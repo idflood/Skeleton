@@ -13,15 +13,18 @@
 
 // Fonts
 // @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
+
+
 $base-font-size: 16px;
 $line-height-ratio: 1.5;
 
-$base-font-family: 'Lora', serif;
+$base-font-family: 'Ubuntu', sans-serig;
+
 $f-default: $base-font-family;
 
 
-$s-design-width: 980px;
+$s-design-width: 960px;
 
 // Colors
 $c-grey-lightest: #f7f7f7;
@@ -29,7 +32,7 @@ $c-grey-light: #ddd;
 
 // spacings
 $s-gutter-half: $s-gutter * .5;
-$s-gutter: 20px;
+$s-gutter: 10px;
 $s-gutter-double: $s-gutter * 2;
 
 // sizes

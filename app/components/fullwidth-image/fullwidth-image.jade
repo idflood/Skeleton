@@ -1,0 +1,12 @@
+mixin fullwidth-image(data, options)
+  - options = setOptionsDefaults(options, "fullwidth-image")
+  - var classes = getOptionsModifier(options, "fullwidth-image")
+
+  .fullwidth-image(style="background-image: url(#{data.imgSrc})")
+    .l-site-width.fullwidth-image-container
+      if options.hasLabel
+        span.fullwidth-image-label= data.labelText
+      if options.hasLabel
+        a.fullwidth-image-arrow(href="#") Arrow here
+      .fullwidth-image-content
+        block

@@ -1,0 +1,12 @@
+mixin section(data, options)
+  - options = setOptionsDefaults(options, "section")
+  - var classes = getOptionsModifier(options, "section")
+
+  .section(class=classes)
+    .l-site-width
+      h2.section-title.t-section-title= data.title
+      .section-content.l-grid
+        block
+      .section-button
+        +button({ href: '#', text: data.buttonText}, {})
+

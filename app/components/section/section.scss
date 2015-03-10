@@ -1,0 +1,17 @@
+$section-outer-spacing: 4*$s-gutter;
+$section-inner-spacing: 3*$s-gutter;
+
+.section {
+  padding: $section-outer-spacing 0;
+
+  &--background-white { background: $c-white; }
+  &--background-grey1 { background: $c-grey1; }
+}
+
+.section-content {
+  margin: $section-inner-spacing 0;
+}
+
+.section-button {
+  text-align: center;
+}

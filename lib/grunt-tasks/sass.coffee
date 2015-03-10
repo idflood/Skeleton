@@ -6,7 +6,8 @@ module.exports =
     loadPath: [
       'lib/bower_components',
       '<%= config.libDir %>/toolset/grunt-tasks/assembler',
-      '<%= config.srcDir %>/css']
+      '<%= config.srcDir %>/css'
+    ]
   dev:
     files: [
       {

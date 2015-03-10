@@ -1,42 +1,37 @@
 
-.title {
-font-family: Avenir;
-font-size: 3rem;
+.t-button {
+font-family: Ubuntu;
+font-size: 1rem;
+font-weight: 300;
 line-height: 1.4;
-color: $c-midnight-blue;
-
-}
-
-.subtitle {
-font-family: Avenir;
-font-size: 2.4rem;
-line-height: 1.4;
-color: $c-wet-asphalt;
-
-}
-
-.nav-item {
-font-family: Avenir;
-font-size: 1.125rem;
-line-height: 1.4;
-color: $c-amethyst;
-
-}
-
-.label {
-font-family: Avenir;
-font-size: .8rem;
-font-weight: bold;
-line-height: 1.4;
-color: $c-belize-hole;
+color: $c-grey3;
 text-transform: uppercase;
 }
 
-.body {
-font-family: Avenir;
-font-size: 1rem;
+.t-section-title {
+font-family: Ubuntu;
+font-size: 1.6rem;
+font-weight: 700;
 line-height: 1.4;
-color: $c-peter-river;
+color: $c-grey3;
+
+}
+
+.t-link-lead {
+font-family: Ubuntu;
+font-size: 1.1rem;
+font-weight: 700;
+line-height: 1.1;
+color: $c-grey3;
+
+}
+
+.t-link-sublead {
+font-family: Ubuntu;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1;
+color: $c-grey2;
 
 }
 

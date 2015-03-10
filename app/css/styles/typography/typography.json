@@ -1,36 +1,35 @@
 {
-  "title": {
-    "fontFamily": "Avenir",
-    "color": "midnight-blue",
-    "fontSize" : "3rem",
-    "lineHeight": "1.4"
-  },
-  "subtitle": {
-    "fontFamily": "Avenir",
-    "color": "wet-asphalt",
-    "fontSize" : "2.4rem",
-    "lineHeight": "1.4"
-  },
-  "nav-item": {
-    "value": "Dropdown",
-    "fontFamily": "Avenir",
-    "color": "amethyst",
-    "fontSize" : "1.125rem",
-    "lineHeight": "1.4"
-  },
-  "label": {
-    "value": "Label",
-    "fontFamily": "Avenir",
-    "fontWeight": "bold",
-    "color": "belize-hole",
-    "fontSize" : ".8rem",
-    "textTransform": "uppercase",
-    "lineHeight": "1.4"
-  },
-  "body": {
-    "fontFamily": "Avenir",
-    "color": "peter-river",
+  "t-button": {
+    "fontFamily": "Ubuntu",
     "fontSize" : "1rem",
-    "lineHeight": "1.4"
+    "fontWeight": "300",
+    "lineHeight": "1.4",
+    "textTransform": "uppercase",
+    "textDecoration": "none",
+    "letterSpacing": "1px",
+    "color": "grey3"
+  },
+  "t-section-title": {
+    "fontFamily": "Ubuntu",
+    "fontSize" : "1.6rem",
+    "fontWeight": "700",
+    "lineHeight": "1.4",
+    "color": "grey3"
+  },
+  "t-link-lead": {
+    "fontFamily": "Ubuntu",
+    "fontSize": "1.1rem",
+    "fontWeight": "700",
+    "lineHeight": "1.1",
+    "color": "grey3",
+    "textDecoration": "underline"
+  },
+  "t-link-sublead": {
+    "fontFamily": "Ubuntu",
+    "fontSize": "1rem",
+    "fontWeight": "400",
+    "lineHeight": "1",
+    "color": "grey2",
+    "textDecoration": "underline"
   }
 }

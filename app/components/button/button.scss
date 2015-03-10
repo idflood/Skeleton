@@ -1,49 +1,26 @@
+$button-height: 4*$s-gutter;
+$button-horizontal-spacing: 3*$s-gutter;
+
 .button {
+  @extend .t-button;
+  background: transparent;
+  display: inline-block;
+  border: 1px solid $c-grey3;
+  border-radius: 1px;
+  height: $button-height;
+  line-height: $button-height;
+  padding: 0 $button-horizontal-spacing;
+
   text-align: center;
-  font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: white;
+  text-decoration: none;
 
-  // Color Variations
-  &, &--color-green {
-    background: green;
+
+  &--color-dark {
+    border-color: $c-grey3;
+    color: $c-grey3;
   }
-
-  &--color-red {
-    background: red;
-  }
-
-  &--color-blue {
-    background: blue;
-  }
-
-  // Size Variations
-  &, &--size-medium {
-    padding: 10px 40px;
-  }
-
-  &--size-small {
-    padding: 5px 10px;
-  }
-
-  &--size-big {
-    padding: 20px 80px;
-  }
-
-  // Corners Variations
-  &, &--corners-rounded {
-    border-radius: 5px;
-  }
-
-  &--corners-circle {
-    border-radius: 100%;
-    box-sizing: border-box;
-    &.button--medium { padding: 10px; }
-  }
-
-  &--corners-square {
-    border-radius: 0;
+  &--color-light {
+    border-color: $c-white;
+    color: $c-white;
   }
 }

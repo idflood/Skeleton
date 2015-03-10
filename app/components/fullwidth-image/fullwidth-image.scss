@@ -1,0 +1,20 @@
+$fullwidth-image-min-height: 30 * $s-gutter;
+
+
+.fullwidth-image {
+  background-size: cover;
+}
+
+.fullwidth-image-container {
+  position: relative;
+  min-height: $fullwidth-image-min-height;
+}
+
+.fullwidth-image-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  transform: translateY(-50%);
+  color: $c-white;
+}

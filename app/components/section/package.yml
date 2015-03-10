@@ -1,0 +1,12 @@
+---
+  name: "section"
+  version: "0.0.1"
+  description: "Example component"
+  author: "Ginetta"
+  data:
+    title: "Projekte im Fokus"
+    buttonText: "Weitere Projekte"
+  options:
+    background:
+      values: ["white", "grey1"]
+      default: "white"
