@@ -30,7 +30,7 @@ html-prod:
 css-dev:
   - stylesAssembler
   - grunticon:dev
-  - compass
+  - sass:dev
   - autoprefixer
 
 css-prod:
@@ -50,6 +50,7 @@ js:
 
 assets-dev:
   - copy:fonts
+  - copy:images
 
 assets-prod:
   - assets-dev

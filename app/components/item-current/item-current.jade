@@ -1,0 +1,7 @@
+mixin item-current(data, options)
+  - options = setOptionsDefaults(options, "item-current")
+
+  .item-current.l-grid-cell.l-one-half(style="background-image: url(#{relativePath}/assets/#{data.type}.png);")
+    a.item-current-row.t-link-sublead(href="")=    data.type
+    a.item-current-row.t-link-lead(href="")= data.title
+

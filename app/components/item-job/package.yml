@@ -1,0 +1,14 @@
+---
+  name: "item-job"
+  version: "0.0.1"
+  description: "Example component"
+  author: "Ginetta"
+  data:
+    position: "Bauingenier/in Brückenbau"
+    positionUrl: "#"
+    location: "Essen"
+    locationUrl: "#"
+  options:
+    hasLabel:
+      values: [true, false]
+      default: false

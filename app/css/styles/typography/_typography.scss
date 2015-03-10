@@ -1,3 +1,9 @@
 @import "typography-theo";
 
 // We could use utilities, vertical rythm, other stuff here.
+.t-section-title,
+.t-link-lead,
+.t-link-sublead,
+.l-link {
+  margin: 0;
+}

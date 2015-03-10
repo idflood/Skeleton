@@ -1,0 +1,15 @@
+---
+  name: "fullwidth-image"
+  version: "0.0.1"
+  description: "Example component"
+  author: "Ginetta"
+  data:
+    imgSrc: "http://static.pexels.com/wp-content/uploads/2014/10/long-road-straight-3131.jpg"
+    labelText: 'Reportage'
+  options:
+    hasLabel:
+      values: [true, false]
+      default: false
+    hasArrow:
+      values: [true, false]
+      default: false

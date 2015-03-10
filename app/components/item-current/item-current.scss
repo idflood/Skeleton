@@ -1,0 +1,16 @@
+$item-current-icon-size: 6*$s-gutter;
+$item-current-spacing: 3*$s-gutter;
+
+.item-current {
+  padding-left: $item-current-icon-size + 2*$s-gutter;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: $item-current-icon-size $item-current-icon-size;
+  margin-bottom: $item-current-spacing;
+  &-row {
+    display: block;
+    margin-bottom: .4em;
+  }
+}
+
+
