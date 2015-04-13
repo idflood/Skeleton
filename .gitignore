@@ -6,3 +6,5 @@ node_modules
 Gemfile.lock
 .tmp/
 styleguide/
+app/css/styles/colors/_colors-theo.scss
+app/css/styles/typography/_typography-theo.scss
