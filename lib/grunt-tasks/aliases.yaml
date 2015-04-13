@@ -30,12 +30,13 @@ html-prod:
 css-dev:
   - stylesAssembler
   # - grunticon:dev
-  - sass:dev
+  - sass
   - autoprefixer
 
 css-prod:
+  - stylesAssembler
   # - grunticon:prod
-  - compass
+  - sass
   - autoprefixer
   - uncss
   - cssmin

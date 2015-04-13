@@ -1,5 +1,5 @@
 mixin item-current(data, options)
-  - options = setOptionsDefaults(options, "item-current")
+  - options = setOptionsDefaults(options, "item-current", components['item-current'])
 
   .item-current.l-grid-cell.l-one-half(style="background-image: url(#{relativePath}/assets/#{data.type}.png);")
     a.item-current-row.t-link-sublead(href="")=    data.type

@@ -1,6 +1,6 @@
 mixin section(data, options)
-  - options = setOptionsDefaults(options, "section")
-  - var classes = getOptionsModifier(options, "section")
+  - options = setOptionsDefaults(options, "section", components.section)
+  - var classes = getOptionsModifier(options, "section", null, components.section)
 
   .section(class=classes)
     .l-site-width
