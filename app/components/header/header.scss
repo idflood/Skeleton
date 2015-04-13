@@ -1,0 +1,9 @@
+.header {
+  &__top, &__bottom {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &__menu {
+    @extend .l-horizontal-list;
+  }
+}
