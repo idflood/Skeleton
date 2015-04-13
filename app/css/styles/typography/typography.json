@@ -6,22 +6,19 @@
     "lineHeight": "1.4",
     "textTransform": "uppercase",
     "textDecoration": "none",
-    "letterSpacing": "1px",
-    "color": "grey3"
+    "letterSpacing": "1px"
   },
   "t-section-title": {
     "fontFamily": "Ubuntu",
     "fontSize" : "1.6rem",
     "fontWeight": "700",
-    "lineHeight": "1.4",
-    "color": "grey3"
+    "lineHeight": "1.4"
   },
   "t-link-lead": {
     "fontFamily": "Ubuntu",
     "fontSize": "1.1rem",
     "fontWeight": "700",
     "lineHeight": "1.1",
-    "color": "grey3",
     "textDecoration": "underline"
   },
   "t-link-sublead": {
@@ -29,7 +26,6 @@
     "fontSize": "1rem",
     "fontWeight": "400",
     "lineHeight": "1",
-    "color": "grey2",
     "textDecoration": "underline"
   }
 }

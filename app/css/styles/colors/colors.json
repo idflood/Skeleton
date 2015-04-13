@@ -1,11 +1,19 @@
 {
+  "primary": {
+    "pink"       : "#dc2856",
+    "light-pink" : "#f8f1f7",
+    "blue"       : "#e0f0fa",
+    "light-blue" : "#f3f9fd",
+    "light-green": "#f6faef"
+  },
   "neutral": {
     "white"        : "#fff",
-    "grey1"        : "#F2F2F2",
-    "grey2"        : "#898989",
-    "grey3"        : "#343434"
-  },
-  "secondary": {
-    "turquoise"     : "#1abc9c"
+    "black"        : "#000",
+    "grey100"      : "#2f2f2f",
+    "grey80"       : "#444",
+    "grey60"       : "#999",
+    "grey40"       : "#bbb",
+    "grey20"       : "#d0d0d0",
+    "light-grey"   : "#f9f9f9"
   }
 }
