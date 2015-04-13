@@ -5,7 +5,7 @@ $button-horizontal-spacing: 3*$s-gutter;
   @extend .t-button;
   background: transparent;
   display: inline-block;
-  border: 1px solid $c-grey3;
+  border: 1px solid $c-grey80;
   border-radius: 1px;
   height: $button-height;
   line-height: $button-height;
@@ -16,8 +16,8 @@ $button-horizontal-spacing: 3*$s-gutter;
 
 
   &--color-dark {
-    border-color: $c-grey3;
-    color: $c-grey3;
+    border-color: $c-grey40;
+    color: $c-grey40;
   }
   &--color-light {
     border-color: $c-white;
