@@ -1,7 +1,10 @@
 {
   "primary": {
     "pink"       : "#dc2856",
-    "light-pink" : "#f8f1f7"
+    "light-pink" : "#f8f1f7",
+    "blue"       : "#e0f0fa",
+    "light-blue" : "#f3f9fd",
+    "light-green": "#f6faef"
   },
   "neutral": {
     "white"        : "#fff",
