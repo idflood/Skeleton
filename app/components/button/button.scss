@@ -2,7 +2,6 @@ $button-height: 4*$s-gutter;
 $button-horizontal-spacing: 3*$s-gutter;
 
 .button {
-  @extend .t-button;
   background: transparent;
   display: inline-block;
   border: 1px solid $c-grey80;
