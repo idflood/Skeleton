@@ -1,6 +1,6 @@
 mixin fullwidth-image(data, options)
-  - options = setOptionsDefaults(options, "fullwidth-image")
-  - var classes = getOptionsModifier(options, "fullwidth-image")
+  - options = setOptionsDefaults(options, "fullwidth-image", components['fullwidth-image'])
+  - var classes = getOptionsModifier(options, "fullwidth-image", null, components['fullwidth-image'])
 
   .fullwidth-image(style="background-image: url(#{data.imgSrc})")
     .l-site-width.fullwidth-image-container
