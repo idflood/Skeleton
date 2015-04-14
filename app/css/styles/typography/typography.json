@@ -20,6 +20,20 @@
     "lineHeight": "1.3636",
     "color": "black"
   },
+  "t-paragraph": {
+    "fontFamily": "Ubuntu",
+    "fontSize" : "1rem",
+    "fontWeight": "200",
+    "lineHeight": "1.5",
+    "color": "black"
+  },
+  "t-link": {
+    "fontFamily": "Ubuntu",
+    "fontSize" : "1rem",
+    "fontWeight": "200",
+    "lineHeight": "1.5",
+    "color": "grey60"
+  },
   "t-testimonial": {
     "fontFamily": "Ubuntu",
     "fontSize" : "1.125rem",
@@ -38,13 +52,6 @@
     "fontFamily": "Ubuntu",
     "fontSize" : "1rem",
     "fontWeight": "700",
-    "lineHeight": "1.5",
-    "color": "black"
-  },
-  "t-paragraph": {
-    "fontFamily": "Ubuntu",
-    "fontSize" : "1rem",
-    "fontWeight": "200",
     "lineHeight": "1.5",
     "color": "black"
   },
