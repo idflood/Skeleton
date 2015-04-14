@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="13px" viewBox="0 0 19 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>mail</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="cheatsheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ligatures" sketch:type="MSArtboardGroup" transform="translate(-536.000000, -749.000000)" fill="#4A4A4A">
+            <path d="M545.039062,756.429688 L554.0625,750.023438 L554.0625,749.4375 C554.0625,749.359375 554.016928,749.26823 553.925781,749.164062 C553.834635,749.059895 553.73698,749.020833 553.632812,749.046875 L536.445312,749.007812 C536.315104,749.033854 536.210938,749.085937 536.132812,749.164062 C536.054687,749.242188 536.015625,749.346354 536.015625,749.476562 L536.015625,749.984375 L545.039062,756.46875 L545.039062,756.429688 Z M545.039062,758.03125 L536.015625,751.546875 L536.015625,760.53125 C536.015625,760.687501 536.054687,760.804687 536.132812,760.882812 C536.210938,760.960938 536.315104,761.013021 536.445312,761.039062 L553.632812,761 C553.73698,761.026042 553.834635,760.98698 553.925781,760.882812 C554.016928,760.778645 554.0625,760.67448 554.0625,760.570312 L554.0625,751.507812 L545.039062,758.070312 L545.039062,758.03125 Z" id="mail" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
