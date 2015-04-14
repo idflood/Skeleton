@@ -13,6 +13,5 @@ mixin footer (data, options)
 //- General mixin for footer-item so that
 //- we avoid repetition
 mixin footer-item (item)
-  - var itemClass = item.active === true ? 'is-item-active ' : ''
-  a.footer-item(href=item.href, class=itemClass)= item.text
+  a.footer-item(href=item.href, class=item.active === true ? 'is-item-active ' : '')= item.text
 
