@@ -18,7 +18,9 @@ mixin header(data, options)
                 if link.icon
                   - var itemClass = link.title === options.active ? 'active' : ''
                   a.header-item(href=link.href, class=itemClass)
-                    i(class="icon icon-" + link.icon)
+                    //i(class="header-icon icon icon--" + link.icon)
+                    i(class="header-icon header-icon-" + link.icon)
+                      +svg(link.icon)
                     | #{link.title}
                 else
                   +header-item(link, options)
@@ -32,8 +34,17 @@ mixin header(data, options)
                 +header-item(link, options)
 
         a.header-search(alt="Search", href="#")
-          i.icon.icon-search
+          i.header-search-icon.icon.icon--loupe
 
 mixin header-item(item, options)
   - var itemClass = item.title === options.active ? 'active' : ''
   a.header-item(href=item.href, class=itemClass)= item.title
+
+mixin svg(icon)
+  // Need to use switch there since Jade doesn't support variable include, ex:
+  // include ../../assets/icons/#{icon}.svg
+  case icon
+    when 'person'
+      include ../../assets/icons/person.svg
+    when 'pin'
+      include ../../assets/icons/pin.svg

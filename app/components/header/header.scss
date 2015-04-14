@@ -4,6 +4,9 @@ $size-l: 70px;
 
 $logo-width: 200px;
 
+$search-icon-width: 18px;
+$search-icon-height: 16px;
+
 .header {
   &-logo {
     display: inline;
@@ -27,19 +30,35 @@ $logo-width: 200px;
 
   &-menu {
     min-height: $size-l;
+  }
 
-    a {
-      display: inline-block;
-      margin-left: $size-m;
-      padding: 22px 0 21px 0;
-      text-decoration: none;
+  &-icon {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 14px;
+    margin-right: 5px;
+    top: -3px;
 
-      &, &:link, &:active, &:visited {
-        color: $c-black;
-      }
-      &.active, &:hover, &:focus {
-        color: $c-pink;
-      }
+    svg {
+      max-width: 100%;
+    }
+    path {
+      fill: currentColor;
+    }
+  }
+
+  .header-item {
+    display: inline-block;
+    margin-left: $size-m;
+    padding: 22px 0 21px 0;
+    text-decoration: none;
+
+    &, &:link, &:active, &:visited {
+      color: $c-black;
+    }
+    &.active, &:hover, &:focus {
+      color: $c-pink;
     }
   }
 
@@ -52,7 +71,7 @@ $logo-width: 200px;
     margin-left: $size-m + $logo-width;
     text-align: right;
 
-    a {
+    .header-item {
       margin-left: $size-xs;
 
       &, &:link, &:active, &:visited {
@@ -73,5 +92,15 @@ $logo-width: 200px;
     width: $size-l;
     border-left: 1px solid $c-grey20;
     border-right: 1px solid $c-grey20;
+
+    &-icon {
+      position: absolute;
+      width: $search-icon-width;
+      height: $search-icon-height;
+      left: 50%;
+      top: 50%;
+      margin-left: -$search-icon-width / 2;
+      margin-top: -$search-icon-height / 2;
+    }
   }
 }

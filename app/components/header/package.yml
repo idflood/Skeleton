@@ -27,14 +27,15 @@
       -
         title: "Offene Stellen"
         href: ""
-        icon: "offene-small"
+        icon: "offene---todo"
       -
         title: "Ansprechpartner"
-        href: "team.html"
-        icon: "contact-small"
+        href: "./team.html"
+        icon: "person"
       -
         title: "Anfahrt"
-        href: ""
+        href: "./anfahrt.html"
+        icon: "pin"
   options:
     active:
       values: [Home, Kompetenzen, Projekte, Arbeiten bei uns, Über uns, Aktuelles]
