@@ -4,28 +4,32 @@ mixin header(data, options)
   - var secondary = components.header.data.secondary
 
   header.header
-    .header__top
+    .header-top
       .l-site-width
-        h1.header__title Basler & Hofmann
+        h1.header-logo
+          a(href="/") Basler & Hofmann
       
-        nav.header__menu.header__menu--secondary
-          ul.inline
+        nav.header-menu.header-menu-secondary
+          ul.l-horizontal-list
             each link, index in secondary
               li
                 if link.icon
                   a(href=link.href)
-                    i(class="icon icon--" + link.icon)
+                    i(class="icon icon-" + link.icon)
                     | #{link.title}
                 else
                   a(href=link.href)= link.title
 
-    .header__bottom
+    .header-bottom
       .l-site-width
-        nav.header__menu.header__menu--primary
-          ul.inline
+        nav.header-menu.header-menu-primary
+          ul.l-horizontal-list
             each link, index in primary
               li
-                a(href=link.href)= link.title
+                if link.title == options.active
+                  a.active(href=link.href)= link.title
+                else
+                  a(href=link.href)= link.title
         
-        a.header__search
-          i.icon.icon--search
+        a.header-search(alt="Search", href="#")
+          i.icon.icon-search

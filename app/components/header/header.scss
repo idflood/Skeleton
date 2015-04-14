@@ -1,9 +1,71 @@
+$size-xs: 20px;
+$size-m: 50px;
+$size-l: 70px;
+
+$logo-width: 200px;
+
 .header {
-  &__top, &__bottom {
-    border-bottom: 1px solid #e5e5e5;
+  &-logo {
+    display: inline;
+    float: left;
+    margin-left: $size-m;
+    font-size: 22px; // TODO: remove this when image is ready.
   }
 
-  &__menu {
-    @extend .l-horizontal-list;
+  &-top, &-bottom {
+    position: relative; // for search button absolute position.
+    padding-left: $size-m;
+    border-bottom: 1px solid $c-grey20;
+    overflow: hidden; // clearfix
+  }
+
+  &-menu {
+    min-height: $size-l;
+
+    a {
+      display: inline-block;
+      margin-left: $size-m;
+      padding: 22px 0 21px 0;
+      text-decoration: none;
+
+      &, &:link, &:active, &:visited {
+        color: $c-black;
+      }
+      &.active, &:hover, &:focus {
+        color: $c-pink;
+      }
+    }
+  }
+
+  &-menu-primary {
+    @extend .t-navigation;
+  }
+
+  &-menu-secondary {
+    @extend .t-label-light;
+    margin-left: $size-m + $logo-width;
+    text-align: right;
+
+    a {
+      margin-left: $size-xs;
+
+      &, &:link, &:active, &:visited {
+        color: $c-grey60;
+      }
+      &:hover, &:focus {
+        color: $c-pink;
+      }
+    }
+  }
+
+  &-search {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $size-l;
+    border-left: 1px solid $c-grey20;
+    border-right: 1px solid $c-grey20;
   }
 }
