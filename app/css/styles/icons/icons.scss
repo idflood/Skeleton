@@ -1,0 +1,8 @@
+@import "grunticon.generated/icons.data.svg";
+
+.icon {
+  background-size: contain;
+}
+
+// Add here more sizes, if needed
+.icon--small { width: $s-gutter-double; height: $s-gutter-double; }
