@@ -106,6 +106,17 @@ $search-icon-height: 16px;
     border-left: 1px solid $c-grey20;
     border-right: 1px solid $c-grey20;
 
+    &, &:link, &:active, &:visited {
+      color: $c-grey80;
+    }
+    &.active, &:hover, &:focus {
+      color: $c-pink;
+    }
+
+    path {
+      fill: currentColor;
+    }
+
     &-icon {
       position: absolute;
       width: $search-icon-width;

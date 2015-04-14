@@ -34,7 +34,8 @@ mixin header(data, options)
                 +header-item(link, options)
 
         a.header-search(alt="Search", href="#")
-          i.header-search-icon.icon.icon--loupe
+          i.header-search-icon
+            +svg("loupe")
 
 mixin header-item(item, options)
   - var itemClass = item.title === options.active ? 'active' : ''
@@ -48,3 +49,5 @@ mixin svg(icon)
       include ../../assets/icons/person.svg
     when 'pin'
       include ../../assets/icons/pin.svg
+    when 'loupe'
+      include ../../assets/icons/loupe.svg
