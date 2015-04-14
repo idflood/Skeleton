@@ -1,0 +1,78 @@
+// SPACINGS
+$footer-height:                7   * $s-gutter !default;
+$footer-item-spacing:          2   * $s-gutter !default;
+$footer-item-group-spacing:    1   * $s-gutter !default;
+
+// COLORS
+$footer-color :                $c-black        !default;
+$footer-item-color :           $c-white        !default;
+$footer-item-color-active:     $c-grey60       !default;
+
+
+/**
+ * The technique applied to the footer is the following:
+ *     - (1) every child element inside footer (footer-copyright and
+ *           footer-items-group) is displayed inline.
+ *
+ *     - (2) Direct child elements are then aligned to the right.
+ *
+ *     - (3) footer-copyright break the default alignment
+ *           to the right by using float. (it is then cleared
+ *           on 3a)
+ */
+.footer {
+  @extend %l-clearfix; // 3a
+  padding: 0 $s-gutter;
+  background: $footer-color;
+  text-align: right; // (2)
+
+  @include breakpoint(mobile) {
+    text-align: left;
+  }
+
+  &-items-group,
+  &-copyright {
+    display: inline; // (1)
+  }
+
+  &-copyright {
+    color: $footer-item-color-active;
+    float: left; // (3)
+
+    @include breakpoint(mobile) {
+      display: block;
+      float: none;
+    }
+  }
+
+  &-copyright,
+  &-item {
+    @extend .t-paragraph;
+    line-height: $footer-height;
+    height: $footer-height;
+  }
+
+  // groups have a spacing between them
+  // because the language items appear closer
+  &-items-group {
+    margin-left: $footer-item-group-spacing;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  &-item {
+    color: $footer-item-color;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 $footer-item-spacing / 2;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.is-item-active {
+      color: $footer-item-color-active;
+    }
+  }
+}
