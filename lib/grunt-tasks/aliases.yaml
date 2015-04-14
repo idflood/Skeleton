@@ -29,13 +29,11 @@ html-prod:
 
 css-dev:
   - stylesAssembler
-  # - grunticon:dev
   - sass
   - autoprefixer
 
 css-prod:
   - stylesAssembler
-  # - grunticon:prod
   - sass
   - autoprefixer
   - uncss
