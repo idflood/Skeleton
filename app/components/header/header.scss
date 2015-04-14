@@ -1,7 +1,3 @@
-$size-xs: 20px;
-$size-m: 50px;
-$size-l: 70px;
-
 $logo-width: 200px;
 
 $search-icon-width: 18px;
@@ -11,9 +7,8 @@ $search-icon-height: 16px;
   &-logo {
     display: inline;
     float: left;
-    margin: 0 0 0 $size-m;
+    margin: 0 0 0 $size-m; // REVIEW: do we need this margin left? I know that we have that on the specs, but it doesn't look like it has on invision
     padding: 23px 0;
-    font-size: 22px; // TODO: remove this when image is ready.
 
     &-image {
       width: $logo-width;
@@ -23,22 +18,22 @@ $search-icon-height: 16px;
 
   &-top, &-bottom {
     position: relative; // for search button absolute position.
-    padding-left: $size-m;
-    border-bottom: 1px solid $c-grey20;
+    padding-left: $size-m; // REVIEW: do we need this? because we al
+    border-bottom: 1px solid $c-grey20; // REVIEW: we should add a variable (e.g. header-border-color)
     overflow: hidden; // clearfix
   }
 
   &-menu {
-    min-height: $size-l;
+    min-height: $size-l; // REVIEW: we should put a variable in here so it's easy to change, if needed
   }
 
   &-icon {
     position: relative;
     display: inline-block;
-    width: 16px;
-    height: 14px;
-    margin-right: 5px;
-    top: -3px;
+    width: 16px; // REVIEW: we should put this in a variable  (e.g. header-icon-w)
+    height: 14px; // REVIEW: we should put this in a variable (e.g. header-icon-h)
+    margin-right: 5px; // REVIEW: we should put a variable    (e.g. header-icon-spacing)
+    top: -3px; // REVIEW: do we need this?
 
     svg {
       max-width: 100%;
@@ -50,15 +45,15 @@ $search-icon-height: 16px;
 
   .header-item {
     display: inline-block;
-    margin-left: $size-m;
-    padding: 22px 0 21px 0;
+    margin-left: $size-m; // REVIEW: we should put this in a variable (e.g. header-item-spacing-primary)
+    padding: 22px 0 21px 0; // REVIEW: can we instead of doing this have a variable called $header-bottom-height and then use line-height here?
     text-decoration: none;
 
     &, &:link, &:active, &:visited {
-      color: $c-black;
+      color: $c-black; // REVIEW: we should put this in a variable (e.g. header-item-color-primary)
     }
     &.active, &:hover, &:focus {
-      color: $c-pink;
+      color: $c-pink; // REVIEW: we should put this in a variable (e.g. header-item-color-active-primary)
     }
     &.active {
       @extend .t-border-bottom;
@@ -69,23 +64,18 @@ $search-icon-height: 16px;
     }
   }
 
-  &-menu-primary {
-    @extend .t-navigation;
-  }
-
   &-menu-secondary {
-    @extend .t-label-light;
-    margin-left: $size-m + $logo-width;
+    margin-left: $size-m + $logo-width; // REVIEW: I think we can remove this because we have text-align: right
     text-align: right;
 
     .header-item {
-      margin-left: $size-xs;
+      margin-left: $size-xs; // REVIEW: we should put this in a variable (e.g. header-item-spacing-secondary)
 
       &, &:link, &:active, &:visited {
-        color: $c-grey60;
+        color: $c-grey60; // REVIEW: we should put this in a variable (e.g. header-item-color-secondary)
       }
       &.active, &:hover, &:focus {
-        color: $c-pink;
+        color: $c-pink; // REVIEW: we should put this in a variable (e.g. header-item-color--active-secondary)
       }
       &.active {
         &:after {
@@ -102,15 +92,15 @@ $search-icon-height: 16px;
     top: 0;
     right: 0;
     bottom: 0;
-    width: $size-l;
-    border-left: 1px solid $c-grey20;
-    border-right: 1px solid $c-grey20;
+    width: $size-l; // REVIEW: we should put this in a variable (e.g. header-search-size)
+    border-left: 1px solid $c-grey20; // REVIEW: we should add a variable (e.g. header-border-color)
+    border-right: 1px solid $c-grey20; // REVIEW: we should add a variable (e.g. header-border-color)
 
     &, &:link, &:active, &:visited {
-      color: $c-grey80;
+      color: $c-grey80;  // REVIEW: we should put this in a variable (e.g. header-search-color)
     }
     &.active, &:hover, &:focus {
-      color: $c-pink;
+      color: $c-pink; // REVIEW: we should put this in a variable (e.g. header-search-color-active)
     }
 
     path {
@@ -121,6 +111,10 @@ $search-icon-height: 16px;
       position: absolute;
       width: $search-icon-width;
       height: $search-icon-height;
+      // REVIEW: instead of a negative margin-left and margin-right to center
+      // stuff we could use transform: translate(-50%, -50%);
+      // there is a mixin in bones to do this
+      // @include absolute-center($direction: both)
       left: 50%;
       top: 50%;
       margin-left: -$search-icon-width / 2;

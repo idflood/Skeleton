@@ -10,20 +10,19 @@ mixin header(data, options)
           a(href="/")
             .is-visuallyhidden Basler & Hofmann
             img.header-logo-image(src="../assets/basler-and-hofmann-logo.png", alt="Basler & Hofmann")
-      
+
         nav.header-menu.header-menu-secondary
           ul.l-horizontal-list
             each link, index in secondary
               li
                 if link.icon
                   - var itemClass = link.title === options.active ? 'active' : ''
-                  a.header-item(href=link.href, class=itemClass)
-                    //i(class="header-icon icon icon--" + link.icon)
+                  a.header-item.t-label(href=link.href, class=itemClass)
                     i(class="header-icon header-icon-" + link.icon)
                       +svg(link.icon)
                     | #{link.title}
                 else
-                  +header-item(link, options)
+                  +header-item(link, options, 'secondary')
 
     .header-bottom
       .l-site-width
@@ -37,9 +36,12 @@ mixin header(data, options)
           i.header-search-icon
             +svg("loupe")
 
-mixin header-item(item, options)
+mixin header-item(item, options, type)
+  - type = type || 'primary'
   - var itemClass = item.title === options.active ? 'active' : ''
-  a.header-item(href=item.href, class=itemClass)= item.title
+  - var typographyClass = type === 'primary' ? ' t-navigation' : ' t-label'
+  - itemClass += typographyClass
+  a.header-item.t-navigation(href=item.href, class=itemClass)= item.title
 
 mixin svg(icon)
   // Need to use switch there since Jade doesn't support variable include, ex:
