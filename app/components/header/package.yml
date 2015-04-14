@@ -7,22 +7,22 @@
     primary:
       -
         title: "Home"
-        href: "/"
+        href: "./"
       -
         title: "Kompetenzen"
-        href: "/kompetenzen.html"
+        href: "./kompetenzen.html"
       -
         title: "Projekte"
-        href: "/projekte.html"
+        href: "./projekte.html"
       -
         title: "Arbeiten bei uns"
-        href: "/arbeiten.html"
+        href: "./arbeiten.html"
       -
         title: "Über uns"
-        href: "/uber_uns.html"
+        href: "./uber_uns.html"
       -
         title: "Aktuelles"
-        href: "/aktuelles.html"
+        href: "./aktuelles.html"
     secondary:
       -
         title: "Offene Stellen"

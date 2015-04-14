@@ -1,5 +1,5 @@
 mixin header(data, options)
-  //- options = setOptionsDefaults(options, "header")
+  - options = setOptionsDefaults(options, 'header', components['header'])
   - var primary = components.header.data.primary
   - var secondary = components.header.data.secondary
 
@@ -7,18 +7,21 @@ mixin header(data, options)
     .header-top
       .l-site-width
         h1.header-logo
-          a(href="/") Basler & Hofmann
+          a(href="/")
+            .is-visuallyhidden Basler & Hofmann
+            img.header-logo-image(src="../assets/basler-and-hofmann-logo.png", alt="Basler & Hofmann")
       
         nav.header-menu.header-menu-secondary
           ul.l-horizontal-list
             each link, index in secondary
               li
                 if link.icon
-                  a(href=link.href)
+                  - var itemClass = link.title === options.active ? 'active' : ''
+                  a.header-item(href=link.href, class=itemClass)
                     i(class="icon icon-" + link.icon)
                     | #{link.title}
                 else
-                  a(href=link.href)= link.title
+                  +header-item(link, options)
 
     .header-bottom
       .l-site-width
@@ -26,10 +29,11 @@ mixin header(data, options)
           ul.l-horizontal-list
             each link, index in primary
               li
-                if link.title == options.active
-                  a.active(href=link.href)= link.title
-                else
-                  a(href=link.href)= link.title
-        
+                +header-item(link, options)
+
         a.header-search(alt="Search", href="#")
           i.icon.icon-search
+
+mixin header-item(item, options)
+  - var itemClass = item.title === options.active ? 'active' : ''
+  a.header-item(href=item.href, class=itemClass)= item.title

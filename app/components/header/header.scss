@@ -8,8 +8,14 @@ $logo-width: 200px;
   &-logo {
     display: inline;
     float: left;
-    margin-left: $size-m;
+    margin: 0 0 0 $size-m;
+    padding: 23px 0;
     font-size: 22px; // TODO: remove this when image is ready.
+
+    &-image {
+      width: 200px;
+      max-width: 100%;
+    }
   }
 
   &-top, &-bottom {
@@ -52,7 +58,7 @@ $logo-width: 200px;
       &, &:link, &:active, &:visited {
         color: $c-grey60;
       }
-      &:hover, &:focus {
+      &.active, &:hover, &:focus {
         color: $c-pink;
       }
     }
