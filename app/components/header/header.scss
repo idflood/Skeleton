@@ -16,7 +16,7 @@ $search-icon-height: 16px;
     font-size: 22px; // TODO: remove this when image is ready.
 
     &-image {
-      width: 200px;
+      width: $logo-width;
       max-width: 100%;
     }
   }
@@ -60,6 +60,13 @@ $search-icon-height: 16px;
     &.active, &:hover, &:focus {
       color: $c-pink;
     }
+    &.active {
+      @extend .t-border-bottom;
+
+      &:after {
+        bottom: 9px; // Need to define it because of the uncommon vertical padding on the link.
+      }
+    }
   }
 
   &-menu-primary {
@@ -79,6 +86,12 @@ $search-icon-height: 16px;
       }
       &.active, &:hover, &:focus {
         color: $c-pink;
+      }
+      &.active {
+        &:after {
+          bottom: 18px; // Smaller border than on primary links.
+          width: 25px;
+        }
       }
     }
   }
