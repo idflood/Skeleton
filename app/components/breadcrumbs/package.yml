@@ -1,0 +1,12 @@
+---
+  name: "breadcrumbs"
+  version: "0.0.1"
+  description: "Standard footer"
+  author: "Ginetta"
+  data:
+    pages:
+      - name: 'Ansprechpartner'
+        href: '#'
+      - name: 'Vorname Nachname'
+        href: '#'
+  options: {}

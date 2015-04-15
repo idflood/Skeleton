@@ -1,0 +1,60 @@
+// COLORS
+$breadcrumb-text-color:     $c-grey60          !default;
+
+// ARROW
+$breadcrumb-arrow-height:        $s-gutter     !default;
+$breadcrumb-arrow-width:    .5 * $s-gutter     !default;
+$breadcrumb-arrow-spacing:       $s-gutter     !default;
+$breadcrumb-arrow-thickness: 2px               !default;
+
+
+/**
+ * Breadcrumbs have an arrow as a dividir. This is accomplished using CSS triangles on
+ * the :before and :after elements.
+ * The :before element is a greu triangle (1) and the :after element is a white triangle (2),
+ * creating an arrow with a given thickness. Both are positioned absolutely on the right
+ * and vertically centered.
+ */
+.breadcrumbs {
+  @extend %l-horizontal-list;
+  // fix the spacing around inline-block elements
+  // https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+  font-size: 0;
+
+  &-item {
+    color: $breadcrumb-text-color;
+    @extend .t-link;
+
+    &--link {
+      @extend .t-link;
+      position: relative;
+      padding-right: $breadcrumb-arrow-width + $breadcrumb-arrow-spacing + $breadcrumb-arrow-thickness;
+      margin-right: $breadcrumb-arrow-spacing;
+      &:after,
+      &:before {
+        content: "";
+        @include absolute-center($direction: vertical);
+      }
+      // (1)
+      &:before {
+        @include triangle(
+          $height: $breadcrumb-arrow-height,
+          $color: $breadcrumb-text-color,
+          $direction: right,
+          $width: $breadcrumb-arrow-width
+        );
+        right: 0;
+      }
+      // (2)
+      &:after {
+        @include triangle(
+          $height: $breadcrumb-arrow-height,
+          $color: $c-white,
+          $direction: right,
+          $width: $breadcrumb-arrow-width
+        );
+        right: $breadcrumb-arrow-thickness;
+      }
+    }
+  }
+}
