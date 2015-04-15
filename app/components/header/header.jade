@@ -47,6 +47,8 @@ mixin header-svg(icon)
   // Need to use switch there since Jade doesn't support variable include, ex:
   // include ../../assets/icons/#{icon}.svg
   case icon
+    when 'check'
+      include ../../assets/icons/check.svg
     when 'person'
       include ../../assets/icons/person.svg
     when 'pin'

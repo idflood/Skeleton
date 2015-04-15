@@ -27,7 +27,7 @@
       -
         title: "Offene Stellen"
         href: ""
-        icon: "offene---todo"
+        icon: "check"
       -
         title: "Ansprechpartner"
         href: "./team.html"
