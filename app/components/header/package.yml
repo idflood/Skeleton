@@ -1,0 +1,42 @@
+---
+  name: "header"
+  version: "0.0.1"
+  description: "Site header"
+  author: "Ginetta"
+  data:
+    primary:
+      -
+        title: "Home"
+        href: "./"
+      -
+        title: "Kompetenzen"
+        href: "./kompetenzen.html"
+      -
+        title: "Projekte"
+        href: "./projekte.html"
+      -
+        title: "Arbeiten bei uns"
+        href: "./arbeiten.html"
+      -
+        title: "Über uns"
+        href: "./uber_uns.html"
+      -
+        title: "Aktuelles"
+        href: "./aktuelles.html"
+    secondary:
+      -
+        title: "Offene Stellen"
+        href: ""
+        icon: "check"
+      -
+        title: "Ansprechpartner"
+        href: "./team.html"
+        icon: "person"
+      -
+        title: "Standorte"
+        href: "./anfahrt.html"
+        icon: "pin"
+  options:
+    active:
+      values: [Home, Kompetenzen, Projekte, Arbeiten bei uns, Über uns, Aktuelles]
+      default: "Home"
