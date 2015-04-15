@@ -30,7 +30,6 @@ html.no-js(lang='en')
       ]
     }, {})
 
-
     block js
       script(src='#{relativePath}/bower_components/requirejs/require.js')
       script(src='#{relativePath}/js/main.js')
@@ -41,13 +40,19 @@ html.no-js(lang='en')
           paths: {
             jquery: '#{relativePath}bower_components/jquery/dist/jquery',
             _: '#{relativePath}bower_components/lodash/dist/lodash.compat',
+            placeholder: '#{relativePath}bower_components/jquery-placeholder/jquery.placeholder',
             mediaQuery: '#{relativePath}bower_components/sensible/mediaQuery',
-            styleguide: '#{relativePath}/js/styleguide'
+            styleguide: '#{relativePath}/js/styleguide',
+            "job-footer": '#{relativePath}components/job-footer/job-footer'
             /* add compoenents as this
             mycomponent: '#{relativePath}components/mycomponent/mycomponent'
             */
           },
-          shim: {}
+          shim: {
+            placeholder: {
+              deps: ['jquery']
+            }
+          }
         });
 
 
