@@ -23,20 +23,10 @@ block htmlbody
     ]
   },{})
 
-  +section({
-    title: 'Foo title',
-    buttonText: 'bar button text',
-    buttonHref: '#'
-  }, { containerSize: 'l', background: 'white' })
-
-  +section({
-    title: 'Bei allfälligen Fragen'
-  }, {
-    background: 'white',
-    containerSize: 's'
-  })
+  .l-s-width.l-spacing-v-xl
+    h2 Bei allfälligen Fragen
     p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-    
+
     .l-grid
       .l-grid-cell.l-one-third
         +item-contact({
