@@ -1,0 +1,78 @@
+$tabs-item-height: $size-m;
+$tabs-inner-spacing: $size-m;
+
+$tabs-item-color: $c-grey60;
+$tabs-item-color-active: $c-pink;
+
+$tabs-border-color: $c-grey20;
+$tabs-border-width: 1px;
+
+$tabs-active-arrow-w: 23px;
+$tabs-active-arrow-h: 12px;
+
+.tabs {
+  border-bottom: $tabs-border-width solid $tabs-border-color;
+
+  &-container {
+    @extend .l-l-width;
+    @extend %l-horizontal-equidistant;
+    padding: 0 $tabs-inner-spacing;
+  }
+
+  // &-item {
+  // }
+
+  &-link {
+    @extend .t-button;
+    font-weight: 200;
+    display: inline-block;
+    height: $tabs-item-height;
+    line-height: $tabs-item-height;
+    text-decoration: none;
+    position: relative;
+
+    &, &:active, &:visited {
+      color: $tabs-item-color;
+    }
+    &.is-active, &:hover, &:focus {
+      color: $tabs-item-color-active;
+    }
+
+    &.is-active {
+      &:before,
+      &:after {
+        display: block;
+      }
+    }
+
+
+
+    &:before,
+    &:after {
+      display: none;
+
+      content: "";
+      @include absolute-center($direction: horizontal);
+    }
+
+    &:before {
+      @include triangle(
+        $height: $tabs-active-arrow-h,
+        $color: $tabs-border-color,
+        $direction: up,
+        $width: $tabs-active-arrow-w
+      );
+      bottom: 0;
+    }
+
+    &:after {
+      @include triangle(
+        $height: $tabs-active-arrow-h,
+        $color: $c-white,
+        $direction: up,
+        $width: $tabs-active-arrow-w
+      );
+      bottom: -1px - $tabs-border-width;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+---
+  name: "tabs"
+  version: "0.0.1"
+  description: "Example component"
+  author: "Ginetta"
+  data:
+    tabs:
+      - text: Alle
+        href: "#"
+        active: true
+      - text: News
+        href: "#"
+      - text: Veranstaltungen
+        href: "#"
+      - text: Broschüre
+        href: "#"
+      - text: Newsletter
+        href: "#"
+      - text: Fachartikel
+        href: "#"
+      - text: Reportage
+        href: "#"
+  options: {}

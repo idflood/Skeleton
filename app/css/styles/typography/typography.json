@@ -48,6 +48,13 @@
     "lineHeight": "1.222",
     "color": "pink"
   },
+  "t-tab": {
+    "fontFamily": "Ubuntu",
+    "fontSize" : "1.125rem",
+    "fontWeight": "200",
+    "lineHeight": "1.222",
+    "color": "grey60"
+  },
   "t-testimonial": {
     "fontFamily": "Ubuntu",
     "fontSize" : "1.125rem",

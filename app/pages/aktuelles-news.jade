@@ -1,0 +1,30 @@
+extends /layout/layout
+
+block htmlhead
+    title Basler & Hofmann
+    meta(name='description', content='')
+
+block htmlbody
+
+  +header({}, {active: "Aktuelles"})
+
+  .l-l-width
+    h1.t-h1.t-border-bottom Aktuelles
+
+  +tabs({
+    tabs: [
+      { text: 'Alle'           , href: 'aktuelles.html'                  },
+      { text: 'News'           , href: 'aktuelles-news.html'           , active: true  },
+      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+    ]
+  },{})
+
+  +section({
+    title: 'Foo title',
+    buttonText: 'bar button text',
+    buttonHref: '#'
+  }, { containerSize: 'l', background: 'white' })

@@ -1,0 +1,9 @@
+mixin tabs(data, options)
+  - options = setOptionsDefaults(options, "tabs", components.tabs)
+
+  .tabs
+    ul.tabs-container(class=classes)
+      each tab in data.tabs
+        li.tabs-item
+          a.tabs-link(href=tab.href, class=tab.active ? 'is-active' : '')= tab.text
+
