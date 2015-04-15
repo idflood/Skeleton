@@ -24,11 +24,12 @@
 );
 
 
+// Container utility classes
+
 .l-xl-width {
   @extend .l-site-width;
   max-width: $container-xl;
 }
-
 
 .l-l-width {
   @extend .l-site-width;
@@ -44,3 +45,13 @@
   @extend .l-site-width;
   max-width: $container-s;
 }
+
+
+// Vertical Spacing utility classes
+// To avoid having unneded classes, let's just uncomment one once we need it.
+
+.l-spacing-v-xl { padding: $size-xl; }
+// .l-spacing-v-l  { padding: $size-l;  }
+// .l-spacing-v-m  { padding: $size-m;  }
+// .l-spacing-v-s  { padding: $size-s;  }
+// .l-spacing-v-xs { padding: $size-xs; }
