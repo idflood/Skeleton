@@ -2,13 +2,14 @@ mixin footer (data, options)
   - options = setOptionsDefaults(options, "footer", components.footer)
 
   footer.footer
-    span.footer-copyright= data.copyright
-    .footer-items-group
-      each item in data.languages
-        +footer-item(item)
-    .footer-items-group
-      each item in data.links
-        +footer-item(item)
+    .l-xl-width
+      span.footer-copyright= data.copyright
+      .footer-items-group
+        each item in data.languages
+          +footer-item(item)
+      .footer-items-group
+        each item in data.links
+          +footer-item(item)
 
 //- General mixin for footer-item so that
 //- we avoid repetition
