@@ -1,17 +1,26 @@
 // SPACINGS
-$job-footer-vertical-padding: 70px !default; // TODO: relace with $size-l when the header branch is merged.
+$job-footer-vertical-padding: $size-l !default;
 $job-footer-title-margin: 0.4em !default;
-$job-footer-paragraph-margin: 0.45em !default;
+$job-footer-paragraph-margin: 7px !default;
 $job-footer-form-margin-top: 20px !default;
+$job-footer-form-input-padding: 16px !default;
+$job-footer-form-input-width: 69% !default;
+$job-footer-form-form-width: 31% !default;
+$job-footer-form-item-height: 40px !default;
 
 // COLORS
 $job-footer-background: $c-grey100 !default;
 $job-footer-color: $c-white !default;
 $job-footer-link-color: $c-white !default;
 $job-footer-link-color--hover: $c-grey20 !default; // TODO: check hover color for links on dark background.
+$job-footer-form-input-color: $c-grey60 !default;
+$job-footer-form-input-bg: $c-white !default;
+$job-footer-form-button-color: $c-white !default;
+$job-footer-form-button-bg: $c-black !default; // TODO: color is #222 on the sketch file, check if using black instead is right.
 
 .job-footer {
-  padding: $job-footer-vertical-padding;
+  $padding-below: $job-footer-vertical-padding - $job-footer-paragraph-margin; // Need to substract the margin below paragraphs.
+  padding: $job-footer-vertical-padding 0 $padding-below;
   background: $job-footer-background;
 
   &, p, &-title {
@@ -30,9 +39,6 @@ $job-footer-link-color--hover: $c-grey20 !default; // TODO: check hover color fo
   p {
     margin-top: 0;
     margin-bottom: $job-footer-paragraph-margin; // Paragraph in job-footer have smaller margin-bellow than standard text.
-    &:last-child {
-      margin-bottom: 0; // Remove margin from last paragraph, otherwise there is too much space at the bottom.
-    }
   }
 
   &-title {
@@ -43,6 +49,33 @@ $job-footer-link-color--hover: $c-grey20 !default; // TODO: check hover color fo
   &-form {
     margin-top: $job-footer-form-margin-top;
     overflow: hidden; // clearfix
+
+    @include placeholder() {
+      color: $job-footer-form-input-color;
+    }
   }
-  
+
+  &-input, &-button {
+    box-sizing: border-box;
+    display: inline;
+    float: left;
+    height: $job-footer-form-item-height;
+  }
+
+  &-input {
+    @extend .t-paragraph;
+    width: $job-footer-form-input-width;
+    padding: 0 $job-footer-form-input-padding;
+    border: 1px solid $job-footer-form-input-bg;
+    background: $job-footer-form-input-bg;
+    color: $job-footer-form-input-color;
+  }
+
+  &-button {
+    @extend .t-h4;
+    width: $job-footer-form-form-width;
+    border: 1px solid $job-footer-form-button-bg;
+    background: $job-footer-form-button-bg;
+    color: $job-footer-form-button-color; // Override the default black color of .t-h4;
+  }
 }

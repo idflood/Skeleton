@@ -1,1 +1,19 @@
 @import "bonescss/3.helpers";
+
+@mixin placeholder() {
+  .placeholder { // jquery.placeholder.js polyfill, ie9
+    @content;
+  }
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder { // Mozilla Firefox 4 to 18
+    @content;
+  }
+  ::-moz-placeholder { // Mozilla Firefox 19+
+    @content;
+  }
+  :-ms-input-placeholder { // Internet Explorer 10+
+    @content;
+  }
+}
