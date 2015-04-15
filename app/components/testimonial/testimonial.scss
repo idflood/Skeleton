@@ -1,0 +1,26 @@
+// SPACINGS
+$testimonial-height: 450px !default;
+$testimonial-padding: $size-s !default;
+$testimonial-width: 456px !default;
+$testimonial-margin-right: 160px !default;
+
+// COLORS
+$testimonial-background: $c-black !default;
+
+.testimonial {
+  position: relative; // Needed for text position.
+  height: $testimonial-height;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &-text {
+    @extend .t-testimonial;
+    position: absolute;
+    right: $testimonial-margin-right;
+    bottom: -$testimonial-padding;
+    width: $testimonial-width;
+    padding: $testimonial-padding;
+    margin: 0; // Overwrite the default paragraph margin-top/bottom.
+    background: $testimonial-background;
+  }
+}
