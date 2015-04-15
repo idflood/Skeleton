@@ -1,14 +1,11 @@
-// SPACINGS
-
-
 // COLORS
-$breadcrumb-text-color: $c-grey60 !default;
+$breadcrumb-text-color:     $c-grey60          !default;
 
 // ARROW
-$breadcrumb-arrow-height: $s-gutter;
-$breadcrumb-arrow-width: .5 * $s-gutter;
-$breadcrumb-arrow-spacing: $s-gutter;
-$breadcrumb-arrow-thickness: 2px;
+$breadcrumb-arrow-height:        $s-gutter     !default;
+$breadcrumb-arrow-width:    .5 * $s-gutter     !default;
+$breadcrumb-arrow-spacing:       $s-gutter     !default;
+$breadcrumb-arrow-thickness: 2px               !default;
 
 
 /**
@@ -23,7 +20,6 @@ $breadcrumb-arrow-thickness: 2px;
   // fix the spacing around inline-block elements
   // https://css-tricks.com/fighting-the-space-between-inline-block-elements/
   font-size: 0;
-  padding: $s-gutter * 2;
 
   &-item {
     color: $breadcrumb-text-color;
