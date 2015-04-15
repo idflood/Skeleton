@@ -34,6 +34,13 @@
     "lineHeight": "1.5",
     "color": "grey60"
   },
+  "t-button": {
+    "fontFamily": "Ubuntu",
+    "fontSize" : "1.125rem",
+    "fontWeight": "700",
+    "lineHeight": "1.222",
+    "color": "pink"
+  },
   "t-testimonial": {
     "fontFamily": "Ubuntu",
     "fontSize" : "1.125rem",
@@ -45,8 +52,8 @@
     "fontFamily": "Ubuntu",
     "fontSize" : "1.125rem",
     "fontWeight": "200",
-    "lineHeight": "1.222",
-    "color": "white"
+    "lineHeight": "1.5",
+    "color": "black"
   },
   "t-navigation": {
     "fontFamily": "Ubuntu",
