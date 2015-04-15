@@ -22,3 +22,24 @@
     ),
     $gridBreakpoints: "not-tablet" "tablet" "tablet-portrait" "not-mobile" "mobile" "mobile-portrait" "print"
 );
+
+
+.l-xl-width {
+  @extend .l-site-width;
+  max-width: $container-xl;
+}
+
+.l-b-width {
+  @extend .l-site-width;
+  max-width: $container-b;
+}
+
+.l-m-width {
+  @extend .l-site-width;
+  max-width: $container-m;
+}
+
+.l-s-width {
+  @extend .l-site-width;
+  max-width: $container-s;
+}
