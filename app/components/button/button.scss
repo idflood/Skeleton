@@ -1,5 +1,9 @@
-$button-height: 5*$s-gutter;
-$button-horizontal-spacing: 3*$s-gutter;
+// SPACES
+$button-height-large:       5 * $s-gutter    !default;
+$button-height-normal:      4 * $s-gutter    !default;
+$button-horizontal-spacing: 3 * $s-gutter    !default;
+$button-icon-width:         $s-gutter-double !default;
+$button-icon-spacing:       $s-gutter        !default;
 
 .button {
   @extend .t-button;
@@ -8,16 +12,59 @@ $button-horizontal-spacing: 3*$s-gutter;
   display: inline-block;
   border: 1px solid $c-grey80;
   border-radius: 1px;
-  height: $button-height;
-  line-height: $button-height;
   padding: 0 $button-horizontal-spacing;
 
   text-align: center;
   text-decoration: none;
 
+  border-color: currentColor;
+
+  transition: background-color 100ms ease-in;
+
+  &, &--size-normal {
+    height: $button-height-normal;
+    line-height: $button-height-normal;
+  }
+
+  &--size-large {
+    height: $button-height-large;
+    line-height: $button-height-large;
+  }
+
+  svg {
+    margin-right: $button-icon-spacing;
+    width: $button-icon-width;
+  }
+
+  path {
+    fill: currentColor;
+  }
+
 
   &--color-pink {
-    border-color: $c-pink;
-    color: $c-pink;
+    &, &:link, &:active, &:visited {
+      color: $c-pink; // (1)
+      border-color: $c-pink;
+    }
+
+    &:hover, &:focus {
+      background: $c-pink;
+    }
+  }
+
+  &--color-grey {
+    &, &:link, &:active, &:visited {
+      color: $c-grey80; // (1)
+      border-color: $c-grey80;
+    }
+    &:hover, &:focus {
+      background: $c-grey80;
+    }
+  }
+
+  // This needs to be added  here so the :active declarations on (1) don't take place
+  // as they have the same CSS priority so the one that appears last is taken.
+  &:hover, &:focus {
+    color: $c-white;
   }
 }

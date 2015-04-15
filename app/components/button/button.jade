@@ -1,5 +1,18 @@
 mixin button (data, options)
   - options = setOptionsDefaults(options, "button", components.button)
-  - var classes = getOptionsModifier(options, "button", null, components.button)
+  - var classes = getOptionsModifier(options, "button", ['color', 'size'], components.button)
 
-  a.button(class=classes, href=data.href)= data.text
+  a.button(class=classes, href=data.href)
+    if options.icon
+      +button-svg(options.icon)
+    | #{data.text}
+
+
+mixin button-svg(icon)
+  // Need to use switch there since Jade doesn't support variable include, ex:
+  // include ../../assets/icons/#{icon}.svg
+  case icon
+    when 'mail'
+      include ../../assets/icons/mail.svg
+    when 'download'
+      include ../../assets/icons/download.svg

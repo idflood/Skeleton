@@ -8,5 +8,11 @@
     href: "#"
   options:
     color:
-      values: ['pink']
+      values: ['pink', 'grey']
       default: "pink"
+    icon:
+      values: [false, 'mail', 'download']
+      default: false
+    size:
+      values: ['normal', 'large']
+      default: 'normal'
