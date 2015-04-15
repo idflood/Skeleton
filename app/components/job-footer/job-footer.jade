@@ -1,0 +1,17 @@
+mixin job-footer (data, options)
+  - options = setOptionsDefaults(options, "job-footer", components["job-footer"])
+  
+  section.job-footer
+    .l-site-width
+      .l-grid
+        .l-grid-cell.l-one-half.l-tablet-one-whole
+          h2.job-footer-title Nichts passendes dabei?
+          p Wir sind jederzeit auf der Suche nach Talenten. Falls zur Zeit keine passende Stelle ausgeschrieben ist, können Sie sich gern initiativ bei uns bewerben.
+          p
+            a(href="#") Zur Initiativbewerbung
+        .l-grid-cell.l-one-half.l-tablet-one-whole
+          h2.job-footer-title Auf dem Laufenden bleiben
+          p Ich möchte über neue Stellen informiert werden
+          form.job-footer-form(action="", method="post")
+            input.job-footer-input(type="email", placeholder="E-Mail Adresse", required)
+            input.job-footer-button(type="button", value="Absenden")
