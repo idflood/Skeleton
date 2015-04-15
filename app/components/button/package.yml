@@ -8,7 +8,5 @@
     href: "#"
   options:
     color:
-      values:
-        - "dark"
-        - "light"
-      default: "dark"
+      values: ['pink']
+      default: "pink"
