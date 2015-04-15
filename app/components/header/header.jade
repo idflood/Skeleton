@@ -19,7 +19,7 @@ mixin header(data, options)
                   - var itemClass = link.title === options.active ? 'active' : ''
                   a.header-item.t-label(href=link.href, class=itemClass)
                     i(class="header-icon header-icon-" + link.icon)
-                      +svg(link.icon)
+                      +header-svg(link.icon)
                     | #{link.title}
                 else
                   +header-item(link, options, 'secondary')
@@ -34,7 +34,7 @@ mixin header(data, options)
 
         a.header-search(alt="Search", href="#")
           i.header-search-icon
-            +svg("loupe")
+            +header-svg("loupe")
 
 mixin header-item(item, options, type)
   - type = type || 'primary'
@@ -43,7 +43,7 @@ mixin header-item(item, options, type)
   - itemClass += typographyClass
   a.header-item.t-navigation(href=item.href, class=itemClass)= item.title
 
-mixin svg(icon)
+mixin header-svg(icon)
   // Need to use switch there since Jade doesn't support variable include, ex:
   // include ../../assets/icons/#{icon}.svg
   case icon
