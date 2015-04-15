@@ -49,7 +49,7 @@ $header-search-color--active: $c-pink !default;
     width: $header-icon-width;
     height: $header-icon-height;
     margin-right: $header-icon-spacing;
-    top: -3px;
+    top: -3px; // Needed to make the icons align correctly to the text.
 
     svg {
       max-width: 100%;
