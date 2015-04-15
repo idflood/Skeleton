@@ -59,7 +59,7 @@
     "fontFamily": "Ubuntu",
     "fontSize" : "1.125rem",
     "fontWeight": "700",
-    "lineHeight": "1.222",
+    "lineHeight": "1.5",
     "color": "white"
   },
   "t-lead": {
