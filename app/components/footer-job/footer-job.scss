@@ -1,0 +1,81 @@
+// SPACINGS
+$footer-job-vertical-padding: $size-l !default;
+$footer-job-title-margin: 0.4em !default;
+$footer-job-paragraph-margin: 7px !default;
+$footer-job-form-margin-top: 20px !default;
+$footer-job-form-input-padding: 16px !default;
+$footer-job-form-input-width: 69% !default;
+$footer-job-form-form-width: 31% !default;
+$footer-job-form-item-height: 40px !default;
+
+// COLORS
+$footer-job-background: $c-grey100 !default;
+$footer-job-color: $c-white !default;
+$footer-job-link-color: $c-white !default;
+$footer-job-link-color--hover: $c-grey20 !default; // TODO: check hover color for links on dark background.
+$footer-job-form-input-color: $c-grey60 !default;
+$footer-job-form-input-bg: $c-white !default;
+$footer-job-form-button-color: $c-white !default;
+$footer-job-form-button-bg: $c-black !default; // TODO: color is #222 on the sketch file, check if using black instead is right.
+
+.footer-job {
+  $padding-below: $footer-job-vertical-padding - $footer-job-paragraph-margin; // Need to substract the margin below paragraphs.
+  padding: $footer-job-vertical-padding 0 $padding-below;
+  background: $footer-job-background;
+
+  &, p, &-title {
+    color: $footer-job-color;
+  }
+
+  a {
+    &, &:link, &:visited, &:active {
+      color: $footer-job-link-color;
+    }
+    &:hover, &:focus {
+      color: $footer-job-link-color--hover;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: $footer-job-paragraph-margin; // Paragraph in footer-job have smaller margin-bellow than standard text.
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: $footer-job-title-margin;
+  }
+
+  &-form {
+    margin-top: $footer-job-form-margin-top;
+    overflow: hidden; // clearfix
+
+    @include placeholder() {
+      color: $footer-job-form-input-color;
+    }
+  }
+
+  &-input, &-button {
+    box-sizing: border-box;
+    display: inline;
+    float: left;
+    height: $footer-job-form-item-height;
+  }
+
+  &-input {
+    @extend .t-paragraph;
+    width: $footer-job-form-input-width;
+    padding: 0 $footer-job-form-input-padding;
+    border: 1px solid $footer-job-form-input-bg;
+    background: $footer-job-form-input-bg;
+    color: $footer-job-form-input-color;
+  }
+
+  &-button {
+    @extend .t-h4;
+    width: $footer-job-form-form-width;
+    border: 1px solid $footer-job-form-button-bg;
+    background: $footer-job-form-button-bg;
+    color: $footer-job-form-button-color; // Override the default black color of .t-h4;
+  }
+}

@@ -1,5 +1,5 @@
 define(['jquery', 'placeholder'], function($) {
   'use strict';
 
-  $('.job-footer input').placeholder();
+  $('.footer-job input').placeholder();
 });
