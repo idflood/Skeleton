@@ -1,0 +1,57 @@
+mixin header(data, options)
+  - options = setOptionsDefaults(options, 'header', components['header'])
+  - var primary = components.header.data.primary
+  - var secondary = components.header.data.secondary
+
+  header.header
+    .header-top
+      .l-site-width
+        h1.header-logo
+          a(href="/")
+            .is-visuallyhidden Basler & Hofmann
+            img.header-logo-image(src="../assets/basler-and-hofmann-logo.png", alt="Basler & Hofmann")
+
+        nav.header-menu.header-menu-secondary
+          ul.l-horizontal-list
+            each link, index in secondary
+              li
+                if link.icon
+                  - var itemClass = link.title === options.active ? 'active' : ''
+                  a.header-item.t-label(href=link.href, class=itemClass)
+                    i(class="header-icon header-icon-" + link.icon)
+                      +header-svg(link.icon)
+                    | #{link.title}
+                else
+                  +header-item(link, options, 'secondary')
+
+    .header-bottom
+      .l-site-width
+        nav.header-menu.header-menu-primary
+          ul.l-horizontal-list
+            each link, index in primary
+              li
+                +header-item(link, options)
+
+        a.header-search(alt="Search", href="#")
+          i.header-search-icon
+            +header-svg("loupe")
+
+mixin header-item(item, options, type)
+  - type = type || 'primary'
+  - var itemClass = item.title === options.active ? 'active' : ''
+  - var typographyClass = type === 'primary' ? ' t-navigation' : ' t-label'
+  - itemClass += typographyClass
+  a.header-item.t-navigation(href=item.href, class=itemClass)= item.title
+
+mixin header-svg(icon)
+  // Need to use switch there since Jade doesn't support variable include, ex:
+  // include ../../assets/icons/#{icon}.svg
+  case icon
+    when 'check'
+      include ../../assets/icons/check.svg
+    when 'person'
+      include ../../assets/icons/person.svg
+    when 'pin'
+      include ../../assets/icons/pin.svg
+    when 'loupe'
+      include ../../assets/icons/loupe.svg

@@ -5,12 +5,16 @@ block htmlhead
     meta(name='description', content='')
 
 block htmlbody
+
+  +header({}, {active: "Home"})
+
   +breadcrumbs({
       pages: [
         { name: 'Impressum', href: '#' },
         { name: 'Vorname Nachname' }
       ]
     },{})
+
   +fullwidth-image({ imgSrc: "https://thisvtlife.files.wordpress.com/2010/04/comm-mtg-35.jpg" }, { hasArrow: true })
     h3 Wir sind ein unabhängiges Ingenieur-, Planungs- und Beratungs-unternehmem.
     p TVernetztes Denken und ein Blick fürs Ganze zeichnen unsere Arbeit aus.

@@ -1,7 +1,9 @@
-$button-height: 4*$s-gutter;
+$button-height: 5*$s-gutter;
 $button-horizontal-spacing: 3*$s-gutter;
 
 .button {
+  @extend .t-button;
+  box-sizing: border-box; // so that border is not calculated on the total height (i.e. border inside)
   background: transparent;
   display: inline-block;
   border: 1px solid $c-grey80;
@@ -14,12 +16,8 @@ $button-horizontal-spacing: 3*$s-gutter;
   text-decoration: none;
 
 
-  &--color-dark {
-    border-color: $c-grey40;
-    color: $c-grey40;
-  }
-  &--color-light {
-    border-color: $c-white;
-    color: $c-white;
+  &--color-pink {
+    border-color: $c-pink;
+    color: $c-pink;
   }
 }
