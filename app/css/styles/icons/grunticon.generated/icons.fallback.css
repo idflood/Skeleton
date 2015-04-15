@@ -26,6 +26,8 @@
 
 .icon--document { background-image: url('png/document.png'); background-repeat: no-repeat; }
 
+.icon--download { background-image: url('png/download.png'); background-repeat: no-repeat; }
+
 .icon--downstroke { background-image: url('png/downstroke.png'); background-repeat: no-repeat; }
 
 .icon--downstrokethin { background-image: url('png/downstrokethin.png'); background-repeat: no-repeat; }
