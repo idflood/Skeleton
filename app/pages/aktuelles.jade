@@ -23,8 +23,18 @@ block htmlbody
     ]
   },{})
 
-  +section({
-    title: 'Foo title',
-    buttonText: 'bar button text',
-    buttonHref: '#'
-  }, { containerSize: 'l', background: 'white' })
+  .l-s-width.l-spacing-v-xl
+    h2 Bei allfälligen Fragen
+    p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+
+    .l-grid
+      .l-grid-cell.l-one-third
+        +item-contact({
+          imgSrc: "http://lorempixel.com/output/people-q-c-217-145-1.jpg",
+          firstname: "Hans",
+          lastname: "Muster",
+          role: "Leitender Experte",
+          region: "Murten",
+          phone: "044 387 13 19",
+          email: "test@example.com"
+          }, {})
