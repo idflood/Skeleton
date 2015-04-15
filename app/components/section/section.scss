@@ -1,17 +1,27 @@
-$section-outer-spacing: 4*$s-gutter;
-$section-inner-spacing: 3*$s-gutter;
+$section-vertical-spacing: $size-xl !default;
+$section-inner-spacing: $size-l !default;
 
 .section {
-  padding: $section-outer-spacing 0;
+  padding: $section-vertical-spacing 0;
 
-  &--background-white { background: $c-white; }
-  &--background-grey1 { background: $c-grey20; }
-}
+  &--background-white      { background: $c-white;      }
+  &--background-light-pink { background: $c-light-pink; }
+  &--background-light-blue { background: $c-light-blue; }
 
-.section-content {
-  margin: $section-inner-spacing 0;
-}
 
-.section-button {
-  text-align: center;
+
+  &-title {
+    @extend .t-h1;
+    @extend .t-border-bottom;
+    margin: 0;
+  }
+
+  &-content {
+    margin-top: $section-inner-spacing;
+  }
+
+  &-button {
+    margin-top: $section-inner-spacing;
+    text-align: center;
+  }
 }

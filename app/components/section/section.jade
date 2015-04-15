@@ -1,12 +1,17 @@
 mixin section(data, options)
-  - options = setOptionsDefaults(options, "section", components.section)
-  - var classes = getOptionsModifier(options, "section", null, components.section)
+  - options     = setOptionsDefaults(options, "section", components.section)
+  - var classes = getOptionsModifier(options, "section", ['background'], components.section)
 
+  - containerClass = 'l-' + options.containerSize + '-width'
   .section(class=classes)
-    .l-site-width
-      h2.section-title.t-section-title= data.title
-      .section-content.l-grid
+    div(class=containerClass)
+      h2.section-title= data.title
+      .section-content
         block
-      .section-button
-        +button({ href: '#', text: data.buttonText}, {})
+      if data.buttonText && data.buttonHref
+        .section-button
+          +button({
+              href: data.buttonHref,
+              text: data.buttonText
+          }, { color: 'pink' })
 

@@ -1,12 +1,16 @@
 ---
   name: "section"
   version: "0.0.1"
-  description: "Example component"
+  description: "A section is a module that has a title and transcluded content. Optionally it also contains a button"
   author: "Ginetta"
   data:
     title: "Projekte im Fokus"
     buttonText: "Weitere Projekte"
+    buttonHref: "#"
   options:
     background:
-      values: ["white", "grey1"]
+      values: ["white", "light-pink", "light-blue"]
       default: "white"
+    containerSize:
+      values: ['s', 'm', 'l']
+      default: 'm'
