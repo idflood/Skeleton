@@ -1,0 +1,14 @@
+---
+  name: "item-text"
+  version: "0.0.1"
+  description: "Item text has a title and text"
+  author: "Ginetta"
+  data:
+    title: "Ganzheitliche Lösungen"
+    text: "Bei Basler & Hofmann stellen wir sicher, dass alle Facetten einer Aufgabe berücksichtigt werden. Unseren Kunden erhalten belastbare und praxistaugliche Lösungen."
+    linkText: "Weiterlesen"
+    linkHref: '#'
+  options:
+    card:
+      values: [false, 'grey', 'blue']
+      default: false

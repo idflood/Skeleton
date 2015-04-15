@@ -1,0 +1,10 @@
+mixin item-text(data, options)
+  - options = setOptionsDefaults(options, "item-text", components['item-text'])
+  - var classes = getOptionsModifier(options, "item-text", ['card'], components['item-text'])
+
+  .item-text(class=options.card ? classes : 'item-text--no-card')
+    h3.item-text-title.t-h3= data.title
+    p.item-text-content.t-paragraph !{data.text}
+    if data.linkText && data.linkHref
+      a.item-text-link.t-link(href=data.linkHref)= data.linkText
+

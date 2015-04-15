@@ -20,6 +20,13 @@
     "lineHeight": "1.3636",
     "color": "black"
   },
+  "t-h3": {
+    "fontFamily": "Ubuntu",
+    "fontSize" : "1.125rem",
+    "fontWeight": "700",
+    "lineHeight": "1.3636",
+    "color": "black"
+  },
   "t-h4": {
     "fontFamily": "Ubuntu",
     "fontSize" : "1rem",
