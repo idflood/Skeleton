@@ -1,6 +1,22 @@
 @import "typography-theo";
 
 // We could use utilities, vertical rythm, other stuff here.
+
+.t-border-bottom {
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background-color: currentColor;
+  }
+}
+
 h1 { @extend .t-h1; color: $c-black; } // override default color which is pink.
 h2 { @extend .t-h2; }
 

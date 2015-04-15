@@ -1,0 +1,135 @@
+// SPACINGS
+$header-logo-width: 200px !default;
+$header-menu-height: $size-l !default;
+$header-icon-width: 16px !default;
+$header-icon-height: 14px !default;
+$header-icon-spacing: 5px !default;
+$header-item-spacing: $size-m !default;
+$header-item-spacing-secondary: $size-xs !default;
+$header-search-icon-width: 18px !default;
+$header-search-icon-height: 16px !default;
+$header-search-size: $size-l !default;
+$header-bottom-height: $size-l !default;
+
+// COLORS
+$header-border-color: $c-grey20 !default;
+$header-item-color-primary: $c-black !default;
+$header-item-color-primary--active: $c-pink !default;
+$header-item-color-secondary: $c-grey40 !default;
+$header-item-color-secondary--active: $c-pink !default;
+$header-search-color: $c-grey80 !default;
+$header-search-color--active: $c-pink !default;
+
+.header {
+  &-logo {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 23px 0;
+
+    &-image {
+      width: $header-logo-width;
+      max-width: 100%;
+    }
+  }
+
+  &-top, &-bottom {
+    position: relative; // for search button absolute position.
+    border-bottom: 1px solid $header-border-color;
+    overflow: hidden; // clearfix
+  }
+
+  &-menu {
+    min-height: $header-menu-height;
+  }
+
+  &-icon {
+    position: relative;
+    display: inline-block;
+    width: $header-icon-width;
+    height: $header-icon-height;
+    margin-right: $header-icon-spacing;
+    top: -3px;
+
+    svg {
+      max-width: 100%;
+    }
+    path {
+      fill: currentColor;
+    }
+  }
+
+  .header-item {
+    display: inline-block;
+    margin-right: $header-item-spacing;
+    line-height: $header-bottom-height;
+    text-decoration: none;
+
+    &, &:link, &:active, &:visited {
+      color: $header-item-color-primary;
+    }
+    &.active, &:hover, &:focus {
+      color: $header-item-color-primary--active;
+    }
+    &.active {
+      @extend .t-border-bottom;
+
+      &:after {
+        bottom: 18px; // Need to define it because of the uncommon line-height.
+      }
+    }
+  }
+
+  &-menu-secondary {
+    text-align: right;
+
+    .header-item {
+      margin-right: 0;
+      margin-left: $header-item-spacing-secondary;
+
+      &, &:link, &:active, &:visited {
+        color: $header-item-color-secondary;
+      }
+      &.active, &:hover, &:focus {
+        color: $header-item-color-secondary--active;
+      }
+      &.active {
+        &:after {
+          width: 25px; // Smaller border than on primary links.
+        }
+      }
+    }
+  }
+
+  &-search {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $header-search-size;
+    border-left: 1px solid $header-border-color;
+    border-right: 1px solid $header-border-color;
+
+    &, &:link, &:active, &:visited {
+      color: $header-search-color;
+    }
+    &.active, &:hover, &:focus {
+      color: $header-search-color--active;
+    }
+
+    path {
+      fill: currentColor;
+    }
+
+    &-icon {
+      position: absolute;
+      width: $header-search-icon-width;
+      height: $header-search-icon-height;
+      left: 50%;
+      top: 50%;
+      margin-left: -$header-search-icon-width / 2;
+      margin-top: -$header-search-icon-height / 2;
+    }
+  }
+}
