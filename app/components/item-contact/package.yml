@@ -1,0 +1,14 @@
+---
+  name: "item-contact"
+  version: "0.0.1"
+  description: "Contact item component"
+  author: "Ginetta"
+  data:
+    imgSrc: "http://lorempixel.com/output/people-q-c-217-145-1.jpg"
+    firstname: "Hans"
+    lastname: "Muster"
+    role: "Leitender Experte"
+    region: "Murten"
+    phone: "044 387 13 19"
+    email: "test@example.com"
+  options: {}

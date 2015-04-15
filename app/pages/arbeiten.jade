@@ -47,4 +47,42 @@ block htmlbody
   })
     p Uns ist wichtig, dass unsere Mitarbeiter sich nicht nur als Fachkraft, sondern als ganzer Mensch fühlen.
 
+  +section({
+    title: 'Ihre Ansprechpartner'
+  }, {
+    background: 'white',
+    containerSize: 's'
+  })
+    .l-grid
+      .l-grid-cell.l-one-third
+        +item-contact({
+          imgSrc: "http://lorempixel.com/output/people-q-c-217-145-1.jpg",
+          firstname: "Hans",
+          lastname: "Muster",
+          role: "Leitender Experte",
+          region: "Murten",
+          phone: "044 387 13 19",
+          email: "test@example.com"
+          }, {})
+      .l-grid-cell.l-one-third
+        +item-contact({
+          imgSrc: "http://lorempixel.com/output/people-q-c-217-145-5.jpg",
+          firstname: "Maria",
+          lastname: "Muster",
+          role: "Leitender Expertin",
+          region: "Zürich",
+          phone: "044 387 13 19",
+          email: "test2@example.com"
+          }, {})
+      .l-grid-cell.l-one-third
+        +item-contact({
+          imgSrc: "http://lorempixel.com/output/people-q-c-217-145-1.jpg",
+          firstname: "Peter",
+          lastname: "Muster",
+          role: "Leitender Experte",
+          region: "Lausanne",
+          phone: "044 387 13 19",
+          email: "test3@example.com"
+          }, {})
+
   +footer-job({}, {})
