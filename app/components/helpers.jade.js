@@ -1,7 +1,7 @@
 function setOptionsDefaults(options, componentName, component) {
   options = options || {};
   for ( var key in component.options ) {
-    options[key] = options[key] || component.options[key].default;
+    options[key] = (typeof options[key] != 'undefined') ? options[key] : component.options[key].default;
   }
 
   return options;

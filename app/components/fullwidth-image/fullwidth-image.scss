@@ -1,20 +1,64 @@
-$fullwidth-image-min-height: 30 * $s-gutter;
+// SPACINGS
+$fullwidth-image-min-height: 45 * $s-gutter !default; // 450px
+$fullwidth-image-min-height--big: 78 * $s-gutter !default; // 780px
+$fullwidth-image-content-top: $size-m !default;
+$fullwidth-image-content-width: 426px !default;
+$fullwidth-image-content-padding-vertical: $size-m !default;
+$fullwidth-image-content-padding-horizontal: $size-s !default;
+$fullwidth-image-title-margin: 1.25em !default;
 
+// COLORS
+$fullwidth-image-background: $c-black !default;
+$fullwidth-image-color: $c-white !default;
+$fullwidth-image-link-color: $fullwidth-image-color !default;
+$fullwidth-image-link-color--active: $c-grey20 !default;
 
 .fullwidth-image {
   background-size: cover;
-}
 
-.fullwidth-image-container {
-  position: relative;
-  min-height: $fullwidth-image-min-height;
-}
+  &-container {
+    position: relative;
+    min-height: $fullwidth-image-min-height;
+  }
 
-.fullwidth-image-content {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 50%;
-  transform: translateY(-50%);
-  color: $c-white;
+  &--size-big .fullwidth-image-container {
+    min-height: $fullwidth-image-min-height--big;
+  }
+
+  &-content {
+    @extend .t-lead;
+    box-sizing: border-box;
+    position: absolute;
+    top: $fullwidth-image-content-top;
+    left: 0;
+    max-width: $fullwidth-image-content-width;
+    padding: $fullwidth-image-content-padding-vertical $fullwidth-image-content-padding-horizontal;
+    color: $fullwidth-image-color;
+    background: $fullwidth-image-background;
+
+    h3 {
+      @extend .t-h1;
+      @extend .t-border-bottom;
+      margin-top: 0; // Overwrite default heading margin-top.
+      margin-bottom: $fullwidth-image-title-margin; // Adds more space below .t-boder-bottom.
+      color: $fullwidth-image-color; // Overwrite .t-h1 pink color.
+    }
+
+    p {
+      color: $fullwidth-image-color;
+
+      &:last-child {
+        margin-bottom: 0; // We want padding-below to be exactly $size-m, withtout adding default paragraph margin-bottom.
+      }
+    }
+
+    a {
+      &, &:active, &:visited {
+        color: $fullwidth-image-link-color;
+      }
+      &:hover, &:focus {
+        color: $fullwidth-image-link-color--active;
+      }
+    }
+  }
 }

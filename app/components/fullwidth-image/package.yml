@@ -5,11 +5,10 @@
   author: "Ginetta"
   data:
     imgSrc: "http://static.pexels.com/wp-content/uploads/2014/10/long-road-straight-3131.jpg"
-    labelText: 'Reportage'
   options:
-    hasLabel:
+    size:
+      values: [normal, big]
+      default: normal
+    content:
       values: [true, false]
-      default: false
-    hasArrow:
-      values: [true, false]
-      default: false
+      default: true

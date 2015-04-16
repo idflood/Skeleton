@@ -7,7 +7,7 @@ block htmlhead
 block htmlbody
   +header({}, {active: "Arbeiten bei uns"})
 
-  +fullwidth-image({ imgSrc: "https://thisvtlife.files.wordpress.com/2010/04/comm-mtg-35.jpg" }, { hasArrow: true })
+  +fullwidth-image({ imgSrc: "https://thisvtlife.files.wordpress.com/2010/04/comm-mtg-35.jpg" }, {"content": false})
   +page-navigation({
     links: [
       {"title": "Arbeitsumfeld", "target": "arbeitsumfel"},
@@ -50,6 +50,8 @@ block htmlbody
           title: 'Gemeinschaft',
           text: 'Mehrmals pro Jahr fliegen wir gemeinsam aus: Besonders beliebt ist die «Bürowanderung» — ein gemeinsames Wochenende mit Partner/-in in den Bergen.'
         }, {})
+
+  +fullwidth-image({ imgSrc: "https://thisvtlife.files.wordpress.com/2010/04/comm-mtg-35.jpg" }, {size: "big", content: false})
 
   +section({
     title: 'Darauf legen wir Wert',
