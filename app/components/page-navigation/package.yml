@@ -1,0 +1,21 @@
+---
+  name: "page-navigation"
+  version: "0.0.1"
+  description: "Internal page navigation component"
+  author: "Ginetta"
+  data:
+    links:
+      -
+        title: "Arbeitsumfeld"
+        target: "arbeitsumfel"
+      -
+        title: "Darauf legen wir Wert"
+        target: "darauf"
+      -
+        title: "Lehre & Praktika"
+        target: "lehre-praktika"
+      -
+        title: "Offene Stellen"
+        target: "offene"
+
+  options: {}

@@ -3,7 +3,8 @@ mixin section(data, options)
   - var classes = getOptionsModifier(options, "section", ['background'], components.section)
 
   - containerClass = 'l-' + options.containerSize + '-width'
-  .section(class=classes)
+  - var sectionID = data.id ? data.id : ''
+  .section(class=classes, id=sectionID)
     div(class=containerClass)
       h2.section-title= data.title
       .section-content
@@ -14,4 +15,3 @@ mixin section(data, options)
               href: data.buttonHref,
               text: data.buttonText
           }, { color: 'pink', size: 'large' })
-
