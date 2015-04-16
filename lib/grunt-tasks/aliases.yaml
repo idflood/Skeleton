@@ -50,6 +50,7 @@ js:
 assets-dev:
   - copy:fonts
   - copy:images
+  - copy:grunticon
 
 assets-prod:
   - assets-dev
