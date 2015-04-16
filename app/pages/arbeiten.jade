@@ -7,7 +7,9 @@ block htmlhead
 block htmlbody
   +header({}, {active: "Arbeiten bei uns"})
 
-  +fullwidth-image({ imgSrc: "https://thisvtlife.files.wordpress.com/2010/04/comm-mtg-35.jpg" }, { hasArrow: true })
+  +fullwidth-image({
+    imgSrc: relativePath + 'assets/arbeiten-fullwidth-image1.png'
+  }, { content: false })
   +page-navigation({
     links: [
       {"title": "Arbeitsumfeld", "target": "arbeitsumfel"},
@@ -51,6 +53,10 @@ block htmlbody
           text: 'Mehrmals pro Jahr fliegen wir gemeinsam aus: Besonders beliebt ist die «Bürowanderung» — ein gemeinsames Wochenende mit Partner/-in in den Bergen.'
         }, {})
 
+  +fullwidth-image({
+    imgSrc: relativePath + 'assets/arbeiten-fullwidth-image2.png'
+  }, { size: "big", content: false })
+
   +section({
     title: 'Darauf legen wir Wert',
     id: 'darauf'
@@ -76,6 +82,11 @@ block htmlbody
         }, { card: 'grey' })
 
 
+  +testimonial({
+    imgSrc: relativePath + 'assets/arbeiten-testimonial1.png',
+    text: '« Unser Team hat schöne Projekte, mit denen wir etwas gestalten können. Und dafür, dass ich abends gut abschalten kann, sorgen meine beiden Kinder. »'
+  }, {})
+
   +section({
     title: 'Lehre & Praktike',
     id: 'lehre-praktika'
@@ -99,6 +110,11 @@ block htmlbody
           linkText: 'Weiterlesen',
           linkHref: 'detail-generic.html'
         }, { card: 'blue' })
+
+  +testimonial({
+    imgSrc: relativePath + 'assets/arbeiten-testimonial2.png',
+    text: '« Ich bin als Bauzeichnerin eingestiegen und habe dann berufsbegleitend ein Bauingenieurstudium absolviert. Nach dem Studium war klar: Ich will in die Bauleitung. »'
+  }, {})
 
   .l-s-width.l-spacing-v-xl
     h2 Ihre Ansprechpartner
