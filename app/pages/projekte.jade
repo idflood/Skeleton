@@ -5,10 +5,16 @@ block htmlhead
     meta(name='description', content='')
 
 block htmlbody
-
   +header({}, {active: "Projekte"})
 
   .l-l-width
-    h1.t-h1.t-border-bottom Projekte
+    h1.t-h1.t-border-bottom Aktuelles
 
-    +search-field({ placeholder: 'Suche in Projekten' }, {})
+    +search-field({ placeholder: 'Suche in Aktuelles' }, {})
+      +filter({label: "Filter nach Kompetenz"}, {})
+
+  +section({
+    title: 'Foo title',
+    buttonText: 'bar button text',
+    buttonHref: '#'
+  }, { containerSize: 'l', background: 'white' })

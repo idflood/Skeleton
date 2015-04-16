@@ -1,5 +1,6 @@
 // SPACINGS
 $search-field-height:               $size-m         !default;
+$search-field-height--small:        40px            !default;
 $search-field-icon-size:            16px            !default;
 $search-field-spacing:              1.5 * $s-gutter !default;
 
@@ -11,12 +12,14 @@ $search-field-text-color:           $c-grey80       !default;
 
 .search-field {
   position: relative;
+  z-index: 500; // When filter component is open we want it to be above content.
 
   &-input {
     @extend .t-paragraph;
     display: block;
     box-sizing: border-box;
     width: 100%;
+    height: $search-field-height;
     padding: $search-field-spacing;
     padding-left: 2*$search-field-spacing + $search-field-icon-size;
     border: 1px solid $search-field-border-color;
@@ -27,13 +30,14 @@ $search-field-text-color:           $c-grey80       !default;
       border-color: $search-field-border-color-focused;
     }
 
-
     @include placeholder() {
       color: $search-field-placeholder-color;
     }
   }
 
-
+  &--size-small .search-field-input {
+    height: $search-field-height--small; // Used inside the filter callout.
+  }
 
   &-icon {
     position: absolute;

@@ -1,0 +1,36 @@
+mixin filter(data, options)
+  - options = setOptionsDefaults(options, "filter", components.filter)
+  - var items = data.items || components.filter.data.items
+
+  .filter
+    button.filter-button(type="button")
+      | #{data.label} <span data-grunticon-embed class='icon icon--downstroke'></span>
+
+    .filter-callout
+      +search-field({ placeholder: '' }, {size: "small"})
+
+      .filter-content
+        +filter-content(items)
+
+mixin filter-content(items)
+  - var lastLetter = ''
+  - var firstpass = true
+
+  a.filter-item.filter-item--all(href="#alle") Alle
+  each item, index in items
+    - var letter = item.charAt(0)
+    if lastLetter != letter
+      if firstpass === false
+        | </ol>
+
+      div.filter-index= letter.toUpperCase()
+
+      | <ol class="filter-index-list">
+      - lastLetter = letter
+
+    li
+      a.filter-item(href="#" + item)= item
+
+    - firstpass = false
+
+  | </ol>
