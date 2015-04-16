@@ -1,0 +1,14 @@
+extends /layout/layout
+
+block htmlhead
+    title Basler & Hofmann
+    meta(name='description', content='')
+
+block htmlbody
+
+  +header({}, {active: "Kompetenzen"})
+
+  .l-l-width
+    h1.t-h1.t-border-bottom Kompetenzen
+
+    +search-field({ placeholder: 'Suche in Kompetenzen' }, {})

@@ -1,0 +1,26 @@
+extends /layout/layout
+
+block htmlhead
+    title Basler & Hofmann
+    meta(name='description', content='')
+
+block htmlbody
+
+  +header({}, {active: "Offene Stellen"})
+
+  .l-l-width
+    h1.t-h1.t-border-bottom Offene Stellen
+
+    +search-field({ placeholder: 'Suche in offenen Stellen' }, {})
+
+    +tabs({
+      tabs: [
+        { text: 'Alle (35)'      , href: '#', active: true },
+        { text: 'Lausanne (2)'   , href: '#' },
+        { text: 'Luzern (7)'     , href: '#' },
+        { text: 'Murten (0)'     , href: '#' },
+        { text: 'Zollikofen (12)', href: '#' },
+        { text: 'Zürich (14)'    , href: '#' },
+        { text: 'Zug (1)'        , href: '#' }
+      ]
+    },{})
