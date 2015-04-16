@@ -1,0 +1,8 @@
+---
+  name: "share"
+  version: "0.0.1"
+  description: "Share component"
+  author: "Ginetta"
+  data:
+    url: "http://localhost:9000/en/"
+  options: {}

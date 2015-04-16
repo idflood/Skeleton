@@ -4,6 +4,7 @@ $header-menu-height: $size-l !default;
 $header-icon-width: 16px !default;
 $header-icon-height: 14px !default;
 $header-icon-spacing: 5px !default;
+$header-icon-vertical-align: 3px !default;
 $header-item-spacing: $size-m !default;
 $header-item-spacing-secondary: $size-xs !default;
 $header-search-icon-width: 18px !default;
@@ -49,7 +50,7 @@ $header-search-color--active: $c-pink !default;
     width: $header-icon-width;
     height: $header-icon-height;
     margin-right: $header-icon-spacing;
-    top: -3px; // Needed to make the icons align correctly to the text.
+    vertical-align: $header-icon-vertical-align; // Needed to make the icons align correctly to the text.
 
     svg {
       max-width: 100%;
