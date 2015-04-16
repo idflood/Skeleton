@@ -11,10 +11,4 @@ mixin share(data, options)
           +share-svg("twitter")
 
 mixin share-svg(icon)
-  // Need to use switch there since Jade doesn't support variable include, ex:
-  // include ../../assets/icons/#{icon}.svg
-  case icon
-    when 'mail'
-      include ../../assets/icons/mail.svg
-    when 'twitter'
-      include ../../assets/icons/twitter.svg
+  div(data-grunticon-embed, class="icon--" + icon)
