@@ -23,6 +23,7 @@ $page-navigation-link-color--active: $c-grey20 !default;
   }
 
   &-link {
+    @extend .t-navigation;
     display: inline-block;
     line-height: $page-navigation-height;
     text-decoration: none;
