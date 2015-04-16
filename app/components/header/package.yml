@@ -19,24 +19,24 @@
         href: "./arbeiten.html"
       -
         title: "Über uns"
-        href: "./uber_uns.html"
+        href: "./uber-uns.html"
       -
         title: "Aktuelles"
         href: "./aktuelles.html"
     secondary:
       -
         title: "Offene Stellen"
-        href: ""
+        href: "./offene.html"
         icon: "check"
       -
         title: "Ansprechpartner"
-        href: "./team.html"
+        href: "./ansprechpartner.html"
         icon: "person"
       -
         title: "Standorte"
-        href: "./anfahrt.html"
+        href: "./standorte.html"
         icon: "pin"
   options:
     active:
-      values: [Home, Kompetenzen, Projekte, Arbeiten bei uns, Über uns, Aktuelles]
+      values: [Home, Kompetenzen, Projekte, Arbeiten bei uns, Über uns, Aktuelles, Offene Stellen, Ansprechpartner, Standorte]
       default: "Home"

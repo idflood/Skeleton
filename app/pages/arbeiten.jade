@@ -111,17 +111,31 @@ block htmlbody
           linkHref: 'detail-generic.html'
         }, { card: 'blue' })
 
+  .l-s-width.l-spacing-v-xl
+    h3.t-h3 Aktuelle Recruitment-Anlässe
+
   +testimonial({
     imgSrc: relativePath + 'assets/arbeiten-testimonial2.png',
     text: '« Ich bin als Bauzeichnerin eingestiegen und habe dann berufsbegleitend ein Bauingenieurstudium absolviert. Nach dem Studium war klar: Ich will in die Bauleitung. »'
   }, {})
+
+  +section({
+    title: 'Wir suchen Verstäarkung',
+    buttonText: 'Alle offene Stellen ansehen (35)',
+    buttonHref: '#',
+    id: 'offene'
+  }, {
+    background: 'white',
+    containerSize: 's'
+  })
+
 
   .l-s-width.l-spacing-v-xl
     h2 Ihre Ansprechpartner
     .l-grid
       .l-grid-cell.l-one-third
         +item-contact({
-          imgSrc: "http://placehold.it/217x145/dc2856/FFFFFF/.png&text=Image1",
+          imgSrc: relativePath + 'assets/home-contact1.png',
           firstname: "Hans",
           lastname: "Muster",
           role: "Leitender Experte",
@@ -131,7 +145,7 @@ block htmlbody
           }, {})
       .l-grid-cell.l-one-third
         +item-contact({
-          imgSrc: "http://placehold.it/217x145/e0f0fa/FFFFFF/.png&text=Image2",
+          imgSrc: relativePath + 'assets/home-contact2.png',
           firstname: "Maria",
           lastname: "Muster",
           role: "Leitender Expertin",
@@ -141,7 +155,7 @@ block htmlbody
           }, {})
       .l-grid-cell.l-one-third
         +item-contact({
-          imgSrc: "http://placehold.it/217x145/bbbbbb/FFFFFF/.png&text=Image3",
+          imgSrc: relativePath + 'assets/home-contact3.png',
           firstname: "Peter",
           lastname: "Muster",
           role: "Leitender Experte",
