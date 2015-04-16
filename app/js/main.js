@@ -13,7 +13,7 @@
           console.log('mycomponent is loaded');
       });
     */
-   require(['footer-job', 'page-navigation', 'search-field']);
+   require(['page-navigation', 'search-field']);
 
    // Adds a global placeholder polyfill (ie9).
    require(['jquery', 'placeholder'], function($) {
