@@ -64,6 +64,11 @@ $filter-item-all-color--active: $c-grey80 !default;
       height: $filter-callout-arrow-height;
       width: $filter-callout-arrow-width;
       background: url('../assets/arrow-tooltip.png') no-repeat;
+      background-size: 100% auto;
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url('../assets/arrow-tooltip@2x.png') no-repeat;
+      }
     }
   }
 
