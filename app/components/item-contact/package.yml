@@ -4,7 +4,7 @@
   description: "Contact item component"
   author: "Ginetta"
   data:
-    imgSrc: "http://lorempixel.com/output/people-q-c-217-145-1.jpg"
+    imgSrc: "http://placehold.it/217x145/dc2856/FFFFFF/.png&text=Image1"
     firstname: "Hans"
     lastname: "Muster"
     role: "Leitender Experte"
