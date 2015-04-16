@@ -22,6 +22,7 @@ $share-link-color--active: $c-pink !default;
     width: $share-link-size; height: $share-link-size;
     margin-top: $share-link-vertical-align; // Align share button to the content.
     border: 1px solid $share-link-border;
+    border-left-width: 0;
 
     &, &:link, &:active, &:visited {
       color: $share-link-color;
@@ -39,7 +40,7 @@ $share-link-color--active: $c-pink !default;
     }
   }
 
-  &-item:last-child .share-link {
-    border-left: 0;
+  &-item:first-child .share-link {
+    border-left-width: 1px;
   }
 }
