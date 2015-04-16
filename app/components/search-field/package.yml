@@ -1,0 +1,8 @@
+---
+  name: "search-field"
+  version: "0.0.1"
+  description: "A search field is a regular text field with a search icon on the right side"
+  author: "Ginetta"
+  data:
+    placeholder: "Suche in Kompetenzen"
+  options: {}

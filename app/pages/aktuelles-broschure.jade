@@ -11,6 +11,8 @@ block htmlbody
   .l-l-width
     h1.t-h1.t-border-bottom Aktuelles
 
+    +search-field({ placeholder: 'Suche in Broschüre' }, {})
+
   +tabs({
     tabs: [
       { text: 'Alle'           , href: 'aktuelles.html'                  },
