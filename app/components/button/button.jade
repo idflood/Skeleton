@@ -9,10 +9,4 @@ mixin button (data, options)
 
 
 mixin button-svg(icon)
-  // Need to use switch there since Jade doesn't support variable include, ex:
-  // include ../../assets/icons/#{icon}.svg
-  case icon
-    when 'mail'
-      include ../../assets/icons/mail.svg
-    when 'download'
-      include ../../assets/icons/download.svg
+  span(data-grunticon-embed, class="icon--" + icon)
