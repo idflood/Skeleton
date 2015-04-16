@@ -1,0 +1,45 @@
+// SPACINGS
+$share-link-size: 44px !default;
+$share-link-vertical-align: -$share-link-size !default;
+
+// COLORS
+$share-link-border: $c-grey20 !default;
+$share-link-color: $c-grey100 !default;
+$share-link-color--active: $c-pink !default;
+
+.share {
+  position: relative;
+
+  &-links {
+    font-size: 0px; // Remove spacing between inline elements.
+    text-align: right;
+  }
+
+  &-link {
+    box-sizing: border-box;
+    position: relative; // Required for icon centering.
+    display: inline-block;
+    width: $share-link-size; height: $share-link-size;
+    margin-top: $share-link-vertical-align; // Align share button to the content.
+    border: 1px solid $share-link-border;
+
+    &, &:link, &:active, &:visited {
+      color: $share-link-color;
+    }
+    &:hover, &:focus {
+      color: $share-link-color--active;
+    }
+
+    svg {
+      @include absolute-center()
+    }
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &-item:last-child .share-link {
+    border-left: 0;
+  }
+}

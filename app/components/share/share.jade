@@ -1,0 +1,20 @@
+mixin share(data, options)
+  - options = setOptionsDefaults(options, "share", components.share)
+
+  .share
+    ul.share-links.l-horizontal-list
+      li.share-item
+        a.share-link(href="mailto:?subject=Subject to define&body=Text to define: " + data.url, title="Share by email")
+          +share-svg("mail")
+      li.share-item
+        a.share-link(href="http://www.twitter.com/share?url=" + data.url, title="Tweet this page")
+          +share-svg("twitter")
+
+mixin share-svg(icon)
+  // Need to use switch there since Jade doesn't support variable include, ex:
+  // include ../../assets/icons/#{icon}.svg
+  case icon
+    when 'mail'
+      include ../../assets/icons/mail.svg
+    when 'twitter'
+      include ../../assets/icons/twitter.svg
