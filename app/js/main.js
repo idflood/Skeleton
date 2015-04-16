@@ -14,6 +14,11 @@
       });
     */
    require(['footer-job', 'page-navigation', 'search-field']);
+
+   // Adds a global placeholder polyfill (ie9).
+   require(['jquery', 'placeholder'], function($) {
+     $('input, textarea').placeholder();
+   });
    require(['styleguide']);
 
 })();
