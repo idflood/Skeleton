@@ -13,7 +13,7 @@
           console.log('mycomponent is loaded');
       });
     */
-   require(['footer-job']);
+   require(['footer-job', 'page-navigation']);
    require(['styleguide']);
 
 })();

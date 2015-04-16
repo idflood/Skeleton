@@ -1,0 +1,38 @@
+// SPACINGS
+$page-navigation-width: 756px !default;
+$page-navigation-height: $size-m !default;
+$page-navigation-padding: $size-s !default;
+
+// COLORS
+$page-navigation-background: $c-black !default;
+$page-navigation-link-color: $c-white !default;
+$page-navigation-link-color--active: $c-grey20 !default;
+
+.page-navigation {
+  position: relative; // Required for z-index.
+  max-width: $page-navigation-width;
+  min-height: $page-navigation-height;
+  margin: -($page-navigation-height / 2) auto; // Simulate absolute position by having negative margins equal to total height.
+  padding: 0 $page-navigation-padding;
+  background: $page-navigation-background;
+  z-index: 300;
+  text-align: center;
+
+  &-links {
+    margin: 0; padding: 0; // Reset default ol margin and padding.
+  }
+
+  &-link {
+    @extend .t-navigation;
+    display: inline-block;
+    line-height: $page-navigation-height;
+    text-decoration: none;
+
+    &, &:active, &:visited {
+      color: $page-navigation-link-color;
+    }
+    &:hover, &:focus {
+      color: $page-navigation-link-color--active;
+    }
+  }
+}
