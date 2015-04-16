@@ -4,9 +4,10 @@ $section-inner-spacing: $size-l !default;
 .section {
   padding: $section-vertical-spacing 0;
 
-  &--background-white      { background: $c-white;      }
-  &--background-light-pink { background: $c-light-pink; }
-  &--background-light-blue { background: $c-light-blue; }
+  &--background-white       { background: $c-white;       }
+  &--background-light-pink  { background: $c-light-pink;  }
+  &--background-light-blue  { background: $c-light-blue;  }
+  &--background-light-green { background: $c-light-green; }
 
 
 

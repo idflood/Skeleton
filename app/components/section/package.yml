@@ -10,7 +10,7 @@
     id: ""
   options:
     background:
-      values: ["white", "light-pink", "light-blue"]
+      values: ["white", "light-pink", "light-blue", "light-green"]
       default: "white"
     containerSize:
       values: ['s', 'm', 'l']
