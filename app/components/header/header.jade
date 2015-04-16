@@ -7,7 +7,7 @@ mixin header(data, options)
     .header-top
       .l-xl-width
         h1.header-logo
-          a(href="/")
+          a(href="/en/")
             .is-visuallyhidden Basler & Hofmann
             img.header-logo-image(src="../assets/basler-and-hofmann-logo.png", alt="Basler & Hofmann")
 
@@ -44,14 +44,4 @@ mixin header-item(item, options, type)
   a.header-item.t-navigation(href=item.href, class=itemClass)= item.title
 
 mixin header-svg(icon)
-  // Need to use switch there since Jade doesn't support variable include, ex:
-  // include ../../assets/icons/#{icon}.svg
-  case icon
-    when 'check'
-      include ../../assets/icons/check.svg
-    when 'person'
-      include ../../assets/icons/person.svg
-    when 'pin'
-      include ../../assets/icons/pin.svg
-    when 'loupe'
-      include ../../assets/icons/loupe.svg
+  div(data-grunticon-embed, class="icon--" + icon)
