@@ -7,8 +7,15 @@ block htmlhead
 block htmlbody
   +header({}, {active: "Projekte"})
 
-  .l-l-width
-    h1.t-h1.t-border-bottom Projekte
+  +section({
+    title: 'Projekte',
+    buttonText: 'Weitere Projekte laden',
+    buttonHref: '#'
+  }, {
+    background: 'white',
+    containerSize: 'l',
+    content: false
+  })
 
     +search-field({ placeholder: 'Suche in Projekten' }, {})
       +filter({label: "Filter nach Kompetenz"}, {})
@@ -63,14 +70,3 @@ block htmlbody
       { text: 'Service Links', href: '#' }
     ]
   }, {})
-
-  +section({
-    title: 'Projekte',
-    buttonText: 'Weitere Projekte laden',
-    buttonHref: '#'
-  }, {
-    background: 'white',
-    containerSize: 'l'
-  })
-
-    +search-field({ placeholder: 'Suche in Projekten' }, {})
