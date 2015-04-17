@@ -1,0 +1,23 @@
+mixin filter(data, options)
+  - options = setOptionsDefaults(options, "filter", components.filter)
+  - var itemGroups = data.itemGroups || components.filter.data.itemGroups
+
+  .filter
+    button.filter-button(type="button")
+      | #{data.label} <span data-grunticon-embed class='icon icon--downstroke'></span>
+
+    .filter-callout
+      +search-field({ placeholder: '' }, {size: "small"})
+
+      .filter-content
+        +filter-content(itemGroups)
+
+mixin filter-content(itemGroups)
+
+  a.filter-item.filter-item--all(href="#alle") Alle
+  each group, index in itemGroups
+    div.filter-index= group.label
+    ol.filter-index-list
+      each item, index2 in group.items
+        li
+          a.filter-item(href="#" + item)= item

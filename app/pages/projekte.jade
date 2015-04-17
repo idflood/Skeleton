@@ -5,20 +5,13 @@ block htmlhead
     meta(name='description', content='')
 
 block htmlbody
-
   +header({}, {active: "Projekte"})
 
-  +section({
-    title: 'Projekte',
-    buttonText: 'Weitere Projekte laden',
-    buttonHref: '#'
-  }, {
-    background: 'white',
-    containerSize: 'l'
-  })
+  .l-l-width
+    h1.t-h1.t-border-bottom Projekte
 
     +search-field({ placeholder: 'Suche in Projekten' }, {})
-
+      +filter({label: "Filter nach Kompetenz"}, {})
 
     .l-margin-v-m
     .l-grid
@@ -56,3 +49,28 @@ block htmlbody
         +item-project({title: "Coop Gebäudekomplex Schafisheim", imgSrc: relativePath + 'assets/projects/project14.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty-five
         +item-project({title: "Basler Fest", imgSrc: relativePath + 'assets/projects/project15.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
+
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
+
+  +section({
+    title: 'Projekte',
+    buttonText: 'Weitere Projekte laden',
+    buttonHref: '#'
+  }, {
+    background: 'white',
+    containerSize: 'l'
+  })
+
+    +search-field({ placeholder: 'Suche in Projekten' }, {})

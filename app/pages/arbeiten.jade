@@ -10,6 +10,7 @@ block htmlbody
   +fullwidth-image({
     imgSrc: relativePath + 'assets/arbeiten-fullwidth-image1.png'
   }, { content: false })
+
   +page-navigation({
     links: [
       {"title": "Arbeitsumfeld", "target": "arbeitsumfel"},
@@ -17,7 +18,7 @@ block htmlbody
       {"title": "Lehre & Praktika", "target": "lehre-praktika"},
       {"title": "Offene Stellen", "target": "offene"}
     ]
-    }, {})
+  }, {})
 
   .l-s-width.l-spacing-v-xl
     h2.t-lead <strong>Gemeinsam. Mit Kopf und Herz</strong> – mit diesen wenigen Worte lässt sich die Grundhaltung unserer beiden Firmenpioniere zusammenfassen. Sie wollten die komplexesten Aufgaben anpacken und herausragende Ingenieurslösungen entwickeln. Dieses Grundverständnis prägt unsere Unternehmenskultur bis heute. Wir sind davon überzeugt, dass wir auch in Zukunft nur mit der Haltung "Gemeinsam. Mit Kopf und Herz" herausragende Leistungen erbringen können.
@@ -165,3 +166,15 @@ block htmlbody
           }, {})
 
   +footer-job({}, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
