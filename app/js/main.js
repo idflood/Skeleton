@@ -14,7 +14,7 @@
       });
     */
 
-   require(['page-navigation', 'search-field', 'filter', 'fullwidth-image']);
+   require(['page-navigation', 'search-field', 'filter', 'fullwidth-image', 'accordion']);
 
    // Adds a global placeholder polyfill (ie9).
    require(['jquery', 'placeholder'], function($) {

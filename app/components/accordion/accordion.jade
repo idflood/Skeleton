@@ -1,0 +1,30 @@
+- var accordionIndex = 0
+
+mixin accordion(data, options)
+  - accordionIndex = 0
+  .accordion
+    if block
+      block
+    else
+      +accordion-item("Accordion item1")
+        p Lorem ipsum
+      +accordion-item("Accordion item2")
+        p Dolor sit amet
+      +accordion-item("Accordion item3")
+        p Mauris nec sodales nisi, quis euismod velit lorem ipsum dolor.
+
+mixin accordion-item(title)
+  - var classes = "accordion-item"
+  if accordionIndex === 0
+    - classes += " is-open"
+
+  div(class=classes)
+    a.accordion-toggle(href="#")
+      span.icon.icon--downstroke(data-grunticon-embed)
+      span.icon.icon--upstroke(data-grunticon-embed)
+      | #{title}
+    
+    .accordion-content
+      block
+  
+  - accordionIndex += 1

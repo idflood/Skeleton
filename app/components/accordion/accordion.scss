@@ -1,0 +1,60 @@
+// SPACINGS
+$accordion-margin-bottom: $size-m !default;
+$accordion-toggle-padding: $size-s !default;
+$accordion-icon-margin: $s-gutter !default;
+$accordion-icon-vertical-align: 2px !default;
+
+// COLORS
+$accordion-border: $c-grey20 !default;
+
+// OTHER
+$accordion-icon-display: inline-block !default;
+
+.accordion {
+  margin-bottom: $accordion-margin-bottom;
+
+  &-item {
+    border-top: 1px solid $accordion-border;
+
+    &:last-child {
+      border-bottom: 1px solid $accordion-border;
+    }
+
+    .icon {
+      display: $accordion-icon-display;
+      margin-right: $accordion-icon-margin;
+      vertical-align: $accordion-icon-vertical-align; // Add a little vertical offset to perfectly align the icon with the title.
+
+      path {
+        fill: currentColor;
+      }
+    }
+    .icon--upstroke {
+      display: none;
+    }
+  }
+
+  &-toggle {
+    @extend .t-navigation;
+    display: block;
+    padding: $accordion-toggle-padding 0;
+    text-decoration: none; // Overwrite default link underline.
+    text-transform: uppercase;
+  }
+
+  &-content {
+    display: none;
+  }
+  &-item.is-open {
+    .accordion-content {
+      display: block;
+    }
+
+    .icon--upstroke {
+      display: $accordion-icon-display;
+    }
+    .icon--downstroke {
+      display: none;
+    }
+  }
+}
