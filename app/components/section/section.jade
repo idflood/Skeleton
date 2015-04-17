@@ -8,7 +8,26 @@ mixin section(data, options)
     div(class=containerClass)
       h2.section-title= data.title
       .section-content
-        block
+        if !options.content
+          block
+        else
+          //- THIS IS JUST FOR THE STYLEGUIDE
+          .l-grid
+            .l-grid-cell.l-one-half
+              +item-text({
+                title: 'Beruf und Familie',
+                text: 'Mit verschiedenen Massnahmen fördern wir eine gesunde Bilanz zwichen privatem und beruflichem Leben.',
+                linkText: 'Weiterlesen',
+                linkHref: 'detail-generic.html'
+              }, { card: 'grey' })
+            .l-grid-cell.l-one-half
+              +item-text({
+                title: 'Persönliche Entwicklung',
+                text: 'Mit verschiedenen Massnahmen fördern wir eine gesunde Bilanz zwichen privatem und beruflichem Leben.',
+                linkText: 'Weiterlesen',
+                linkHref: 'detail-generic.html'
+              }, { card: 'grey' })
+
       if data.buttonText && data.buttonHref
         .section-button
           +button({

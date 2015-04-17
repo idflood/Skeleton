@@ -6,12 +6,16 @@ $fullwidth-image-content-width: 426px !default;
 $fullwidth-image-content-padding-vertical: $size-m !default;
 $fullwidth-image-content-padding-horizontal: $size-s !default;
 $fullwidth-image-title-margin: 1.25em !default;
+$fullwidth-image-arrow-width: 57px !default;
+$fullwidth-image-arrow-height: 37px !default;
+$fullwidth-image-arrow-margin-bottom: $size-s !default;
 
 // COLORS
 $fullwidth-image-background: $c-black !default;
 $fullwidth-image-color: $c-white !default;
 $fullwidth-image-link-color: $fullwidth-image-color !default;
 $fullwidth-image-link-color--active: $c-grey20 !default;
+$fullwidth-image-arrow-color: $c-white !default;
 
 .fullwidth-image {
   background-size: cover;
@@ -59,6 +63,22 @@ $fullwidth-image-link-color--active: $c-grey20 !default;
       &:hover, &:focus {
         color: $fullwidth-image-link-color--active;
       }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: $fullwidth-image-arrow-margin-bottom;
+    margin-left: -($fullwidth-image-arrow-width / 2);
+
+    &, svg {
+      width: $fullwidth-image-arrow-width;
+      height: $fullwidth-image-arrow-height;
+    }
+
+    path {
+      fill: $fullwidth-image-arrow-color;
     }
   }
 }

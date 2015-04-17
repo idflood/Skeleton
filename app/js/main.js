@@ -13,7 +13,8 @@
           console.log('mycomponent is loaded');
       });
     */
-   require(['page-navigation', 'search-field', 'filter']);
+
+   require(['page-navigation', 'search-field', 'filter', 'fullwidth-image']);
 
    // Adds a global placeholder polyfill (ie9).
    require(['jquery', 'placeholder'], function($) {

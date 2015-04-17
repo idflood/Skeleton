@@ -12,3 +12,6 @@
     content:
       values: [true, false]
       default: true
+    arrow:
+      values: [true, false]
+      default: false
