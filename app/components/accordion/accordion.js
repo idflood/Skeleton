@@ -14,7 +14,7 @@ define(['jquery'], function($){
     }
 
     // Else remove any opened item.
-    $items.removeClass(OPEN_CLASS);
+    // $items.removeClass(OPEN_CLASS);
 
     // And open the current item.
     $item.addClass(OPEN_CLASS);
