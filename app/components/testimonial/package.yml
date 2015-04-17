@@ -1,8 +1,8 @@
----
-  name: "testimonial"
-  version: "0.0.1"
-  description: "Testimonial component"
-  author: "Ginetta"
-  data:
-    imgSrc: "http://static.pexels.com/wp-content/uploads/2015/03/clothes-fashion-hat-5108.jpeg"
-    text: "Team Spirit spielt bei uns eine zentrale Rolle. Wie Basler & Hofmann ihren Leitsatz «Miteinander — Füreinander» seit 50 Jahren umsetzt."
+name: "testimonial"
+version: "0.0.1"
+description: "Testimonial component"
+author: "Ginetta"
+data:
+  imgSrc: "http://static.pexels.com/wp-content/uploads/2015/03/clothes-fashion-hat-5108.jpeg"
+  text: "Team Spirit spielt bei uns eine zentrale Rolle. Wie Basler & Hofmann ihren Leitsatz «Miteinander — Füreinander» seit 50 Jahren umsetzt."
+options: {}

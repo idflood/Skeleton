@@ -12,3 +12,16 @@ block htmlbody
     h1.t-h1.t-border-bottom Projekte
 
     +search-field({ placeholder: 'Suche in Projekten' }, {})
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
