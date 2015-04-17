@@ -13,9 +13,5 @@ mixin fullwidth-image(data, options)
           p TVernetztes Denken und ein Blick fürs Ganze zeichnen unsere Arbeit aus.
       
       if options.arrow != false
-        if typeof options.arrow == "object"
-          a.fullwidth-image-arrow(href="#" + options.arrow.target, title=options.arrow.title)
-            div.icon.icon--downstrokethin(data-grunticon-embed)
-        else
-          a.fullwidth-image-arrow(href="#", title="Title of next section")
-            div.icon.icon--downstrokethin(data-grunticon-embed)
+        a.fullwidth-image-arrow(href="#" + data.arrowTarget, title=data.arrowTitle)
+          div.icon.icon--downstrokethin(data-grunticon-embed)
