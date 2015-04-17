@@ -51,7 +51,7 @@ $search-field-text-color:           $c-grey80       !default;
       fill: $search-field-placeholder-color;
     }
 
-    &.is-focused {
+    .is-focused & {
       path {
         fill: $search-field-text-color;
       }
