@@ -23,7 +23,13 @@ block htmlbody
     .l-margin-v-m
     .l-grid
       .l-grid-cell.l-margin-v-m.l-thirty-seven
-        +item-project({title: "Pistensanierung Zürich Flughafen", imgSrc: relativePath + 'assets/projects/project1.jpg', legend: "Pistensanierung unter vollem Flugbetrieb"}, {legend: true})
+        +item-project({
+          title: "Pistensanierung Zürich Flughafen",
+          imgSrc: relativePath + 'assets/projects/project1.jpg',
+          legend: "Pistensanierung unter vollem Flugbetrieb",
+          link: './detail-project.html'
+
+        }, {legend: true})
       .l-grid-cell.l-margin-v-m.l-one-quarter
         +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Herzstück der 2014 eingeweihten Durchmesserlinie ist der grosse Bahnhof im Zürcher Untergrund"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty-seven
