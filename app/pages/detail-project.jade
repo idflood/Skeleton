@@ -1,0 +1,64 @@
+extends /layout/layout
+
+block htmlhead
+    title Project Detail Page
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Projekte"})
+
+  .l-s-width.l-spacing-v-xl
+    h1.t-border-bottom Kehrichtverbrennungsanlage in Perlen
+
+    p
+      | Die neue Kehrichtverbrennungsanlage der Renergia Zentralschweiz AG in
+      | Perlen ist imposant: rund 200 Meter lang, 60 Meter breit und bis zu 50
+      | Meter hoch. Die Anlage beeindruckt aber nicht nur mit ihrer äusserlichen
+      | Dimension, sondern auch mit ihren inneren Werten: Sie zeichnet sich durch
+      | vorbildliche Energieeffizienz aus.
+
+    h3.t-h3 Beteiligte Kompetenzen
+    p.t-link <a href="#">Gebäudetechnik</a>, <a href="#">Energieeffizienz</a>, <a href="#">Erneuerbare Energien</a>, <a href="#">TEDDA –Technical and Environmental Due Diligence</a>, <a href="#">Elektroplanung</a>, <a href="#">Realbrandversuche mit Izar</a>
+
+    h3.t-h3 Auftraggeber/Bauherr
+    p.t-link Renergia Zentralschweiz AG
+
+  +testimonial({
+    imgSrc: relativePath + 'assets/arbeiten-testimonial1.png',
+    text: '« Die Anlage beeindruckt nicht nur mit ihrer äusserlichen Dimensionen, sondern auch mit ihren inneren Werten: Sie zeichnet sich durch vorbildliche Energieeffizienz aus. »'
+  }, {})
+
+  .l-s-width.l-spacing-v-xl
+    h2 Wo Abfall Dampf macht
+
+    p
+      | Der Hauptanteil der Energie, die bei der Verbrennung des Abfalls in
+      | Perlen entsteht, wird in Dampfform von der benachbarten Papierfabrik
+      | genutzt. Damit erreicht die neue Kehrichtverbrennungsanlage einen
+      | Energienutzungsgrad von 70 Prozent. Bei der bisherigen Anlage waren es
+      | nur 29 Prozent. Dank der massgeblichen Unterstützung von Basler & Hofmann
+      | konnte der Recycling-Gedanke zudem auch beim Bau der Anlage in beachtlicher
+      | Weise umgesetzt werden. 17 Prozent der Betonrohstoffe sind Betonabbruch,
+      | also wiederverwerteter Beton. Bei ausgewählten Bauteilen kam zudem
+      | Öko-Beton zum Einsatz, bei dessen Herstellung rund 25 Prozent weniger
+      | CO2 entsteht. Ein in jeder Hinsicht nachhaltiges Kraftwerk.
+
+  +figure-caption({
+    figure: relativePath + 'assets/figure1.jpg',
+    caption: 'Die neue Anlage erreicht einen Energienutzungs-grad von 70 Prozent.'
+  }, {})
+
+  .l-s-width.l-spacing-v-xl
+    h2 Leistungen von Basler & Hofmann
+
+    p
+      | Tragwerksplanung des Hochbaus in Stahlbeton und Stahl, Bauleitung für
+      | Spezialtiefbau und Hochbau,  Planung der neuen Zufahrtsbrücke in
+      | Stahl-Beton-Verbundbauweise inkl. Bauleitung
+    
+    p.t-link Fotograf
+    
+    p
+      a(href="#") Zurück zur Übersicht
+
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})

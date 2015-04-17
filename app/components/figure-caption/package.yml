@@ -1,0 +1,9 @@
+---
+  name: "figure-caption"
+  version: "0.0.1"
+  description: "Figure with caption component"
+  author: "Ginetta"
+  data:
+    figure: "http://placehold.it/700x428/dc2856/FFFFFF/.png&text=Placeholder"
+    caption: "Vestibulum augue velit, ultrices sit amet blandit eu"
+  options: {}

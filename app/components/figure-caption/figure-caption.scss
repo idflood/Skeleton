@@ -1,0 +1,20 @@
+// SPACINGS
+$figure-caption-text-width: 12 * $s-gutter !default;
+$figure-caption-text-margin: $size-xs !default;
+
+.figure-caption {
+  position: relative;
+
+  &-image {
+    display: block; // Remove extra whitespace at the bottom of inline image.
+    margin: 0 0 0 auto; // In case the image is smaller align it next to the caption.
+  }
+
+  &-text {
+    @extend .t-link;
+    position: absolute;
+    top: 0;
+    right: -($figure-caption-text-margin + $figure-caption-text-width);
+    width: $figure-caption-text-width;
+  }
+}
