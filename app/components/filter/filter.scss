@@ -1,0 +1,116 @@
+// SPACINGS
+$filter-button-line-height: 47px !default;
+$filter-button-margin-right: $size-xs !default;
+$filter-button-icon-margin: 5px !default;
+$filter-callout-width: 33 * $s-gutter !default; // 330px
+$filter-callout-arrow-width: 36px !default;
+$filter-callout-arrow-height: 14px !default;
+$filter-callout-arrow-right: $size-m - 4px !default;
+$filter-callout-margin-top: $size-m + 12px !default;
+$filter-callout-margin-right: -$size-m !default;
+$filter-callout-padding: $size-xs !default;
+$filter-callout-content-margin: $size-s - 10px !default; // Substract line-height and padding of .filter-item.
+$filter-callout-content-height: 22 * $s-gutter !default; // 220px
+$filter-index-padding: 5px !default;
+$filter-item-padding: 3px!default;
+
+// COLORS
+$filter-callout-background: $c-white !default;
+$filter-item-color: $c-grey80 !default;
+$filter-item-color--active: $c-grey100 !default;
+$filter-item-all-color: $c-grey60 !default;
+$filter-item-all-color--active: $c-grey80 !default;
+
+.filter {
+  position: absolute;
+  top: 0;
+  right: $filter-button-margin-right;
+  z-index: 500;
+
+  &-button {
+    border: 0;
+    background: none;
+    line-height: $filter-button-line-height;
+
+    &:focus {
+      outline: 0;
+    }
+
+    .icon {
+      margin-left: $filter-button-icon-margin;
+    }
+  }
+
+  &-callout {
+    position: absolute;
+    top: $filter-callout-margin-top;
+    right: $filter-callout-margin-right;
+    box-sizing: border-box;
+    width: $filter-callout-width;
+    padding: $filter-callout-padding $filter-callout-padding 0 $filter-callout-padding;
+    background: $filter-callout-background;
+    box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.19);
+    display: none;
+
+    &:before {
+      // Here we can't use the standard border trick to do triangle since it has
+      // a shadow: https://css-tricks.com/triangle-with-shadow/
+      // We will use an image instead so that it has a good browser support.
+      content: "";
+      display: block;
+      position: absolute;
+      top: -$filter-callout-arrow-height;
+      right: $filter-callout-arrow-right;
+      height: $filter-callout-arrow-height;
+      width: $filter-callout-arrow-width;
+      background: url('../assets/arrow-tooltip.png') no-repeat;
+      background-size: 100% auto;
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url('../assets/arrow-tooltip@2x.png') no-repeat;
+      }
+    }
+  }
+
+  &.is-open .filter-callout {
+    display: block;
+  }
+
+  &-content {
+    overflow-y: auto;
+    margin-top: $filter-callout-content-margin;
+    max-height: $filter-callout-content-height;
+  }
+
+  &-index {
+    @extend .t-label;
+    padding: $filter-index-padding 0;
+  }
+
+  &-index-list {
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+
+  &-item {
+    display: block;
+    padding: $filter-item-padding 0;
+    text-decoration: none; // Overwrite default link underline.
+
+    &, &:active, &:visited {
+      color: $filter-item-color;
+    }
+    &:hover, &:focus {
+      color: $filter-item-color--active;
+    }
+
+    &--all {
+      &, &:active, &:visited {
+        color: $filter-item-all-color;
+      }
+      &:hover, &:focus {
+        color: $filter-item-all-color--active;
+      }
+    }
+  }
+}

@@ -5,13 +5,14 @@ block htmlhead
     meta(name='description', content='')
 
 block htmlbody
-
   +header({}, {active: "Projekte"})
 
   .l-l-width
-    h1.t-h1.t-border-bottom Projekte
+    h1.t-h1.t-border-bottom Aktuelles
 
     +search-field({ placeholder: 'Suche in Projekten' }, {})
+      +filter({label: "Filter nach Kompetenz"}, {})
+
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
