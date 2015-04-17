@@ -1,0 +1,14 @@
+---
+  name: "item-project"
+  version: "0.0.1"
+  description: "Project component"
+  author: "Ginetta"
+  data:
+    title: "Pistensanierung Zürich Flughafen"
+    legend: "Pistensanierung unter vollem Flugbetrieb"
+    imgSrc: "http://placehold.it/366x274/dc2856/FFFFFF/.png&text=Project1"
+    link: '#'
+  options:
+    legend:
+      values: [false, true]
+      default: true

@@ -26,6 +26,13 @@ block htmlbody
     background: 'white',
     containerSize: 'l'
   })
+    .l-grid
+      .l-grid-cell.l-thirty-seven
+        +item-project({title: "Pistensanierung Zürich Flughafen", imgSrc: relativePath + 'assets/projects/project1.jpg'}, {legend: false})
+      .l-grid-cell.l-one-quarter
+        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg'}, {legend: false})
+      .l-grid-cell.l-thirty-seven
+        +item-project({title: "Tramlinie vom Escher-Wyss-Platz bis Zürich Altstetten", imgSrc: relativePath + 'assets/projects/project3.jpg'}, {legend: false})
 
   +section({
     title: 'Aktuell bei Basler & Hofmann',

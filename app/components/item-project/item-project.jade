@@ -1,0 +1,11 @@
+mixin item-project(data, options)
+  - options = setOptionsDefaults(options, "item-project", components["item-project"])
+  - var link = data.link || components['item-project'].data.link
+  
+  article.item-project
+    a.item-project-link(href=link)
+      img.item-project-image(src=data.imgSrc, alt=data.title)
+      h3.t-h3.item-project-title= data.title
+
+      if options.legend && data.legend
+        p.item-project-legend= data.legend

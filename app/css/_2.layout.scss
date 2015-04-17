@@ -16,9 +16,13 @@
         "one-third"         : 33.333%,
         "two-thirds"        : 66.666%,
         "one-fifth"         : 20%,
+        "two-fifth"         : 40%,
         "four-fifths"       : 80%,
         "one-sixth"         : 16.666%,
-        "five-sixths"       : 83.333%
+        "five-sixths"       : 83.333%,
+        "thirty-seven"      : 37.5%, // used in combination with one-quarter
+        "thirty-five"       : 35%, // used in combination with one-quarter + two-fifth
+        "thirty"            : 30% // used in combination with two-fifth
     ),
     $gridBreakpoints: "not-tablet" "tablet" "tablet-portrait" "not-mobile" "mobile" "mobile-portrait" "print"
 );
@@ -52,6 +56,11 @@
 
 .l-spacing-v-xl { padding: $size-xl; }
 // .l-spacing-v-l  { padding: $size-l;  }
-// .l-spacing-v-m  { padding: $size-m;  }
+//.l-spacing-v-m  { padding: $size-m;  }
 // .l-spacing-v-s  { padding: $size-s;  }
 // .l-spacing-v-xs { padding: $size-xs; }
+
+// .l-margin-v-l { margin-bottom: $size-l; }
+.l-margin-v-m { margin-bottom: $size-m; }
+// .l-margin-v-s { margin-bottom: $size-s; }
+// .l-margin-v-xs { margin-bottom: $size-xs; }
