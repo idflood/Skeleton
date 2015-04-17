@@ -1,0 +1,22 @@
+---
+  name: "filter"
+  version: "0.0.1"
+  description: "Filter component"
+  author: "Ginetta"
+  data:
+    label: "Filter nach Kompetenz"
+    itemGroups:
+      - label: 'A'
+        items:
+          - Altlasten
+          - Asbest und Gebäudeschadstoffe
+      - label: 'B'
+        items:
+          - Bahnbau
+          - Bahnhöfe
+          - Bahntechnik
+          - Baudynamik
+          - Baugruben
+          - Baugrund
+
+  options: {}

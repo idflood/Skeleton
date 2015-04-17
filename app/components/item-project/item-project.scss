@@ -1,0 +1,29 @@
+// SPACINGS
+$item-project-title-margin-top: ($s-gutter * 2) !default;
+$item-project-title-margin-bottom: ($s-gutter / 2) !default;
+
+// COLORS
+$item-project-title-color: $c-black !default;
+$item-project-legend-color: $c-grey80 !default;
+
+.item-project {
+  &-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  &-image {
+    display: block;
+    max-width: 100%;
+  }
+
+  &-title {
+    margin: $item-project-title-margin-top 0 $item-project-title-margin-bottom 0;
+    color: $item-project-title-color; // Override link color.
+  }
+
+  &-legend {
+    margin: 0; // Overwrite default paragraph margin.
+    color: $item-project-legend-color;
+  }
+}

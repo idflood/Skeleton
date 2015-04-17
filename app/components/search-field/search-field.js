@@ -4,11 +4,9 @@ define(['jquery'], function($){
 
   $('.search-field')
     .on('focus.search-field', 'input', function(e) {
-      var $icon = $(this).siblings('.search-field-icon');
-      $icon.addClass(FOCUS_CLASS)
+      $(this).parent().addClass(FOCUS_CLASS);
     })
     .on('blur.search-field', 'input', function(e) {
-      var $icon = $(this).siblings('.search-field-icon');
-      $icon.removeClass(FOCUS_CLASS)
+      $(this).parent().removeClass(FOCUS_CLASS)
     });
 });

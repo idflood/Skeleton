@@ -9,18 +9,30 @@ block htmlbody
   +header({}, {active: "Home"})
 
 
-  +fullwidth-image({ imgSrc: relativePath + 'assets/home-fullwidth-image1.png' })
+  +fullwidth-image({
+    imgSrc: relativePath + 'assets/home-fullwidth-image1.png',
+    arrowTitle: 'Projekte im Fokus',
+    arrowTarget: 'projekte-im-focus'
+  }, {arrow: true})
     h3 Wir sind ein unabhängiges Ingenieur-, Planungs- und Beratungs-unternehmem.
     p TVernetztes Denken und ein Blick fürs Ganze zeichnen unsere Arbeit aus.
 
   +section({
     title: 'Projekte im Fokus',
     buttonText: 'Weitere Projekte',
-    buttonHref: '#'
+    buttonHref: '#',
+    id: 'projekte-im-focus'
   }, {
     background: 'white',
     containerSize: 'l'
   })
+    .l-grid
+      .l-grid-cell.l-thirty-seven
+        +item-project({title: "Pistensanierung Zürich Flughafen", imgSrc: relativePath + 'assets/projects/project1.jpg'}, {legend: false})
+      .l-grid-cell.l-one-quarter
+        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg'}, {legend: false})
+      .l-grid-cell.l-thirty-seven
+        +item-project({title: "Tramlinie vom Escher-Wyss-Platz bis Zürich Altstetten", imgSrc: relativePath + 'assets/projects/project3.jpg'}, {legend: false})
 
   +section({
     title: 'Aktuell bei Basler & Hofmann',

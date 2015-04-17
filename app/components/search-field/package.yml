@@ -5,4 +5,7 @@
   author: "Ginetta"
   data:
     placeholder: "Suche in Kompetenzen"
-  options: {}
+  options:
+    size:
+      values: [small, normal]
+      default: normal
