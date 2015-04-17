@@ -6,7 +6,12 @@ block htmlhead
 
 block htmlbody
   +header({}, {active: "Projekte"})
-
+  +breadcrumbs({
+    pages: [
+      { name: 'Projekte'       , href: 'projekte.html'},
+      { name: 'Projekte Detail', }
+      ]
+    })
   .l-s-width.l-spacing-v-xl
     h1.t-border-bottom Kehrichtverbrennungsanlage in Perlen
 
@@ -55,10 +60,23 @@ block htmlbody
       | Tragwerksplanung des Hochbaus in Stahlbeton und Stahl, Bauleitung für
       | Spezialtiefbau und Hochbau,  Planung der neuen Zufahrtsbrücke in
       | Stahl-Beton-Verbundbauweise inkl. Bauleitung
-    
+
     p.t-link Fotograf
-    
+
     p
       a(href="#") Zurück zur Übersicht
 
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
