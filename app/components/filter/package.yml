@@ -5,13 +5,18 @@
   author: "Ginetta"
   data:
     label: "Filter nach Kompetenz"
-    items:
-      - Altlasten
-      - Asbest und Gebäudeschadstoffe
-      - Bahnbau
-      - Bahnhöfe
-      - Bahntechnik
-      - Baudynamik
-      - Baugruben
-      - Baugrund
+    itemGroups:
+      - label: 'A'
+        items:
+          - Altlasten
+          - Asbest und Gebäudeschadstoffe
+      - label: 'B'
+        items:
+          - Bahnbau
+          - Bahnhöfe
+          - Bahntechnik
+          - Baudynamik
+          - Baugruben
+          - Baugrund
+
   options: {}

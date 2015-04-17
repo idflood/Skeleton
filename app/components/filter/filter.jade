@@ -1,6 +1,6 @@
 mixin filter(data, options)
   - options = setOptionsDefaults(options, "filter", components.filter)
-  - var items = data.items || components.filter.data.items
+  - var itemGroups = data.itemGroups || components.filter.data.itemGroups
 
   .filter
     button.filter-button(type="button")
@@ -10,27 +10,14 @@ mixin filter(data, options)
       +search-field({ placeholder: '' }, {size: "small"})
 
       .filter-content
-        +filter-content(items)
+        +filter-content(itemGroups)
 
-mixin filter-content(items)
-  - var lastLetter = ''
-  - var firstpass = true
+mixin filter-content(itemGroups)
 
   a.filter-item.filter-item--all(href="#alle") Alle
-  each item, index in items
-    - var letter = item.charAt(0)
-    if lastLetter != letter
-      if firstpass === false
-        | </ol>
-
-      div.filter-index= letter.toUpperCase()
-
-      | <ol class="filter-index-list">
-      - lastLetter = letter
-
-    li
-      a.filter-item(href="#" + item)= item
-
-    - firstpass = false
-
-  | </ol>
+  each group, index in itemGroups
+    div.filter-index= group.label
+    ol.filter-index-list
+      each item, index2 in group.items
+        li
+          a.filter-item(href="#" + item)= item
