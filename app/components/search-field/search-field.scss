@@ -10,6 +10,8 @@ $search-field-border-color-focused: $c-grey40       !default;
 $search-field-placeholder-color:    $c-grey40       !default;
 $search-field-text-color:           $c-grey80       !default;
 
+input.search-field-input { box-sizing: border-box; }
+
 .search-field {
   position: relative;
   z-index: 500; // When filter component is open we want it to be above content.
@@ -17,7 +19,6 @@ $search-field-text-color:           $c-grey80       !default;
   &-input {
     @extend .t-paragraph;
     display: block;
-    box-sizing: border-box;
     width: 100%;
     height: $search-field-height;
     padding: $search-field-spacing;
