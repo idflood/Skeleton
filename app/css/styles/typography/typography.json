@@ -1,99 +1,86 @@
 {
   "t-title": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "2.25rem",
-    "fontWeight": "600",
     "lineHeight": "1.27",
     "color": "black"
   },
   "t-h1": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1.875rem",
-    "fontWeight": "700",
     "lineHeight": "1.333",
     "color": "black"
   },
   "t-h2": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1.375rem",
-    "fontWeight": "700",
     "lineHeight": "1.3636",
     "color": "black"
   },
   "t-h3": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1.125rem",
-    "fontWeight": "700",
     "lineHeight": "1.3636",
     "color": "black"
   },
   "t-h4": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1rem",
-    "fontWeight": "700",
     "lineHeight": "1.5",
     "color": "black"
   },
   "t-paragraph": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Light",
     "fontSize" : "1rem",
-    "fontWeight": "200",
     "lineHeight": "1.5",
     "color": "black"
   },
   "t-link": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Light",
     "fontSize" : "1rem",
-    "fontWeight": "200",
     "lineHeight": "1.5",
     "color": "grey60"
   },
   "t-button": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1.125rem",
-    "fontWeight": "700",
     "lineHeight": "1.222",
     "color": "pink"
   },
   "t-tab": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Light",
     "fontSize" : "1.125rem",
-    "fontWeight": "200",
     "lineHeight": "1.222",
     "color": "grey60"
   },
   "t-testimonial": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1.125rem",
-    "fontWeight": "700",
     "lineHeight": "1.5",
     "color": "white"
   },
   "t-lead": {
     "fontFamily": "Ubuntu",
     "fontSize" : "1.125rem",
-    "fontWeight": "200",
+    "fontWeight": "ZwoWeb-Light",
     "lineHeight": "1.5",
     "color": "black"
   },
   "t-navigation": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1rem",
-    "fontWeight": "700",
     "lineHeight": "1.5",
     "color": "black"
   },
   "t-label": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : ".875rem",
-    "fontWeight": "700",
     "lineHeight": "1.714",
     "color": "black"
   },
   "t-label-light": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : ".875rem",
-    "fontWeight": "700",
     "lineHeight": "1.714",
     "color": "grey60"
   }
