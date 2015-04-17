@@ -1,6 +1,8 @@
 mixin search-field (data, options)
   - options = setOptionsDefaults(options, "search-field", components['search-field'])
+  - var classes = getOptionsModifier(options, "search-field", null, components['search-field'])
 
-  .search-field
+  div(class=classes)
     input.search-field-input(type="search", placeholder=data.placeholder)
     span.search-field-icon(data-grunticon-embed, class="icon--loupe")
+    block
