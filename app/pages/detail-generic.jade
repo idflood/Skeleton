@@ -60,5 +60,17 @@ block htmlbody
       | CH-8032 Zürich
       br
       | <a href="#">Lageplan und Anfahrtsbeschreibung</a>
-    
+
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})

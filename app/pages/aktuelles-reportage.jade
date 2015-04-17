@@ -30,3 +30,16 @@ block htmlbody
     buttonText: 'bar button text',
     buttonHref: '#'
   }, { containerSize: 'l', background: 'white' })
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
