@@ -6,44 +6,60 @@ block htmlhead
 
 block htmlbody
   +header({}, {active: "Arbeiten bei uns"})
-  .l-margin-v-xs
   +breadcrumbs({
     pages: [
       {name: "Arbeiten bei uns", href: "./arbeiten.html"},
       {name: "Detail Generic"}
     ]
   }, {})
-  .l-s-width.l-spacing-v-xl
+  .l-m-width.l-spacing-v-l.t-rt-container
+    h1.t-title Generic Detail Page
+    p.t-lead <strong>Every page as a lead text. It should be the summary of the content of a page.</strong> Der eine möchte sich in ein neues Fachgebiet vertiefen oder einige Zeit im Ausland verbringen, die andere möchte neue Aufgaben in der Projektleitung übernehmen oder den Horizont mit einem Studium erweitern. Wir unterstützen unsere Mitarbeitenden darin, ihr Potenzial zu erschliessen.
 
-    h1 RTE Heading 1
     h2 RTE Heading 2
-    p
-      | RTE paragraph with <small>small text</small>, <strong>strong text</strong>.
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+    h3 RTE Heading 3
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+    h4 RTE Heading 4
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+    h5 RTE Heading 5
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+    h6 RTE Heading 6
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.KL
+
     p
       | It could also contain <a href="#">Links that lead to some places</a>.
       | Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.
       | Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
+    figure
+      img(src="http://placehold.it/640x300",alt="Normal image")
+      figcaption An image with exactly 640px
+
+    figure
+      img(src="http://placehold.it/700x300",alt="Normal image")
+      figcaption An image bigger than 640px gets adjusted.
+
+    figure
+      img(src="http://placehold.it/400x300",alt="Normal image")
+      figcaption An image smaller than 640px.
+
+
     p Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
 
 
-    h2 Was fasziniert dich an deiner Arbeit?
+    figure
+      img(src="http://placehold.it/640x300",alt="Normal image")
+      figcaption An image with exactly 640px
+
+    h3 An H3 after Image
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
 
-    h2 Warum arbeitest du bei Basler & Hofmann?
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
 
-    h3 Basler & Hofmann West AG
-    p
-      | Forchstrasse 395, Postfach
-      br
-      | CH-8032 Zürich
-      br
-      | <a href="#">Lageplan und Anfahrtsbeschreibung</a>
+    figure
+      img(src="http://placehold.it/640x300",alt="Normal image")
+      figcaption An image with exactly 640px
 
-    h2 Was fasziniert dich an deiner Arbeit?
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
-
-    h2 Warum arbeitest du bei Basler & Hofmann?
+    h4 An H4 after Image
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
 
     h3 Basler & Hofmann West AG

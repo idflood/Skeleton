@@ -12,28 +12,29 @@ block htmlbody
       { name: 'Projekte Detail', }
       ]
     })
-  .l-s-width.l-spacing-v-xl
-    h1.t-border-bottom Kehrichtverbrennungsanlage in Perlen
+  .l-m-width.l-spacing-v-xl
+    h1.t-title Kehrichtverbrennungsanlage in Perlen
 
-    p
+    p.t-lead
       | Die neue Kehrichtverbrennungsanlage der Renergia Zentralschweiz AG in
       | Perlen ist imposant: rund 200 Meter lang, 60 Meter breit und bis zu 50
       | Meter hoch. Die Anlage beeindruckt aber nicht nur mit ihrer äusserlichen
       | Dimension, sondern auch mit ihren inneren Werten: Sie zeichnet sich durch
       | vorbildliche Energieeffizienz aus.
 
-    h3.t-h3 Beteiligte Kompetenzen
-    p.t-link <a href="#">Gebäudetechnik</a>, <a href="#">Energieeffizienz</a>, <a href="#">Erneuerbare Energien</a>, <a href="#">TEDDA –Technical and Environmental Due Diligence</a>, <a href="#">Elektroplanung</a>, <a href="#">Realbrandversuche mit Izar</a>
+    .t-rt-container
+      h3 Beteiligte Kompetenzen
+      p <a href="#">Gebäudetechnik</a>, <a href="#">Energieeffizienz</a>, <a href="#">Erneuerbare Energien</a>, <a href="#">TEDDA –Technical and Environmental Due Diligence</a>, <a href="#">Elektroplanung</a>, <a href="#">Realbrandversuche mit Izar</a>
 
-    h3.t-h3 Auftraggeber/Bauherr
-    p.t-link Renergia Zentralschweiz AG
+      h3 Auftraggeber/Bauherr
+      p Renergia Zentralschweiz AG
 
   +testimonial({
     imgSrc: relativePath + 'assets/arbeiten-testimonial1.png',
     text: '« Die Anlage beeindruckt nicht nur mit ihrer äusserlichen Dimensionen, sondern auch mit ihren inneren Werten: Sie zeichnet sich durch vorbildliche Energieeffizienz aus. »'
   }, {})
 
-  .l-s-width.l-spacing-v-xl
+  .l-m-width.l-spacing-v-s.t-rt-container
     h2 Wo Abfall Dampf macht
 
     p
@@ -48,12 +49,10 @@ block htmlbody
       | Öko-Beton zum Einsatz, bei dessen Herstellung rund 25 Prozent weniger
       | CO2 entsteht. Ein in jeder Hinsicht nachhaltiges Kraftwerk.
 
-  +figure-caption({
-    figure: relativePath + 'assets/figure1.jpg',
-    caption: 'Die neue Anlage erreicht einen Energienutzungs-grad von 70 Prozent.'
-  }, {})
+    figure
+      img(src="http://placehold.it/640x300")
+      figcaption Die neue Anlage erreicht einen Energienutzungs-grad von 70 Prozent.
 
-  .l-s-width.l-spacing-v-xl
     h2 Leistungen von Basler & Hofmann
 
     p
@@ -61,12 +60,38 @@ block htmlbody
       | Spezialtiefbau und Hochbau,  Planung der neuen Zufahrtsbrücke in
       | Stahl-Beton-Verbundbauweise inkl. Bauleitung
 
-    p.t-link Fotograf
+    a(href="#") Fotograf
 
+  .l-m-width.l-spacing-v-s
     p
       a(href="#") Zurück zur Übersicht
 
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+  .l-border-t.l-spacing-v-l
+    .l-m-width
+      h2 Ähnliche Projekte
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-project({
+          title: "Pistensanierung Zürich Flughafen",
+          imgSrc: relativePath + 'assets/projects/project1.jpg',
+          legend: "Pistensanierung unter vollem Flugbetrieb",
+          link: './detail-project.html'
+        }, {legend: true})
+        .l-grid-cell.l-one-third
+          +item-project({
+          title: "Pistensanierung Zürich Flughafen",
+          imgSrc: relativePath + 'assets/projects/project1.jpg',
+          legend: "Pistensanierung unter vollem Flugbetrieb",
+          link: './detail-project.html'
+        }, {legend: true})
+        .l-grid-cell.l-one-third
+          +item-project({
+          title: "Pistensanierung Zürich Flughafen",
+          imgSrc: relativePath + 'assets/projects/project1.jpg',
+          legend: "Pistensanierung unter vollem Flugbetrieb",
+          link: './detail-project.html'
+        }, {legend: true})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
