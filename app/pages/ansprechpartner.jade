@@ -11,6 +11,7 @@ block htmlbody
     h1.t-title.t-border-bottom Ansprechpartner
 
     +search-field({ placeholder: 'Suche in Ansprechpartner' }, {})
+      +filter({label: "Filter nach Kompetenz"}, {})
   
     .l-margin-v-m
     +index({}, {columns: false})
