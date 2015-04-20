@@ -19,12 +19,12 @@ mixin accordion-item(title)
     - classes += " is-open"
 
   div(class=classes)
-    a.accordion-toggle(href="#")
+    a.accordion-toggle.t-navigation(href="#")
       span.icon.icon--downstroke(data-grunticon-embed)
       span.icon.icon--upstroke(data-grunticon-embed)
       | #{title}
-    
+
     .accordion-content
       block
-  
+
   - accordionIndex += 1
