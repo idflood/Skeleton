@@ -27,41 +27,42 @@ block htmlbody
           title: "Pistensanierung Zürich Flughafen",
           imgSrc: relativePath + 'assets/projects/project1.jpg',
           legend: "Pistensanierung unter vollem Flugbetrieb",
-          link: './detail-project.html'
+          link: './detail-project.html',
+          filter: "Bahnbau"},
+        {legend: true})
 
-        }, {legend: true})
       .l-grid-cell.l-margin-v-m.l-one-quarter
-        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Herzstück der 2014 eingeweihten Durchmesserlinie ist der grosse Bahnhof im Zürcher Untergrund"}, {legend: true})
+        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg',  legend: "Herzstück der 2014 eingeweihten Durchmesserlinie ist der grosse Bahnhof im Zürcher Untergrund", filter: "Bahnbau"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty-seven
-        +item-project({title: "Tramlinie vom Escher-Wyss-Platz bis Zürich Altstetten", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Die Verwandlung von Zürich-West: sieben neue Tramhaltestellen und vernetzte Grün- und Freiräume"}, {legend: true})
+        +item-project({title: "Tramlinie vom Escher-Wyss-Platz bis Zürich Altstetten", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Die Verwandlung von Zürich-West: sieben neue Tramhaltestellen und vernetzte Grün- und Freiräume", filter: "Bahntechnik"}, {legend: true})
 
       .l-grid-cell.l-margin-v-m.l-thirty
-        +item-project({title: "Kehrichtverbrennungs-anlage in Perlen", imgSrc: relativePath + 'assets/projects/project4.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
+        +item-project({title: "Kehrichtverbrennungs-anlage in Perlen", imgSrc: relativePath + 'assets/projects/project4.jpg', legend: "Lorem ipsum dolor sit amet", filter: "Baudynamik"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-project({title: "Eisenbahnverbindungmitten durch Zürich", imgSrc: relativePath + 'assets/projects/project5.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
+        +item-project({title: "Eisenbahnverbindungmitten durch Zürich", imgSrc: relativePath + 'assets/projects/project5.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension", filter: "Bahnhöfe"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty
-        +item-project({title: "PV Anlage in Esslingen", imgSrc: relativePath + 'assets/projects/project6.jpg', legend: "220 Watt Photovoltaik-Module übernehmen die Funktion von Ziegeln."}, {legend: true})
+        +item-project({title: "PV Anlage in Esslingen", imgSrc: relativePath + 'assets/projects/project6.jpg', legend: "220 Watt Photovoltaik-Module übernehmen die Funktion von Ziegeln.", filter: "Baugrund"}, {legend: true})
 
       .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-project({title: "Viadukt Fislisbach an der SBB Heitersberglinie", imgSrc: relativePath + 'assets/projects/project7.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
+        +item-project({title: "Viadukt Fislisbach an der SBB Heitersberglinie", imgSrc: relativePath + 'assets/projects/project7.jpg', legend: "Lorem ipsum dolor sit amet", filter: "Baugruben"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty
-        +item-project({title: "Viaduc de Chillon Genf", imgSrc: relativePath + 'assets/projects/project8.jpg', legend: "Frisch saniert und für die nächsten 100 Jahre fest verankert."}, {legend: true})
+        +item-project({title: "Viaduc de Chillon Genf", imgSrc: relativePath + 'assets/projects/project8.jpg', legend: "Frisch saniert und für die nächsten 100 Jahre fest verankert.", filter: "Baugruben"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty
-        +item-project({title: "Erweiterungen am Bahnhof Genf", imgSrc: relativePath + 'assets/projects/project9.jpg', legend: "Mauris nec sodales nisi, quis euismod velit. Nullam eros quam, sodales quis consectetur"}, {legend: true})
+        +item-project({title: "Erweiterungen am Bahnhof Genf", imgSrc: relativePath + 'assets/projects/project9.jpg', legend: "Mauris nec sodales nisi, quis euismod velit. Nullam eros quam, sodales quis consectetur", filter: "Bahnbau"}, {legend: true})
 
       .l-grid-cell.l-margin-v-m.l-one-quarter
-        +item-project({title: "Riedtlistrasse Zürich", imgSrc: relativePath + 'assets/projects/project10.jpg', legend: "Ein städtisches Pionierprojekt: Tiefbau in hoher Geschwindigkeit und Qualität."}, {legend: true})
+        +item-project({title: "Riedtlistrasse Zürich", imgSrc: relativePath + 'assets/projects/project10.jpg', legend: "Ein städtisches Pionierprojekt: Tiefbau in hoher Geschwindigkeit und Qualität.", filter: "Bahnbau"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty-five
-        +item-project({title: "Umwelt Arena Spreitenbach", imgSrc: relativePath + 'assets/projects/project11.jpg', legend: "Innovationsobjekte für die Photovoltaik stellen Glaubengrundsätze auf den Kopf"}, {legend: true})
+        +item-project({title: "Umwelt Arena Spreitenbach", imgSrc: relativePath + 'assets/projects/project11.jpg', legend: "Innovationsobjekte für die Photovoltaik stellen Glaubengrundsätze auf den Kopf", filter: "Bahntechnik"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-project({title: "Kraftwerk in Andermatt", imgSrc: relativePath + 'assets/projects/project12.jpg', legend: "Ein Wasserkraftwerk in äusserst heiklem Umfeld"}, {legend: true})
+        +item-project({title: "Kraftwerk in Andermatt", imgSrc: relativePath + 'assets/projects/project12.jpg', legend: "Ein Wasserkraftwerk in äusserst heiklem Umfeld", filter: "Baugruben"}, {legend: true})
 
       .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-project({title: "Bundesinventar der historischen Verkehrswege der Schweiz", imgSrc: relativePath + 'assets/projects/project13.jpg', legend: "Vom Papierinventar zum Hightech-Produkt"}, {legend: true})
+        +item-project({title: "Bundesinventar der historischen Verkehrswege der Schweiz", imgSrc: relativePath + 'assets/projects/project13.jpg', legend: "Vom Papierinventar zum Hightech-Produkt", filter: "Baudynamik"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-one-quarter
-        +item-project({title: "Coop Gebäudekomplex Schafisheim", imgSrc: relativePath + 'assets/projects/project14.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
+        +item-project({title: "Coop Gebäudekomplex Schafisheim", imgSrc: relativePath + 'assets/projects/project14.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension", filter: "Baugrund"}, {legend: true})
       .l-grid-cell.l-margin-v-m.l-thirty-five
-        +item-project({title: "Basler Fest", imgSrc: relativePath + 'assets/projects/project15.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
+        +item-project({title: "Basler Fest", imgSrc: relativePath + 'assets/projects/project15.jpg', legend: "Lorem ipsum dolor sit amet", filter: "Altlasten"}, {legend: true})
 
 
   +footer({
