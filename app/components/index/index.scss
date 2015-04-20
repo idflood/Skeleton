@@ -1,5 +1,6 @@
 // SPACINGS
-$index-item-margin-bottom: $size-m !default;
+$index-item-margin-bottom: $size-xs !default;
+$index-item-margin-bottom--columns: $size-m !default;
 
 .index {
   margin: 0;
@@ -10,8 +11,12 @@ $index-item-margin-bottom: $size-m !default;
     margin-bottom: $index-item-margin-bottom;
   }
 
-  // Set the fallback for ie9.
   &--columns {
+    .index-item {
+      margin-bottom: $index-item-margin-bottom--columns;
+    }
+
+    // Set the fallback for ie9.
     html:not(.csscolumns) & {
       @include breakpoint('desktop') {
         // We can't use @extend inside media queries, so here is the .l-grid.

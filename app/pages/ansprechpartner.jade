@@ -5,10 +5,9 @@ block htmlhead
     meta(name='description', content='')
 
 block htmlbody
-
   +header({}, {active: "Ansprechpartner"})
 
-  .l-m-width.l-spacing-v-l
+  .l-l-width.l-spacing-v-l
     h1.t-title.t-border-bottom Ansprechpartner
 
     +search-field({ placeholder: 'Suche in Ansprechpartner' }, {})
@@ -112,6 +111,42 @@ block htmlbody
               phone: "044 387 13 19",
               email: "test3@example.com"
               }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
+              firstname: "Hans",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Murten",
+              phone: "044 387 13 19",
+              email: "test@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
+              firstname: "Maria",
+              lastname: "Muster",
+              role: "Leitender Expertin",
+              region: "Zürich",
+              phone: "044 387 13 19",
+              email: "test2@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
+              firstname: "Peter",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Lausanne",
+              phone: "044 387 13 19",
+              email: "test3@example.com"
+              }, {})
+
+    .section-button
+      +button({
+          href: "#",
+          text: "Weitere Kontakte laden"
+      }, { color: 'pink', size: 'large' })
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
