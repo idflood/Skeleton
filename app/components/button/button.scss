@@ -6,7 +6,6 @@ $button-icon-width:         $s-gutter-double !default;
 $button-icon-spacing:       $s-gutter        !default;
 
 .button {
-  @extend .t-button;
   box-sizing: border-box; // so that border is not calculated on the total height (i.e. border inside)
   background: transparent;
   display: inline-block;
