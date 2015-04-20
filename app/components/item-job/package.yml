@@ -9,6 +9,6 @@
     location: "Essen"
     locationUrl: "#"
   options:
-    hasLabel:
-      values: [true, false]
-      default: false
+    layout:
+      values: ['magazine', 'table']
+      default: 'magazine'
