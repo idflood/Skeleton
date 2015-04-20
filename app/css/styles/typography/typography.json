@@ -36,10 +36,11 @@
     "color": "black"
   },
   "t-link": {
-    "fontFamily": "ZwoWeb-Light",
+    "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "1rem",
     "lineHeight": "1.5",
-    "color": "grey60"
+    "color": "grey60",
+    "textDecoration": "underline"
   },
   "t-button": {
     "fontFamily": "ZwoWeb-Semibold",
@@ -60,7 +61,7 @@
     "color": "white"
   },
   "t-lead": {
-    "fontFamily": "Ubuntu",
+    "fontFamily": "ZwoWeb-Light",
     "fontSize" : "1.125rem",
     "fontWeight": "ZwoWeb-Light",
     "lineHeight": "1.5",
