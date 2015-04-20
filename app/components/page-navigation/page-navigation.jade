@@ -5,4 +5,4 @@ mixin page-navigation(data, options)
     ol.page-navigation-links.l-horizontal-equidistant
       each link, index in data.links
         li.page-navigation-item
-          a.page-navigation-link(href="#" + link.target)= link.title
+          a.page-navigation-link.t-navigation(href="#" + link.target)= link.title
