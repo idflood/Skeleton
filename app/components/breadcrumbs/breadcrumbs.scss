@@ -6,6 +6,7 @@ $breadcrumb-arrow-height:        $s-gutter     !default;
 $breadcrumb-arrow-width:    .5 * $s-gutter     !default;
 $breadcrumb-arrow-spacing:       $s-gutter     !default;
 $breadcrumb-arrow-thickness: 2px               !default;
+$breadcrumb-item-height:     $size-m           !default;
 
 
 /**
@@ -23,10 +24,13 @@ $breadcrumb-arrow-thickness: 2px               !default;
 
   &-item {
     color: $breadcrumb-text-color;
-    @extend .t-link;
+
+    &--link,
+    &--page {
+      line-height: $breadcrumb-item-height;
+    }
 
     &--link {
-      @extend .t-link;
       position: relative;
       padding-right: $breadcrumb-arrow-width + $breadcrumb-arrow-spacing + $breadcrumb-arrow-thickness;
       margin-right: $breadcrumb-arrow-spacing;

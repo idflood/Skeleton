@@ -7,6 +7,6 @@ mixin breadcrumbs (data, options)
         li.breadcrumbs-item
           - var isLink = index < data.pages.length - 1
           if isLink
-            a.breadcrumbs-item--link(href=breadcrumb.href)= breadcrumb.name
+            a.breadcrumbs-item--link.t-link(href=breadcrumb.href)= breadcrumb.name
           else
-            | #{breadcrumb.name}
+            span.breadcrumbs-item--page.t-link #{breadcrumb.name}
