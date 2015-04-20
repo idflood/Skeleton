@@ -6,6 +6,13 @@ block htmlhead
 
 block htmlbody
   +header({}, {active: "Arbeiten bei uns"})
+  .l-margin-v-xs
+  +breadcrumbs({
+    pages: [
+      {name: "Arbeiten bei uns", href: "./arbeiten.html"},
+      {name: "Detail Generic"}
+    ]
+  }, {})
   .l-s-width.l-spacing-v-xl
 
     h1 RTE Heading 1
