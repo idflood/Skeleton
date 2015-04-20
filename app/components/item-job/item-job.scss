@@ -1,8 +1,10 @@
 // SPACINGS
-$item-job-margin-bottom:       $size-m + $s-gutter !default; // 60px
-$item-job-location-margin:     $s-gutter !default;
+$item-job-margin-bottom:       $size-s !default;
 $item-job-layout-table-height: $size-m !default;
 $item-job-layout-table-location-width: 15%;
+
+$item-job-position-margin:     .5em !default;
+
 
 // COLORS
 $item-job-link-color: $c-grey60 !default;
@@ -19,7 +21,6 @@ $item-job-link-color--active: $c-grey80 !default;
   }
 
   &-location {
-    margin-bottom: $item-job-location-margin;
     text-transform: uppercase;
     .item-job--layout-table & {
       float: right;
@@ -35,13 +36,15 @@ $item-job-link-color--active: $c-grey80 !default;
 
   &-position {
     text-decoration: underline;
+    margin-top: $item-job-position-margin;
+    font-family: $strong-font-family;
+
     .item-job--layout-table & {
       float: left;
       margin: 0;
       height: $item-job-layout-table-height;
       line-height: $item-job-layout-table-height;
       @extend .t-paragraph;
-      font-family: $strong-font-family;
       text-decoration: none;
       width: 100% - $item-job-layout-table-location-width;
     }
