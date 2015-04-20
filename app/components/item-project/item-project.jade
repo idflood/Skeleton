@@ -4,8 +4,14 @@ mixin item-project(data, options)
   - var dataFilter = ''
   if data.filter
     - dataFilter = data.filter
-  
-  article.item-project(data-searchable, data-filter=dataFilter)
+
+  - var dataAttributes = {}
+  if data.attributes
+    each val, key in data.attributes
+      - dataAttributes['data-' + key] = val
+
+
+  article.item-project(data-searchable, data-filter=dataFilter)&attributes(dataAttributes)
     a.item-project-link(href=link)
       img.item-project-image(src=data.imgSrc, alt=data.title)
       h3.t-h3.item-project-title= data.title

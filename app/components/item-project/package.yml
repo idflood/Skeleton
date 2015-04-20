@@ -8,6 +8,8 @@
     legend: "Pistensanierung unter vollem Flugbetrieb"
     imgSrc: "http://placehold.it/366x274/dc2856/FFFFFF/.png&text=Project1"
     link: '#'
+    attributes:
+      expertise: Bahnbau
   options:
     legend:
       values: [false, true]

@@ -1,10 +1,43 @@
-define(['jquery'], function($){
+define(['jquery', 'search'], function($, Search){
   'use strict';
+
+
   var HIDDEN_CLASS = 'is-hidden';
   var FOCUS_CLASS = 'is-focused';
+  var MUTED_BY_FILTER_CLASS = 'js-muted-by-filter';
   var $items = $('[data-searchable]');
   var filter = false;
   var searchString = '';
+
+  var searchFieldSearch = new Search({
+    id                : 'search-field',
+    container         : '.js-search',
+    inputFieldSelector: '.js-main-search-field > input',
+    itemsSelector     : '.item-project',
+    onSearchResults   : function (searchQuery, matchingItems, notMatchingItems) {
+      matchingItems.forEach(function ($item) {
+        if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
+          $item.parent().removeClass(HIDDEN_CLASS);
+        }
+      });
+      notMatchingItems.forEach(function ($item) {
+        $item.parent().addClass(HIDDEN_CLASS);
+      });
+    },
+    onSearchSelect: function (matchingItems) {
+      if (matchingItems.length === 1) {
+        var value = highlight.getOriginalText(matchingItems[0]);
+        $filter.find('.filter-value').text(value);
+        $filter.find('.filter-value-input').val(value).trigger('change');
+        $filter.find('.search-field input').val(value);
+        $filter.trigger('filter-has-changed', [value, attribute]);
+        $filter.toggleClass(OPEN_CLASS);
+      }
+    }
+  });
+
+  $('.search-field.js-main-search-field')
+    .on()
 
   $('.search-field')
     .on('focus.search-field', 'input', function(e) {
@@ -13,49 +46,20 @@ define(['jquery'], function($){
     .on('blur.search-field', 'input', function(e) {
       $(this).parent().removeClass(FOCUS_CLASS)
     })
-    .on('change.search-field, keyup.search-field', 'input', function(e) {
-      // Trim whitespace from start and end of the searchstring.
-      searchString = $.trim($(this).val());
-      console.log("on change", searchString);
-      filterContent();
-    })
-    .on('filter.search-field', '.filter', function(e, filterValue) {
-      filter = filterValue;
-      filterContent();
-    });
-
-  var strContains = function(str, search) {
-    // Check for index on lowercased string so that it is case insensitive.
-    return str.toLowerCase().indexOf(search.toLowerCase()) > -1;
-  }
-
-  var filterContent = function() {
-    // If there is no filter and no search string we simply display all items.
-    if (filter === false && searchString == '') {
-      $items.parent().removeClass(HIDDEN_CLASS);
-      return;
-    }
-
-    // Loop over all searchable items.
-    $items.each(function() {
-      var isVisible = true;
-      var $this = $(this);
-
-      console.log(filter);
-      // If there is a filter and the item doesn't match it we hide the item.
-      if (filter && $this.data('filter') != filter) {
-        isVisible = false;
-      }
-
-      // If item is alredy hidden by the filter no need to search for string.
-      if (isVisible) {
-        var text = $this.text();
-        if (searchString != '' && strContains(text, searchString) === false) {
-          isVisible = false;
+    .on('filter-has-changed', '.filter', function (e, value, attribute) {
+      $items.each(function (index, item) {
+        var $item = $(item);
+        if (value === "" || $item.data(attribute) === value) {
+          $item
+            .removeClass(MUTED_BY_FILTER_CLASS)
+            .parent()
+            .removeClass(HIDDEN_CLASS);
+        } else {
+          $item
+            .addClass(MUTED_BY_FILTER_CLASS)
+            .parent()
+            .addClass(HIDDEN_CLASS);
         }
-      }
-      // Need to set the visibility class on the parent (the grid-cell).
-      $this.parent().toggleClass(HIDDEN_CLASS, !isVisible);
+      })
     });
-  };
 });

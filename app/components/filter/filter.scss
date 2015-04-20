@@ -97,6 +97,14 @@ $filter-item-all-color--active: $c-grey80 !default;
     padding: $filter-item-padding 0;
     text-decoration: none; // Overwrite default link underline.
 
+    &.js-is-hidden {
+      display: none;
+    }
+
+    .is-highlighted {
+      font-family: $strong-font-family;
+    }
+
     &, &:active, &:visited {
       color: $filter-item-color;
     }
