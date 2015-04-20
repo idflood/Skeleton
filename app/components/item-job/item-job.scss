@@ -1,8 +1,31 @@
+// SPACINGS
+$item-job-margin-bottom: $size-m + $s-gutter !default; // 60px
+$item-job-location-margin: $s-gutter !default;
+
+// COLORS
+$item-job-link-color: $c-grey60 !default;
+$item-job-link-color--active: $c-grey80 !default;
+
 .item-job {
-  &-row {
+  margin-bottom: $item-job-margin-bottom;
+
+  &-link {
     display: block;
-    margin-bottom: .4em;
+    text-decoration: none;
+  }
+
+  &-location {
+    margin-bottom: $item-job-location-margin;
+    text-transform: uppercase;
+  }
+
+  &-position {
+    text-decoration: underline;
+  }
+
+  &:hover, &:focus {
+    .item-job-position {
+      color: $item-job-link-color--active;
+    }
   }
 }
-
-
