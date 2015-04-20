@@ -34,6 +34,12 @@
   }
 }
 
+.no-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 h1 { @extend .t-h1; color: $c-pink; } // override default color which is pink.
 h2 { @extend .t-h2; }
 
@@ -41,7 +47,6 @@ p  { @extend .t-paragraph; }
 a  { @extend .t-link; }
 
 strong { font-weight: 700; font-family: "ZwoWeb-Semibold"; }
-
 
 
 h1,

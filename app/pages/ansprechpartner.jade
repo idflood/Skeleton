@@ -8,10 +8,110 @@ block htmlbody
 
   +header({}, {active: "Ansprechpartner"})
 
-  .l-l-width.l-spacing-v-l
+  .l-m-width.l-spacing-v-l
     h1.t-title.t-border-bottom Ansprechpartner
 
     +search-field({ placeholder: 'Suche in Ansprechpartner' }, {})
+  
+    .l-margin-v-m
+    +index({}, {columns: false})
+      +index-item('A')
+        .l-margin-v-xs
+        ol.no-bullets.l-grid
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
+              firstname: "Hans",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Murten",
+              phone: "044 387 13 19",
+              email: "test@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
+              firstname: "Maria",
+              lastname: "Muster",
+              role: "Leitender Expertin",
+              region: "Zürich",
+              phone: "044 387 13 19",
+              email: "test2@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact3.jpg',
+              firstname: "Peter",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Lausanne",
+              phone: "044 387 13 19",
+              email: "test3@example.com"
+              }, {})
+                
+      +index-item('B')
+        .l-margin-v-xs
+        ol.no-bullets.l-grid
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
+              firstname: "Hans",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Murten",
+              phone: "044 387 13 19",
+              email: "test@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
+              firstname: "Maria",
+              lastname: "Muster",
+              role: "Leitender Expertin",
+              region: "Zürich",
+              phone: "044 387 13 19",
+              email: "test2@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
+              firstname: "Peter",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Lausanne",
+              phone: "044 387 13 19",
+              email: "test3@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
+              firstname: "Hans",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Murten",
+              phone: "044 387 13 19",
+              email: "test@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
+              firstname: "Maria",
+              lastname: "Muster",
+              role: "Leitender Expertin",
+              region: "Zürich",
+              phone: "044 387 13 19",
+              email: "test2@example.com"
+              }, {})
+          li.l-grid-cell.l-one-third.l-margin-v-s
+            +item-contact({
+              imgSrc: relativePath + 'assets/anspreschpartner-contact3.jpg',
+              firstname: "Peter",
+              lastname: "Muster",
+              role: "Leitender Experte",
+              region: "Lausanne",
+              phone: "044 387 13 19",
+              email: "test3@example.com"
+              }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
