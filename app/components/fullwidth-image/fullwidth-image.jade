@@ -5,13 +5,13 @@ mixin fullwidth-image(data, options)
   div(style="background-image: url(#{data.imgSrc})", class=classes)
     .l-l-width.fullwidth-image-container
       if block
-        .fullwidth-image-content
+        .fullwidth-image-content.t-lead
           block
       else if options.content
-        .fullwidth-image-content
+        .fullwidth-image-content.t-lead
           h3 Wir sind ein unabhängiges Ingenieur-, Planungs- und Beratungs-unternehmem.
           p TVernetztes Denken und ein Blick fürs Ganze zeichnen unsere Arbeit aus.
-      
+
       if options.arrow != false
         a.fullwidth-image-arrow(href="#" + data.arrowTarget, title=data.arrowTitle)
           div.icon.icon--downstrokethin(data-grunticon-embed)

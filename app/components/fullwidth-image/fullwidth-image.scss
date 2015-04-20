@@ -30,7 +30,6 @@ $fullwidth-image-arrow-color: $c-white !default;
   }
 
   &-content {
-    @extend .t-lead;
     box-sizing: border-box;
     position: absolute;
     top: $fullwidth-image-content-top;
