@@ -1,7 +1,7 @@
 mixin item-job(data, options)
   - options = setOptionsDefaults(options, "item-job", components['item-job'])
 
-  .item-job.l-grid-cell.l-one-fifth
-    a.item-job-row.t-link-lead(href=data.positionUrl)=    data.position
-    a.item-job-row.t-link-sublead(href=data.locationUrl)= data.location
-
+  .item-job
+    a.item-job-link(href=data.positionUrl)
+      .item-job-location.t-label= data.location
+      .item-job-position.t-lead= data.position
