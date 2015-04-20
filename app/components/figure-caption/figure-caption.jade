@@ -1,0 +1,6 @@
+mixin figure-caption(data, options)
+  - options = setOptionsDefaults(options, "figure-caption", components["figure-caption"])
+
+  figure
+    img(src=data.figure, alt="")
+    figcaption= data.caption
