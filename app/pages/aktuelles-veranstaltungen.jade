@@ -8,8 +8,8 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width
-    h1.t-h1.t-border-bottom Aktuelles
+  .l-l-width.l-spacing-v-l
+    h1.t-title.t-border-bottom Aktuelles
 
     +search-field({ placeholder: 'Suche in Veranstaltungen' }, {})
 
@@ -25,26 +25,41 @@ block htmlbody
     ]
   },{})
 
-  .section.section--background-white
+  .l-l-width.l-spacing-v-l
+    +list({title: "Demnächst"}, {showTitle: true})
+      +list-item()
+        +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+      +list-item()
+        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+      +list-item()
+        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+
+    +list({title: "Rückblick"}, {showTitle: true})
+      +list-item()
+        +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+      +list-item()
+        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+      +list-item()
+        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+    .section-button
+      a.button.button--color-pink.button--size-large(href="#") Weitere Veranstaltungen laden
+
+  .l-border-t.l-spacing-v-s
     .l-l-width
-      +list({title: "Demnächst"}, {showTitle: true})
-        +list-item()
-          +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
-        +list-item()
-          +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
-        +list-item()
-          +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
-      
-      +list({title: "Rückblick"}, {showTitle: true})
-        +list-item()
-          +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
-        +list-item()
-          +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
-        +list-item()
-          +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
-      .section-button
-        a.button.button--color-pink.button--size-large(href="#") Weitere Veranstaltungen laden
-    .l-margin-v-xl
+      h2 Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

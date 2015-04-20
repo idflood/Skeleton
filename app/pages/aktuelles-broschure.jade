@@ -8,8 +8,8 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width
-    h1.t-h1.t-border-bottom Aktuelles
+  .l-l-width.l-spacing-v-l
+    h1.t-title.t-border-bottom Aktuelles
 
     +search-field({ placeholder: 'Suche in Broschüre' }, {})
 
@@ -25,11 +25,22 @@ block htmlbody
     ]
   },{})
 
-  +section({
-    title: 'Foo title',
-    buttonText: 'bar button text',
-    buttonHref: '#'
-  }, { containerSize: 'l', background: 'white' })
+  .l-border-t.l-spacing-v-s
+    .l-l-width
+      h2 Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

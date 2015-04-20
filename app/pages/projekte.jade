@@ -7,20 +7,13 @@ block htmlhead
 block htmlbody
   +header({}, {active: "Projekte"})
 
-  +section({
-    title: 'Projekte',
-    buttonText: 'Weitere Projekte laden',
-    buttonHref: '#'
-  }, {
-    background: 'white',
-    containerSize: 'l',
-    content: false
-  })
+  .l-l-width.l-spacing-v-l
+    h1.t-title.t-border-bottom Projekte
 
     +search-field({ placeholder: 'Suche in Projekten' }, {})
       +filter({label: "Filter nach Kompetenz"}, {})
 
-    .l-margin-v-m
+  .l-l-width
     .l-grid
       .l-grid-cell.l-margin-v-m.l-thirty-seven
         +item-project({
