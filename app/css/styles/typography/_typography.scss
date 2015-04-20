@@ -34,10 +34,22 @@
   }
 }
 
-h1 { @extend .t-h1; color: $c-black; } // override default color which is pink.
+h1 { @extend .t-h1; color: $c-pink; } // override default color which is pink.
 h2 { @extend .t-h2; }
 
 p  { @extend .t-paragraph; }
 a  { @extend .t-link; }
 
-strong { font-weight: 700; }
+strong { font-weight: 700; font-family: "ZwoWeb-Semibold"; }
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  max-width: 32em;
+}
