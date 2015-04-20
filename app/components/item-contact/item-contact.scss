@@ -4,7 +4,7 @@ $item-contact-image-margin: 10px !default;
 .item-contact {
   &-image {
     display: block; // Remove spacing below caused by inline style.
-    max-width: 100%;
+    width: 100%;
     margin-bottom: $item-contact-image-margin;
   }
 

@@ -3,7 +3,7 @@
     "fontFamily": "ZwoWeb-Semibold",
     "fontSize" : "2.25rem",
     "lineHeight": "1.27",
-    "color": "black"
+    "color": "pink"
   },
   "t-h1": {
     "fontFamily": "ZwoWeb-Semibold",
@@ -36,7 +36,7 @@
     "color": "black"
   },
   "t-link": {
-    "fontFamily": "ZwoWeb-Semibold",
+    "fontFamily": "ZwoWeb-Light",
     "fontSize" : "1rem",
     "lineHeight": "1.5",
     "color": "grey60",
@@ -63,7 +63,6 @@
   "t-lead": {
     "fontFamily": "ZwoWeb-Light",
     "fontSize" : "1.125rem",
-    "fontWeight": "ZwoWeb-Light",
     "lineHeight": "1.5",
     "color": "black"
   },

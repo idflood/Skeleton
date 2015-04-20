@@ -1,8 +1,8 @@
 mixin page-navigation(data, options)
   - options = setOptionsDefaults(options, "page-navigation", components["page-navigation"])
 
-  .page-navigation
+  .page-navigation.l-m-width
     ol.page-navigation-links.l-horizontal-equidistant
       each link, index in data.links
         li.page-navigation-item
-          a.page-navigation-link(href="#" + link.target)= link.title
+          a.page-navigation-link.t-navigation(href="#" + link.target)= link.title

@@ -8,8 +8,8 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width
-    h1.t-h1.t-border-bottom Aktuelles
+  .l-l-width.l-spacing-v-l
+    h1.t-title.t-border-bottom Aktuelles
 
     +search-field({ placeholder: 'Suche in Aktuelles' }, {})
 
@@ -25,21 +25,40 @@ block htmlbody
     ]
   },{})
 
-  .l-s-width.l-spacing-v-xl
-    h2 Bei allfälligen Fragen
-    p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-
+  .l-l-width.l-spacing-v-l
+    //- TODO: CHANGE THIS
     .l-grid
-      .l-grid-cell.l-one-third
-        +item-contact({
-          imgSrc: "http://placehold.it/217x145/dc2856/FFFFFF/.png&text=Image1",
-          firstname: "Hans",
-          lastname: "Muster",
-          role: "Leitender Experte",
-          region: "Murten",
-          phone: "044 387 13 19",
-          email: "test@example.com"
-          }, {})
+      .l-grid-cell.l-margin-v-m.l-thirty-seven
+        +item-project({
+          title: "Pistensanierung Zürich Flughafen",
+          imgSrc: relativePath + 'assets/projects/project1.jpg',
+          legend: "Pistensanierung unter vollem Flugbetrieb",
+          link: './detail-project.html'
+
+        }, {legend: true})
+      .l-grid-cell.l-margin-v-m.l-one-quarter
+        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Herzstück der 2014 eingeweihten Durchmesserlinie ist der grosse Bahnhof im Zürcher Untergrund"}, {legend: true})
+      .l-grid-cell.l-margin-v-m.l-thirty-seven
+        +item-project({title: "Tramlinie vom Escher-Wyss-Platz bis Zürich Altstetten", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Die Verwandlung von Zürich-West: sieben neue Tramhaltestellen und vernetzte Grün- und Freiräume"}, {legend: true})
+
+
+
+  .l-border-t.l-spacing-v-s
+    .l-l-width
+      h2 Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

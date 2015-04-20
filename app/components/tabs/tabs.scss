@@ -14,16 +14,15 @@ $tabs-active-arrow-h: 12px;
   border-bottom: $tabs-border-width solid $tabs-border-color;
 
   &-container {
-    @extend .l-l-width;
     @extend %l-horizontal-equidistant;
     padding: 0 $tabs-inner-spacing;
+    box-sizing: border-box;
   }
 
   // &-item {
   // }
 
   &-link {
-    @extend .t-button;
     font-weight: 200;
     display: inline-block;
     height: $tabs-item-height;

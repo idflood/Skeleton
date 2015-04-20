@@ -30,7 +30,7 @@ block htmlbody
     id: 'arbeitsumfel'
   }, {
     background: 'light-pink',
-    containerSize: 's',
+    containerSize: 'm',
     content: false
   })
     .l-grid
@@ -64,7 +64,7 @@ block htmlbody
     id: 'darauf'
   }, {
     background: 'white',
-    containerSize: 's',
+    containerSize: 'm',
     content: false
   })
     p Uns ist wichtig, dass unsere Mitarbeiter sich nicht nur als Fachkraft, sondern als ganzer Mensch fühlen.
@@ -95,7 +95,7 @@ block htmlbody
     id: 'lehre-praktika'
   }, {
     background: 'light-blue',
-    containerSize: 's',
+    containerSize: 'm',
     content: false
   })
     p Uns ist wichtig, dass unsere Mitarbeiter sich nicht nur als Fachkraft, sondern als ganzer Mensch fühlen.
@@ -115,7 +115,7 @@ block htmlbody
           linkHref: 'detail-generic.html'
         }, { card: 'blue' })
 
-  .l-s-width.l-spacing-v-xl
+  .l-l-width.l-spacing-v-xl
     h3.t-h3 Aktuelle Recruitment-Anlässe
 
   +testimonial({
@@ -130,43 +130,58 @@ block htmlbody
     id: 'offene'
   }, {
     background: 'white',
-    containerSize: 's'
+    containerSize: 'm',
+    content: false
   })
-
-
-  .l-s-width.l-spacing-v-xl
-    h2 Ihre Ansprechpartner
     .l-grid
-      .l-grid-cell.l-one-third
-        +item-contact({
-          imgSrc: relativePath + 'assets/home-contact1.png',
-          firstname: "Hans",
-          lastname: "Muster",
-          role: "Leitender Experte",
-          region: "Murten",
-          phone: "044 387 13 19",
-          email: "test@example.com"
-          }, {})
-      .l-grid-cell.l-one-third
-        +item-contact({
-          imgSrc: relativePath + 'assets/home-contact2.png',
-          firstname: "Maria",
-          lastname: "Muster",
-          role: "Leitender Expertin",
-          region: "Zürich",
-          phone: "044 387 13 19",
-          email: "test2@example.com"
-          }, {})
-      .l-grid-cell.l-one-third
-        +item-contact({
-          imgSrc: relativePath + 'assets/home-contact3.png',
-          firstname: "Peter",
-          lastname: "Muster",
-          role: "Leitender Experte",
-          region: "Lausanne",
-          phone: "044 387 13 19",
-          email: "test3@example.com"
-          }, {})
+      .l-grid-cell.l-one-half
+        +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Murten', positionUrl: '#', locationUrl: '#'}, {})
+      .l-grid-cell.l-one-half
+        +item-job({ position: 'Erfahrene/r Bauingenieur/in Erdbeben-wesen', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+      .l-grid-cell.l-one-half
+        +item-job({ position: 'Senior Projektleiter/in Raumplanung', location: 'Luzern', positionUrl: '#', locationUrl: '#'}, {})
+      .l-grid-cell.l-one-half
+        +item-job({ position: 'Fachperson Gebäudeschadstoffe (70% - 100%)', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+      .l-grid-cell.l-one-half
+        +item-job({ position: 'Gebäuddetechnikplaner/innen Heizung, Lüftung oder Sanitär', location: 'Zollikofen', positionUrl: '#', locationUrl: '#'}, {})
+      .l-grid-cell.l-one-half
+        +item-job({ position: 'Gesamtprojektleiter/in Gebäudetechnik', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+
+
+  .l-border-t.l-spacing-v-xl
+    .l-m-width
+      h2 Ihre Ansprechpartner
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact1.png',
+            firstname: "Hans",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Murten",
+            phone: "044 387 13 19",
+            email: "test@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact3.png',
+            firstname: "Peter",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Lausanne",
+            phone: "044 387 13 19",
+            email: "test3@example.com"
+            }, {})
 
   +footer-job({}, {})
   +footer({

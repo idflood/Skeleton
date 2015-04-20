@@ -35,7 +35,6 @@ $accordion-icon-display: inline-block !default;
   }
 
   &-toggle {
-    @extend .t-navigation;
     display: block;
     padding: $accordion-toggle-padding 0;
     text-decoration: none; // Overwrite default link underline.
