@@ -3,6 +3,7 @@ $search-field-height:               $size-m         !default;
 $search-field-height--small:        40px            !default;
 $search-field-icon-size:            16px            !default;
 $search-field-spacing:              1.5 * $s-gutter !default;
+$search-field-margin-top:         $size-m         !default;
 
 // COLORS
 $search-field-border-color:         $c-grey20       !default;
@@ -15,6 +16,7 @@ input.search-field-input { box-sizing: border-box; }
 .search-field {
   position: relative;
   z-index: 500; // When filter component is open we want it to be above content.
+  margin-top: $search-field-margin-top;
 
   &-input {
     @extend .t-paragraph;
