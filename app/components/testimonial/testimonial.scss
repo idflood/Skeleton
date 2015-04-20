@@ -18,9 +18,15 @@ $testimonial-background: $c-black !default;
     position: absolute;
     right: $testimonial-margin-right;
     bottom: -$testimonial-padding;
-    width: $testimonial-width;
+    max-width: $testimonial-width;
     padding: $testimonial-padding;
     margin: 0; // Overwrite the default paragraph margin-top/bottom.
     background: $testimonial-background;
+
+    @include breakpoint(mobile) {
+      left: $size-s;
+      right: -$size-s;
+      max-width: 100%;
+    }
   }
 }
