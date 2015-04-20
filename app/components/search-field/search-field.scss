@@ -38,6 +38,7 @@ input.search-field-input { box-sizing: border-box; }
 
   &--size-small .search-field-input {
     height: $search-field-height--small; // Used inside the filter callout.
+    margin-top: 0;
   }
 
   &-icon {
