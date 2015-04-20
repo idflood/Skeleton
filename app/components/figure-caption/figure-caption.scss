@@ -3,12 +3,15 @@ $figure-caption-text-width: 12 * $s-gutter !default;
 $figure-caption-text-margin: $size-xs !default;
 
 figure {
-  @extend .l-s-width;
+  @extend .l-m-width;
+  padding: 0;
   position: relative;
+  margin-top: $size-s;
 
   img {
     display: block; // Remove extra whitespace at the bottom of inline image.
     margin: 0 0 0 auto; // In case the image is smaller align it next to the caption.
+    max-width: 100%;
   }
 
   figcaption {
