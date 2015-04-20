@@ -4,7 +4,7 @@ mixin section(data, options)
 
   - containerClass = 'l-' + options.containerSize + '-width'
   - var sectionID = data.id ? data.id : ''
-  .section(class=classes, id=sectionID)
+  div(class=classes, id=sectionID)
     div(class=containerClass)
       h2.section-title= data.title
       .section-content
