@@ -1,7 +1,7 @@
 mixin item-job(data, options)
   - options = setOptionsDefaults(options, "item-job", components['item-job'])
+  - var classes = getOptionsModifier(options, "item-job", ['layout'], components['item-job'])
 
-  .item-job
-    a.item-job-link(href=data.positionUrl)
-      .item-job-location.t-label= data.location
-      .item-job-position.t-link= data.position
+  a(class=classes, href=data.positionUrl)
+    .item-job-location.t-truncate.t-label= data.location
+    .item-job-position.t-truncate.t-link= data.position
