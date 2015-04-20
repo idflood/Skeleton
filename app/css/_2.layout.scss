@@ -53,14 +53,20 @@
 
 // Vertical Spacing utility classes
 // To avoid having unneded classes, let's just uncomment one once we need it.
-.l-spacing-v-xl { padding: $size-xl; }
-// .l-spacing-v-l  { padding: $size-l;  }
-//.l-spacing-v-m  { padding: $size-m;  }
-// .l-spacing-v-s  { padding: $size-s;  }
-// .l-spacing-v-xs { padding: $size-xs; }
+.l-spacing-v-xl { padding: $size-xl 0; }
+.l-spacing-v-l  { padding: $size-l 0;  }
+// .l-spacing-v-m  { padding: $size-m 0;  }
+.l-spacing-v-s  { padding: $size-s 0;  }
+// .l-spacing-v-xs { padding: $size-xs 0; }
 
 .l-margin-v-xl { margin-bottom: $size-xl; }
 .l-margin-v-l { margin-bottom: $size-l; }
 .l-margin-v-m { margin-bottom: $size-m; }
 // .l-margin-v-s { margin-bottom: $size-s; }
 .l-margin-v-xs { margin-bottom: $size-xs; }
+
+
+
+
+// Border utilities
+.l-border-t { border-top: 1px solid $c-grey20; }
