@@ -1,5 +1,6 @@
 $section-vertical-spacing: $size-xl !default;
 $section-inner-spacing: $size-l !default;
+$section-title-color: $c-pink !default;
 
 .section {
   padding: $section-vertical-spacing 0;
@@ -14,6 +15,7 @@ $section-inner-spacing: $size-l !default;
   &-title {
     @extend .t-h1;
     @extend .t-border-bottom;
+    color: $section-title-color;
     margin: 0;
   }
 
