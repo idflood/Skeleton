@@ -6,39 +6,39 @@ block htmlhead
 
 block htmlbody
   +header({}, {active: "Arbeiten bei uns"})
-  
+
   +breadcrumbs({
     pages: [
       {name: "Kompetenzen", href: "#"},
       {name: "Tunnelbau", href: "#"}
     ]
   }, {})
-    
-  .l-s-width.l-spacing-v-xl
+
+  .l-m-width
     h1.t-h1.t-border-bottom Ansprechpartner
-    
+
     p.t-lead
-      | Basler & Hofmann verfügt über jahrzehntelange Erfahrung im maschinellen 
-      | und konventionellen Tunnelbau, im Fels sowie im Lockergestein und unter 
-      | schwierigen hydrologischen Baugrundverhältnissen. Unsere Stärken liegen 
-      | im innerstädtischen Tunnelbau. Wir unterstützen Bauherren im In- und 
+      | Basler & Hofmann verfügt über jahrzehntelange Erfahrung im maschinellen
+      | und konventionellen Tunnelbau, im Fels sowie im Lockergestein und unter
+      | schwierigen hydrologischen Baugrundverhältnissen. Unsere Stärken liegen
+      | im innerstädtischen Tunnelbau. Wir unterstützen Bauherren im In- und
       | Ausland bei allen Aspekten rund um den Tunnelbau.
-      
+
     h3 Unsere Leistungen
-    
+
     p todo
-    
+
     h3 Partner für komplexe Aufgaben
-    
+
     p
-      | Jedes Tunnelprojekt ist ein einzigartiges Vorhaben. Spezifische 
-      | Nutzungsanforderungen und unterschiedliche Baugrundverhältnisse 
-      | erfordern massgeschneiderte Konzepte. Unsere erfahrenen Bauleiter 
-      | unterstützen Bauherren und Unternehmungen in allen Projektierungsphasen 
+      | Jedes Tunnelprojekt ist ein einzigartiges Vorhaben. Spezifische
+      | Nutzungsanforderungen und unterschiedliche Baugrundverhältnisse
+      | erfordern massgeschneiderte Konzepte. Unsere erfahrenen Bauleiter
+      | unterstützen Bauherren und Unternehmungen in allen Projektierungsphasen
       | von der Studie bis zur Realisierung.
 
     h3 Beispielprojekte
-    
+
     +accordion()
       +accordion-item("Untertagbautunnel", true)
         .l-grid
@@ -86,9 +86,9 @@ block htmlbody
             +item-project({title: "PV Anlage in Esslingen", imgSrc: relativePath + 'assets/projects/project6.jpg', legend: "220 Watt Photovoltaik-Module übernehmen die Funktion von Ziegeln."}, {legend: true})
     p
       a(href="#") Zurück zur Übersicht
-    
+
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
-      
+
   +footer({
     copyright: '© Basler & Hofmann 2015',
     languages: [
