@@ -47,7 +47,6 @@ $footer-item-color-active:     $c-grey60       !default;
 
   &-copyright,
   &-item {
-    @extend .t-paragraph;
     line-height: $footer-height;
     height: $footer-height;
   }
