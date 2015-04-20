@@ -13,17 +13,29 @@ block htmlbody
 
     +search-field({ placeholder: 'Suche in offenen Stellen' }, {})
 
-    +tabs({
-      tabs: [
-        { text: 'Alle (35)'      , href: '#', active: true },
-        { text: 'Lausanne (2)'   , href: '#' },
-        { text: 'Luzern (7)'     , href: '#' },
-        { text: 'Murten (0)'     , href: '#' },
-        { text: 'Zollikofen (12)', href: '#' },
-        { text: 'Zürich (14)'    , href: '#' },
-        { text: 'Zug (1)'        , href: '#' }
-      ]
-    },{})
+  +tabs({
+    tabs: [
+      { text: 'Alle (35)'      , href: '#', active: true },
+      { text: 'Lausanne (2)'   , href: '#' },
+      { text: 'Luzern (7)'     , href: '#' },
+      { text: 'Murten (0)'     , href: '#' },
+      { text: 'Zollikofen (12)', href: '#' },
+      { text: 'Zürich (14)'    , href: '#' },
+      { text: 'Zug (1)'        , href: '#' }
+    ]
+  },{})
+
+  .l-l-width
+    .l-margin-v-l
+    +list({}, {})
+      +list-item()
+        +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+      +list-item()
+        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+      +list-item()
+        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+
+    .l-margin-v-xl
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

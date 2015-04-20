@@ -1,0 +1,11 @@
+---
+  name: "list"
+  version: "0.0.1"
+  description: "List component"
+  author: "Ginetta"
+  data:
+    title: "Rückblick"
+  options:
+    showTitle:
+      values: [false, true]
+      default: false
