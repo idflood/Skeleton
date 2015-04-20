@@ -2,15 +2,16 @@
 $figure-caption-text-width: 12 * $s-gutter !default;
 $figure-caption-text-margin: $size-xs !default;
 
-.figure-caption {
+figure {
+  @extend .l-s-width;
   position: relative;
 
-  &-image {
+  img {
     display: block; // Remove extra whitespace at the bottom of inline image.
     margin: 0 0 0 auto; // In case the image is smaller align it next to the caption.
   }
 
-  &-text {
+  figcaption {
     @extend .t-link;
     position: absolute;
     top: 0;

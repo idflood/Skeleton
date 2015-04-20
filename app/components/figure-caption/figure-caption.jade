@@ -1,6 +1,6 @@
 mixin figure-caption(data, options)
   - options = setOptionsDefaults(options, "figure-caption", components["figure-caption"])
 
-  figure.figure-caption.l-s-width
-    img.figure-caption-image(src=data.figure, alt="")
-    figcaption.figure-caption-text= data.caption
+  figure
+    img(src=data.figure, alt="")
+    figcaption= data.caption
