@@ -1,0 +1,37 @@
+// SPACINGS
+$list-margin-bottom: $size-l !default; // 70px
+$list-title-margin-bottom: 8px !default;
+$list-item-padding: $size-xs !default; // 20px
+
+// COLORS
+$list-title-border-size: $s-gutter !default; // 10px
+$list-title-border-color: $c-light-grey !default;
+$list-item-border: $c-grey20 !default;
+
+.list {
+  margin-bottom: $list-margin-bottom;
+
+  &-title {
+    @extend .t-paragraph;
+    margin: 0 0 $list-title-margin-bottom 0;
+    text-transform: uppercase;
+  }
+
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid $list-item-border;
+  }
+
+  &-item {
+    padding: $size-xs 0;
+    border-bottom: 1px solid $list-item-border;
+  }
+
+  &--with-title {
+    .list-list {
+      border-top: $list-title-border-size solid $list-title-border-color;
+    }
+  }
+}

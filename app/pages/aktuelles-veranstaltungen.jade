@@ -25,11 +25,26 @@ block htmlbody
     ]
   },{})
 
-  +section({
-    title: 'Foo title',
-    buttonText: 'bar button text',
-    buttonHref: '#'
-  }, { containerSize: 'l', background: 'white' })
+  .section.section--background-white
+    .l-l-width
+      +list({title: "Demnächst"}, {showTitle: true})
+        +list-item()
+          +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+        +list-item()
+          +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+        +list-item()
+          +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+      
+      +list({title: "Rückblick"}, {showTitle: true})
+        +list-item()
+          +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+        +list-item()
+          +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+        +list-item()
+          +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+      .section-button
+        a.button.button--color-pink.button--size-large(href="#") Weitere Veranstaltungen laden
+    .l-margin-v-xl
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

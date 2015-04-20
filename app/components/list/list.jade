@@ -1,0 +1,24 @@
+mixin list(data, options)
+  - options = setOptionsDefaults(options, "list", components.list)
+  - var classes = "list"
+  if data.title && options.showTitle
+    - classes += " list--with-title"
+
+  div(class=classes)
+    if data.title && options.showTitle
+      h2.list-title= data.title
+
+    ol.list-list
+      if block
+        block
+      else
+        +list-item()
+          +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+        +list-item()
+          +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+        +list-item()
+          +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+
+mixin list-item()
+  li.list-item
+    block
