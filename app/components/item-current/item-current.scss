@@ -91,6 +91,7 @@ $item-current-icon-color--medium: $c-grey40 !default;
       color: $item-current-type-color--medium;
     }
     .item-current-title {
+      max-width: 100%; // Overwrite default h2 max-width of 32em.
       text-decoration: none; // Remove underline from title on medium only.
       color: $item-current-title-color--medium;
     }
