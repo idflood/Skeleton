@@ -8,7 +8,7 @@ $list-title-border-size: $s-gutter !default; // 10px
 $list-title-border-color: $c-light-grey !default;
 $list-item-border: $c-grey20 !default;
 
-.list {
+.listing {
   margin-bottom: $list-margin-bottom;
 
   &-title {
@@ -29,7 +29,7 @@ $list-item-border: $c-grey20 !default;
   }
 
   &--with-title {
-    .list-list {
+    .listing-list {
       border-top: $list-title-border-size solid $list-title-border-color;
     }
   }

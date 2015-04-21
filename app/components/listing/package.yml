@@ -1,7 +1,7 @@
 ---
-  name: "list"
+  name: "listing"
   version: "0.0.1"
-  description: "List component"
+  description: "Listing component"
   author: "Ginetta"
   data:
     title: "Rückblick"

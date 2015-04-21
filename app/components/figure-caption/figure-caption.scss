@@ -1,12 +1,13 @@
 // SPACINGS
 $figure-caption-text-width: 12 * $s-gutter !default;
 $figure-caption-text-margin: $size-xs !default;
+$figure-caption-margin:     2em !default; // same as headings
 
 figure {
-  @extend .l-m-width;
+  @extend .l-s-width;
   padding: 0;
   position: relative;
-  margin-top: $size-s;
+  margin-top: $figure-caption-margin;
 
   img {
     display: block; // Remove extra whitespace at the bottom of inline image.
