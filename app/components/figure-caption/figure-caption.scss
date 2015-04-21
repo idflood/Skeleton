@@ -3,7 +3,7 @@ $figure-caption-text-width: 12 * $s-gutter !default;
 $figure-caption-text-margin: $size-xs !default;
 
 figure {
-  @extend .l-m-width;
+  @extend .l-s-width;
   padding: 0;
   position: relative;
   margin-top: $size-s;
