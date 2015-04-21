@@ -19,9 +19,12 @@ $item-current-icon-color--medium: $c-grey40 !default;
 
 .item-current {
   position: relative;
-  display: inline-block; // Overwrite default <a> display.
   margin-bottom: $item-current-spacing;
-  text-decoration: none;
+
+  &-link {
+    display: inline-block; // Overwrite default <a> display.
+    text-decoration: none;
+  }
 
   &-type {
     text-transform: uppercase;
@@ -82,7 +85,6 @@ $item-current-icon-color--medium: $c-grey40 !default;
   }
 
   &--size-medium {
-    display: block; // Overwrite inline-block display for listing.
     // Different vertical spacing for medium size (in listing).
     margin: $item-current-spacing--medium 0;
     .item-current-type {
