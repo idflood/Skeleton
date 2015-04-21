@@ -24,6 +24,16 @@ block htmlbody
       { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
     ]
   },{})
+    
+  .l-l-width.l-spacing-v-l
+    +listing({}, {})
+      +listing-item()
+        +item-current({ title: 'Basler & Hofmann ausgezeichnet als “Tunnel Design Firm of the Year”', type: 'News'}, {size: 'medium'})
+      +listing-item()
+        +item-current({ title: 'Generationswechsel in der Geschäftsleitung: Martin Bosshard übergibt den Stab an Stefan Moser', type: 'News'}, {size: 'medium'})
+      +listing-item()
+        +item-current({ title: 'Kunstausstellung von Ursula Lee', type: 'News'}, {size: 'medium'})
+
 
   .l-border-t.l-spacing-v-s
     .l-l-width

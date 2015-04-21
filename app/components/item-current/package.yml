@@ -1,12 +1,16 @@
 ---
   name: "item-current"
   version: "0.0.1"
-  description: "Example component"
+  description: "Current item component"
   author: "Ginetta"
   data:
     title: "Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015"
     type: "Veranstaltungen"
+    href: "#"
   options:
-    hasLabel:
+    size:
+      values: ['small', 'medium', 'large', 'box']
+      default: 'small'
+    isExternal:
       values: [true, false]
       default: false

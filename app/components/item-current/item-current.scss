@@ -1,16 +1,109 @@
-$item-current-icon-size: 6*$s-gutter;
-$item-current-spacing: 3*$s-gutter;
+// SPACINGS
+$item-current-padding: $size-xl !default; // 90px
+$item-current-spacing: 3 * $s-gutter !default;
+$item-current-spacing--medium: $size-xs !default;
+
+$item-current-icon-width--small: 14px !default;
+$item-current-icon-height--small: 16px !default;
+$item-current-icon-width: 5 * $s-gutter !default;
+$item-current-icon-height: 4 * $s-gutter !default;
+$item-current-icon-width--box: 6 * $s-gutter !default;
+$item-current-icon-height--box: 5 * $s-gutter !default;
+$item-current-icon-margin--small: 5px !default;
+$item-current-external-margin: 5px !default;
+
+// COLORS
+$item-current-type-color--medium: $c-grey60 !default;
+$item-current-title-color--medium: $c-black !default;
+$item-current-icon-color--medium: $c-grey40 !default;
 
 .item-current {
-  padding-left: $item-current-icon-size + 2*$s-gutter;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: $item-current-icon-size $item-current-icon-size;
+  position: relative;
+  display: block; // Overwrite default <a> display.
   margin-bottom: $item-current-spacing;
-  &-row {
-    display: block;
-    margin-bottom: .4em;
+  text-decoration: none;
+
+  &-type {
+    text-transform: uppercase;
+  }
+
+  &-title {
+    text-decoration: underline;
+    // Bold on each variants.
+    font-family: "ZwoWeb-Semibold";
+
+    .item-current--size-large & {
+      font-size: 1.125rem; // overwrite default 16px .t-link font-size (18px).
+    }
+  }
+
+  &-external {
+    display: inline-box;
+    margin-left: $item-current-external-margin;
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &-icon {
+    display: inline-block;
+    width: $item-current-icon-width;
+    height: $item-current-icon-height;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    // Smaller icon on small variant.
+    .item-current--size-small & {
+      width: $item-current-icon-width--small;
+      height: $item-current-icon-height--small;
+      margin-right: $item-current-icon-margin--small;
+    }
+
+    // Larger icon on large and box variant.
+    .item-current--size-large &,
+    .item-current--size-box & {
+      width: $item-current-icon-width--box;
+      height: $item-current-icon-height--box;
+    }
+  }
+
+  // On small variant the title is below the icon.
+  &--size-small {
+    .item-current-icon {
+      float: left;
+    }
+    .item-current-title {
+      clear: both;
+    }
+  }
+
+  &--size-medium {
+    // Different vertical spacing for medium size (in listing).
+    margin: $item-current-spacing--medium 0;
+    .item-current-type {
+      color: $item-current-type-color--medium;
+    }
+    .item-current-title {
+      text-decoration: none; // Remove underline from title on medium only.
+      color: $item-current-title-color--medium;
+    }
+    .item-current-icon path {
+      fill: $item-current-icon-color--medium;
+    }
+  }
+
+  &--size-medium,
+  &--size-large {
+    padding-left: $item-current-padding;
+
+    .item-current-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
 }
-
-

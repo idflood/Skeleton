@@ -44,10 +44,11 @@ block htmlbody
     containerSize: 'l',
     content: false
   })
-    +item-current({ title: 'Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015', type: 'Veranstaltungen'}, {})
-    +item-current({ title: 'Gemeinsam mit Kopf und Herz: Firmenportrait zum 50. Jubiläum', type: 'Publikationen'}, {})
-    +item-current({ title: 'Basler & Hofmann ausgezeichnet als "Tunnel Design Firm of the Year"', type: 'Neuigkeiten'}, {})
-    +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt', type: 'Frachartikel'}, {})
+    .l-grid
+      +item-current({ title: 'Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015', type: 'Veranstaltung'}, {size: 'large'})
+      +item-current({ title: 'Gemeinsam mit Kopf und Herz: Firmenportrait zum 50. Jubiläum', type: 'Publikation'}, {size: 'large', isExternal: true})
+      +item-current({ title: 'Basler & Hofmann ausgezeichnet als "Tunnel Design Firm of the Year"', type: 'News'}, {size: 'large'})
+      +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt', type: 'Fachartikel'}, {size: 'large', isExternal: true})
 
   +fullwidth-image({ imgSrc: relativePath + 'assets/home-fullwidth-image2.png' }, {})
     h3 People Business
