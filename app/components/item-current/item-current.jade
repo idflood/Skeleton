@@ -3,9 +3,18 @@ mixin item-current(data, options)
   if options.icon == 'publikation'
     - options.icon = 'archive' // TODO: remove this when the correct "book" icon when available.
 
+  - var labelElements = []
   if data.date
-    - var dateElement = timeElement(data.date)
-    - data.label = dateElement + ' | ' + data.label
+    if options.icon == 'calendar'
+      - labelElements.push(timeElementEvent(data.date))
+    else
+      - labelElements.push(timeElement(data.date))
+
+  if data.location
+    - labelElements.push('<span itemprop="location">' + data.location + '</span>')
+
+  if labelElements.length
+    - data.label = labelElements.join(' ') + ' | ' + data.label
 
   +item-current-wrapper(data, options)
     span(data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
@@ -23,8 +32,11 @@ mixin item-current-wrapper(data, options)
     - classes += ' l-grid-cell l-one-half'
 
   if options.size == 'medium'
-    article(class=classes)
-      a.item-current-link(href=href)
+    - var itemtype = "http://schema.org/Article"
+    if options.icon == 'calendar'
+      - itemtype = "http://schema.org/Event"
+    article(class=classes, itemscope, itemtype=itemtype)
+      a.item-current-link(href=href, itemprop="url")
         block
   else
     a.item-current-link(class=classes, href=href)
@@ -33,7 +45,7 @@ mixin item-current-wrapper(data, options)
 mixin item-current-title(data, options)
   - var classes = 'item-current-title t-link'
   if options.size == 'medium'
-    h2(class=classes)
+    h2(class=classes, itemprop="name")
       block
   else
     div(class=classes)

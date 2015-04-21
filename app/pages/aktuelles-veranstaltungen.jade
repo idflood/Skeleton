@@ -28,26 +28,33 @@ block htmlbody
   .l-l-width.l-spacing-v-l
     +listing({title: "Demnächst"}, {showTitle: true})
       +listing-item()
-        +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'Info-Veranstaltungen zur Berufsausbildung am SwissSkills Bern', date: ['02.04.2015', '09.04.2015'], location: 'Bern', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
       +listing-item()
-        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann Zürich', date: '08.04.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
       +listing-item()
-        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'ZIG (Zentrum für Integrale Gebäudetechnik) — Planerseminar an der Hochschule Luzern', date: '27.04.2015', location: 'Luzern', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
+      +listing-item()
+        +item-current({ title: 'Seminar bei Basler & Hofmann ZH: Störfallvorsorge und Raumplanung', date: ['18.05.2015', '21.05.2015'], location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
+      +listing-item()
+        +item-current({ title: 'Vernissage: Kunstausstellung von Ursula Lee in der Galerie Rehalp', date: '16.06.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
+
 
     +listing({title: "Rückblick"}, {showTitle: true})
       +listing-item()
-        +item-job({ position: 'Bauingenier/in Brückenbau', location: 'Zürich', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'Info-Veranstaltungen zur Berufsausbildung am SwissSkills Bern', date: ['02.04.2015', '09.04.2015'], location: 'Bern', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
       +listing-item()
-        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann Zürich', date: '08.04.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
       +listing-item()
-        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'ZIG (Zentrum für Integrale Gebäudetechnik) — Planerseminar an der Hochschule Luzern', date: '27.04.2015', location: 'Luzern', label: 'Veranstaltung'}, {size: 'medium', icon: 'calendar'})
+
     .section-button
       a.button.button--color-pink.button--size-large(href="#") Weitere Veranstaltungen laden
 
-  .l-border-t.l-spacing-v-s
+  .l-border-t.l-spacing-v-l
     .l-l-width
-      h2 Bei allfälligen Fragen
-      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-margin-v-m
+        h2 Bei allfälligen Fragen
+        p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
 
       .l-grid
         .l-grid-cell.l-one-third

@@ -8,6 +8,7 @@
     label: "Veranstaltung"
     href: "#"
     date: "27.03.2015"
+    location: ""
   options:
     size:
       values: ['small', 'medium', 'large', 'box']
