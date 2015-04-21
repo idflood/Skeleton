@@ -3,9 +3,13 @@ mixin item-current(data, options)
   if options.icon == 'publikation'
     - options.icon = 'archive' // TODO: remove this when the correct "book" icon when available.
 
+  if data.date
+    - var dateElement = timeElement(data.date)
+    - data.label = dateElement + ' | ' + data.label
+
   +item-current-wrapper(data, options)
     span(data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
-    .item-current-type.t-label= data.label
+    .item-current-type.t-label!= data.label
     +item-current-title(data, options)
       | #{data.title}
       if options.isExternal
