@@ -9,35 +9,30 @@ define(['jquery', 'search'], function($, Search){
   var filter = false;
   var searchString = '';
 
-  var searchFieldSearch = new Search({
-    id                : 'search-field',
-    container         : '.js-search',
-    inputFieldSelector: '.js-main-search-field > input',
-    itemsSelector     : '.item-project',
-    onSearchResults   : function (searchQuery, matchingItems, notMatchingItems) {
-      matchingItems.forEach(function ($item) {
-        if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
-          $item.parent().removeClass(HIDDEN_CLASS);
-        }
-      });
-      notMatchingItems.forEach(function ($item) {
-        $item.parent().addClass(HIDDEN_CLASS);
-      });
-    },
-    onSearchSelect: function (matchingItems) {
-      if (matchingItems.length === 1) {
-        var value = highlight.getOriginalText(matchingItems[0]);
-        $filter.find('.filter-value').text(value);
-        $filter.find('.filter-value-input').val(value).trigger('change');
-        $filter.find('.search-field input').val(value);
-        $filter.trigger('filter-has-changed', [value, attribute]);
-        $filter.toggleClass(OPEN_CLASS);
-      }
-    }
-  });
 
-  $('.search-field.js-main-search-field')
-    .on()
+  var $searchContainer = $('.js-search');
+  var $searchInput     = $searchContainer.find('.js-main-search-field > input');
+  var $searchItems     = $searchContainer.find('.item-project');
+
+  $searchContainer.search =
+    new Search($searchContainer)
+      .configure($searchInput, $searchItems)
+      // .on('search.start', function () {
+      //   console.log('[SF]: search start');
+      // })
+      .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
+        matchingItems.forEach(function ($item) {
+          if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
+            $item.parent().removeClass(HIDDEN_CLASS);
+          }
+        });
+        notMatchingItems.forEach(function ($item) {
+          $item.parent().addClass(HIDDEN_CLASS);
+        });
+      })
+      .on('search.select', function () {
+        console.log('[SF]: search select');
+      });
 
   $('.search-field')
     .on('focus.search-field', 'input', function(e) {

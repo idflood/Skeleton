@@ -7,32 +7,38 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
   var OPEN_CLASS = 'is-open';
   var $filter = $('.filter');
 
-  var attribute = $filter.data('filter-attribute');
+  var attribute     = $filter.data('filter-attribute');
 
-  var filterSearch = new Search({
-    id                : 'filter',
-    container         : '.filter',
-    inputFieldSelector: '.js-secondary-search-field > input',
-    itemsSelector     : '.filter-item',
-    onSearchResults   : function (searchQuery, matchingItems, notMatchingItems) {
-      matchingItems.forEach(function ($item) {
-        $item.removeClass(HIDDEN_CLASS);
-        highlight.highlightElement($item, searchQuery);
+  var $filterInput = $filter.find('.js-secondary-search-field > input');
+  var $filterItems = $filter.find('.filter-item');
+
+  $filter.search =
+    new Search($filter)
+      .configure($filterInput, $filterItems)
+      // the filter is not interested on this, for now.
+      // .on('search.start', function () {
+      //   console.log('search start');
+      // })
+      .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
+        console.log('search end', query, matchingItems.length, notMatchingItems.length);
+          matchingItems.forEach(function ($item) {
+            $item.removeClass(HIDDEN_CLASS);
+            highlight.highlightElement($item, query);
+          });
+          notMatchingItems.forEach(function ($item) {
+            $item.addClass(HIDDEN_CLASS);
+          });
+      })
+      .on('search.select', function (evt, matchingItems) {
+        console.log('search select');
+        if (matchingItems.length === 1) {
+          var value = highlight.getOriginalText(matchingItems[0]);
+          $filter.find('.filter-text-value').text(textValue);
+          $filter.find('.search-field input').val(value);
+          $filter.trigger('filter-has-changed', [value, attribute]);
+          $filter.toggleClass(OPEN_CLASS);
+        }
       });
-      notMatchingItems.forEach(function ($item) {
-        $item.addClass(HIDDEN_CLASS);
-      });
-    },
-    onSearchSelect: function (matchingItems) {
-      if (matchingItems.length === 1) {
-        var value = highlight.getOriginalText(matchingItems[0]);
-        $filter.find('.filter-text-value').text(textValue);
-        $filter.find('.search-field input').val(value);
-        $filter.trigger('filter-has-changed', [value, attribute]);
-        $filter.toggleClass(OPEN_CLASS);
-      }
-    }
-  });
 
   $filter.on('click.filter', '.filter-item', function (e) {
     var $item = $(this);

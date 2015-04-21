@@ -1,53 +1,88 @@
 define(['jquery'], function ($){
-  var IS_SEARCHING_CLASS = 'js-is-searching';
 
-  var DEFAULT_OPTIONS = {
-    container         : '.js-search',
-    inputFieldSelector: '.js-search-input-field',
-    itemsSelector     : '.js-search-item',
-    onSearchResults   : function (searchQuery, matchingItems, notMatchingItems) {
-      console.log(searchQuery, matchingItems.length, notMatchingItems.length);
-    },
-    onSearchSelect    : null
+  var EVENTS = {
+    START  : 'search.start',
+    END    : 'search.end',
+    SELECT : 'search.select'
   }
 
-  function Search (options) {
-    var me = this;
-    this.options = options;
-    this.id = options.id;
-    this.$container = $(this.options.container)
-    this.$input = this.$container.find(this.options.inputFieldSelector);
-    this.$items = this.$container.find(this.options.itemsSelector);
+  /**
+   * Creates a new Search class that is responsible
+   * for generic searching.
+   *
+   * It only needs:
+   *  - a $root element, so it can trigger custom events on this element.
+   *  - an $input element, so it can watch for queries and selection (ENTER keypress)
+   *  - an $items elements, which is a list of nodes to do the search.
+   *
+   * This doesn't actually perform any action on the $items (like showing/hiding or
+   * highlighting). Instead, it only analyses with $items match the search query
+   * of the $input.
+   *
+   * The matching works as follows:
+   *   - the .html() of the $item is analyses and if it *search query*
+   *     is contained in it, the item matches the query.
+   *
+   *
+   * USAGE:
+   *
+   *  new Search($root)
+   *   .configure($input, items)
+   *   .on('search.start', function (evt) {
+   *      // You might want to add a loading indicator here.
+   *    })
+   *   .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
+   *     // You might want to show/hide items or/and do some kind of highlighting.
+   *   })
+   *   .on('search.select', function (evt, matchingItems) {
+   *     // You might do select some item or go into a detail page
+   *     // if the select results in only one matching item.
+   *   });
+   *
+   * @class
+   */
+  function Search ($root) {
+    this.$root  = $root;
+    this.$input = null;
+    this.$items = null;
+  }
 
-    var previous = new Date();
-    this.$container.on('change keyup', this.options.inputFieldSelector, function (evt) {
-      me.$input.parent().addClass(IS_SEARCHING_CLASS);
-      me.onInputChange(evt);
+  Search.prototype.configure = function ($input, $items) {
+    var self = this;
+
+    this.$input = $input;
+    this.$items = $items;
+
+    this.matchingItems    = [];
+    this.notMatchingItems = [];
+
+    this.$input.on('change keyup', function (evt) {
+      self.$root.trigger(EVENTS.START);
+      var searchQuery = $(evt.currentTarget).val().toLowerCase();
+      self.search(searchQuery);
+      self.$root.trigger(EVENTS.END, [
+          searchQuery,
+          self.matchingItems,
+          self.notMatchingItems
+        ]);
     });
 
-    if (this.options.onSearchSelect) {
-      this.$container.on('keypress', this.options.inputFieldSelector, $.proxy(function (evt) {
-        var key = evt.which;
-        if (key === 13) {
-          this.options.onSearchSelect(this.matchingItems);
-        }
-      }, this));
-    }
+    this.$input.on('keypress', function (evt) {
+      var key = evt.which;
+      if (key === 13) {
+        self.$root.trigger(EVENTS.SELECT, [self.matchingItems]);
+      }
+    });
 
+    return this.$root;
   }
-
-  Search.prototype.onInputChange = function (evt) {
-
-    var searchQuery = $(evt.currentTarget).val().toLowerCase();
-    this.search(searchQuery);
-    this.options.onSearchResults(searchQuery, this.matchingItems, this.notMatchingItems);
-    this.$input.parent().removeClass(IS_SEARCHING_CLASS);
-  };
 
   Search.prototype.search = function (searchQuery) {
     var self = this;
+
     this.matchingItems    = [];
     this.notMatchingItems = [];
+
     this.$items.each(function (index, item) {
       var $item = $(item);
       var text  = $item.data('highlight-old') || $item.html();
