@@ -33,31 +33,35 @@
 .l-xl-width {
   @extend .l-site-width;
   max-width: $container-xl;
+  padding-left: $size-s; padding-right: $size-s;
 }
 
 .l-l-width {
   @extend .l-site-width;
   max-width: $container-l;
+  padding-left: $size-s; padding-right: $size-s;
 }
 
 .l-m-width {
   @extend .l-site-width;
   max-width: $container-m;
+  padding-left: $size-s; padding-right: $size-s;
 }
 
 .l-s-width {
   @extend .l-site-width;
   max-width: $container-s;
+  padding-left: $size-s; padding-right: $size-s;
 }
 
 
 // Vertical Spacing utility classes
 // To avoid having unneded classes, let's just uncomment one once we need it.
-.l-spacing-v-xl { padding: $size-xl 0; }
-.l-spacing-v-l  { padding: $size-l 0;  }
-// .l-spacing-v-m  { padding: $size-m 0;  }
-.l-spacing-v-s  { padding: $size-s 0;  }
-// .l-spacing-v-xs { padding: $size-xs 0; }
+.l-spacing-v-xl { padding-top: $size-xl; padding-bottom: $size-xl; }
+.l-spacing-v-l  { padding-top: $size-l;  padding-bottom: $size-l;  }
+// .l-spacing-v-m  { padding-top: $size-m;  padding-bottom: $size-m;  }
+.l-spacing-v-s  { padding-top: $size-s;  padding-bottom: $size-s;  }
+// .l-spacing-v-xs { padding-top: $size-xs; padding-bottom: $size-xs; }
 
 .l-margin-v-xl { margin-bottom: $size-xl; }
 .l-margin-v-l { margin-bottom: $size-l; }

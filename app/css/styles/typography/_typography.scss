@@ -17,7 +17,8 @@
   src: url("../assets/fonts/ff-zwo-web-light/ZwoWeb-Light.woff") format("woff");
 }
 
-
+$t-border-spacing: .8333em;
+$-title-margin-bottom: 1.38em;
 
 .t-border-bottom {
   position: relative;
@@ -26,7 +27,7 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: -12px;
+    bottom: -$t-border-spacing;
     left: 0;
     width: 40px;
     height: 1px;
@@ -40,11 +41,30 @@
   list-style: none;
 }
 
-h1 { @extend .t-h1; color: $c-pink; } // override default color which is pink.
-h2 { @extend .t-h2; }
+.t-title {
+  @extend .t-border-bottom;
+  margin-bottom: $-title-margin-bottom + $t-border-spacing;
+}
 
+.t-lead {
+  margin-top: 0;
+}
+
+h1 { @extend .t-h1; }
+h2 { @extend .t-h2; }
+h3 { @extend .t-h3; }
+h4 { @extend .t-h4; }
 p  { @extend .t-paragraph; }
 a  { @extend .t-link; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $strong-font-family;
+}
 
 strong { font-weight: 700; font-family: "ZwoWeb-Semibold"; }
 
@@ -57,4 +77,32 @@ h5,
 h6,
 p {
   max-width: 32em;
+  margin: 0;
+}
+
+
+.t-rt-container {
+
+  // TODO: remove this, is just for debugging
+  background: rgba(red, 0.1);
+
+  // NOTE: h1 doesn't have margin top
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2.27em;
+  }
+
+  p {
+    margin-top: 1em;
+  }
+
+  p + p {
+    margin-top: .5em;
+  }
+
+
+  figure + p { margin-top: $size-m; }
 }
