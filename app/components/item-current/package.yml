@@ -5,12 +5,15 @@
   author: "Ginetta"
   data:
     title: "Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015"
-    type: "Veranstaltungen"
+    label: "Veranstaltung"
     href: "#"
   options:
     size:
       values: ['small', 'medium', 'large', 'box']
       default: 'small'
+    icon:
+      values: ['document', 'calendar', 'publikation']
+      default: 'document'
     isExternal:
       values: [true, false]
       default: false

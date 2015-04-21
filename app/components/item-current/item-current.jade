@@ -2,18 +2,16 @@ mixin item-current(data, options)
   - options = setOptionsDefaults(options, "item-current", components['item-current'])
   - var classes = getOptionsModifier(options, "item-current", ['size'], components['item-current'])
   - var href = data.href || '#'
-  - var icon = 'document' // TODO: change this to correct "news" icon when available.
-  if data.type == 'Veranstaltung'
-    - icon = 'calendar'
-  if data.type == 'Publikation' || data.type == "Broschüre" || data.type == "Newsletter"
-    - icon = 'archive' // TODO: change this to correct "book" icon when available.
+
+  if options.icon == 'publikation'
+    - options.icon = 'archive' // TODO: remove this when the correct "book" icon when available.
 
   if options.size != 'box' && options.size != 'medium'
     - classes += ' l-grid-cell l-one-half'
 
   a(class=classes, href=href)
-    span(data-grunticon-embed, class="item-current-icon icon icon--" + icon)
-    .item-current-type.t-label= data.type
+    span(data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
+    .item-current-type.t-label= data.label
     .item-current-title.t-link
       | #{data.title}
       if options.isExternal
