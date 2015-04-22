@@ -34,10 +34,6 @@ $item-current-icon-color--medium: $c-grey40 !default;
     text-decoration: underline;
     // Bold on each variants.
     font-family: "ZwoWeb-Semibold";
-
-    .item-current--size-large & {
-      font-size: 1.125rem; // overwrite default 16px .t-link font-size (18px).
-    }
   }
 
   &-download {
@@ -67,26 +63,16 @@ $item-current-icon-color--medium: $c-grey40 !default;
       width: 100%;
       height: 100%;
     }
-
-    // Smaller icon on small variant.
-    .item-current--size-small & {
-      width: $item-current-icon-width--small;
-      height: $item-current-icon-height--small;
-      margin-right: $item-current-icon-margin--small;
-    }
-
-    // Larger icon on large and box variant.
-    .item-current--size-large &,
-    .item-current--size-box & {
-      width: $item-current-icon-width--box;
-      height: $item-current-icon-height--box;
-    }
   }
 
   // On small variant the title is below the icon.
   &--size-small {
     .item-current-icon {
       float: left;
+      // Smaller icon on small variant.
+      width: $item-current-icon-width--small;
+      height: $item-current-icon-height--small;
+      margin-right: $item-current-icon-margin--small;
     }
     .item-current-title {
       clear: both;
@@ -111,7 +97,6 @@ $item-current-icon-color--medium: $c-grey40 !default;
       // Only visible on medium size.
       @include absolute-center(vertical);
       right: 0;
-
     }
   }
 
@@ -123,6 +108,21 @@ $item-current-icon-color--medium: $c-grey40 !default;
       position: absolute;
       left: 0;
       top: 0;
+    }
+  }
+
+  &--size-large,
+  &--size-box {
+    // Larger icon on large and box variant.
+    .item-current-icon {
+      width: $item-current-icon-width--box;
+      height: $item-current-icon-height--box;
+    }
+  }
+
+  &--size-large {
+    .item-current-title {
+      font-size: 1.125rem; // overwrite default 16px .t-link font-size (18px).
     }
   }
 }
