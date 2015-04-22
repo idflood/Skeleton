@@ -6,9 +6,18 @@ mixin fullwidth-image(data, options)
     .l-l-width.fullwidth-image-container
       if block
         .fullwidth-image-content.t-lead
+          if data.label
+            .fullwidth-image-label
+              if options.icon != false
+                span.icon(class='icon--' + options.icon, data-grunticon-embed)
+              | #{data.label}
           block
       else if options.content
         .fullwidth-image-content.t-lead
+          if options.icon != false
+            .fullwidth-image-label
+              span.icon(class='icon--' + options.icon, data-grunticon-embed)
+              | #{data.label}
           h3 Wir sind ein unabhängiges Ingenieur-, Planungs- und Beratungs-unternehmem.
           p TVernetztes Denken und ein Blick fürs Ganze zeichnen unsere Arbeit aus.
 
