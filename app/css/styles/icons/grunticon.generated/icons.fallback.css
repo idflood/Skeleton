@@ -34,6 +34,8 @@
 
 .icon--downstrokethin { background-image: url('png/downstrokethin.png'); background-repeat: no-repeat; }
 
+.icon--event { background-image: url('png/event.png'); background-repeat: no-repeat; }
+
 .icon--export { background-image: url('png/export.png'); background-repeat: no-repeat; }
 
 .icon--facebook { background-image: url('png/facebook.png'); background-repeat: no-repeat; }
@@ -96,6 +98,8 @@
 
 .icon--mobilephone { background-image: url('png/mobilephone.png'); background-repeat: no-repeat; }
 
+.icon--news { background-image: url('png/news.png'); background-repeat: no-repeat; }
+
 .icon--paperclip { background-image: url('png/paperclip.png'); background-repeat: no-repeat; }
 
 .icon--pause { background-image: url('png/pause.png'); background-repeat: no-repeat; }
@@ -125,6 +129,8 @@
 .icon--pluscircle { background-image: url('png/pluscircle.png'); background-repeat: no-repeat; }
 
 .icon--popup { background-image: url('png/popup.png'); background-repeat: no-repeat; }
+
+.icon--publication { background-image: url('png/publication.png'); background-repeat: no-repeat; }
 
 .icon--right-stroke { background-image: url('png/right-stroke.png'); background-repeat: no-repeat; }
 
