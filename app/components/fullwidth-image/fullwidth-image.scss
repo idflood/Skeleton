@@ -5,6 +5,8 @@ $fullwidth-image-content-top: $size-m !default;
 $fullwidth-image-content-width: 426px !default;
 $fullwidth-image-content-padding-vertical: $size-m !default;
 $fullwidth-image-content-padding-horizontal: $size-s !default;
+$fullwidth-image-label-margin: $size-s !default;
+$fullwidth-image-label-icon-margin: $s-gutter !default;
 $fullwidth-image-title-margin: 1.25em !default;
 $fullwidth-image-arrow-width: 57px !default;
 $fullwidth-image-arrow-height: 37px !default;
@@ -13,6 +15,7 @@ $fullwidth-image-arrow-margin-bottom: $size-s !default;
 // COLORS
 $fullwidth-image-background: $c-black !default;
 $fullwidth-image-color: $c-white !default;
+$fullwidth-image-label-color: $c-grey40 !default;
 $fullwidth-image-link-color: $fullwidth-image-color !default;
 $fullwidth-image-link-color--active: $c-grey20 !default;
 $fullwidth-image-arrow-color: $c-white !default;
@@ -27,6 +30,22 @@ $fullwidth-image-arrow-color: $c-white !default;
 
   &--size-big .fullwidth-image-container {
     min-height: $fullwidth-image-min-height--big;
+  }
+
+  &-label {
+    margin: -$fullwidth-image-label-margin 0 $fullwidth-image-label-margin 0;
+    color: $fullwidth-image-label-color;
+    font-size: 1rem; // Overwrite the default 18px font-size from .t-lead. (16px)
+    text-transform: uppercase;
+
+    .icon {
+      display: inline-block;
+      margin-right: $fullwidth-image-label-icon-margin;
+      vertical-align: top;
+    }
+    path {
+      fill: currentColor;
+    }
   }
 
   &-content {

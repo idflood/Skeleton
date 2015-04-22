@@ -40,7 +40,6 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
     new Search($filter)
       .configure($filterInput, $filterItems)
       .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
-        console.log('search end', query, matchingItems.length, notMatchingItems.length);
           matchingItems.forEach(function ($item) {
             $item.removeClass(HIDDEN_CLASS);
             highlight.highlightElement($item, query);
@@ -50,7 +49,6 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
           });
       })
       .on('search.select', function (evt, matchingItems) {
-        console.log('search select');
         if (matchingItems.length === 1) {
           var value = highlight.getOriginalText(matchingItems[0]);
           activateFilter(value)
@@ -58,6 +56,7 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
       });
 
   $filter.on('click.filter', '.filter-clear', function (e) {
+    e.preventDefault();
     var $item = $(this);
     var originalText = $item.data('original');
     activateFilter('', originalText);
@@ -65,6 +64,7 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
 
   // 3.1 b) an item being selected by clicking on it.
   $filter.on('click.filter', '.filter-item', function (e) {
+    e.preventDefault();
     var $item = $(this);
     var value = highlight.getOriginalText($item);
 
@@ -106,19 +106,5 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
     if (!is_click_inside_callout) {
       $filter.removeClass(OPEN_CLASS);
     }
-  });
-
-  // See 3.2) description above
-  $('body').on('click.filter', '.filter-item', function(e) {
-    e.preventDefault();
-
-    // Close the callout.
-    $filter.removeClass(OPEN_CLASS);
-
-    // Get the value of the selected filter.
-    var $item = $(this);
-    var value = $item.attr('href').replace('#', '');
-
-    activateFilter(value);
   });
 });

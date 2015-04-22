@@ -4,10 +4,11 @@ define(['jquery', 'search'], function($, Search){
 
   var HIDDEN_CLASS = 'is-hidden';
   var FOCUS_CLASS = 'is-focused';
-  var MUTED_BY_FILTER_CLASS = 'js-muted-by-filter';
-  var filter = false;
-  var searchString = '';
 
+  // We add utility classes so that we know if the item is muted
+  // by search of by filter
+  var MUTED_BY_FILTER_CLASS = 'js-muted-by-filter';
+  var MUTED_BY_SEARCH_CLASS = 'js-muted-by-search';
 
   var $searchContainer = $('.js-search');
   var $searchInput     = $searchContainer.find('.js-main-search-field > input');
@@ -16,22 +17,35 @@ define(['jquery', 'search'], function($, Search){
   $searchContainer.search =
     new Search($searchContainer)
       .configure($searchInput, $searchItems)
-      // .on('search.start', function () {
-      //   console.log('[SF]: search start');
-      // })
       .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
         matchingItems.forEach(function ($item) {
-          if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
-            $item.parent().removeClass(HIDDEN_CLASS);
-          }
+          // (1) do not show items that, even though they match the search
+          // are muted by the filter
+          $item.removeClass(MUTED_BY_SEARCH_CLASS);
+          updateItemVisibility($item);
         });
         notMatchingItems.forEach(function ($item) {
-          $item.parent().addClass(HIDDEN_CLASS);
+          $item.addClass(MUTED_BY_SEARCH_CLASS)
+          updateItemVisibility($item);
         });
       })
-      .on('search.select', function () {
-        console.log('[SF]: search select');
-      });
+
+
+  /**
+   * Decide wheter or not an item is visible.
+   * An item is visible if it is not muted by
+   * search nor filter.
+   * @param  {Jquery} $item
+   * @return {void}
+   */
+  function updateItemVisibility($item) {
+    if ($item.hasClass(MUTED_BY_SEARCH_CLASS) || $item.hasClass(MUTED_BY_FILTER_CLASS)) {
+      $item.parent().addClass(HIDDEN_CLASS);
+    } else {
+      $item.parent().removeClass(HIDDEN_CLASS);
+    }
+  }
+
 
   $('.search-field')
     .on('focus.search-field', 'input', function(e) {
@@ -43,17 +57,15 @@ define(['jquery', 'search'], function($, Search){
     .on('filter.filter-selected', '.filter', function (e, value, attribute) {
       $searchItems.each(function (index, item) {
         var $item = $(item);
+
+        // Update muted class
         if (value === "" || $item.data(attribute) === value) {
-          $item
-            .removeClass(MUTED_BY_FILTER_CLASS)
-            .parent()
-            .removeClass(HIDDEN_CLASS);
+          $item.removeClass(MUTED_BY_FILTER_CLASS);
         } else {
-          $item
-            .addClass(MUTED_BY_FILTER_CLASS)
-            .parent()
-            .addClass(HIDDEN_CLASS);
+          $item.addClass(MUTED_BY_FILTER_CLASS)
         }
+        // Update item visibility
+        updateItemVisibility($item);
       })
     });
 });

@@ -5,6 +5,7 @@
   author: "Ginetta"
   data:
     imgSrc: "http://static.pexels.com/wp-content/uploads/2014/10/long-road-straight-3131.jpg"
+    label: "Reportage"
   options:
     size:
       values: [normal, big]
@@ -14,4 +15,8 @@
       default: true
     arrow:
       values: [true, false]
+      default: false
+    icon:
+      # TODO: change icon to news when https://github.com/ginetta/Basler-Hofmann/pull/86 is commited
+      values: [false, 'document']
       default: false

@@ -12,14 +12,6 @@ block htmlbody
     h1.t-title.t-border-bottom Aktuelles
     +search-field({ placeholder: 'Suche in Farchartikel' }, {})
 
-    +listing({title: "2015"}, {showTitle: true})
-      +listing-item()
-        +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reustal', type: 'Zürich'}, {})
-      +listing-item()
-        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
-      +listing-item()
-        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
-
   +tabs({
     tabs: [
       { text: 'Alle'           , href: 'aktuelles.html'                  },
@@ -31,6 +23,15 @@ block htmlbody
       { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
     ]
   },{})
+
+  .l-l-width.l-spacing-v-l
+    +listing({title: "2015"}, {showTitle: true})
+      +listing-item()
+        +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reustal', type: 'Zürich'}, {})
+      +listing-item()
+        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+      +listing-item()
+        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
 
   .l-border-t.l-spacing-v-s
     .l-l-width
