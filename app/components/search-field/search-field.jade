@@ -2,7 +2,7 @@ mixin search-field (data, options)
   - options = setOptionsDefaults(options, "search-field", components['search-field'])
   - var classes = getOptionsModifier(options, "search-field", null, components['search-field'])
 
-  if block
+  if options.size === "normal"
     - classes += ' js-main-search-field'
   else
     - classes += ' js-secondary-search-field'
