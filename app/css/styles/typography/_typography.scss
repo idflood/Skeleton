@@ -35,6 +35,12 @@ $-title-margin-bottom: 1.38em;
   }
 }
 
+.no-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 
 .t-title {
   @extend .t-border-bottom;
@@ -62,7 +68,6 @@ h6 {
 }
 
 strong { font-weight: 700; font-family: "ZwoWeb-Semibold"; }
-
 
 
 h1,

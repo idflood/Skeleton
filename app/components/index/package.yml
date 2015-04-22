@@ -1,0 +1,11 @@
+---
+  name: "index"
+  version: "0.0.1"
+  description: "Example component"
+  author: "Ginetta"
+  data:
+    title: "A"
+  options:
+    columns:
+      values: [false, true]
+      default: false

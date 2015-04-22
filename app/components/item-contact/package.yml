@@ -11,4 +11,6 @@
     region: "Murten"
     phone: "044 387 13 19"
     email: "test@example.com"
+    attributes:
+      expertises: 'Bahnbau'
   options: {}

@@ -11,7 +11,7 @@ mixin item-project(data, options)
       - dataAttributes['data-' + key] = val
 
 
-  article.item-project(data-searchable, data-filter=dataFilter)&attributes(dataAttributes)
+  article.item-project(data-filter=dataFilter)&attributes(dataAttributes)
     a.item-project-link(href=link)
       img.item-project-image(src=data.imgSrc, alt=data.title)
       h3.t-h3.item-project-title= data.title

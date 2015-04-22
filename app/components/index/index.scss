@@ -1,0 +1,59 @@
+// SPACINGS
+$index-item-margin-bottom: $size-xs !default;
+$index-item-margin-bottom--columns: $size-m !default;
+
+.index {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &-item {
+    margin-bottom: $index-item-margin-bottom;
+  }
+
+  &--columns {
+    .index-item {
+      margin-bottom: $index-item-margin-bottom--columns;
+    }
+
+    // Set the fallback for ie9.
+    html:not(.csscolumns) & {
+      @include breakpoint('desktop') {
+        // We can't use @extend inside media queries, so here is the .l-grid.
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: -$s-gutter;
+        margin-right: calc( -#{$s-gutter} + #{-1px} );
+
+        .index-item {
+          // Here is a .l-grid-cell with .l-one-third.
+          display: inline-block;
+          vertical-align: top;
+          box-sizing: border-box;
+          width: 33.333%;
+          padding-right: $s-gutter;
+        }
+      }
+    }
+
+    // For browsers with csscolumns support.
+    .csscolumns & {
+      .index-item {
+        -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+        page-break-inside: avoid; /* Firefox */
+        break-inside: avoid; /* IE 10+ */
+      }
+
+      @include breakpoint('only-tablet') {
+        column-count: 2;
+        column-gap: $s-gutter;
+      }
+
+      @include breakpoint('desktop') {
+        column-count: 3;
+      }
+    }
+  }
+
+}
