@@ -1,0 +1,71 @@
+// SPACINGS
+$organizational-chart-title-margin: $size-xs;
+$organizational-chart-link-height: 26px;
+$organizational-chart-row-padding: $size-xs !default;
+$organizational-chart-item-padding: $s-gutter ($s-gutter * 1.5) !default;
+$organizational-chart-item-min-height: 12 * $s-gutter !default;
+
+// COLORS
+$organizational-chart-row-border: $c-grey20 !default;
+$organizational-chart-item-background: $c-light-grey !default;
+$organizational-chart-item-background--highlight: $c-light-blue !default;
+
+.organizational-chart {
+  &-title {
+    max-width: 100%; // Overwrite the default h* max-width of 32em.
+    margin-bottom: $organizational-chart-title-margin;
+    text-align: center;
+  }
+
+  &-link {
+    width: 1px;
+    height: $organizational-chart-link-height;
+    margin: auto;
+    background: $organizational-chart-row-border;
+  }
+
+  &-row {
+    position: relative;
+    //border-top: 1px solid $organizational-chart-row-border;
+    padding-top: $organizational-chart-row-padding;
+
+    // Use a pseudo element to draw the border-top, this allows us to use
+    // a different width on the -row--small.
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      top: 0;
+      left: 0;
+      right: 20px; // .l-grid has a margin-right of -20px
+      background: $organizational-chart-row-border;
+    }
+  }
+
+  // Add a hidden pseudo element on the small row to align items to center.
+  &-row--small {
+    &:before {
+      content: "";
+      @extend .l-grid-cell;
+      @extend .l-one-fifth;
+    }
+
+    &:after {
+      left: 20%;
+      width: 58%;
+    }
+  }
+
+  &-item {
+    box-sizing: border-box;
+
+    padding: $organizational-chart-item-padding;
+    min-height: $organizational-chart-item-min-height;
+    background: $organizational-chart-item-background;
+
+    &--highlight {
+      background: $organizational-chart-item-background--highlight;
+    }
+  }
+}
