@@ -8,7 +8,7 @@ mixin header(data, options)
       .l-xl-width
         h1.header-logo
           a(href="/en/")
-            .is-visuallyhidden Basler & Hofmann
+            span.is-visuallyhidden Basler & Hofmann
             img.header-logo-image(src= relativePath + "assets/basler-and-hofmann-logo.svg", alt="Basler & Hofmann")
 
         nav.header-menu.header-menu-secondary
@@ -18,7 +18,7 @@ mixin header(data, options)
                 if link.icon
                   - var itemClass = link.title === options.active ? 'active' : ''
                   a.header-item.t-label(href=link.href, class=itemClass)
-                    i(class="header-icon header-icon-" + link.icon)
+                    span(class="header-icon header-icon-" + link.icon)
                       +header-svg(link.icon)
                     | #{link.title}
                 else
@@ -32,8 +32,8 @@ mixin header(data, options)
               li
                 +header-item(link, options)
 
-        a.header-search(alt="Search", href="#")
-          i.header-search-icon
+        a.header-search( aria-label="Search", href="#")
+          .header-search-icon
             +header-svg("loupe")
 
 mixin header-item(item, options, type)
@@ -44,4 +44,4 @@ mixin header-item(item, options, type)
   a.header-item.t-navigation(href=item.href, class=itemClass)= item.title
 
 mixin header-svg(icon)
-  div(data-grunticon-embed, class="icon--" + icon)
+  span(data-grunticon-embed, class="icon--" + icon)
