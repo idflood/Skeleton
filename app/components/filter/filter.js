@@ -105,18 +105,4 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
       $filter.removeClass(OPEN_CLASS);
     }
   });
-
-  // See 3.2) description above
-  $('body').on('click.filter', '.filter-item', function(e) {
-    e.preventDefault();
-
-    // Close the callout.
-    $filter.removeClass(OPEN_CLASS);
-
-    // Get the value of the selected filter.
-    var $item = $(this);
-    var value = $item.attr('href').replace('#', '');
-
-    activateFilter(value);
-  });
 });
