@@ -56,6 +56,7 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
       });
 
   $filter.on('click.filter', '.filter-clear', function (e) {
+    e.preventDefault();
     var $item = $(this);
     var originalText = $item.data('original');
     activateFilter('', originalText);
@@ -63,6 +64,7 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
 
   // 3.1 b) an item being selected by clicking on it.
   $filter.on('click.filter', '.filter-item', function (e) {
+    e.preventDefault();
     var $item = $(this);
     var value = highlight.getOriginalText($item);
 
