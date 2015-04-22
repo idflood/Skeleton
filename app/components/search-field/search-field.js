@@ -4,6 +4,10 @@ define(['jquery', 'search'], function($, Search){
 
   var HIDDEN_CLASS = 'is-hidden';
   var FOCUS_CLASS = 'is-focused';
+
+  // we need to distiguish when an item is muted by the
+  // filter and when an item is just hidden (because of the search)
+  // see (1)
   var MUTED_BY_FILTER_CLASS = 'js-muted-by-filter';
   var $items = $('[data-searchable]');
   var filter = false;
@@ -19,6 +23,8 @@ define(['jquery', 'search'], function($, Search){
       .configure($searchInput, $searchItems)
       .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
         matchingItems.forEach(function ($item) {
+          // (1) do not show items that, even though they match the search
+          // are muted by the filter
           if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
             $item.parent().removeClass(HIDDEN_CLASS);
           }
@@ -41,7 +47,8 @@ define(['jquery', 'search'], function($, Search){
           $item
             .removeClass(MUTED_BY_FILTER_CLASS);
 
-          // only show the item if it is not hidden (by the search)
+          // If the item is already hidden (this is because of search)
+          // do not show it.
           if (!$item.parent().hasClass(HIDDEN_CLASS)) {
             $item.parent().removeClass(HIDDEN_CLASS);
           }
