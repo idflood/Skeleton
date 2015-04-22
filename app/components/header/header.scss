@@ -1,5 +1,6 @@
 // SPACINGS
 $header-logo-width: 200px !default;
+$header-logo-height: 70px !default;
 $header-menu-height: $size-l !default;
 $header-icon-width: 16px !default;
 $header-icon-height: 14px !default;
@@ -26,10 +27,10 @@ $header-search-color--active: $c-pink !default;
     display: inline;
     float: left;
     margin: 0;
-    padding: 23px 0;
 
     &-image {
       width: $header-logo-width;
+      height: $header-logo-height;
       max-width: 100%;
     }
   }

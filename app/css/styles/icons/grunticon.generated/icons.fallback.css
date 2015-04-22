@@ -4,6 +4,8 @@
 
 .icon--bell { background-image: url('png/bell.png'); background-repeat: no-repeat; }
 
+.icon--briefcase { background-image: url('png/briefcase.png'); background-repeat: no-repeat; }
+
 .icon--broadcast { background-image: url('png/broadcast.png'); background-repeat: no-repeat; }
 
 .icon--browser { background-image: url('png/browser.png'); background-repeat: no-repeat; }
@@ -77,6 +79,8 @@
 .icon--lock { background-image: url('png/lock.png'); background-repeat: no-repeat; }
 
 .icon--lockopen { background-image: url('png/lockopen.png'); background-repeat: no-repeat; }
+
+.icon--logo { background-image: url('png/logo.png'); background-repeat: no-repeat; }
 
 .icon--loupe { background-image: url('png/loupe.png'); background-repeat: no-repeat; }
 

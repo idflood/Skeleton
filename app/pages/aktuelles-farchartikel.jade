@@ -12,12 +12,12 @@ block htmlbody
     h1.t-title.t-border-bottom Aktuelles
     +search-field({ placeholder: 'Suche in Farchartikel' }, {})
 
-    +list({title: "2015"}, {showTitle: true})
-      +list-item()
+    +listing({title: "2015"}, {showTitle: true})
+      +listing-item()
         +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reustal', type: 'Zürich'}, {})
-      +list-item()
+      +listing-item()
         +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
-      +list-item()
+      +listing-item()
         +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
 
   +tabs({

@@ -41,6 +41,7 @@ $-title-margin-bottom: 1.38em;
   list-style: none;
 }
 
+
 .t-title {
   @extend .t-border-bottom;
   margin-bottom: $-title-margin-bottom + $t-border-spacing;
@@ -83,8 +84,12 @@ p {
 
 .t-rt-container {
 
+  ul {
+    margin: 0;
+  }
+
   // TODO: remove this, is just for debugging
-  background: rgba(red, 0.1);
+  // background: rgba(red, 0.1);
 
   // NOTE: h1 doesn't have margin top
   h2,
@@ -92,17 +97,37 @@ p {
   h4,
   h5,
   h6 {
-    margin-top: 2.27em;
+    margin-top: 2em;
   }
 
-  p {
+  p, ul {
     margin-top: 1em;
   }
 
-  p + p {
+  p + p,
+  li + li {
     margin-top: .5em;
   }
 
 
   figure + p { margin-top: $size-m; }
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+    // column-count: 2;
+    // column-gap: 2*$s-gutter;
+    li {
+      position: relative;
+      &:before {
+        content: "_";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: -5px;
+        transform: translateX(-100%);
+      }
+    }
+  }
 }
