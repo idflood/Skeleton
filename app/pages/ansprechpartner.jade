@@ -7,147 +7,160 @@ block htmlhead
 block htmlbody
   +header({}, {active: "Ansprechpartner"})
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Ansprechpartner
+  .js-search(data-search-items-selector=".item-contact")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Ansprechpartner
 
-    +search-field({ placeholder: 'Suche in Ansprechpartner' }, {})
-      +filter({label: "Filter nach Kompetenz"}, {})
-  
-    .l-margin-v-m
-    +index({}, {columns: false})
-      +index-item('A')
-        .l-margin-v-xs
-        ol.no-bullets.l-grid
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
-              firstname: "Hans",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Murten",
-              phone: "044 387 13 19",
-              email: "test@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
-              firstname: "Maria",
-              lastname: "Muster",
-              role: "Leitender Expertin",
-              region: "Zürich",
-              phone: "044 387 13 19",
-              email: "test2@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact3.jpg',
-              firstname: "Peter",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Lausanne",
-              phone: "044 387 13 19",
-              email: "test3@example.com"
-              }, {})
-                
-      +index-item('B')
-        .l-margin-v-xs
-        ol.no-bullets.l-grid
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
-              firstname: "Hans",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Murten",
-              phone: "044 387 13 19",
-              email: "test@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
-              firstname: "Maria",
-              lastname: "Muster",
-              role: "Leitender Expertin",
-              region: "Zürich",
-              phone: "044 387 13 19",
-              email: "test2@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
-              firstname: "Peter",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Lausanne",
-              phone: "044 387 13 19",
-              email: "test3@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
-              firstname: "Hans",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Murten",
-              phone: "044 387 13 19",
-              email: "test@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
-              firstname: "Maria",
-              lastname: "Muster",
-              role: "Leitender Expertin",
-              region: "Zürich",
-              phone: "044 387 13 19",
-              email: "test2@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact3.jpg',
-              firstname: "Peter",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Lausanne",
-              phone: "044 387 13 19",
-              email: "test3@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
-              firstname: "Hans",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Murten",
-              phone: "044 387 13 19",
-              email: "test@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
-              firstname: "Maria",
-              lastname: "Muster",
-              role: "Leitender Expertin",
-              region: "Zürich",
-              phone: "044 387 13 19",
-              email: "test2@example.com"
-              }, {})
-          li.l-grid-cell.l-one-third.l-margin-v-s
-            +item-contact({
-              imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
-              firstname: "Peter",
-              lastname: "Muster",
-              role: "Leitender Experte",
-              region: "Lausanne",
-              phone: "044 387 13 19",
-              email: "test3@example.com"
-              }, {})
+      +search-field({ placeholder: 'Suche in Ansprechpartner' }, {})
+        +filter({label: "Filter nach ", filterValue: "Kompetenz", filterAttribute: "expertises"}, {})
 
-    .section-button
-      +button({
-          href: "#",
-          text: "Weitere Kontakte laden"
-      }, { color: 'pink', size: 'large' })
+      .l-margin-v-m
+      +index({}, {columns: false})
+        +index-item('A')
+          .l-margin-v-xs
+          ol.no-bullets.l-grid
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
+                firstname: "Hans",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Murten",
+                phone: "044 387 13 19",
+                email: "test@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
+                firstname: "Maria",
+                lastname: "Muster",
+                role: "Leitender Expertin",
+                region: "Zürich",
+                phone: "044 387 13 19",
+                email: "test2@example.com",
+                attributes: { expertises: 'Altlasten' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact3.jpg',
+                firstname: "Peter",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Lausanne",
+                phone: "044 387 13 19",
+                email: "test3@example.com",
+                attributes: { expertises: 'Altlasten' }
+                }, {})
+
+        +index-item('B')
+          .l-margin-v-xs
+          ol.no-bullets.l-grid
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
+                firstname: "Hans",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Murten",
+                phone: "044 387 13 19",
+                email: "test@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
+                firstname: "Maria",
+                lastname: "Muster",
+                role: "Leitender Expertin",
+                region: "Zürich",
+                phone: "044 387 13 19",
+                email: "test2@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
+                firstname: "Peter",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Lausanne",
+                phone: "044 387 13 19",
+                email: "test3@example.com",
+                attributes: { expertises: 'Altlasten' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
+                firstname: "Hans",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Murten",
+                phone: "044 387 13 19",
+                email: "test@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
+                firstname: "Maria",
+                lastname: "Muster",
+                role: "Leitender Expertin",
+                region: "Zürich",
+                phone: "044 387 13 19",
+                email: "test2@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact3.jpg',
+                firstname: "Peter",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Lausanne",
+                phone: "044 387 13 19",
+                email: "test3@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
+                firstname: "Hans",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Murten",
+                phone: "044 387 13 19",
+                email: "test@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
+                firstname: "Maria",
+                lastname: "Muster",
+                role: "Leitender Expertin",
+                region: "Zürich",
+                phone: "044 387 13 19",
+                email: "test2@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+            li.l-grid-cell.l-one-third.l-margin-v-s
+              +item-contact({
+                imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
+                firstname: "Peter",
+                lastname: "Muster",
+                role: "Leitender Experte",
+                region: "Lausanne",
+                phone: "044 387 13 19",
+                email: "test3@example.com",
+                attributes: { expertises: 'Bahnbau' }
+                }, {})
+
+      .section-button
+        +button({
+            href: "#",
+            text: "Weitere Kontakte laden"
+        }, { color: 'pink', size: 'large' })
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

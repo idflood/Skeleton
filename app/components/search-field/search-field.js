@@ -5,14 +5,13 @@ define(['jquery', 'search'], function($, Search){
   var HIDDEN_CLASS = 'is-hidden';
   var FOCUS_CLASS = 'is-focused';
   var MUTED_BY_FILTER_CLASS = 'js-muted-by-filter';
-  var $items = $('[data-searchable]');
   var filter = false;
   var searchString = '';
 
 
   var $searchContainer = $('.js-search');
   var $searchInput     = $searchContainer.find('.js-main-search-field > input');
-  var $searchItems     = $searchContainer.find('.item-project');
+  var $searchItems     = $searchContainer.find($searchContainer.data('search-items-selector'));
 
   $searchContainer.search =
     new Search($searchContainer)
@@ -42,7 +41,7 @@ define(['jquery', 'search'], function($, Search){
       $(this).parent().removeClass(FOCUS_CLASS)
     })
     .on('filter.filter-selected', '.filter', function (e, value, attribute) {
-      $items.each(function (index, item) {
+      $searchItems.each(function (index, item) {
         var $item = $(item);
         if (value === "" || $item.data(attribute) === value) {
           $item

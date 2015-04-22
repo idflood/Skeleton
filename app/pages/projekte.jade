@@ -6,7 +6,7 @@ block htmlhead
 
 block htmlbody
   +header({}, {active: "Projekte"})
-  .js-search
+  .js-search(data-search-items-selector=".item-project")
     .l-l-width.l-spacing-v-l
       h1.t-title.t-border-bottom Projekte
 
