@@ -9,6 +9,7 @@ define(['jquery', 'search'], function($, Search){
   // filter and when an item is just hidden (because of the search)
   // see (1)
   var MUTED_BY_FILTER_CLASS = 'js-muted-by-filter';
+  var MUTED_BY_SEARCH_CLASS = 'js-muted-by-search';
   var $items = $('[data-searchable]');
   var filter = false;
   var searchString = '';
@@ -25,12 +26,17 @@ define(['jquery', 'search'], function($, Search){
         matchingItems.forEach(function ($item) {
           // (1) do not show items that, even though they match the search
           // are muted by the filter
+          $item.removeClass(MUTED_BY_SEARCH_CLASS);
+
           if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
             $item.parent().removeClass(HIDDEN_CLASS);
           }
         });
         notMatchingItems.forEach(function ($item) {
-          $item.parent().addClass(HIDDEN_CLASS);
+          $item
+            .addClass(MUTED_BY_SEARCH_CLASS)
+            .parent()
+            .addClass(HIDDEN_CLASS);
         });
       })
   $('.search-field')
@@ -43,7 +49,19 @@ define(['jquery', 'search'], function($, Search){
     .on('filter.filter-selected', '.filter', function (e, value, attribute) {
       $items.each(function (index, item) {
         var $item = $(item);
-        if (value === "" || $item.data(attribute) === value) {
+
+        // filter reset, show  the item if it is not muted by search
+        if (value === "") {
+          $item.removeClass(MUTED_BY_FILTER_CLASS);
+
+          if (!$item.hasClass(MUTED_BY_SEARCH_CLASS)) {
+            $item
+              .parent()
+              .removeClass(HIDDEN_CLASS);
+          }
+
+        } else if ($item.data(attribute) === value) {
+          // item matches filter, only show it if it is not muted by search
           $item
             .removeClass(MUTED_BY_FILTER_CLASS);
 
@@ -54,6 +72,7 @@ define(['jquery', 'search'], function($, Search){
           }
 
         } else {
+          // item doesn't match filter, hide it always
           $item
             .addClass(MUTED_BY_FILTER_CLASS)
             .parent()
