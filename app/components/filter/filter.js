@@ -40,7 +40,6 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
     new Search($filter)
       .configure($filterInput, $filterItems)
       .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
-        console.log('search end', query, matchingItems.length, notMatchingItems.length);
           matchingItems.forEach(function ($item) {
             $item.removeClass(HIDDEN_CLASS);
             highlight.highlightElement($item, query);
@@ -50,7 +49,6 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
           });
       })
       .on('search.select', function (evt, matchingItems) {
-        console.log('search select');
         if (matchingItems.length === 1) {
           var value = highlight.getOriginalText(matchingItems[0]);
           activateFilter(value)

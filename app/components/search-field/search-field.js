@@ -17,9 +17,6 @@ define(['jquery', 'search'], function($, Search){
   $searchContainer.search =
     new Search($searchContainer)
       .configure($searchInput, $searchItems)
-      // .on('search.start', function () {
-      //   console.log('[SF]: search start');
-      // })
       .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
         matchingItems.forEach(function ($item) {
           if (!$item.hasClass(MUTED_BY_FILTER_CLASS)) {
@@ -30,10 +27,6 @@ define(['jquery', 'search'], function($, Search){
           $item.parent().addClass(HIDDEN_CLASS);
         });
       })
-      .on('search.select', function () {
-        console.log('[SF]: search select');
-      });
-
   $('.search-field')
     .on('focus.search-field', 'input', function(e) {
       $(this).parent().addClass(FOCUS_CLASS);
