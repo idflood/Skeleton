@@ -5,7 +5,6 @@ function convertDateToUS(date) {
 
 function timeElement(date) {
   var dateUS = convertDateToUS(date);
-
   return '<time datetime="' + dateUS + '" itemprop="datePublished">' + date + '</time>';
 }
 module.exports.timeElement = timeElement;

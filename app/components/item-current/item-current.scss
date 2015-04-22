@@ -11,6 +11,7 @@ $item-current-icon-width--box: 6 * $s-gutter !default;
 $item-current-icon-height--box: 5 * $s-gutter !default;
 $item-current-icon-margin--small: 5px !default;
 $item-current-icon-margin--box: $size-xs !default;
+
 $item-current-external-margin: 5px !default;
 $item-current-download-margin: 5px !default;
 
@@ -154,8 +155,9 @@ $item-current-icon-color--box: $c-grey40 !default;
         fill: $item-current-icon-color--box;
       }
     }
-
-    &.item-current--background-light-blue .item-current-icon { background: $c-light-blue;  }
-    &.item-current--background-light-green .item-current-icon { background: $c-light-green; }
   }
+
+  // The background modifier is only added when using box size.
+  &--background-light-blue .item-current-icon { background: $c-light-blue;  }
+  &--background-light-green .item-current-icon { background: $c-light-green; }
 }
