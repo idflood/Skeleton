@@ -11,6 +11,7 @@ $item-current-icon-width--box: 6 * $s-gutter !default;
 $item-current-icon-height--box: 5 * $s-gutter !default;
 $item-current-icon-margin--small: 5px !default;
 $item-current-external-margin: 5px !default;
+$item-current-download-margin: 5px !default;
 
 // COLORS
 $item-current-type-color--medium: $c-grey60 !default;
@@ -21,8 +22,7 @@ $item-current-icon-color--medium: $c-grey40 !default;
   position: relative;
   margin-bottom: $item-current-spacing;
 
-  &-link {
-    display: inline-block; // Overwrite default <a> display.
+  a {
     text-decoration: none;
   }
 
@@ -37,6 +37,15 @@ $item-current-icon-color--medium: $c-grey40 !default;
 
     .item-current--size-large & {
       font-size: 1.125rem; // overwrite default 16px .t-link font-size (18px).
+    }
+  }
+
+  &-download {
+    .icon {
+      margin-left: $item-current-download-margin;
+    }
+    path {
+      fill: currentColor;
     }
   }
 
@@ -97,6 +106,12 @@ $item-current-icon-color--medium: $c-grey40 !default;
     }
     .item-current-icon path {
       fill: $item-current-icon-color--medium;
+    }
+    .item-current-download {
+      // Only visible on medium size.
+      @include absolute-center(vertical);
+      right: 0;
+
     }
   }
 

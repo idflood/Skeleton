@@ -1,5 +1,7 @@
 mixin item-current(data, options)
   - options = setOptionsDefaults(options, "item-current", components['item-current'])
+  - options.href = options.href || '#'
+
   if options.icon == 'publikation'
     - options.icon = 'archive' // TODO: remove this when the correct "book" icon when available.
 
@@ -17,16 +19,19 @@ mixin item-current(data, options)
     - data.label = labelElements.join(' ') + ' | ' + data.label
 
   +item-current-wrapper(data, options)
-    span(data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
-    .item-current-type.t-label!= data.label
+    a(href=options.href, data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
+    a.item-current-type.t-label(href=options.href)!= data.label
     +item-current-title(data, options)
       | #{data.title}
       if options.isExternal
         span(data-grunticon-embed, class="icon item-current-external icon--export")
 
+    if options.download
+      a.item-current-download(href="#")= options.download
+        span.icon.icon--download(data-grunticon-embed)
+
 mixin item-current-wrapper(data, options)
   - var classes = getOptionsModifier(options, "item-current", ['size'], components['item-current'])
-  - var href = data.href || '#'
 
   if options.size != 'box' && options.size != 'medium'
     - classes += ' l-grid-cell l-one-half'
@@ -36,17 +41,17 @@ mixin item-current-wrapper(data, options)
     if options.icon == 'calendar'
       - itemtype = "http://schema.org/Event"
     article(class=classes, itemscope, itemtype=itemtype)
-      a.item-current-link(href=href, itemprop="url")
-        block
-  else
-    a.item-current-link(class=classes, href=href)
-      block
-
-mixin item-current-title(data, options)
-  - var classes = 'item-current-title t-link'
-  if options.size == 'medium'
-    h2(class=classes, itemprop="name")
       block
   else
     div(class=classes)
       block
+
+mixin item-current-title(data, options)
+  - var classes = 'item-current-title t-link'
+  a(href=options.href, itemprop="url")
+    if options.size == 'medium'
+      h2(class=classes, itemprop="name")
+        block
+    else
+      div(class=classes)
+        block

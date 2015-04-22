@@ -19,3 +19,6 @@
     isExternal:
       values: [true, false]
       default: false
+    download:
+      values: [false, '.pdf']
+      default: false

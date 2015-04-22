@@ -27,16 +27,26 @@ block htmlbody
   .l-l-width.l-spacing-v-l
     +listing({title: "2015"}, {showTitle: true})
       +listing-item()
-        +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reustal', legend: 'Zürich'}, {})
+        +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reusstal', label: 'Fachartikel', date: '27.03.2015'}, {size: 'medium', download: '.pdf'})
       +listing-item()
-        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'Strömungslenkung an der unteren Tavern', label: 'Fachartikel', date: '27.03.2015'}, {size: 'medium', download: '.pdf'})
+    
+    +listing({title: "2014"}, {showTitle: true})
       +listing-item()
-        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+        +item-current({ title: 'Kommunikative Begleitung für das Energie Coaching der Stadt Zürich', label: 'Fachartikel', date: '12.03.2014'}, {size: 'medium'})
+      +listing-item()
+        +item-current({ title: 'Ermessenspielraum und Willkürgrenze bei Gestaltungsfragen', label: 'Fachartikel', date: '20.02.2014'}, {size: 'medium'})
+      +listing-item()
+        +item-current({ title: 'Gelungener Start in Lausanne', label: 'Fachartikel', date: '12.02.2014'}, {size: 'medium', download: '.pdf'})
 
-  .l-border-t.l-spacing-v-s
+    .section-button
+      a.button.button--color-pink.button--size-large(href="#") Weitere Fachartikel laden
+
+  .l-border-t.l-spacing-v-l
     .l-l-width
-      h2 Bei allfälligen Fragen
-      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-margin-v-m
+        h2 Bei allfälligen Fragen
+        p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
 
       .l-grid
         .l-grid-cell.l-one-third
