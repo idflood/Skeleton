@@ -46,9 +46,13 @@ define(['jquery', 'search'], function($, Search){
         var $item = $(item);
         if (value === "" || $item.data(attribute) === value) {
           $item
-            .removeClass(MUTED_BY_FILTER_CLASS)
-            .parent()
-            .removeClass(HIDDEN_CLASS);
+            .removeClass(MUTED_BY_FILTER_CLASS);
+
+          // only show the item if it is not hidden (by the search)
+          if (!$item.parent().hasClass(HIDDEN_CLASS)) {
+            $item.parent().removeClass(HIDDEN_CLASS);
+          }
+
         } else {
           $item
             .addClass(MUTED_BY_FILTER_CLASS)
