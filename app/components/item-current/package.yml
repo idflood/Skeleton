@@ -14,8 +14,8 @@
       values: ['small', 'medium', 'large', 'box']
       default: 'small'
     icon:
-      values: ['document', 'calendar', 'publikation']
-      default: 'document'
+      values: ['news', 'event', 'publication']
+      default: 'news'
     isExternal:
       values: [true, false]
       default: false

@@ -45,7 +45,7 @@ module.exports.timeElementEvent = timeElementEvent;
 function itemCurrentLabel(data, options) {
   var labelElements = [];
   if (data.date) {
-    if (options.icon === 'calendar') {
+    if (options.icon === 'event') {
       // If this is an event we need to set the start and end date.
       labelElements.push(timeElementEvent(data.date));
     }

@@ -2,9 +2,6 @@ mixin item-current(data, options)
   - options = setOptionsDefaults(options, "item-current", components['item-current'])
   - options.href = options.href || '#'
 
-  if options.icon == 'publikation'
-    - options.icon = 'archive' // TODO: remove this when the correct "book" icon when available.
-
   - itemCurrentLabel(data, options)
 
   +item-current-wrapper(data, options)
@@ -31,7 +28,7 @@ mixin item-current-wrapper(data, options)
 
   if options.size == 'box' || options.size == 'medium'
     - var itemtype = "http://schema.org/Article"
-    if options.icon == 'calendar'
+    if options.icon == 'event'
       - itemtype = "http://schema.org/Event"
     article(class=classes, itemscope, itemtype=itemtype)
       block
