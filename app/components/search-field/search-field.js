@@ -41,7 +41,7 @@ define(['jquery', 'search'], function($, Search){
     .on('blur.search-field', 'input', function(e) {
       $(this).parent().removeClass(FOCUS_CLASS)
     })
-    .on('filter-has-changed', '.filter', function (e, value, attribute) {
+    .on('filter.filter-selected', '.filter', function (e, value, attribute) {
       $items.each(function (index, item) {
         var $item = $(item);
         if (value === "" || $item.data(attribute) === value) {

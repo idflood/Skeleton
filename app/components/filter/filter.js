@@ -1,13 +1,37 @@
 define(['jquery', 'search', 'highlight'], function($, Search, highlight){
   'use strict';
 
+
+  /**
+   * The filter module does the following things:
+   *   1) opens when clicking on the filter button when it is closed.
+   *   2) closes when clicking on the outside of the filter OR clicking
+   *      on the filter button when it is opened.
+   *   3) when opened:
+   *       3.1) uses the Search functionality to filter items in its
+   *            itemsGroups:
+   *
+   *            a) when a search is completed it shows and highlights
+   *               matching items; it hides notMatching items
+   *
+   *            b) when an item is selected (via ENTER on the input field)
+   *               it selects that item and closes. (similar to 3.2)
+   *      3.2) when a user clicks on an item in its itemGroups it selects
+   *           that item and closes.
+   *
+   *      3.3) when a user clicks on the "All" it clears the filter
+   *          and closes (it keeps any search query, if any is present).
+   *
+   */
+
   var HIDDEN_CLASS = 'js-is-hidden';
-
-
   var OPEN_CLASS = 'is-open';
-  var $filter = $('.filter');
+  var EVENTS = {
+    FILTER_SELECTED: 'filter.filter-selected'
+  };
 
-  var attribute     = $filter.data('filter-attribute');
+
+  var $filter = $('.filter');
 
   var $filterInput = $filter.find('.js-secondary-search-field > input');
   var $filterItems = $filter.find('.filter-item');
@@ -15,10 +39,6 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
   $filter.search =
     new Search($filter)
       .configure($filterInput, $filterItems)
-      // the filter is not interested on this, for now.
-      // .on('search.start', function () {
-      //   console.log('search start');
-      // })
       .on('search.end', function (evt, query, matchingItems, notMatchingItems) {
         console.log('search end', query, matchingItems.length, notMatchingItems.length);
           matchingItems.forEach(function ($item) {
@@ -33,30 +53,45 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
         console.log('search select');
         if (matchingItems.length === 1) {
           var value = highlight.getOriginalText(matchingItems[0]);
-          $filter.find('.filter-text-value').text(textValue);
-          $filter.find('.search-field input').val(value);
-          $filter.trigger('filter-has-changed', [value, attribute]);
-          $filter.toggleClass(OPEN_CLASS);
+          activateFilter(value)
         }
       });
 
-  $filter.on('click.filter', '.filter-item', function (e) {
+  $filter.on('click.filter', '.filter-clear', function (e) {
     var $item = $(this);
-
-    var value = highlight.getOriginalText($item);
-    var textValue = value;
-
-    if ($item.hasClass('filter-item--all')) {
-      textValue = $item.data('original');
-      value = "";
-    }
-
-    $filter.find('.filter-text-value').text(textValue);
-    $filter.find('.search-field input').val(value);
-    $filter.trigger('filter-has-changed', [value, attribute]);
-
+    var originalText = $item.data('original');
+    activateFilter('', originalText);
   });
 
+  // 3.1 b) an item being selected by clicking on it.
+  $filter.on('click.filter', '.filter-item', function (e) {
+    var $item = $(this);
+    var value = highlight.getOriginalText($item);
+
+    activateFilter(value)
+  });
+
+  /**
+   *
+   * What it means to have a selected filter?
+   * Selecting a filter means 2 things:
+   *   1) changing the filter button text.
+   *   2) triggering the 'filter-has-changed' event with the value of the selected field
+   *   3) close the filter
+   **/
+  function activateFilter (filterValue, filterText) {
+    var attribute = $filter.data('filter-attribute');
+
+    var filterText = filterText || filterValue;
+    // 1)
+    $filter.find('.filter-text-value').text(filterText);
+    // 2)
+    $filter.trigger(EVENTS.FILTER_SELECTED, [filterValue, attribute]);
+    // 3)
+    $filter.toggleClass(OPEN_CLASS);
+  }
+
+  // See 1) and 2) description above.
   $('body').on('click.filter', function(e) {
     var $target = $(e.target);
     var is_click_inside_callout = $target.closest('.filter-callout').length;
@@ -73,6 +108,7 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
     }
   });
 
+  // See 3.2) description above
   $('body').on('click.filter', '.filter-item', function(e) {
     e.preventDefault();
 
@@ -80,16 +116,9 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
     $filter.removeClass(OPEN_CLASS);
 
     // Get the value of the selected filter.
-    var selected = $(this).attr('href').replace('#', '');
-    // If we selected "Alle" set the value to false.
-    if (selected == '') {
-      selected = false;
-    }
+    var $item = $(this);
+    var value = $item.attr('href').replace('#', '');
 
-    // Keep the clicked value in the filter data
-    $filter.data('value', selected);
-
-    // Trigger the custom event.
-    $filter.trigger('filter', [selected]);
+    activateFilter(value);
   });
 });

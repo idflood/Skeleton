@@ -9,14 +9,13 @@ mixin filter(data, options)
       span(data-grunticon-embed, class='icon icon--downstroke')
 
     .filter-callout
-      +search-field({ placeholder: '' }, {size: "small"})
-
+      .filter-input-container
+        +search-field({ placeholder: '' }, {size: "small"})
+        a.filter-clear.t-label(href="#", data-original=data.filterValue) Alle
       .filter-content
         +filter-content(itemGroups, data)
 
 mixin filter-content(itemGroups, data)
-
-  //- a.filter-item.filter-item--all(href="#", data-original=data.filterValue) Alle
   each group, index in itemGroups
     div.filter-index= group.label
     ol.filter-index-list

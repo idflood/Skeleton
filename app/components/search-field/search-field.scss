@@ -41,6 +41,7 @@ input.search-field-input { box-sizing: border-box; }
   &--size-small {
     margin-top: 0;
     .search-field-input {
+      padding-right: $size-m; // ALLE button
       height: $search-field-height--small; // Used inside the filter callout
     }
   }
