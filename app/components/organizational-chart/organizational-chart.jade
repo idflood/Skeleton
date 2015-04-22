@@ -5,18 +5,18 @@ mixin organizational-chart(data, options)
   .organizational-chart.l-spacing-l
     h3.organizational-chart-title= components["organizational-chart"].data.title
     each row, index in rows
-      - var rowClasses = 'l-grid'
+      - var isSmall = false
       if row.length == 3
-        - rowClasses += " organizational-chart-row--small"
+        - isSmall = true
       .organizational-chart-link
-      .organizational-chart-row(class=rowClasses)
+      .l-grid
         each item, index2 in row
           - var classes = ''
 
           if item.highlight
             - classes = 'organizational-chart-item--highlight'
-          
-          .l-grid-cell.l-one-fifth
+
+          .organizational-chart-item-container.l-grid-cell.l-one-fifth(class=isSmall && index2 === 0 ? 'l-push-one-fifth' : '')
             div.organizational-chart-item(class=classes)
               .t-h4= item.title
               .t-link= item.location
