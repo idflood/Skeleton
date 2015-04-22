@@ -28,7 +28,7 @@ block htmlbody
   .l-l-width.l-spacing-v-l
     //- TODO: CHANGE THIS
     .l-grid
-      .l-grid-cell.l-margin-v-m.l-thirty-seven
+      .l-grid-cell.l-margin-v-m.l-two-fifth
         +item-project({
           title: "Pistensanierung Zürich Flughafen",
           imgSrc: relativePath + 'assets/projects/project1.jpg',
@@ -36,17 +36,24 @@ block htmlbody
           link: './detail-project.html'
 
         }, {legend: true})
-      .l-grid-cell.l-margin-v-m.l-one-quarter
-        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Herzstück der 2014 eingeweihten Durchmesserlinie ist der grosse Bahnhof im Zürcher Untergrund"}, {legend: true})
-      .l-grid-cell.l-margin-v-m.l-thirty-seven
+      .l-grid-cell.l-margin-v-m.l-thirty
+        +item-current({ title: 'Fachtagung bei der Basler & Hofman ZH: Schule als Gestaltungs-, Lern- und Lebensraum', date: '30.03.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'box', icon: 'calendar', background: 'light-pink'})
+      .l-grid-cell.l-margin-v-m.l-thirty
         +item-project({title: "Tramlinie vom Escher-Wyss-Platz bis Zürich Altstetten", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Die Verwandlung von Zürich-West: sieben neue Tramhaltestellen und vernetzte Grün- und Freiräume"}, {legend: true})
+      
+      .l-grid-cell.l-margin-v-m.l-thirty
+        +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt ', date: '21.03.2015', label: 'Fachartikel'}, {size: 'box', icon: 'document', background: 'light-blue'})
+      .l-grid-cell.l-margin-v-m.l-thirty-seven
+        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Herzstück der 2014 eingeweihten Durchmesserlinie ist der grosse Bahnhof im Zürcher Untergrund"}, {legend: true})
 
-
-
-  .l-border-t.l-spacing-v-s
+    .section-button
+      a.button.button--color-pink.button--size-large(href="#") Weitere Fachartikel laden
+      
+  .l-border-t.l-spacing-v-l
     .l-l-width
-      h2 Bei allfälligen Fragen
-      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-margin-v-m
+        h2 Bei allfälligen Fragen
+        p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
 
       .l-grid
         .l-grid-cell.l-one-third

@@ -24,8 +24,12 @@ mixin item-current-wrapper(data, options)
 
   if options.size != 'box' && options.size != 'medium'
     - classes += ' l-grid-cell l-one-half'
+  
+  if options.size == 'box'
+    - // Set the background class for box size only.
+    - classes += ' item-current--background-' + options.background
 
-  if options.size == 'medium'
+  if options.size == 'box' || options.size == 'medium'
     - var itemtype = "http://schema.org/Article"
     if options.icon == 'calendar'
       - itemtype = "http://schema.org/Event"

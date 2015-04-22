@@ -10,6 +10,7 @@ $item-current-icon-height: 4 * $s-gutter !default;
 $item-current-icon-width--box: 6 * $s-gutter !default;
 $item-current-icon-height--box: 5 * $s-gutter !default;
 $item-current-icon-margin--small: 5px !default;
+$item-current-icon-margin--box: $size-xs !default;
 $item-current-external-margin: 5px !default;
 $item-current-download-margin: 5px !default;
 
@@ -17,6 +18,7 @@ $item-current-download-margin: 5px !default;
 $item-current-type-color--medium: $c-grey60 !default;
 $item-current-title-color--medium: $c-black !default;
 $item-current-icon-color--medium: $c-grey40 !default;
+$item-current-icon-color--box: $c-grey40 !default;
 
 .item-current {
   position: relative;
@@ -82,21 +84,29 @@ $item-current-icon-color--medium: $c-grey40 !default;
   &--size-medium {
     // Different vertical spacing for medium size (in listing).
     margin: $item-current-spacing--medium 0;
-    .item-current-type {
-      color: $item-current-type-color--medium;
-    }
-    .item-current-title {
-      max-width: 100%; // Overwrite default h2 max-width of 32em.
-      text-decoration: none; // Remove underline from title on medium only.
-      color: $item-current-title-color--medium;
-    }
+
     .item-current-icon path {
       fill: $item-current-icon-color--medium;
     }
+
     .item-current-download {
       // Only visible on medium size.
       @include absolute-center(vertical);
       right: 0;
+    }
+  }
+
+  // Medium and box variant share the same title and type style.
+  &--size-medium,
+  &--size-box {
+    .item-current-type {
+      color: $item-current-type-color--medium;
+    }
+
+    .item-current-title {
+      max-width: 100%; // Overwrite default h2 max-width of 32em.
+      text-decoration: none; // Remove underline from title on medium only.
+      color: $item-current-title-color--medium;
     }
   }
 
@@ -111,18 +121,41 @@ $item-current-icon-color--medium: $c-grey40 !default;
     }
   }
 
-  &--size-large,
-  &--size-box {
-    // Larger icon on large and box variant.
+  &--size-large {
+    .item-current-title {
+      font-size: 1.125rem; // overwrite default 16px .t-link font-size (18px).
+    }
+
+    // Larger icon on large variant.
     .item-current-icon {
       width: $item-current-icon-width--box;
       height: $item-current-icon-height--box;
     }
   }
 
-  &--size-large {
-    .item-current-title {
-      font-size: 1.125rem; // overwrite default 16px .t-link font-size (18px).
+  &--size-box {
+    .item-current-icon {
+      position: relative;
+      display: block;
+      // Use padding top trick to keep 1:1 aspect ratio.
+      padding-top: 100%;
+      background: $c-light-pink;
+      width: auto; // Overwrite size defined on .item-current-icon.
+      height: auto;
+      margin-bottom: $item-current-icon-margin--box;
+
+      svg {
+        @include absolute-center();
+        width: $item-current-icon-width--box;
+        height: $item-current-icon-height--box;
+      }
+
+      path {
+        fill: $item-current-icon-color--box;
+      }
     }
+
+    &.item-current--background-light-blue .item-current-icon { background: $c-light-blue;  }
+    &.item-current--background-light-green .item-current-icon { background: $c-light-green; }
   }
 }

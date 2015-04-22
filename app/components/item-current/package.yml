@@ -22,3 +22,6 @@
     download:
       values: [false, '.pdf']
       default: false
+    background:
+      values: ["light-pink", "light-blue", "light-green"]
+      default: "light-pink"
