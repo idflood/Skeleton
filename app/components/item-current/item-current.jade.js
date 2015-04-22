@@ -8,7 +8,6 @@ function timeElement(date) {
 
   return '<time datetime="' + dateUS + '" itemprop="datePublished">' + date + '</time>';
 }
-
 module.exports.timeElement = timeElement;
 
 function timeElementEvent(date) {
@@ -41,5 +40,28 @@ function timeElementEvent(date) {
     return result;
   }
 }
-
 module.exports.timeElementEvent = timeElementEvent;
+
+function itemCurrentLabel(data, options) {
+  var labelElements = [];
+  if (data.date) {
+    if (options.icon === 'calendar') {
+      // If this is an event we need to set the start and end date.
+      labelElements.push(timeElementEvent(data.date));
+    }
+    else {
+      // If this is an article simply set the publisehed date.
+      labelElements.push(timeElement(data.date));
+    }
+  }
+
+  // Add the location for event type.
+  if (data.location) {
+    labelElements.push('<span itemprop="location">' + data.location + '</span>');
+  }
+
+  if (labelElements.length) {
+    data.label = labelElements.join(' ') + ' | ' + data.label;
+  }
+}
+module.exports.itemCurrentLabel = itemCurrentLabel;

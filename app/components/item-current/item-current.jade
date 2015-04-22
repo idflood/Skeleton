@@ -5,18 +5,7 @@ mixin item-current(data, options)
   if options.icon == 'publikation'
     - options.icon = 'archive' // TODO: remove this when the correct "book" icon when available.
 
-  - var labelElements = []
-  if data.date
-    if options.icon == 'calendar'
-      - labelElements.push(timeElementEvent(data.date))
-    else
-      - labelElements.push(timeElement(data.date))
-
-  if data.location
-    - labelElements.push('<span itemprop="location">' + data.location + '</span>')
-
-  if labelElements.length
-    - data.label = labelElements.join(' ') + ' | ' + data.label
+  - itemCurrentLabel(data, options)
 
   +item-current-wrapper(data, options)
     a(href=options.href, data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
