@@ -92,10 +92,31 @@ $filter-item-all-color--active: $c-grey80 !default;
     margin: 0; padding: 0;
   }
 
+  &-input-container { position: relative; }
+
+  &-clear {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 501;
+    text-decoration: none;
+    border-left: 1px solid $c-grey40;
+    padding: 0 $s-gutter;
+  }
+
   &-item {
     display: block;
     padding: $filter-item-padding 0;
     text-decoration: none; // Overwrite default link underline.
+
+    &.js-is-hidden {
+      display: none;
+    }
+
+    .is-highlighted {
+      font-family: $strong-font-family;
+    }
 
     &, &:active, &:visited {
       color: $filter-item-color;

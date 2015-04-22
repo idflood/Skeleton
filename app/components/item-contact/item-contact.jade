@@ -1,7 +1,12 @@
 mixin item-contact(data, options)
   - options = setOptionsDefaults(options, "item-contact", components["item-contact"])
 
-  .item-contact.vcard(itemscope, itemtype="http://schema.org/Person")
+  - var dataAttributes = {}
+  if data.attributes
+    each val, key in data.attributes
+      - dataAttributes['data-' + key] = val
+
+  .item-contact.vcard(itemscope, itemtype="http://schema.org/Person")&attributes(dataAttributes)
     img.item-contact-image(itemprop="image", alt=data.firstname + ' ' + data.lastname, src=data.imgSrc)
     .item-contact-title.fn(itemprop="name")= data.firstname + ' ' + data.lastname
     .item-contact-text

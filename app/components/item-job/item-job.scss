@@ -5,6 +5,7 @@ $item-job-layout-table-location-width: 15%;
 
 $item-job-position-margin:     .5em !default;
 
+
 // COLORS
 $item-job-link-color: $c-grey60 !default;
 $item-job-link-color--active: $c-grey80 !default;
@@ -37,6 +38,7 @@ $item-job-link-color--active: $c-grey80 !default;
     text-decoration: underline;
     margin-top: $item-job-position-margin;
     font-family: $strong-font-family;
+
     .item-job--layout-table & {
       float: left;
       margin: 0;

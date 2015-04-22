@@ -1,0 +1,19 @@
+---
+  name: "organizational-chart"
+  version: "0.0.1"
+  description: "Organizational chart component"
+  author: "Ginetta"
+  data:
+    title: "Basler & Hofmann Holding AG"
+    rows:
+      -
+        - {title: "B,S,S. Volkswirtschaftliche Beratung", location: "Zürich"}
+        - {title: "Basler & Hofmann AG", location: "Zürich, Esslingen, Lausanne", highlight: true}
+        - {title: "Basler & Hofmann Innerschweiz AG", location: "Luzern, Zug, Stansstad NW", highlight: true}
+        - {title: "Basler & Hofmann West AG", location: "Zollikofen, Murten", highlight: true}
+        - {title: "Rehalp-Verwaltungs AG", location: "Zürich"}
+      -
+        - {title: "Basler & Hofmann Slovakia s.r.o.", location: "Bratislava"}
+        - {title: "Basler & Hofmann Deutschland GmbH", location: "Halle (Saale)"}
+        - {title: "Basler & Hofmann Pte. Ltd.", location: "Singapur"}
+  options: {}

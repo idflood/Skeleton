@@ -1,0 +1,43 @@
+// SPACINGS
+$organizational-chart-title-margin: $size-xs;
+$organizational-chart-link-height: 26px;
+$organizational-chart-row-padding: $size-xs !default;
+$organizational-chart-item-padding: $s-gutter ($s-gutter * 1.5) !default;
+$organizational-chart-item-min-height: 12 * $s-gutter !default;
+
+// COLORS
+$organizational-chart-row-border: $c-grey20 !default;
+$organizational-chart-item-background: $c-light-grey !default;
+$organizational-chart-item-background--highlight: $c-light-blue !default;
+
+.organizational-chart {
+  &-title {
+    max-width: 100%; // Overwrite the default h* max-width of 32em.
+    margin-bottom: $organizational-chart-title-margin;
+    text-align: center;
+  }
+
+  &-link {
+    width: 1px;
+    height: $organizational-chart-link-height;
+    margin: auto;
+    background: $organizational-chart-row-border;
+  }
+
+  &-item-container {
+    padding-top: $organizational-chart-row-padding;
+    border-top: 1px solid $organizational-chart-row-border;
+  }
+
+  &-item {
+    box-sizing: border-box;
+
+    padding: $organizational-chart-item-padding;
+    min-height: $organizational-chart-item-min-height;
+    background: $organizational-chart-item-background;
+
+    &--highlight {
+      background: $organizational-chart-item-background--highlight;
+    }
+  }
+}

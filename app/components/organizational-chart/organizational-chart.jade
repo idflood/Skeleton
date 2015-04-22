@@ -1,0 +1,22 @@
+mixin organizational-chart(data, options)
+  - options = setOptionsDefaults(options, "organizational-chart", components["organizational-chart"])
+
+  - var rows = components["organizational-chart"].data.rows
+  .organizational-chart.l-spacing-l
+    h3.organizational-chart-title= components["organizational-chart"].data.title
+    each row, index in rows
+      - var isSmall = false
+      if row.length == 3
+        - isSmall = true
+      .organizational-chart-link
+      .l-grid
+        each item, index2 in row
+          - var classes = ''
+
+          if item.highlight
+            - classes = 'organizational-chart-item--highlight'
+
+          .organizational-chart-item-container.l-grid-cell.l-one-fifth(class=isSmall && index2 === 0 ? 'l-push-one-fifth' : '')
+            div.organizational-chart-item(class=classes)
+              .t-h4= item.title
+              .t-link= item.location

@@ -1,8 +1,17 @@
 mixin item-project(data, options)
   - options = setOptionsDefaults(options, "item-project", components["item-project"])
   - var link = data.link || components['item-project'].data.link
-  
-  article.item-project
+  - var dataFilter = ''
+  if data.filter
+    - dataFilter = data.filter
+
+  - var dataAttributes = {}
+  if data.attributes
+    each val, key in data.attributes
+      - dataAttributes['data-' + key] = val
+
+
+  article.item-project(data-filter=dataFilter)&attributes(dataAttributes)
     a.item-project-link(href=link)
       img.item-project-image(src=data.imgSrc, alt=data.title)
       h3.t-h3.item-project-title= data.title

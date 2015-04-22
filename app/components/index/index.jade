@@ -1,0 +1,11 @@
+mixin index(data, options)
+  - options = setOptionsDefaults(options, "index", components["index"])
+  - var classes = getOptionsModifier(options, "index", null, components['index'])
+
+  ol(class=classes)
+    block
+
+mixin index-item(title)
+  li.index-item
+    .t-h2= title
+    block

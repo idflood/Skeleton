@@ -1,5 +1,12 @@
 extends /layout/layout
 
+mixin konpetenz-link(title, href)
+  if !href
+    - href = '#'
+
+  li.item-expertise
+    a(href=href)= title
+
 block htmlhead
     title Basler & Hofmann
     meta(name='description', content='')
@@ -7,11 +14,120 @@ block htmlhead
 block htmlbody
 
   +header({}, {active: "Kompetenzen"})
-
-  .l-l-width.l-spacing-v-l
+  .l-l-width.l-spacing-v-l.js-search(data-search-items-selector=".item-expertise a")
     h1.t-title.t-border-bottom Kompetenzen
 
     +search-field({ placeholder: 'Suche in Kompetenzen' }, {})
+
+    .l-margin-v-m
+    +index({}, {columns: true})
+      +index-item('A')
+        ol.no-bullets
+          +konpetenz-link("Altasten", "detail-kompetenz.html")
+          +konpetenz-link("Asbest und Gebäudeschadstoffe")
+      +index-item('B')
+        ol.no-bullets
+          +konpetenz-link("Bahnbau")
+          +konpetenz-link("Bahnhöfe")
+          +konpetenz-link("Bahnhofsentwicklung")
+          +konpetenz-link("Bahntechnik")
+          +konpetenz-link("Baudynamik")
+          +konpetenz-link("Baugruben")
+          +konpetenz-link("Baugrund")
+          +konpetenz-link("Bauherrenberatung und Bauherrenvertretung")
+          +konpetenz-link("Bauphysik")
+          +konpetenz-link("Betriebsplanung")
+          +konpetenz-link("Biosicherheit")
+          +konpetenz-link("Bodenschutz")
+          +konpetenz-link("Brandschutz")
+          +konpetenz-link("Brücken")
+      +index-item('E')
+        ol.no-bullets
+          +konpetenz-link("Elektroplanung")
+          +konpetenz-link("Energieeffizienz")
+          +konpetenz-link("Erdbau")
+          +konpetenz-link("Erdbebensicherheit")
+          +konpetenz-link("Erneuerbare Energien")
+          +konpetenz-link("Erschütterungsschutz")
+      +index-item('F')
+        ol.no-bullets
+          +konpetenz-link("Façade Engineering")
+          +konpetenz-link("Fahrbahntechnik")
+          +konpetenz-link("Flughafenbau")
+          +konpetenz-link("Fundationen")
+      +index-item('G')
+        ol.no-bullets
+          +konpetenz-link("Gebäudetechnik")
+          +konpetenz-link("Gemeindeberatung")
+          +konpetenz-link("Geoinformationssysteme")
+          +konpetenz-link("Gewässer")
+          +konpetenz-link("Glasbau")
+      +index-item('H')
+        ol.no-bullets
+          +konpetenz-link("Hochwasser")
+          +konpetenz-link("Hochleistungsstrassen")
+      +index-item('I')
+        ol.no-bullets
+          +konpetenz-link("Immobilienstrategie")
+          +konpetenz-link("Industriebauten")
+      +index-item('K')
+        ol.no-bullets
+          +konpetenz-link("Kernanlagen: Bauliche Sicherheit")
+          +konpetenz-link("Konstruktiver Tiefbau")
+      +index-item('L')
+        ol.no-bullets
+          +konpetenz-link("Lärmschutz")
+      +index-item('M')
+        ol.no-bullets
+          +konpetenz-link("Minergie")
+          +konpetenz-link("Mobilitätsmanagement")
+      +index-item('N')
+        ol.no-bullets
+          +konpetenz-link("Nachhaltige Immobilien")
+          +konpetenz-link("Naturgefahren")
+      +index-item('P')
+        ol.no-bullets
+          +konpetenz-link("Photovoltaik")
+      +index-item('Q')
+        ol.no-bullets
+          +konpetenz-link("Quartierplanung")
+      +index-item('R')
+        ol.no-bullets
+          +konpetenz-link("Raumplanung")
+          +konpetenz-link("Risikoanalysen")
+      +index-item('S')
+        ol.no-bullets
+          +konpetenz-link("Schulraumentwicklung")
+          +konpetenz-link("Siedlungsentwässerung")
+          +konpetenz-link("Städtischer Tiefbau")
+          +konpetenz-link("Stahlbau")
+          +konpetenz-link("Standortentwicklung")
+          +konpetenz-link("Störfallvorsorge")
+          +konpetenz-link("Strassenbau")
+          +konpetenz-link("Stratus - Spectus")
+      +index-item('T')
+        ol.no-bullets
+          +konpetenz-link("Technologiezentrum")
+          +konpetenz-link("TEDDA - Technical and Environmental Due Diligence")
+          +konpetenz-link("Tragkonstruktionen")
+          +konpetenz-link("Tunnelbau")
+      +index-item('U')
+        ol.no-bullets
+          +konpetenz-link("Umweltchemie")
+          +konpetenz-link("Umweltplanung")
+          +konpetenz-link("Umwelttechnik")
+      +index-item('V')
+        ol.no-bullets
+          +konpetenz-link("Verkehrsplanung")
+          +konpetenz-link("Vermessung")
+      +index-item('W')
+        ol.no-bullets
+          +konpetenz-link("Wasserkraft")
+          +konpetenz-link("Wasserversorgung")
+          +konpetenz-link("Werkleitungen")
+          +konpetenz-link("Werterhalt Kunstbauten")
+          +konpetenz-link("Wettbewerbe")
+
   +footer({
     copyright: '© Basler & Hofmann 2015',
     languages: [

@@ -4,7 +4,9 @@
   description: "Filter component"
   author: "Ginetta"
   data:
-    label: "Filter nach Kompetenz"
+    label: "Filter nach "
+    filterValue: Kompetenz
+    filterAttribute: expertise
     itemGroups:
       - label: 'A'
         items:
