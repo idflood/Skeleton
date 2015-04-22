@@ -1,0 +1,70 @@
+extends /layout/layout
+
+block htmlhead
+    title Detail Expertise Simple
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Kompetenzen"})
+
+  +breadcrumbs({
+    pages: [
+      {name: "Kompetenzen", href: "kompetenzen.html"},
+      {name: "Tunnelbau", href: "#"}
+    ]
+  }, {})
+
+  .l-s-width.l-spacing-v-m.t-rt-container
+    h1.t-title Ansprechpartner
+
+    p.t-lead
+      | Basler & Hofmann verfügt über jahrzehntelange Erfahrung im maschinellen
+      | und konventionellen Tunnelbau, im Fels sowie im Lockergestein und unter
+      | schwierigen hydrologischen Baugrundverhältnissen. Unsere Stärken liegen
+      | im innerstädtischen Tunnelbau. Wir unterstützen Bauherren im In- und
+      | Ausland bei allen Aspekten rund um den Tunnelbau.
+
+    h2 Unsere Leistungen
+
+    ul
+      li Studien
+      li Projektierung
+      li Ausschreibung
+      li Bauleitung
+
+    h2 Behindertengerecht und fussgängerfreundlich
+
+    p
+      | Jedes Tunnelprojekt ist ein einzigartiges Vorhaben. Spezifische
+      | Nutzungsanforderungen und unterschiedliche Baugrundverhältnisse
+      | erfordern massgeschneiderte Konzepte. Unsere erfahrenen Bauleiter
+      | unterstützen Bauherren und Unternehmungen in allen Projektierungsphasen
+      | von der Studie bis zur Realisierung.
+
+    h3 Beispielprojekte
+
+    .l-grid
+      .l-grid-cell.l-margin-v-m.l-one-third
+        +item-project({title: "Axenstrasse Schwyz–Uri", imgSrc: relativePath + 'assets/projects/project1.jpg', legend: "Mauris nec sodales nisi, quis euismod velit lorem ipsum dolor."}, {legend: true})
+      .l-grid-cell.l-margin-v-m.l-one-third
+        +item-project({title: "Eisenbahnverbindung mitten durch Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Ein Tunnel in äusserst heiklem Umfeld"}, {legend: true})
+      .l-grid-cell.l-margin-v-m.l-one-third
+        +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Das Herzstück der 2014 eingeweihten Durchmesserlinie"}, {legend: true})
+
+    p
+      a(href="#") Zurück zur Übersicht
+
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
