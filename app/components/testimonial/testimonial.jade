@@ -1,7 +1,5 @@
 mixin testimonial(data, options)
   - options = setOptionsDefaults(options, "testimonial", components.testimonial)
 
-  .l-xl-width
-    .testimonial(style="background-image: url(#{data.imgSrc})")
-      p.testimonial-text= data.text
-
+  .testimonial(style="background-image: url(#{data.imgSrc})")
+    p.testimonial-text= data.text
