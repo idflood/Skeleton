@@ -12,6 +12,9 @@ $fullwidth-image-arrow-width: 57px !default;
 $fullwidth-image-arrow-height: 37px !default;
 $fullwidth-image-arrow-margin-bottom: $size-s !default;
 
+$fullwidth-image-icon-w: 25px;
+$fullwidth-image-icon-h: 20px;
+
 // COLORS
 $fullwidth-image-background: $c-black !default;
 $fullwidth-image-color: $c-white !default;
@@ -43,6 +46,11 @@ $fullwidth-image-arrow-color: $c-white !default;
       margin-right: $fullwidth-image-label-icon-margin;
       vertical-align: top;
     }
+    svg {
+      width: $fullwidth-image-icon-w;
+      height: $fullwidth-image-icon-h;
+    }
+
     path {
       fill: currentColor;
     }
