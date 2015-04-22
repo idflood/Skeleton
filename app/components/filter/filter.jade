@@ -2,19 +2,20 @@ mixin filter(data, options)
   - options = setOptionsDefaults(options, "filter", components.filter)
   - var itemGroups = data.itemGroups || components.filter.data.itemGroups
 
-  .filter
+  .filter(data-filter-attribute=data.filterAttribute)
     button.filter-button(type="button")
-      | #{data.label} <span data-grunticon-embed class='icon icon--downstroke'></span>
+      | #{data.label}
+      span.filter-text-value #{data.filterValue}
+      span(data-grunticon-embed, class='icon icon--downstroke')
 
     .filter-callout
-      +search-field({ placeholder: '' }, {size: "small"})
-
+      .filter-input-container
+        +search-field({ placeholder: '' }, {size: "small"})
+        a.filter-clear.t-label(href="#", data-original=data.filterValue) Alle
       .filter-content
-        +filter-content(itemGroups)
+        +filter-content(itemGroups, data)
 
-mixin filter-content(itemGroups)
-
-  a.filter-item.filter-item--all(href="#alle") Alle
+mixin filter-content(itemGroups, data)
   each group, index in itemGroups
     div.filter-index= group.label
     ol.filter-index-list
