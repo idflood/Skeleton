@@ -49,10 +49,9 @@ input.search-field-input { box-sizing: border-box; }
   &-icon {
     position: absolute;
     top: 50%;
-    margin-top: - ($search-field-icon-size / 2);
+    transform: translateY(-50%);
     left: $search-field-spacing;
     width: $search-field-icon-size;
-    height: $search-field-icon-size;
 
     path {
       fill: $search-field-placeholder-color;
