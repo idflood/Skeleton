@@ -44,12 +44,13 @@ block htmlbody
     containerSize: 'l',
     content: false
   })
-    +item-current({ title: 'Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015', type: 'Veranstaltungen', link: './detail-project.html'}, {})
-    +item-current({ title: 'Gemeinsam mit Kopf und Herz: Firmenportrait zum 50. Jubiläum', type: 'Publikationen', link: './detail-project.html'}, {})
-    +item-current({ title: 'Basler & Hofmann ausgezeichnet als "Tunnel Design Firm of the Year"', type: 'Neuigkeiten', link: './detail-project.html'}, {})
-    +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt', type: 'Frachartikel', link: './detail-project.html'}, {})
+    .l-grid
+      +item-current({ title: 'Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015', label: 'Veranstaltung'}, {size: 'large', icon: 'event'})
+      +item-current({ title: 'Gemeinsam mit Kopf und Herz: Firmenportrait zum 50. Jubiläum', label: 'Publikation'}, {size: 'large', isExternal: true, icon: 'publication'})
+      +item-current({ title: 'Basler & Hofmann ausgezeichnet als "Tunnel Design Firm of the Year"', label: 'News'}, {size: 'large', icon: 'publication'})
+      +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt', label: 'Fachartikel'}, {size: 'large', isExternal: true})
 
-  +fullwidth-image({ imgSrc: relativePath + 'assets/home-fullwidth-image2.png', label: 'Reportage' }, {icon: 'document'})
+  +fullwidth-image({ imgSrc: relativePath + 'assets/home-fullwidth-image2.png', label: 'Reportage' }, {icon: 'news'})
     h3 People Business
     p Team Spirit spielt bei uns eine zentrale Rolle. Wie Basler & Hofmann ihren Leitsatz "Miteinander — Füreinander" seit 50 Jahren umsetzt. <a href="#">Weiterlesen</a>
 

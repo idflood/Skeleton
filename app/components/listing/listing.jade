@@ -1,10 +1,7 @@
 mixin listing(data, options)
   - options = setOptionsDefaults(options, "listing", components.listing)
-  - var classes = "listing"
-  if data.title && options.showTitle
-    - classes += " listing--with-title"
-
-  div(class=classes)
+  
+  +listing-wrapper(data, options)
     if data.title && options.showTitle
       h2.listing-title= data.title
 
@@ -18,6 +15,18 @@ mixin listing(data, options)
           +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
         +listing-item()
           +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+
+mixin listing-wrapper(data, options)
+  - var classes = "listing"
+  if data.title && options.showTitle
+    - classes += " listing--with-title"
+
+  if data.title && options.showTitle
+    section(class=classes)
+      block
+  else
+    div(class=classes)
+      block
 
 mixin listing-item()
   li.listing-item
