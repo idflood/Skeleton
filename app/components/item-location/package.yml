@@ -1,0 +1,12 @@
+---
+  name: "item-location"
+  version: "0.0.1"
+  description: "Location item component"
+  author: "Ginetta"
+  data:
+    lat: 47.377455
+    lng: 8.536715
+  options:
+    direction:
+      values: [false, true]
+      default: false

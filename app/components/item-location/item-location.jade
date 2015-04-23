@@ -1,0 +1,22 @@
+mixin item-location(data, options)
+  - options = setOptionsDefaults(options, "item-location", components["item-location"])
+
+  - var mapLink = "https://www.google.ch/maps/place/Vorsorgefonds+der+Firma+Basler+und+Hofmann+AG,+in+Z%C3%BCrich/@47.351471,8.582607,17z/data=!3m1!4b1!4m2!3m1!1s0x479aa727a4183fe5:0xf3dbe4c6bb27346f?hl=fr"
+  - var mapText = "Lageplan"
+  if options.direction
+    - mapLink = "https://www.google.ch/maps/dir//Vorsorgefonds+der+Firma+Basler+und+Hofmann+AG,+in+Z%C3%BCrich,+Forchstrasse+395,+8008+Z%C3%BCrich/@47.351471,8.582607,17z/data=!4m13!1m4!3m3!1s0x479aa727a4183fe5:0xf3dbe4c6bb27346f!2sVorsorgefonds+der+Firma+Basler+und+Hofmann+AG,+in+Z%C3%BCrich!3b1!4m7!1m0!1m5!1m1!1s0x479aa727a4183fe5:0xf3dbe4c6bb27346f!2m2!1d8.582607!2d47.351471?hl=fr"
+    - mapText += " und Anfahrtsbeschreibung"
+
+  .item-location(data-gmap-item, data-gmap-lat=data.lat, data-gmap-lng=data.lng)
+    .item-location-content
+      block
+    a.item-location-email(href="mailto:test@example.com")
+      span.icon.icon--mail(data-grunticon-embed)
+      | Email
+    
+    a.item-location-link(href=mapLink, target="_blank")
+      span.icon.icon--pin(data-grunticon-embed)
+      | #{mapText}
+
+mixin item-location-map(options)
+  .item-location-map(data-gmap, data-gmap-zoom=options.zoom, data-gmap-center-lat=options.center.lat, data-gmap-center-lng=options.center.lng)
