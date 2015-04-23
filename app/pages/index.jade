@@ -20,7 +20,7 @@ block htmlbody
   +section({
     title: 'Projekte im Fokus',
     buttonText: 'Weitere Projekte',
-    buttonHref: './projekt.html',
+    buttonHref: './projekte.html',
     id: 'projekte-im-focus'
   }, {
     background: 'white',
@@ -44,10 +44,10 @@ block htmlbody
     containerSize: 'l',
     content: false
   })
-    +item-current({ title: 'Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015', type: 'Veranstaltungen'}, {})
-    +item-current({ title: 'Gemeinsam mit Kopf und Herz: Firmenportrait zum 50. Jubiläum', type: 'Publikationen'}, {})
-    +item-current({ title: 'Basler & Hofmann ausgezeichnet als "Tunnel Design Firm of the Year"', type: 'Neuigkeiten'}, {})
-    +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt', type: 'Frachartikel'}, {})
+    +item-current({ title: 'Schule als Gestaltungs-, Lern und Lebensraum am 12. März 2015', type: 'Veranstaltungen', link: './detail-project.html'}, {})
+    +item-current({ title: 'Gemeinsam mit Kopf und Herz: Firmenportrait zum 50. Jubiläum', type: 'Publikationen', link: './detail-project.html'}, {})
+    +item-current({ title: 'Basler & Hofmann ausgezeichnet als "Tunnel Design Firm of the Year"', type: 'Neuigkeiten', link: './detail-project.html'}, {})
+    +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt', type: 'Frachartikel', link: './detail-project.html'}, {})
 
   +fullwidth-image({ imgSrc: relativePath + 'assets/home-fullwidth-image2.png', label: 'Reportage' }, {icon: 'document'})
     h3 People Business
