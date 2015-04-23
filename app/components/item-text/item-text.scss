@@ -6,9 +6,10 @@ $item-text-margin: $size-s;
 $item-text-title-vr:     2 * $s-gutter !default;
 $item-text-content-vr:   1 * $s-gutter !default;
 
+
 .item-text {
   padding: $item-text-card-spacing;
-  margin-bottom: $item-text-margin;
+  margin-top: $item-text-margin;
 
   &--no-card { padding: 0; }
 

@@ -11,7 +11,7 @@ mixin filter(data, options)
     .filter-callout
       .filter-input-container
         +search-field({ placeholder: '' }, {size: "small"})
-        a.filter-clear.t-label(href="#", data-original=data.filterValue) Alle
+        a.filter-clear(href="#", data-original=data.filterValue) Alle
       .filter-content
         +filter-content(itemGroups, data)
 
