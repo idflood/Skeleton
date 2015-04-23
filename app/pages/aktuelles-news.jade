@@ -7,40 +7,47 @@ block htmlhead
 block htmlbody
 
   +header({}, {active: "Aktuelles"})
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Aktuelles
+      +search-field({ placeholder: 'Suche in News' }, {})
 
-    +search-field({ placeholder: 'Suche in News' }, {})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                  },
+        { text: 'News'           , href: 'aktuelles-news.html'           , active: true  },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+      ]
+    },{})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                  },
-      { text: 'News'           , href: 'aktuelles-news.html'           , active: true  },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
-    ]
-  },{})
+    .l-l-width.l-spacing-v-l
+      +listing({}, {})
+        +listing-item()
+          +item-current({ title: 'Basler & Hofmann ausgezeichnet als “Tunnel Design Firm of the Year”', date: '27.03.2015', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Generationswechsel in der Geschäftsleitung: Martin Bosshard übergibt den Stab an Stefan Moser', date: '16.03.2015', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Kunstausstellung von Ursula Lee', date: '12.03.2015', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Areal "Village Luzern" erhält Label "2000-Watt-Areal in Entwicklung"', date: '20.02.2014', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Gelungener Start in Lausanne', date: '12.02.2014', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Kunstausstellung von Doris Schmid-Rymann', date: '01.03.2014', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Pilotphase für SNBS abgeschlossen: Basler & Hofmann nahm mit zwei Projekten teil', date: '28.01.2014', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: '"Fokus Bahnhof" – eine neue Themenbrief-Serie', date: '24.01.2014', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Ein Grossprojekt geht in Betrieb', date: '20.01.2014', label: 'News'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Grosser Erfolg für Engagement in Haiti', date: '18.01.2014', label: 'News'}, {size: 'medium'})
 
-  .l-border-t.l-spacing-v-s
-    .l-l-width
-      h2 Bei allfälligen Fragen
-      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-
-      .l-grid
-        .l-grid-cell.l-one-third
-          +item-contact({
-            imgSrc: relativePath + 'assets/home-contact2.png',
-            firstname: "Maria",
-            lastname: "Muster",
-            role: "Leitender Expertin",
-            region: "Zürich",
-            phone: "044 387 13 19",
-            email: "test2@example.com"
-            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

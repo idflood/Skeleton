@@ -8,47 +8,37 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Aktuelles
-    +search-field({ placeholder: 'Suche in Farchartikel' }, {})
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
+      +search-field({ placeholder: 'Suche in Farchartikel' }, {})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                  },
-      { text: 'News'           , href: 'aktuelles-news.html'             },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'   , active: true  },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
-    ]
-  },{})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                  },
+        { text: 'News'           , href: 'aktuelles-news.html'             },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'   , active: true  },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+      ]
+    },{})
 
-  .l-l-width.l-spacing-v-l
-    +listing({title: "2015"}, {showTitle: true})
-      +listing-item()
-        +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reustal', type: 'Zürich'}, {})
-      +listing-item()
-        +item-job({ position: 'Bauleiter/in Hoch- und Tiefbau', location: 'Lausanne', positionUrl: '#', locationUrl: '#'}, {})
-      +listing-item()
-        +item-job({ position: 'Bauzeichner/in', location: 'Zug', positionUrl: '#', locationUrl: '#'}, {})
+    .l-l-width.l-spacing-v-l
+      +listing({title: "2015"}, {showTitle: true})
+        +listing-item()
+          +item-current({ title: 'Lärmsanierung mit Drainasphalt im Urner Reusstal', label: 'Fachartikel', date: '27.03.2015'}, {size: 'medium', download: '.pdf'})
+        +listing-item()
+          +item-current({ title: 'Strömungslenkung an der unteren Tavern', label: 'Fachartikel', date: '27.03.2015'}, {size: 'medium', download: '.pdf'})
 
-  .l-border-t.l-spacing-v-s
-    .l-l-width
-      h2 Bei allfälligen Fragen
-      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-
-      .l-grid
-        .l-grid-cell.l-one-third
-          +item-contact({
-            imgSrc: relativePath + 'assets/home-contact2.png',
-            firstname: "Maria",
-            lastname: "Muster",
-            role: "Leitender Expertin",
-            region: "Zürich",
-            phone: "044 387 13 19",
-            email: "test2@example.com"
-            }, {})
+      +listing({title: "2014"}, {showTitle: true})
+        +listing-item()
+          +item-current({ title: 'Kommunikative Begleitung für das Energie Coaching der Stadt Zürich', label: 'Fachartikel', date: '12.03.2014'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Ermessenspielraum und Willkürgrenze bei Gestaltungsfragen', label: 'Fachartikel', date: '20.02.2014'}, {size: 'medium'})
+        +listing-item()
+          +item-current({ title: 'Gelungener Start in Lausanne', label: 'Fachartikel', date: '12.02.2014'}, {size: 'medium', download: '.pdf'})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

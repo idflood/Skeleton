@@ -69,7 +69,7 @@ block htmlbody
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
   .l-border-t.l-spacing-v-l
     .l-m-width
-      h2 Ähnliche Projekte
+      h2.l-margin-v-xs Ähnliche Projekte
       .l-grid
         .l-grid-cell.l-one-third
           +item-project({
@@ -92,6 +92,13 @@ block htmlbody
           legend: "Pistensanierung unter vollem Flugbetrieb",
           link: './detail-project.html'
         }, {legend: true})
+
+  .l-margin-v-l
+    .l-m-width
+      h2.l-margin-v-xs Rundum das Thema
+      .l-grid
+        +item-current({ title: 'Dienstleistungen für Bahnhöfe und ihr Umfeld, 3.2 MB', label: 'Broschüre'}, {size: 'small', icon: 'publication'})
+        +item-current({ title: 'Ausbildungs-Info-Abend bei Basler & Hofmann, 11.11.2014 um 17:00 Uhr', label: 'Newsletter'}, {size: 'small', icon: 'publication'})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

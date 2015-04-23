@@ -1,7 +1,44 @@
 mixin item-current(data, options)
   - options = setOptionsDefaults(options, "item-current", components['item-current'])
+  - options.href = options.href || '#'
 
-  .item-current.l-grid-cell.l-one-half(style="background-image: url(#{relativePath}/assets/#{data.type}.png);")
-    a.item-current-row.t-link-sublead(href="")=    data.type
-    a.item-current-row.t-link-lead(href="")= data.title
+  - // Set the data.label with location and date. @see item-current.jade.js
+  - itemCurrentLabel(data, options)
 
+  +item-current-wrapper(data, options)
+    a(href=options.href, data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
+    a.item-current-type.t-label(href=options.href)!= data.label
+    +item-current-title(data, options)
+      | #{data.title}
+      if options.isExternal
+        span(data-grunticon-embed, class="icon item-current-external icon--export")
+
+    if options.download
+      a.item-current-download(href="#")= options.download
+        span.icon.icon--download(data-grunticon-embed)
+
+mixin item-current-wrapper(data, options)
+  - var classes = getOptionsModifier(options, "item-current", ['size'], components['item-current'])
+
+  if options.size == 'box'
+    - // Set the background class for box size only.
+    - classes += ' item-current--background-' + options.background
+
+  if options.size == 'box' || options.size == 'medium'
+    - var itemtype = "http://schema.org/Article"
+    if options.icon == 'event'
+      - itemtype = "http://schema.org/Event"
+    article(class=classes, itemscope, itemtype=itemtype)
+      block
+  else
+    div.l-grid-cell.l-one-half.l-mobile-one-whole(class=classes)
+      block
+
+mixin item-current-title(data, options)
+  a(href=options.href, itemprop="url")
+    if options.size == 'medium'
+      h2.item-current-title.t-link(itemprop="name")
+        block
+    else
+      div.item-current-title.t-link
+        block

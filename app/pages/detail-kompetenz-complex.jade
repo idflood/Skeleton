@@ -88,10 +88,63 @@ block htmlbody
             +item-project({title: "Eisenbahnverbindungmitten durch Zürich", imgSrc: relativePath + 'assets/projects/project5.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
           .l-grid-cell.l-margin-v-m.l-one-third
             +item-project({title: "PV Anlage in Esslingen", imgSrc: relativePath + 'assets/projects/project6.jpg', legend: "220 Watt Photovoltaik-Module übernehmen die Funktion von Ziegeln."}, {legend: true})
+  .l-m-width.l-spacing-v-s
     p
       a(href="#") Zurück zur Übersicht
 
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+      
+  .l-border-t.l-spacing-v-l
+    .l-m-width
+      h2.l-margin-v-xs Ihre Ansprechpartner
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact1.png',
+            firstname: "Hans",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Murten",
+            phone: "044 387 13 19",
+            email: "test@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact3.png',
+            firstname: "Peter",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Lausanne",
+            phone: "044 387 13 19",
+            email: "test3@example.com"
+            }, {})
+
+  .l-margin-v-s
+    .l-m-width
+      h2.l-margin-v-xs Rundum das Thema
+      .l-grid
+        +item-current({ title: 'Dienstleistungen für Bahnhöfe und ihr Umfeld, 3.2 MB', label: 'Broschüre'}, {size: 'small', icon: 'publication'})
+        +item-current({ title: 'Ausbildungs-Info-Abend bei Basler & Hofmann, 11.11.2014 um 17:00 Uhr', label: 'Newsletter'}, {size: 'small', icon: 'publication'})
+
+  .l-margin-v-l
+    .l-m-width
+      h2.l-margin-v-xs Verbundene Kompetenzen
+      - var links = ["Bahnbau", "Spezialtiefbau", "Bahntechnik", "Tunnelbau", "Umweltplanung", "Risikoanalysen", "Verkehrsplanung"]
+      p.t-link
+        each link, index in links
+          a(href="#")= link
+          if index < links.length - 1
+            span= ", "
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
