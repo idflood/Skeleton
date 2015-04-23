@@ -7,10 +7,11 @@ block htmlhead
 block htmlbody
   +header({}, {active: "Standorte"})
 
-  +item-location-map({
-    center: {lat: 46.9546499, lng: 7.8105},
+  +map({
+    lat: 46.9546499,
+    lng: 7.8105,
     zoom: 8
-  })
+  }, {})
 
   .l-l-width.l-spacing-v-m
     h1.t-title Standorte

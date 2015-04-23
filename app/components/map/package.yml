@@ -1,0 +1,10 @@
+---
+  name: "map"
+  version: "0.0.1"
+  description: "Example component"
+  author: "Ginetta"
+  data:
+    lat: 46.9546499
+    lng: 7.8105
+    zoom: 8
+  options: {}

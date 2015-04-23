@@ -1,5 +1,4 @@
 // SPACINGS
-$item-location-map-height: 45 * $s-gutter !default; // 450px
 $item-location-margin: 4 * $s-gutter !default; // 40px
 $item-location-icon-size: 14px !default;
 $item-location-icon-margin: 5px !default;
@@ -24,13 +23,6 @@ $item-location-icon-margin: 5px !default;
 
     svg {
       max-width: 100%;
-    }
-  }
-
-  &-map {
-    .js & {
-      // Only set the map height if js is available.
-      height: $item-location-map-height;
     }
   }
 }
