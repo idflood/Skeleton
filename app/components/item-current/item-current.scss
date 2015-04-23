@@ -20,6 +20,7 @@ $item-current-type-color--medium: $c-grey60 !default;
 $item-current-title-color--medium: $c-black !default;
 $item-current-icon-color--medium: $c-grey40 !default;
 $item-current-icon-color--box: $c-grey40 !default;
+$item-current-image-border: $c-grey20 !default;
 
 .item-current {
   position: relative;
@@ -54,6 +55,19 @@ $item-current-icon-color--box: $c-grey40 !default;
 
     path {
       fill: currentColor;
+    }
+  }
+
+  &-image {
+    display: block;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    &--border {
+      border: 1px solid $item-current-image-border;
     }
   }
 
@@ -135,6 +149,10 @@ $item-current-icon-color--box: $c-grey40 !default;
   }
 
   &--size-box {
+    .item-current-image {
+      // Same margin as icon.
+      margin-bottom: $item-current-icon-margin--box;
+    }
     .item-current-icon {
       position: relative;
       display: block;
@@ -154,6 +172,10 @@ $item-current-icon-color--box: $c-grey40 !default;
       path {
         fill: $item-current-icon-color--box;
       }
+    }
+    .icon--download {
+      // Apply the margin to the icon since it's not in the wrapper .item-current-download.
+      margin-left: $item-current-download-margin;
     }
   }
 

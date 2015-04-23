@@ -4,23 +4,36 @@ mixin item-current(data, options)
 
   - // Set the data.label with location and date. @see item-current.jade.js
   - itemCurrentLabel(data, options)
-
+  
   +item-current-wrapper(data, options)
-    a(href=options.href, data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
+    if !data.imgSrc
+      a(href=options.href, data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
+    else
+      - // We can have border arround the image, visible only for broschure and newsletter on the box size.
+      - var classes = ""
+      if options.border
+        - classes = "item-current-image--border"
+      a.item-current-image(href=options.href, class=classes)
+        img(src=data.imgSrc)
     a.item-current-type.t-label(href=options.href)!= data.label
     +item-current-title(data, options)
       | #{data.title}
       if options.isExternal
         span(data-grunticon-embed, class="icon item-current-external icon--export")
+      - // On box item, the download icon is simply displayed after the title inline.
+      - // We add it directly to the title so that it will inherit the color and be directly placed correctly.
+      - // Contrary to download links in list (medium), this is also not a link but simply an icon.
+      if options.download && options.size == 'box'
+        span.icon.icon--download(data-grunticon-embed)
 
-    if options.download
+    if options.download && options.size != 'box'
       a.item-current-download(href="#")= options.download
         span.icon.icon--download(data-grunticon-embed)
 
 mixin item-current-wrapper(data, options)
   - var classes = getOptionsModifier(options, "item-current", ['size'], components['item-current'])
 
-  if options.size == 'box'
+  if options.size == 'box' && options.background
     - // Set the background class for box size only.
     - classes += ' item-current--background-' + options.background
 
