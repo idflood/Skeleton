@@ -7,66 +7,46 @@ block htmlhead
 block htmlbody
 
   +header({}, {active: "Aktuelles"})
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Aktuelles
+      +search-field({ placeholder: 'Suche in Veranstaltungen' }, {})
 
-    +search-field({ placeholder: 'Suche in Veranstaltungen' }, {})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                  },
+        { text: 'News'           , href: 'aktuelles-news.html'             },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html', active: true  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+      ]
+    },{})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                  },
-      { text: 'News'           , href: 'aktuelles-news.html'             },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html', active: true  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
-    ]
-  },{})
-
-  .l-l-width.l-spacing-v-l
-    +listing({title: "Demnächst"}, {showTitle: true})
-      +listing-item()
-        +item-current({ title: 'Info-Veranstaltungen zur Berufsausbildung am SwissSkills Bern', date: ['02.04.2015', '09.04.2015'], location: 'Bern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
-      +listing-item()
-        +item-current({ title: 'Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann Zürich', date: '08.04.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
-      +listing-item()
-        +item-current({ title: 'ZIG (Zentrum für Integrale Gebäudetechnik) — Planerseminar an der Hochschule Luzern', date: '27.04.2015', location: 'Luzern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
-      +listing-item()
-        +item-current({ title: 'Seminar bei Basler & Hofmann ZH: Störfallvorsorge und Raumplanung', date: ['18.05.2015', '21.05.2015'], location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
-      +listing-item()
-        +item-current({ title: 'Vernissage: Kunstausstellung von Ursula Lee in der Galerie Rehalp', date: '16.06.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+    .l-l-width.l-spacing-v-l
+      +listing({title: "Demnächst"}, {showTitle: true})
+        +listing-item()
+          +item-current({ title: 'Info-Veranstaltungen zur Berufsausbildung am SwissSkills Bern', date: ['02.04.2015', '09.04.2015'], location: 'Bern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+        +listing-item()
+          +item-current({ title: 'Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann Zürich', date: '08.04.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+        +listing-item()
+          +item-current({ title: 'ZIG (Zentrum für Integrale Gebäudetechnik) — Planerseminar an der Hochschule Luzern', date: '27.04.2015', location: 'Luzern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+        +listing-item()
+          +item-current({ title: 'Seminar bei Basler & Hofmann ZH: Störfallvorsorge und Raumplanung', date: ['18.05.2015', '21.05.2015'], location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+        +listing-item()
+          +item-current({ title: 'Vernissage: Kunstausstellung von Ursula Lee in der Galerie Rehalp', date: '16.06.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
 
 
-    +listing({title: "Rückblick"}, {showTitle: true})
-      +listing-item()
-        +item-current({ title: 'Info-Veranstaltungen zur Berufsausbildung am SwissSkills Bern', date: ['02.04.2015', '09.04.2015'], location: 'Bern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
-      +listing-item()
-        +item-current({ title: 'Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann Zürich', date: '08.04.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
-      +listing-item()
-        +item-current({ title: 'ZIG (Zentrum für Integrale Gebäudetechnik) — Planerseminar an der Hochschule Luzern', date: '27.04.2015', location: 'Luzern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+      +listing({title: "Rückblick"}, {showTitle: true})
+        +listing-item()
+          +item-current({ title: 'Info-Veranstaltungen zur Berufsausbildung am SwissSkills Bern', date: ['02.04.2015', '09.04.2015'], location: 'Bern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+        +listing-item()
+          +item-current({ title: 'Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann Zürich', date: '08.04.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
+        +listing-item()
+          +item-current({ title: 'ZIG (Zentrum für Integrale Gebäudetechnik) — Planerseminar an der Hochschule Luzern', date: '27.04.2015', location: 'Luzern', label: 'Veranstaltung'}, {size: 'medium', icon: 'event'})
 
-    .section-button
-      a.button.button--color-pink.button--size-large(href="#") Weitere Veranstaltungen laden
-
-  .l-border-t.l-spacing-v-l
-    .l-l-width
-      .l-margin-v-m
-        h2 Bei allfälligen Fragen
-        p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-
-      .l-grid
-        .l-grid-cell.l-one-third
-          +item-contact({
-            imgSrc: relativePath + 'assets/home-contact2.png',
-            firstname: "Maria",
-            lastname: "Muster",
-            role: "Leitender Expertin",
-            region: "Zürich",
-            phone: "044 387 13 19",
-            email: "test2@example.com"
-            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
