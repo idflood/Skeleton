@@ -4,7 +4,8 @@
     "light-pink" : "#f8f1f7",
     "blue"       : "#e0f0fa",
     "light-blue" : "#f3f9fd",
-    "light-green": "#f6faef"
+    "light-green": "#f6faef",
+    "green"      : "#7ed321"
   },
   "neutral": {
     "white"        : "#fff",
