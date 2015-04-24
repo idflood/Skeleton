@@ -3,5 +3,5 @@ mixin item-job(data, options)
   - var classes = getOptionsModifier(options, "item-job", ['layout'], components['item-job'])
 
   a(class=classes, href=data.positionUrl)
-    .item-job-location.t-truncate.t-label= data.location
-    .item-job-position.t-truncate.t-link= data.position
+    .item-job-location.t-label= data.location
+    .item-job-position.t-link= data.position
