@@ -9,12 +9,13 @@
     href: "#"
     date: "27.03.2015"
     location: ""
+    imgSrc: false
   options:
     size:
       values: ['small', 'medium', 'large', 'box']
       default: 'small'
     icon:
-      values: ['news', 'event', 'publication']
+      values: ['news', 'event', 'publication', false]
       default: 'news'
     isExternal:
       values: [true, false]
@@ -23,5 +24,8 @@
       values: [false, '.pdf']
       default: false
     background:
-      values: ["light-pink", "light-blue", "light-green"]
+      values: ["light-pink", "light-blue", "light-green", false]
       default: "light-pink"
+    border:
+      values: [false, true]
+      default: false
