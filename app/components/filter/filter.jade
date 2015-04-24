@@ -17,8 +17,9 @@ mixin filter(data, options)
 
 mixin filter-content(itemGroups, data)
   each group, index in itemGroups
-    div.filter-index= group.label
-    ol.filter-index-list
-      each item, index2 in group.items
-        li
-          a.filter-item(href="#" + item)= item
+    .filter-group
+      div.filter-index= group.label
+      ol.filter-index-list
+        each item, index2 in group.items
+          li
+            a.filter-item(href="#" + item)= item
