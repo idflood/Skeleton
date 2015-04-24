@@ -1,0 +1,9 @@
+// SPACINGS
+$map-height: 45 * $s-gutter !default; // 450px
+
+.map {
+  .js & {
+    // Only set the map height if js is available.
+    height: $map-height;
+  }
+}

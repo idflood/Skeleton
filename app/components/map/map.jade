@@ -1,0 +1,4 @@
+mixin map(data, options)
+  - options = setOptionsDefaults(options, "map", components.map)
+
+  .map(data-map, data-map-zoom=data.zoom, data-map-center-lat=data.lat, data-map-center-lng=data.lng)
