@@ -26,4 +26,10 @@ $item-project-legend-color: $c-grey80 !default;
     margin: 0; // Overwrite default paragraph margin.
     color: $item-project-legend-color;
   }
+
+  &.active, &:hover, &:focus {
+    .item-project-title, .item-project-legend {
+      color: $c-pink;
+    }
+  }
 }
