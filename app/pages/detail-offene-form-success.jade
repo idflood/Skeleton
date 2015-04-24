@@ -16,23 +16,26 @@ block htmlbody
   .l-m-width.l-spacing-v-xl
     h1.t-title Bauingenieur/in Brückenbau
 
-    p.t-link
+    p.t-link.l-margin-v-xs
       | Zollikofen |
       a(href="#") Lageplan und Anfahrtsbeschreibung
 
+    
+    p.t-lead
+      | Michael Weber<br>
+      | mweber@gmail.com<br>
+      | 078 928 38 42
 
-      p Bewerbungen per Post bitte an:
+    ul.no-bullets.t-lead.l-spacing-v-s
+      li
+        span.icon.icon-inline.icon--check.icon-color-green(data-grunticon-embed)
+        | Curriculum Vitae wurde hochgeladen
+      li
+        span.icon.icon-inline.icon--check.icon-color-green(data-grunticon-embed)
+        | Begleitschreiben wurde hochgeladen
 
-      p.l-margin-v-l
-        span.t-h3 Kathrin Huber
-        | <br>Leiterin Human Resources, <br>
-        | Zürich und Lausanne<br>
-        | Forchstrasse 395 <br>
-        | Postfach<br>
-        | 8032 Zürich
-
-      p
-        a(href="offene.html") Zurück zur Übersicht
+    p.l-spacing-v-s
+      a(href="offene.html") Zurück zur Übersicht
 
   +footer-job({}, {})
   +footer({
