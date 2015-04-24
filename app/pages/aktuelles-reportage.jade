@@ -8,69 +8,52 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Aktuelles
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
 
-    +search-field({ placeholder: 'Suche in Reportage' }, {})
+      +search-field({ placeholder: 'Suche in Reportage' }, {})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                  },
-      { text: 'News'           , href: 'aktuelles-news.html'             },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'       , active: true }
-    ]
-  },{})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                  },
+        { text: 'News'           , href: 'aktuelles-news.html'             },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'       , active: true }
+      ]
+    },{})
 
-  .l-l-width.l-spacing-v-l
-    .l-grid
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'Studienauftrag für Kanton Basel-Stadt: Wie kann der Autoverkehr reduziert werden?', label: 'Reportage', date: '30.03.2015', imgSrc: relativePath + 'assets/reportage1.jpg'}, {size: 'box'})
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', label: 'Reportage', date: '27.03.2015', imgSrc: relativePath + 'assets/reportage2.jpg'}, {size: 'box'})
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '20.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
-
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'Studienauftrag für Kanton Basel-Stadt: Wie kann der Autoverkehr reduziert werden?', label: 'Reportage', date: '18.03.2015', imgSrc: relativePath + 'assets/reportage1.jpg'}, {size: 'box'})
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', label: 'Reportage', date: '17.03.2015', imgSrc: relativePath + 'assets/reportage2.jpg'}, {size: 'box'})
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '12.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
-
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'Studienauftrag für Kanton Basel-Stadt: Wie kann der Autoverkehr reduziert werden?', label: 'Reportage', date: '08.03.2015', imgSrc: relativePath + 'assets/reportage1.jpg'}, {size: 'box'})
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', label: 'Reportage', date: '06.03.2015', imgSrc: relativePath + 'assets/reportage2.jpg'}, {size: 'box'})
-      .l-grid-cell.l-one-third
-        +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '02.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
-
-    .section-button
-      +button({
-          href: "#",
-          text: "Weitere Reportage laden"
-      }, { color: 'pink', size: 'large' })
-
-  .l-border-t.l-spacing-v-l
-    .l-l-width
-      .l-margin-v-m
-        h2 Bei allfälligen Fragen
-        p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-
+    .l-l-width.l-spacing-v-l
       .l-grid
         .l-grid-cell.l-one-third
-          +item-contact({
-            imgSrc: relativePath + 'assets/home-contact2.png',
-            firstname: "Maria",
-            lastname: "Muster",
-            role: "Leitender Expertin",
-            region: "Zürich",
-            phone: "044 387 13 19",
-            email: "test2@example.com"
-            }, {})
+          +item-current({ title: 'Studienauftrag für Kanton Basel-Stadt: Wie kann der Autoverkehr reduziert werden?', label: 'Reportage', date: '30.03.2015', imgSrc: relativePath + 'assets/reportage1.jpg'}, {size: 'box'})
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', label: 'Reportage', date: '27.03.2015', imgSrc: relativePath + 'assets/reportage2.jpg'}, {size: 'box'})
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '20.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
+
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'Studienauftrag für Kanton Basel-Stadt: Wie kann der Autoverkehr reduziert werden?', label: 'Reportage', date: '18.03.2015', imgSrc: relativePath + 'assets/reportage1.jpg'}, {size: 'box'})
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', label: 'Reportage', date: '17.03.2015', imgSrc: relativePath + 'assets/reportage2.jpg'}, {size: 'box'})
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '12.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
+
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'Studienauftrag für Kanton Basel-Stadt: Wie kann der Autoverkehr reduziert werden?', label: 'Reportage', date: '08.03.2015', imgSrc: relativePath + 'assets/reportage1.jpg'}, {size: 'box'})
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', label: 'Reportage', date: '06.03.2015', imgSrc: relativePath + 'assets/reportage2.jpg'}, {size: 'box'})
+        .l-grid-cell.l-one-third
+          +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '02.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
+
+      .section-button
+        +button({
+            href: "#",
+            text: "Weitere Reportage laden"
+        }, { color: 'pink', size: 'large' })
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

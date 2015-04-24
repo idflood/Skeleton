@@ -8,69 +8,53 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width
-    h1.t-h1.t-border-bottom Aktuelles
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
 
-    +search-field({ placeholder: 'Suche in Newsletter' }, {})
+      +search-field({ placeholder: 'Suche in Newsletter' }, {})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                  },
-      { text: 'News'           , href: 'aktuelles-news.html'             },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'     , active: true  },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
-    ]
-  },{})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                  },
+        { text: 'News'           , href: 'aktuelles-news.html'             },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'     , active: true  },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+      ]
+    },{})
 
-  .l-l-width.l-spacing-v-l
-    .l-grid
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Einblicke - November 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter1.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - September 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter2.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - Juli 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter3.jpg'}, {size: 'box', border: true})
-
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - Juni 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter4.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - Juni 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter5.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - November 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter6.jpg'}, {size: 'box', border: true})
-
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Einblicke - Juni 2013', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter7.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - November 2012', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter8.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Fokus Bahnhof - Mai 2012', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter9.jpg'}, {size: 'box', border: true})
-
-    .section-button
-      +button({
-          href: "#",
-          text: "Weitere Newsletter laden"
-      }, { color: 'pink', size: 'large' })
-  
-  .l-border-t.l-spacing-v-l
-    .l-l-width
-      .l-margin-v-m
-        h2 Bei allfälligen Fragen
-        p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
-
+    .l-l-width.l-spacing-v-l
       .l-grid
-        .l-grid-cell.l-one-third
-          +item-contact({
-            imgSrc: relativePath + 'assets/home-contact2.png',
-            firstname: "Maria",
-            lastname: "Muster",
-            role: "Leitender Expertin",
-            region: "Zürich",
-            phone: "044 387 13 19",
-            email: "test2@example.com"
-            }, {})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Einblicke - November 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter1.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - September 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter2.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - Juli 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter3.jpg'}, {size: 'box', border: true})
+
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - Juni 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter4.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - Juni 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter5.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - November 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter6.jpg'}, {size: 'box', border: true})
+
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Einblicke - Juni 2013', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter7.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - November 2012', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter8.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Fokus Bahnhof - Mai 2012', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter9.jpg'}, {size: 'box', border: true})
+
+      .section-button
+        +button({
+            href: "#",
+            text: "Weitere Newsletter laden"
+        }, { color: 'pink', size: 'large' })
+
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
