@@ -145,13 +145,6 @@ p {
   column-count: 2;
   column-gap: 2*$s-gutter;
 
-  // Since we add in (1) below a margin-bottom to the li we remove it from
-  // the list.
-  // We need to increase specificty to ul since we override a style applied to ul.
-  ul& {
-    margin-bottom: -0.5em;
-  }
-
   > li {
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
     page-break-inside: avoid; /* Firefox */
@@ -167,4 +160,10 @@ p {
     margin-top: 0;
     margin-bottom: 0.5em;
   }
+}
+
+ul.ul--two-columns{
+  // Since we added a margin-bottom to the li we remove it from the list.
+  // We need to increase specificty to ul since we override a style applied to ul.
+  margin-bottom: -0.5em;
 }
