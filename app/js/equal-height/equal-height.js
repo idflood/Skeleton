@@ -1,3 +1,4 @@
+//define(['jquery', 'mediaQuery'], function ($, mediaQuery){
 define(['jquery'], function ($){
   function EqualHeight(target) {
     this.$target = $(target);
@@ -14,6 +15,8 @@ define(['jquery'], function ($){
       var $elements = $container.data('equal-height-elements');
 
       // TODO: use the sensible method to retrive the scss breakpoints.
+      // But sensible should first be updated to https://github.com/meodai/sensible/pull/11
+      // mediaQuery.is('mobile')
       if (WINDOW_WIDTH <= 740) {
         // On mobile simply set height to auto.
         $elements.height('auto');
