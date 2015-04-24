@@ -51,6 +51,15 @@ $-title-margin-bottom: 1.38em;
   margin-top: 0;
 }
 
+.t-link {
+  &, &:link, &:active, &:visited {
+    color: $c-grey60;
+  }
+  &.active, &:hover, &:focus {
+    color: $c-pink;
+  }
+}
+
 h1 { @extend .t-h1; }
 h2 { @extend .t-h2; }
 h3 { @extend .t-h3; }
