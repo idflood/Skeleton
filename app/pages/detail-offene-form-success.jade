@@ -1,0 +1,52 @@
+extends /layout/layout
+
+block htmlhead
+    title Project Detail Page
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Offene Stellen"})
+  +breadcrumbs({
+    pages: [
+      { name: 'Offene Stellen', href: 'offene.html'},
+      { name: 'Newsartikel', }
+      ]
+    })
+
+  .l-m-width.l-spacing-v-xl
+    h1.t-title Bauingenieur/in Brückenbau
+
+    p.t-link.l-margin-v-xs
+      | Zollikofen |
+      a(href="#") Lageplan und Anfahrtsbeschreibung
+
+    
+    p.t-lead
+      | Michael Weber<br>
+      | mweber@gmail.com<br>
+      | 078 928 38 42
+
+    ul.no-bullets.t-lead.l-spacing-v-s
+      li
+        span.icon.icon-inline.icon--check.icon-color-green(data-grunticon-embed)
+        | Curriculum Vitae wurde hochgeladen
+      li
+        span.icon.icon-inline.icon--check.icon-color-green(data-grunticon-embed)
+        | Begleitschreiben wurde hochgeladen
+
+    p.l-spacing-v-s
+      a(href="offene.html") Zurück zur Übersicht
+
+  +footer-job({}, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
