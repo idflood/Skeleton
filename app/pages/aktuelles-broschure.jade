@@ -25,8 +25,30 @@ block htmlbody
     ]
   },{})
 
+
   .l-l-width.l-spacing-v-l
-    h2.t-h2 Not yet implemented.
+    .l-grid
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Expertise auf allen Ebenen', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure1.jpg'}, {size: 'box', download: true, border: true})
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Expertise at every level', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure2.jpg'}, {size: 'box', download: true, border: true})
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Perspektiven', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure3.jpg'}, {size: 'box', download: true, border: true})
+
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Basler Hofmann Innerschweiz', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure4.jpg'}, {size: 'box', download: true, border: true})
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Bahnhofsentwicklung', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure5.jpg'}, {size: 'box', download: true, border: true})
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Broschüre Exzellenz im Tunnelbau', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure6.jpg'}, {size: 'box', download: true, border: true})
+
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Broschüre Gebäude, die funktionieren', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure7.jpg'}, {size: 'box', download: true, border: true})
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Broschüre Gesamtdienstleister für Bahninfrastruktur', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure8.jpg'}, {size: 'box', download: true, border: true})
+      .l-grid-cell.l-margin-v-xs.l-one-third
+        +item-current({ title: 'Broschüre Kompetenzzentrum Hochleistungsstrassen', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure9.jpg'}, {size: 'box', download: true, border: true})
+
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

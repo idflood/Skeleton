@@ -1,0 +1,20 @@
+---
+  name: "item-location"
+  version: "0.0.1"
+  description: "Location item component"
+  author: "Ginetta"
+  data:
+    lat: 47.377455
+    lng: 8.536715
+    title: "Basler & Hofmann AG"
+    subtitle: "Ingenieure, Planer und Berater"
+    address: "Forchstrasse 395, Postfach"
+    postbox: false
+    country: "CH"
+    npa: "8032"
+    locality: "Zürich"
+    phone: "041 44 387 11 22"
+  options:
+    direction:
+      values: [false, true]
+      default: false

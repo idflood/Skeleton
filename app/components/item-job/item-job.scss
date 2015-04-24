@@ -18,6 +18,11 @@ $item-job-link-color--active: $c-grey80 !default;
   &--layout-table {
     @extend %l-clearfix;
     margin-bottom: 0;
+
+    .item-job-location,
+    .item-job-position {
+      @extend .t-truncate;
+    }
   }
 
   &-location {

@@ -1,0 +1,28 @@
+// SPACINGS
+$item-location-margin: 4 * $s-gutter !default; // 40px
+$item-location-icon-size: 14px !default;
+$item-location-icon-margin: 5px !default;
+
+.item-location {
+  margin-bottom: $item-location-margin;
+
+  &-link,
+  &-email {
+    display: block;
+
+    .icon {
+      display: inline-block;
+      width: $item-location-icon-size;
+      height: $item-location-icon-size;
+      margin-right: $item-location-icon-margin;
+    }
+
+    path {
+      fill: currentColor;
+    }
+
+    svg {
+      max-width: 100%;
+    }
+  }
+}
