@@ -20,6 +20,11 @@
    require(['jquery', 'placeholder'], function($) {
      $('input, textarea').placeholder();
    });
+
+   require(['equal-height'], function(EqualHeight) {
+     new EqualHeight('[data-equal-height]');
+   });
+
    require(['styleguide']);
 
 })();

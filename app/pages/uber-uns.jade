@@ -32,23 +32,24 @@ block htmlbody
     containerSize: 'm',
     content: false
   })
-    .l-grid
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Ganzheitliche Lösungen',
           text: 'Bei Basler & Hofmann stellen wir sicher, dass alle Facetten einer Aufgabe berücksichtigt werden. Unseren Kunden erhalten belastbare und praxistaugliche Lösungen.'
         }, {})
-      .l-grid-cell.l-one-half
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Experten auf allen Ebenen',
           text: 'Wir begleiten unsere Kunden in allen Stadien eines Projekts von der Planung bis zur Umsetzung. Wir bewahren immer den Blick fürs Ganze - und fürs konkrete Detail.'
         }, {})
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Prozesskompetenz',
           text: 'Wir legen grossen Wert auf die breite Kompetenz unserer Projektleiter und Projektleiterinnen: Ein effizientes Projektmanagement ist wichtig, mindestens ebenso wichtig ist die Fähigkeit, zuhören und integrierend führen zu können.'
         }, {})
-      .l-grid-cell.l-one-half
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Traditionell innovativ',
           text: 'Neue Ansprüche an unsere Arbeit – seien sie technischer, ökologischer oder gesellschaftlicher Art – nehmen wir frühzeitig auf. Wir stehen in engem Austausch mit Fachleuten aus aller Welt und bieten unseren Kunden Lösungen auf der Höhe der Zeit.'
@@ -67,12 +68,13 @@ block htmlbody
     .l-grid
       .l-grid-cell-l-one-whole
         p.t-lead Die  Eigentümerfamilien sind überzeugt, die stabilste und nachhaltigste Unternehmensform gewählt zu haben. Das belegt die Unternehmensgeschichte, die von nachhaltigem Wachstum geprägt ist.
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Ein starkes Unternehmen',
           text: 'Die zentralen Ziele und Strategien haben die Eigentümer in der Familiencharta fest geschrieben, damit das Unternehmen sich auch im internationalen Wettbewerb als Familienunternehmen behaupten und erfolgreich weiterentwickeln kann. '
         }, {})
-      .l-grid-cell.l-one-half
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Unsere Verantwortung',
           text: 'Wir übernehmen Verantwortung für unsere Mitarbeitenden ebenso wie gegenüber Staat, Gesellschaft und Umwelt. Mit unseren Tätigkeiten prägen wir Räume und Landschaften und liefern Grundlagen für politische Entscheidungen. '
@@ -89,17 +91,19 @@ block htmlbody
     .l-grid
       .l-grid-cell-l-one-whole
         p.t-lead Fakten können Unternehmen nur bedingt charakterisieren. Viel wichtiger sind aus unserer Sicht die Unternehmenskultur und die Mitarbeitenden. Dennoch nennen wir hier einige Rahmengrössen, die einen Eindruck von uns vermitteln.
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Auf einen Blick',
           text: 'Gegründet in 1963, in der Unternehmensgruppe sind rund 500 Mitarbeitende an Standorten Schweiz, Deutschland, Slowakei und Singapur'
         }, {})
-      .l-grid-cell.l-one-half
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Mitgliedschaften',
           text: 'SIA, usic, Europengineers sowie zahlreiche weitere themenspezifische Fachvereinigungen.'
         }, {})
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Qualitätsmanagement',
           text: 'Am 13.04.1994 erhielten wir als erstes Ingenieurunternehmen in der Schweiz das Qualitätszertifikat nach ISO 9001. Seit 1996 ist unser Umweltmanagementsystem nach ISO 14001 zertifiziert.'
