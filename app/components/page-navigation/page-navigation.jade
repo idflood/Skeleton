@@ -1,8 +1,12 @@
 mixin page-navigation(data, options)
   - options = setOptionsDefaults(options, "page-navigation", components["page-navigation"])
 
-  .page-navigation.l-m-width
-    ol.page-navigation-links.l-horizontal-equidistant
-      each link, index in data.links
-        li.page-navigation-item
-          a.page-navigation-link.t-navigation(href="#" + link.target)= link.title
+  .page-navigation.js-sticky-item(
+    data-sticky-id="page-navigation",
+    data-sticky-distance="70"
+  )
+    .page-navigation-container.l-m-width
+      ol.page-navigation-links.l-horizontal-equidistant
+        each link, index in data.links
+          li.page-navigation-item
+            a.page-navigation-link.t-navigation(href="#" + link.target)= link.title

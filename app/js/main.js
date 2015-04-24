@@ -14,12 +14,25 @@
       });
     */
 
-   require(['page-navigation', 'search-field', 'filter', 'fullwidth-image', 'accordion', 'map']);
+   require([
+    'page-navigation',
+    'search-field',
+    'filter',
+    'fullwidth-image',
+    'accordion',
+    'map',
+    'sticky'
+  ]);
 
    // Adds a global placeholder polyfill (ie9).
    require(['jquery', 'placeholder'], function($) {
      $('input, textarea').placeholder();
    });
+
+   require(['equal-height'], function(EqualHeight) {
+     new EqualHeight('[data-equal-height]');
+   });
+
    require(['styleguide']);
 
 })();

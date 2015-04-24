@@ -33,7 +33,7 @@ block htmlbody
     containerSize: 'm',
     content: false
   })
-    .l-grid
+    .l-grid(data-equal-height=".item-text")
       .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Teilzeit',
@@ -44,6 +44,7 @@ block htmlbody
           title: 'Grüne Welle',
           text: 'Wir unterstützen die Nutzung des öffentlichen Verkehrs mit Halbtax und Bonuskarte. 57 Prozent unserer Pendlerkilometer legen wir mit dem ÖV, per Velo oder zu Fuss zurück.'
         }, {})
+    .l-grid(data-equal-height=".item-text")
       .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Leib und Seele',
@@ -68,15 +69,15 @@ block htmlbody
     content: false
   })
     p Uns ist wichtig, dass unsere Mitarbeiter sich nicht nur als Fachkraft, sondern als ganzer Mensch fühlen.
-    .l-grid
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Beruf und Familie',
           text: 'Mit verschiedenen Massnahmen fördern wir eine gesunde Bilanz zwichen privatem und beruflichem Leben.',
           linkText: 'Weiterlesen',
           linkHref: 'detail-generic.html'
         }, { card: 'grey' })
-      .l-grid-cell.l-one-half
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Persönliche Entwicklung',
           text: 'Ob Auslandseinsatz, Weiterbildung oder.',
@@ -99,15 +100,15 @@ block htmlbody
     content: false
   })
     p Uns ist wichtig, dass unsere Mitarbeiter sich nicht nur als Fachkraft, sondern als ganzer Mensch fühlen.
-    .l-grid
-      .l-grid-cell.l-one-half
+    .l-grid(data-equal-height=".item-text")
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Lehre bei uns',
           text: 'Lernen in einem guten Umfeld, Vernetzung mit Hochschulen, Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           linkText: 'Weiterlesen',
           linkHref: 'detail-generic.html'
         }, { card: 'blue' })
-      .l-grid-cell.l-one-half
+      .l-grid-cell.l-one-half.l-mobile-one-whole
         +item-text({
           title: 'Praktika',
           text: 'Praxiserfahrung für Studierende Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis tortor eu tellus.',

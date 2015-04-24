@@ -1,6 +1,7 @@
 // SPACINGS
 $page-navigation-height: $size-m !default;
 $page-navigation-padding: $size-s !default;
+$page-navigation-sticky-offset: $header-menu-height;
 
 // COLORS
 $page-navigation-background: $c-black !default;
@@ -10,12 +11,26 @@ $page-navigation-link-color--active: $c-grey20 !default;
 .page-navigation {
   position: relative; // Required for z-index.
 
+  &.js-is-sticky {
+    position: fixed;
+    top: $page-navigation-sticky-offset;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: $page-navigation-background;
+  }
+
   min-height: $page-navigation-height;
   margin: -($page-navigation-height / 2) auto; // Simulate absolute position by having negative margins equal to total height.
   padding: 0 $page-navigation-padding;
-  background: $page-navigation-background;
-  z-index: 300;
+  z-index: 600;
   text-align: center;
+
+  transition: background .15s ease-in;
+
+  &-container {
+    background: $page-navigation-background;
+  }
 
   &-links {
     margin: 0; padding: 0; // Reset default ol margin and padding.

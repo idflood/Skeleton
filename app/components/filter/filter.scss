@@ -114,6 +114,9 @@ $filter-item-color--active: $c-pink !default;
     }
   }
 
+  &-group.js-is-hidden {
+    display: none;
+  }
 
   &-item {
     display: block;

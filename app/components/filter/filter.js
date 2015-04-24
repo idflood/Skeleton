@@ -33,8 +33,9 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
 
   var $filter = $('.filter');
 
-  var $filterInput = $filter.find('.js-secondary-search-field > input');
-  var $filterItems = $filter.find('.filter-item');
+  var $filterInput  = $filter.find('.js-secondary-search-field > input');
+  var $filterItems  = $filter.find('.filter-item');
+  var $filterGroups = $filter.find('.filter-group')
 
   $filter.search =
     new Search($filter)
@@ -47,6 +48,7 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
           notMatchingItems.forEach(function ($item) {
             $item.addClass(HIDDEN_CLASS);
           });
+          updateGroupsVisibility();
       })
       .on('search.select', function (evt, matchingItems) {
         if (matchingItems.length === 1) {
@@ -54,6 +56,25 @@ define(['jquery', 'search', 'highlight'], function($, Search, highlight){
           activateFilter(value)
         }
       });
+
+  function updateGroupsVisibility () {
+    $filterGroups.each(function (){
+      var $group = $(this)
+      var isGroupVisible = false;
+      $group.find('a').each(function () {
+        var $item = $(this);
+        if (!$item.hasClass(HIDDEN_CLASS)) {
+          isGroupVisible = true;
+        }
+      });
+
+      if (isGroupVisible) {
+        $group.removeClass(HIDDEN_CLASS);
+      } else {
+        $group.addClass(HIDDEN_CLASS);
+      }
+    });
+  }
 
   $filter.on('click.filter', '.filter-clear', function (e) {
     e.preventDefault();

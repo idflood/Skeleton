@@ -41,6 +41,19 @@ $header-search-color--active: $c-pink !default;
     overflow: hidden; // clearfix
   }
 
+  .js-is-sticky--header & {
+    margin-bottom: $header-menu-height;
+  }
+
+  &-bottom.js-is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 600;
+    background: $c-white;
+  }
+
   &-menu {
     min-height: $header-menu-height;
   }
