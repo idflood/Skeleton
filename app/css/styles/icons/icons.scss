@@ -1,7 +1,22 @@
 //@import "grunticon.generated/icons.data.svg";
+@import "../colors/colors";
+@import "../../_0.settings";
+
+// SPACINGS
+$icon-inline-margin: $s-gutter !default;
 
 .icon {
   background-size: contain;
+}
+
+.icon-color-green {
+  path {
+    fill: $c-green;
+  }
+}
+
+.icon-inline {
+  margin-right: $icon-inline-margin;
 }
 
 // Add here more sizes, if needed
