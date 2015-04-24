@@ -7,10 +7,24 @@ mixin item-location(data, options)
     - mapLink = "https://www.google.ch/maps/dir//Vorsorgefonds+der+Firma+Basler+und+Hofmann+AG,+in+Z%C3%BCrich,+Forchstrasse+395,+8008+Z%C3%BCrich/@47.351471,8.582607,17z/data=!4m13!1m4!3m3!1s0x479aa727a4183fe5:0xf3dbe4c6bb27346f!2sVorsorgefonds+der+Firma+Basler+und+Hofmann+AG,+in+Z%C3%BCrich!3b1!4m7!1m0!1m5!1m1!1s0x479aa727a4183fe5:0xf3dbe4c6bb27346f!2m2!1d8.582607!2d47.351471?hl=fr"
     - mapText += " und Anfahrtsbeschreibung"
 
-  .item-location(data-map-item, data-map-lat=data.lat, data-map-lng=data.lng)
+  .item-location.vcard(data-map-item, data-map-lat=data.lat, data-map-lng=data.lng, itemscope, itemtype="http://schema.org/LocalBusiness")
     .item-location-content
-      block
-    a.item-location-email(href="mailto:test@example.com")
+      .fn(itemprop="name")= data.title
+      div(itemprop="description")= data.subtitle
+      .adr(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress")
+        .street-address(itemprop="streetAddress")= data.address
+        if data.postbox
+          - // If the postbox has a number wrap it in a proper microdata markup.
+          - data.postbox = data.postbox.replace(/\b(\d+)\b/g, "<span itemprop='postOfficeBoxNumber'>$1</span>")
+          .post-office-box!= data.postbox
+        if data.country
+          span.country-name(itemprop="addressCountry")= data.country + "-"
+        span.postal-code(itemprop="postalCode")= data.npa + " "
+        span.locality(itemprop="addressLocality")= data.locality
+        
+      .tel(itemprop="telephone")= data.phone
+      
+    a.item-location-email(href="mailto:test@example.com", itemprop="email")
       span.icon.icon--mail(data-grunticon-embed)
       | Email
     
