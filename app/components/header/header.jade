@@ -24,7 +24,7 @@ mixin header(data, options)
                 else
                   +header-item(link, options, 'secondary')
 
-    .header-bottom
+    .header-bottom.js-sticky-item(data-sticky-id="header")
       .l-xl-width
         nav.header-menu.header-menu-primary
           ul.l-horizontal-list
