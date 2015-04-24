@@ -13,6 +13,9 @@ define(['jquery', 'search'], function($, Search){
   var $searchContainer = $('.js-search');
   var $searchInput     = $searchContainer.find('.js-main-search-field > input');
   var $searchItems     = $searchContainer.find($searchContainer.data('search-items-selector'));
+  var $searchGroups    = $searchContainer.find($searchContainer.data('search-group-selector'));
+
+  var hasSearchGroups = $searchGroups.length > 0;
 
   $searchContainer.search =
     new Search($searchContainer)
@@ -28,6 +31,10 @@ define(['jquery', 'search'], function($, Search){
           $item.addClass(MUTED_BY_SEARCH_CLASS)
           updateItemVisibility($item);
         });
+
+        if (hasSearchGroups) {
+          updateGroupsVisibility();
+        }
       })
 
 
@@ -44,6 +51,27 @@ define(['jquery', 'search'], function($, Search){
     } else {
       $item.parent().removeClass(HIDDEN_CLASS);
     }
+  }
+
+  function updateGroupsVisibility () {
+    $searchGroups.each(function () {
+      var $group = $(this);
+      var groupItemsSelector = $searchContainer.data('search-items-selector');
+      var isGroupVisible = false;
+      $group.find(groupItemsSelector).each(function () {
+        var $item = $(this);
+        if (!$item.parent().hasClass(HIDDEN_CLASS)) {
+          isGroupVisible = true;
+        }
+      });
+
+      if (!isGroupVisible) {
+        $group.addClass(HIDDEN_CLASS);
+      } else {
+        $group.removeClass(HIDDEN_CLASS);
+      }
+
+    })
   }
 
 
@@ -66,6 +94,9 @@ define(['jquery', 'search'], function($, Search){
         }
         // Update item visibility
         updateItemVisibility($item);
-      })
+      });
+      if (hasSearchGroups) {
+        updateGroupsVisibility();
+      }
     });
 });
