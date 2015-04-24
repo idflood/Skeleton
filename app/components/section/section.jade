@@ -12,7 +12,7 @@ mixin section(data, options)
           block
         else
           //- THIS IS JUST FOR THE STYLEGUIDE
-          .l-grid
+          .l-grid(data-equal-height=".item-text")
             .l-grid-cell.l-one-half
               +item-text({
                 title: 'Beruf und Familie',
