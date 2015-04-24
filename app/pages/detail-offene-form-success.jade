@@ -1,0 +1,49 @@
+extends /layout/layout
+
+block htmlhead
+    title Project Detail Page
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Offene Stellen"})
+  +breadcrumbs({
+    pages: [
+      { name: 'Offene Stellen', href: 'offene.html'},
+      { name: 'Newsartikel', }
+      ]
+    })
+
+  .l-m-width.l-spacing-v-xl
+    h1.t-title Bauingenieur/in Brückenbau
+
+    p.t-link
+      | Zollikofen |
+      a(href="#") Lageplan und Anfahrtsbeschreibung
+
+
+      p Bewerbungen per Post bitte an:
+
+      p.l-margin-v-l
+        span.t-h3 Kathrin Huber
+        | <br>Leiterin Human Resources, <br>
+        | Zürich und Lausanne<br>
+        | Forchstrasse 395 <br>
+        | Postfach<br>
+        | 8032 Zürich
+
+      p
+        a(href="offene.html") Zurück zur Übersicht
+
+  +footer-job({}, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
