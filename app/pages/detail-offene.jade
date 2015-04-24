@@ -1,0 +1,92 @@
+extends /layout/layout
+
+block htmlhead
+    title Project Detail Page
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Offene Stellen"})
+  +breadcrumbs({
+    pages: [
+      { name: 'Offene Stellen', href: 'offene.html'},
+      { name: 'Newsartikel', }
+      ]
+    })
+
+  .l-m-width.l-spacing-v-xl
+    h1.t-title Bauingenieur/in Brückenbau
+
+    p.t-link
+      | Zollikofen |
+      a(href="#") Lageplan und Anfahrtsbeschreibung
+
+    +form()
+      .l-grid
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          label.form-label.t-lead Name
+            input.form-text(type="text", name="name", required)
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          label.form-label.t-lead Vorname
+            input.form-text(type="text", name="vorname", required)
+
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          label.form-label.t-lead E-mail
+            input.form-text(type="text", name="email", required)
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          label.form-label.t-lead Telefon (fakultativ)
+            input.form-text(type="email", name="telefon")
+
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          label.form-label.t-lead Curriculum Vitae
+            input.form-file(type="file", name="cv", required)
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          label.form-label.t-lead Begleitschreiben
+            input.form-file(type="file", name="begleitschreiben", required)
+
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          .form-radio-wrapper
+            input#radio1.form-radio(type="radio", name="radio-example", value="radio1")
+            label.form-label.t-lead(for="radio1") Radio button 1
+          .form-radio-wrapper
+            input#radio2.form-radio(type="radio", name="radio-example", value="radio2", checked)
+            label.form-label.t-lead(for="radio2") Radio button 2
+        .form-element.l-grid-cell.l-one-half.l-mobile-one-whole
+          .form-checkbox-wrapper
+            input#check1.form-checkbox(type="checkbox", name="check1", value="checkbox1")
+            label.form-label.t-lead(for="check1") Checkbox 1
+          .form-checkbox-wrapper
+            input#check2.form-checkbox(type="checkbox", name="check2", value="checkbox2", checked)
+            label.form-label.t-lead(for="check2") Checkbox 2
+
+        .form-element.l-grid-cell.l-one-whole
+          label.form-label.t-lead Komentar
+            textarea.form-textarea(name="Komentar")
+
+        .form-element.l-grid-cell.l-one-whole.l-spacing-v-xs
+          input.button.button--color-pink(type="button", value="Formular abschicken")
+
+      p Bewerbungen per Post bitte an:
+
+      p.l-margin-v-l
+        span.t-h3 Kathrin Huber
+        | <br>Leiterin Human Resources, <br>
+        | Zürich und Lausanne<br>
+        | Forchstrasse 395 <br>
+        | Postfach<br>
+        |  8032 Zürich
+
+      p
+        a(href="offene.html") Zurück zur Übersicht
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
