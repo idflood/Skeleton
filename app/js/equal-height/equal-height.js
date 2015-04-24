@@ -43,9 +43,9 @@ define(['jquery'], function ($){
     this.$target.each(function() {
       var $container = $(this);
       var $elements = $container.find($container.data('equal-height'));
-      console.log($elements);
       $container.data('equal-height-elements', $elements);
     });
+
     // Recalculate elements height on resize and trigger resize.
     var self = this;
     $(window).resize(function() {self.onResize();});
