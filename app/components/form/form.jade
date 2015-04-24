@@ -1,0 +1,5 @@
+mixin form(data, options)
+  - options = setOptionsDefaults(options, "form", components.form)
+
+  form.form.l-spacing-v-xs(action="", name="example-form", method="post")
+    block

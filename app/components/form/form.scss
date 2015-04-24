@@ -1,0 +1,91 @@
+// SPACINGS
+$form-element-margin: $size-s !default;
+$form-input-height: 4 * $s-gutter !default;
+$form-input-spacing: 1.5 * $s-gutter !default;
+$form-textarea-height: 12 * $s-gutter !default; // 120px
+$form-radio-wrapper-margin: $s-gutter !default;
+
+// COLORS
+$form-input-border-color: $c-grey20 !default;
+$form-input-border-color-focused: $c-grey40 !default;
+$form-input-text-color: $c-grey80 !default;
+
+.form {
+  &-element {
+    margin-bottom: $form-element-margin;
+  }
+
+  &-label {
+    display: block;
+  }
+
+  &-text,
+  &-textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+
+    height: $form-input-height;
+    padding: $form-input-spacing;
+    border: 1px solid $form-input-border-color;
+    color: $form-input-text-color;
+    outline: none;
+
+    // Overwrite default style on ios devices.
+    border-radius: 0;
+    appearance: none;
+
+    &:focus {
+      border-color: $form-input-border-color-focused;
+    }
+  }
+
+  &-textarea {
+    height: $form-textarea-height;
+    resize: none;
+  }
+
+  &-radio-wrapper,
+  &-checkbox-wrapper {
+    margin-bottom: $form-radio-wrapper-margin;
+
+    &:last-child {
+      // Remove extra margin from last item to have correct spacing between
+      // this and the next .form-element.
+      margin-bottom: 0;
+    }
+  }
+
+  &-radio,
+  &-checkbox {
+    position: absolute;
+    opacity: 0;
+
+    + label {
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        margin-right: 10px;
+        vertical-align: -6px;
+      }
+    }
+  }
+
+  &-radio + label:before {
+    background: url('../assets/radio.svg') no-repeat;
+  }
+  &-radio:checked + label:before {
+    background: url('../assets/radio--checked.svg') no-repeat;
+  }
+
+  &-checkbox + label:before {
+    background: url('../assets/checkbox.svg') no-repeat;
+  }
+  &-checkbox:checked + label:before {
+    background: url('../assets/checkbox--checked.svg') no-repeat;
+  }
+}
