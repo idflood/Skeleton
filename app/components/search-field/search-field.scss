@@ -57,15 +57,6 @@ input.search-field-input { box-sizing: border-box; }
       fill: $search-field-placeholder-color;
     }
 
-    .js-is-searching & {
-      @keyframes pulsate {
-          0%   { transform: scale(1);  }
-          50%  { transform: scale(.8); }
-          100% { transform: scale(1);  }
-      }
-      animation: pulsate 1s ease-in-out;
-      animation-iteration-count: infinite;
-    }
 
     .is-focused & {
       path {
