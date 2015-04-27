@@ -24,7 +24,7 @@ $item-current-image-border: $c-grey20 !default;
 
 .item-current {
   position: relative;
-  margin-bottom: $item-current-spacing;
+  margin-top: $item-current-spacing;
 
   a {
     text-decoration: none;
