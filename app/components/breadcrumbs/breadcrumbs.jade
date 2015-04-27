@@ -2,7 +2,7 @@ mixin breadcrumbs (data, options)
   - options = setOptionsDefaults(options, "breadcrumbs", components.breadcrumbs)
 
   .l-xl-width
-    ul.breadcrumbs
+    ul.breadcrumbs.list--no-bullets
       each breadcrumb, index in data.pages
         li.breadcrumbs-item
           - var isLink = index < data.pages.length - 1
