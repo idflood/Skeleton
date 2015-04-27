@@ -141,7 +141,7 @@ p {
   }
 }
 
-.ul--two-columns {
+.list--two-columns {
   column-count: 2;
   column-gap: 2*$s-gutter;
 
@@ -162,7 +162,7 @@ p {
   }
 }
 
-ul.ul--two-columns{
+ul.list--two-columns{
   // Since we added a margin-bottom to the li we remove it from the list.
   // We need to increase specificty to ul since we override a style applied to ul.
   margin-bottom: -0.5em;
