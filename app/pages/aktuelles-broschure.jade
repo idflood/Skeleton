@@ -8,46 +8,47 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Aktuelles
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
 
-    +search-field({ placeholder: 'Suche in Broschüre' }, {})
+      +search-field({ placeholder: 'Suche in Broschüre' }, {})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                  },
-      { text: 'News'           , href: 'aktuelles-news.html'             },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'      , active: true  },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
-    ]
-  },{})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                  },
+        { text: 'News'           , href: 'aktuelles-news.html'             },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'      , active: true  },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+      ]
+    },{})
 
 
-  .l-l-width.l-spacing-v-l
-    .l-grid
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Expertise auf allen Ebenen', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure1.jpg'}, {size: 'box', download: true, border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Expertise at every level', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure2.jpg'}, {size: 'box', download: true, border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Perspektiven', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure3.jpg'}, {size: 'box', download: true, border: true})
+    .l-l-width.l-spacing-v-l
+      .l-grid
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Expertise auf allen Ebenen', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure1.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Expertise at every level', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure2.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Perspektiven', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure3.jpg'}, {size: 'box', download: true, border: true})
 
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Basler Hofmann Innerschweiz', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure4.jpg'}, {size: 'box', download: true, border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Bahnhofsentwicklung', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure5.jpg'}, {size: 'box', download: true, border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Broschüre Exzellenz im Tunnelbau', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure6.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Basler Hofmann Innerschweiz', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure4.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Bahnhofsentwicklung', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure5.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Broschüre Exzellenz im Tunnelbau', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure6.jpg'}, {size: 'box', download: true, border: true})
 
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Broschüre Gebäude, die funktionieren', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure7.jpg'}, {size: 'box', download: true, border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Broschüre Gesamtdienstleister für Bahninfrastruktur', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure8.jpg'}, {size: 'box', download: true, border: true})
-      .l-grid-cell.l-margin-v-xs.l-one-third
-        +item-current({ title: 'Broschüre Kompetenzzentrum Hochleistungsstrassen', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure9.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Broschüre Gebäude, die funktionieren', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure7.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Broschüre Gesamtdienstleister für Bahninfrastruktur', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure8.jpg'}, {size: 'box', download: true, border: true})
+        .l-grid-cell.l-margin-v-xs.l-one-third
+          +item-current({ title: 'Broschüre Kompetenzzentrum Hochleistungsstrassen', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure9.jpg'}, {size: 'box', download: true, border: true})
 
 
   +footer({
