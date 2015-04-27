@@ -8,51 +8,80 @@ block htmlbody
 
   +header({}, {active: "Aktuelles"})
 
-  .l-l-width.l-spacing-v-l
-    h1.t-title.t-border-bottom Aktuelles
+  .js-search(data-search-items-selector=".item-current")
+    .l-l-width.l-spacing-v-l
+      h1.t-title.t-border-bottom Aktuelles
 
-    +search-field({ placeholder: 'Suche in Aktuelles' }, {})
+      +search-field({ placeholder: 'Suche in Aktuelles' }, {})
 
-  +tabs({
-    tabs: [
-      { text: 'Alle'           , href: 'aktuelles.html'                 , active: true },
-      { text: 'News'           , href: 'aktuelles-news.html'             },
-      { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
-      { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
-      { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
-      { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
-      { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
-    ]
-  },{})
+    +tabs({
+      tabs: [
+        { text: 'Alle'           , href: 'aktuelles.html'                 , active: true },
+        { text: 'News'           , href: 'aktuelles-news.html'             },
+        { text: 'Veranstaltungen', href: 'aktuelles-veranstaltungen.html'  },
+        { text: 'Broschüre'      , href: 'aktuelles-broschure.html'        },
+        { text: 'Newsletter'     , href: 'aktuelles-newsletter.html'       },
+        { text: 'Farchartikel'   , href: 'aktuelles-farchartikel.html'     },
+        { text: 'Reportage'      , href: 'aktuelles-reportage.html'        }
+      ]
+    },{})
 
-  .l-l-width.l-spacing-v-l
-    .l-grid
-      .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-current({ title: 'Basler & Hofmann ausgezeichnet als “Tunnel Design Firm of the Year”', date: '27.03.2015', label: 'News', imgSrc: relativePath + 'assets/projects/project5.jpg'}, {size: 'box'})
-      .l-grid-cell.l-margin-v-m.l-thirty
-        +item-current({ title: 'Fachtagung bei der Basler & Hofman ZH: Schule als Gestaltungs-, Lern- und Lebensraum', date: '30.03.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'box', icon: 'event', background: 'light-pink'})
-      .l-grid-cell.l-margin-v-m.l-thirty
-        +item-current({ title: 'Expertise at every level', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure1.jpg'}, {size: 'box', download: true, border: true})
+    .l-l-width.l-spacing-v-l
+      .l-grid
+        .l-grid-cell.l-margin-v-m.l-two-fifth
+          +item-current({ title: 'Basler & Hofmann ausgezeichnet als “Tunnel Design Firm of the Year”', date: '27.03.2015', label: 'News', imgSrc: relativePath + 'assets/projects/project5.jpg'}, {size: 'box'})
+        .l-grid-cell.l-margin-v-m.l-thirty
+          +item-current({ title: 'Fachtagung bei der Basler & Hofman ZH: Schule als Gestaltungs-, Lern- und Lebensraum', date: '30.03.2015', location: 'Zürich', label: 'Veranstaltung'}, {size: 'box', icon: 'event', background: 'light-pink'})
+        .l-grid-cell.l-margin-v-m.l-thirty
+          +item-current({ title: 'Expertise at every level', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure1.jpg'}, {size: 'box', download: true, border: true})
 
-      .l-grid-cell.l-margin-v-m.l-one-quarter
-        +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt ', date: '21.03.2015', label: 'Fachartikel'}, {size: 'box', icon: 'news', background: 'light-blue'})
-      .l-grid-cell.l-margin-v-m.l-thirty-five
-        +item-current({ title: 'Areal "Village Luzern" erhält Label "2000-Watt-Areal in Entwicklung"', date: '05.03.2015', label: 'News', imgSrc: relativePath + 'assets/news1.jpg'}, {size: 'box'})
-      .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', date: '16.03.2015', label: 'Reportage', imgSrc: relativePath + 'assets/news2.jpg'}, {size: 'box'})
+        .l-grid-cell.l-margin-v-m.l-one-quarter
+          +item-current({ title: 'NZZ am Sonntag vom 28.12.2014: Unterschätzter Unterhalt ', date: '21.03.2015', label: 'Fachartikel'}, {size: 'box', icon: 'news', background: 'light-blue'})
+        .l-grid-cell.l-margin-v-m.l-thirty-five
+          +item-current({ title: 'Areal "Village Luzern" erhält Label "2000-Watt-Areal in Entwicklung"', date: '05.03.2015', label: 'News', imgSrc: relativePath + 'assets/news1.jpg'}, {size: 'box'})
+        .l-grid-cell.l-margin-v-m.l-two-fifth
+          +item-current({ title: 'People Business: Team Spirit spielt bei uns eine zentrale Rolle', date: '16.03.2015', label: 'Reportage', imgSrc: relativePath + 'assets/news2.jpg'}, {size: 'box'})
 
-      .l-grid-cell.l-margin-v-m.l-two-fifth
-        +item-current({ title: 'Unser gegenwärtiges Kulturbuch anlässlich unseres 50-jährigen Jubiläums, online durchblättern', label: 'Kulturbuch', imgSrc: relativePath + 'assets/news3.jpg'}, {size: 'box'})
-      .l-grid-cell.l-margin-v-m.l-thirty
-        +item-current({ title: 'Newsletter «Einblicke» Juni 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter5.jpg'}, {size: 'box', border: true})
-      .l-grid-cell.l-margin-v-m.l-thirty
-        +item-current({ title: 'Perspektiven für Bewerberinnen und Bewerber', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure3.jpg'}, {size: 'box', download: true, border: true})
-
-    .section-button
-      +button({
-          href: "#",
-          text: "Mehr Aktuelles laden"
-      }, { color: 'pink', size: 'large' })
+        .l-grid-cell.l-margin-v-m.l-two-fifth
+          +item-current({ title: 'Unser gegenwärtiges Kulturbuch anlässlich unseres 50-jährigen Jubiläums, online durchblättern', label: 'Kulturbuch', imgSrc: relativePath + 'assets/news3.jpg'}, {size: 'box'})
+        .l-grid-cell.l-margin-v-m.l-thirty
+          +item-current({ title: 'Newsletter «Einblicke» Juni 2014', label: 'Newsletter', imgSrc: relativePath + 'assets/newsletter/newsletter5.jpg'}, {size: 'box', border: true})
+        .l-grid-cell.l-margin-v-m.l-thirty
+          +item-current({ title: 'Perspektiven für Bewerberinnen und Bewerber', label: 'Broschüre', imgSrc: relativePath + 'assets/broschure/broschure3.jpg'}, {size: 'box', download: true, border: true})
+  .l-border-t.l-spacing-v-l
+    .l-m-width
+      h2.t-vr-reset Ihre Ansprechpartner
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact1.png',
+            firstname: "Hans",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Murten",
+            phone: "044 387 13 19",
+            email: "test@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact3.png',
+            firstname: "Peter",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Lausanne",
+            phone: "044 387 13 19",
+            email: "test3@example.com"
+            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

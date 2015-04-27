@@ -49,11 +49,40 @@ block htmlbody
         .l-grid-cell.l-one-third
           +item-current({ title: 'Generalplanermandat für Publikumsanlagen im Bahnhof Bern', label: 'Reportage', date: '02.03.2015', imgSrc: relativePath + 'assets/reportage3.jpg'}, {size: 'box'})
 
-      .section-button
-        +button({
-            href: "#",
-            text: "Weitere Reportage laden"
-        }, { color: 'pink', size: 'large' })
+  .l-border-t.l-spacing-v-l
+    .l-m-width
+      h2.t-vr-reset Ihre Ansprechpartner
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact1.png',
+            firstname: "Hans",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Murten",
+            phone: "044 387 13 19",
+            email: "test@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact3.png',
+            firstname: "Peter",
+            lastname: "Muster",
+            role: "Leitender Experte",
+            region: "Lausanne",
+            phone: "044 387 13 19",
+            email: "test3@example.com"
+            }, {})
 
   +footer({
     copyright: '© Basler & Hofmann 2015',
