@@ -1,7 +1,9 @@
 // SPACINGS
 $item-contact-image-margin: 10px !default;
+$item-contact-vr: $size-s;
 
 .item-contact {
+  margin-top: $item-contact-vr;
   &-image {
     display: block; // Remove spacing below caused by inline style.
     width: 100%;
