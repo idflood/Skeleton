@@ -2,7 +2,7 @@ mixin tabs(data, options)
   - options = setOptionsDefaults(options, "tabs", components.tabs)
 
   .tabs
-    ul.tabs-container.l-l-width(class=classes)
+    ul.tabs-container.l-l-width.list--no-bullets(class=classes)
       each tab in data.tabs
         li.tabs-item
           a.tabs-link.t-button(href=tab.href, class=tab.active ? 'is-active' : '')= tab.text
