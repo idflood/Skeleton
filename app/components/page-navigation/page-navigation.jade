@@ -6,7 +6,7 @@ mixin page-navigation(data, options)
     data-sticky-distance="70"
   )
     .page-navigation-container.l-m-width
-      ol.page-navigation-links.l-horizontal-equidistant
+      ol.page-navigation-links.l-horizontal-equidistant.list--no-bullets
         each link, index in data.links
           li.page-navigation-item
             a.page-navigation-link.t-navigation(href="#" + link.target)= link.title
