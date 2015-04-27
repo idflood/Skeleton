@@ -20,6 +20,7 @@ $item-contact-title-hover: $c-pink !default;
   &-link {
     display: block;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover, &:focus {
       .item-contact-title {
