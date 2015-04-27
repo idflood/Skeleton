@@ -6,6 +6,6 @@ mixin index(data, options)
     block
 
 mixin index-item(title)
-  li.index-item
-    .t-h2= title
+  li.index-item()
+    h2.t-h2()&attributes(attributes)= title
     block
