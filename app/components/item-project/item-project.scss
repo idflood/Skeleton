@@ -31,7 +31,7 @@ $item-project-legend-color: $c-grey80 !default;
   }
 
   &.active, &:hover, &:focus {
-    .item-project-title, .item-project-legend {
+    .item-project-title {
       color: $c-pink;
     }
   }
