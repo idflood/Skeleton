@@ -38,6 +38,21 @@ block htmlbody
     a.t-link(href="#") Zurück zur Übersicht
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
 
+  .l-border-t.l-spacing-v-m
+    .l-m-width
+      h2.t-vr-reset Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
   +footer({
     copyright: '© Basler & Hofmann 2015',
     languages: [
