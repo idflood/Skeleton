@@ -1,0 +1,52 @@
+extends /layout/layout
+
+block htmlhead
+    title Past Event Detail Page
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Aktuelles"})
+  +breadcrumbs({
+    pages: [
+      {name: "Aktuelles", href: "./aktuelles.html"},
+      {name: "Future Event"}
+    ]
+  }, {})
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h1.t-title Fachtagung "Gewässerrevitalisierungen" bei Basler & Hofmann ZH
+    p.t-grey60
+      span.icon.icon--clock(data-grunticon-embed)
+      | Dienstag, 08.04.2015 von 17:00 bis 19:00 Uhr
+    p.t-grey60
+      span.icon.icon--pin(data-grunticon-embed)
+      a(href="#") Hauptsitz Basler & Hofmann, Forchstrasse 395
+      | , Sitzungszimmer P24p
+    p.t-lead Am 8. April 2015 findet bei Basler & Hofmann die Fachtagung „Gewässerrevitalisierungen“ mit namhaften Referenten aus Pädagogik und Umwelt statt.
+
+    h2 Referenten
+    ul
+      li Franziska Peterhans, Zentralsekretärin LCH
+      li Dr. Otto Seydel, Institut für Schulentwicklung, Überlingen
+      li Cédric Perrenoud, Basler & Hofmann
+      li Prof. Dr. Ernst Buschor, Forum Bildung 
+
+    h2 Interesse
+    p Haben wir Ihr Interesse geweckt? Dann freuen wir uns, Sie kennen zu lernen!
+    +button({text: "Online anmelden", href: "#"}, {})
+
+  .l-m-width.l-spacing-v-m
+    a.t-link(href="#") Zurück zur Übersicht
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})

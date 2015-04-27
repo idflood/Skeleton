@@ -1,0 +1,71 @@
+extends /layout/layout
+
+block htmlhead
+    title Past Event Detail Page
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Aktuelles"})
+  +breadcrumbs({
+    pages: [
+      {name: "Aktuelles", href: "./aktuelles.html"},
+      {name: "Past Event"}
+    ]
+  }, {})
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h1.t-title Fachtagung bei Basler & Hofman ZH: Schule als Gestaltungs-, Lern und Lebensraum
+    p.t-grey60 30.03.2015
+    p.t-lead Am 30. März 2015 fand bei Basler & Hofmann die Fachtagung „Schule als Gestaltungs-, Lern- und Lebensraum“ mit namhaften Referenten aus Pädagogik und Architektur statt.
+
+    h2 Referate zum Downloaden
+    p
+      strong Franziska Peterhans, Zentralsekretärin LCH 
+      br
+      a(href="#") Ziele und Inhalte des Lehrplan 21, pdf 3MB
+
+    p
+      strong Dr. Otto Seydel, Institut für Schulentwicklung, Überlingen 
+      br
+      a(href="#") Von der Schulentwicklung zur Schulraumentwicklung: Der Planungsprozess als Schlüssel zum Gelingen, pdf 1.2MB
+
+    p
+      strong Cédric Perrenoud, Basler & Hofmann 
+      br
+      a(href="#") Zukunftsfähiger Schulumbau? Beispiele aus der Praxis, pdf 2MB
+
+    p
+      strong Prof. Dr. Ernst Buschor, Forum Bildung 
+      br
+      a(href="#") Kulturelle und volkswirtschaftliche Bedeutung der Schulentwicklung, pdf 1.4MB.
+
+  .l-m-width.l-spacing-v-m
+    a.t-link(href="#") Zurück zur Übersicht
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  .l-border-t.l-spacing-v-m
+    .l-m-width
+      h2 Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
