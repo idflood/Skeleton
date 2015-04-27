@@ -2,6 +2,9 @@
 $item-contact-image-margin: 10px !default;
 $item-contact-vr: $size-s;
 
+// COLORS
+$item-contact-title-hover: $c-pink !default;
+
 .item-contact {
   margin-top: $item-contact-vr;
   &-image {
@@ -12,6 +15,18 @@ $item-contact-vr: $size-s;
 
   &-title {
     @extend .t-h4;
+  }
+
+  &-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      .item-contact-title {
+        color: $item-contact-title-hover;
+      }
+    }
   }
 
   &-text {

@@ -7,10 +7,12 @@ mixin item-contact(data, options)
       - dataAttributes['data-' + key] = val
 
   .item-contact.vcard(itemscope, itemtype="http://schema.org/Person")&attributes(dataAttributes)
-    img.item-contact-image(itemprop="image", alt=data.firstname + ' ' + data.lastname, src=data.imgSrc)
-    .item-contact-title.fn(itemprop="name")= data.firstname + ' ' + data.lastname
-    .item-contact-text
-      span(itemprop="jobTitle")= data.role
-      span , Bereich #{data.region}
-      div.tel(itemprop="telephone")= data.phone
-      a(href="mailto:" + data.email) Email
+    a.item-contact-link(href=data.href)
+      img.item-contact-image(itemprop="image", alt=data.firstname + ' ' + data.lastname, src=data.imgSrc)
+      .item-contact-title.fn(itemprop="name")= data.firstname + ' ' + data.lastname
+      .item-contact-text
+        span(itemprop="jobTitle")= data.role
+        span , Bereich #{data.region}
+        div.tel(itemprop="telephone")= data.phone
+
+    a.item-contact-email(href="mailto:" + data.email) Email
