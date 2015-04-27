@@ -50,6 +50,7 @@ $item-job-link-color--active: $c-pink !default;
       height: $item-job-layout-table-height;
       line-height: $item-job-layout-table-height;
       @extend .t-paragraph;
+      font-family: $strong-font-family;
       text-decoration: none;
       width: 100% - $item-job-layout-table-location-width;
     }
