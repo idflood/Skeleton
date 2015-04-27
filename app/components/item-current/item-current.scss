@@ -1,6 +1,6 @@
 // SPACINGS
 $item-current-padding: $size-xl !default; // 90px
-$item-current-spacing: 3 * $s-gutter !default;
+$item-current-spacing: $size-s !default;
 $item-current-spacing--medium: $size-xs !default;
 
 $item-current-icon-width--small: 14px !default;
