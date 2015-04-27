@@ -33,6 +33,10 @@
      new EqualHeight('[data-equal-height]');
    });
 
+   require(['sticky-footer'], function(StickyFooter) {
+     new StickyFooter();
+   });
+
    require(['styleguide']);
 
 })();
