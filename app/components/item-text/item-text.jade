@@ -3,8 +3,10 @@ mixin item-text(data, options)
   - var classes = getOptionsModifier(options, "item-text", ['card'], components['item-text'])
 
   .item-text(class=options.card ? classes : 'item-text--no-card')
-    h3.item-text-title.t-h3= data.title
+    h3.t-h3.t-vr-reset= data.title
     p.item-text-content.t-paragraph !{data.text}
+
     if data.linkText && data.linkHref
-      a.item-text-link.t-link(href=data.linkHref)= data.linkText
+      p
+        a.t-link(href=data.linkHref)= data.linkText
 

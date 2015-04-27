@@ -2,37 +2,13 @@
 $item-text-card-spacing: 3 * $s-gutter !default;
 $item-text-margin: $size-s;
 
-// TYPOGRAPHY VERTICAL RHYTHM
-$item-text-title-vr:     2 * $s-gutter !default;
-$item-text-content-vr:   1 * $s-gutter !default;
-
-
 .item-text {
   padding: $item-text-card-spacing;
   margin-top: $item-text-margin;
 
-  &--no-card { padding: 0; }
-
+  &--no-card   { padding: $item-text-card-spacing 0; }
   &--card-grey { background: $c-light-grey; }
   &--card-blue { background: $c-blue; }
-
-
-
-
-  &-title,
-  // &-content,
-  // &-link
-  {
-    margin: 0;
-  }
-
-  &-title {
-    margin-bottom: $item-text-title-vr;
-  }
-  &-link  {
-    display: block;
-    margin-top: $item-text-content-vr;
-  }
 }
 
 
