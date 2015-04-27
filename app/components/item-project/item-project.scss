@@ -1,12 +1,15 @@
 // SPACINGS
 $item-project-title-margin-top: ($s-gutter * 2) !default;
 $item-project-title-margin-bottom: ($s-gutter / 2) !default;
+$item-project-spacing: $size-s;
 
 // COLORS
 $item-project-title-color: $c-black !default;
 $item-project-legend-color: $c-grey80 !default;
 
 .item-project {
+  margin-top: $item-project-spacing;
+
   &-link {
     display: block;
     text-decoration: none;
@@ -28,7 +31,7 @@ $item-project-legend-color: $c-grey80 !default;
   }
 
   &.active, &:hover, &:focus {
-    .item-project-title, .item-project-legend {
+    .item-project-title {
       color: $c-pink;
     }
   }

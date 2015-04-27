@@ -32,4 +32,6 @@ require(['jquery'], function ($) {
       }
     });
   });
+  // Trigger scroll event so that it is placed correctly on load.
+  $w.trigger('scroll');
 })

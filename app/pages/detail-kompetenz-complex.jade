@@ -14,8 +14,8 @@ block htmlbody
     ]
   }, {})
 
-  .l-s-width.l-spacing-v-m.t-rt-container
-    h1.t-title Ansprechpartner
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h1.t-title Tunnelbau
 
     p.t-lead
       | Basler & Hofmann verfügt über jahrzehntelange Erfahrung im maschinellen
@@ -26,77 +26,73 @@ block htmlbody
 
     h2 Unsere Leistungen
 
-    ul
-      li Studien
-      li Projektierung
-      li Ausschreibung
-      li Bauleitung
+    ul.list--two-columns
+      li Planung und Projektierung von Bahn- und Strassentunneln, Stollen, Kavernen und Bauhilfsmassnahmen
+      li Sicherheits- und Risikoanalysen,  Expertisen und Prüfungen
+      li Bauleitung und Bauherrenunterstützung 
+      li Integrale und fachübergreifende Gesamtprojektleitung von grossen Infrastrukturprojekten
+      li Zustandsuntersuchungen, Instandsetzung und Erneuerung von Untertagbauwerken unter Betrieb
 
-    h2 Behindertengerecht und fussgängerfreundlich
+    h2 Partner für komplexe Aufgaben
 
-    p
-      | Jedes Tunnelprojekt ist ein einzigartiges Vorhaben. Spezifische
-      | Nutzungsanforderungen und unterschiedliche Baugrundverhältnisse
-      | erfordern massgeschneiderte Konzepte. Unsere erfahrenen Bauleiter
-      | unterstützen Bauherren und Unternehmungen in allen Projektierungsphasen
-      | von der Studie bis zur Realisierung.
+    p Jedes Tunnelprojekt ist ein einzigartiges Vorhaben. Spezifische Nutzungsanforderungen und unterschiedliche Baugrundverhältnisse erfordern massgeschneiderte Konzepte. Unsere erfahrenen Bauleiter unterstützen Bauherren und Unternehmungen in allen Projektierungsphasen von der Studie bis zur Realisierung.
 
-    h3 Beispielprojekte
+    h2 Beispielprojekte
 
     +accordion()
       +accordion-item("Untertagbautunnel", true)
         .l-grid
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Axenstrasse Schwyz–Uri", imgSrc: relativePath + 'assets/projects/project1.jpg', legend: "Mauris nec sodales nisi, quis euismod velit lorem ipsum dolor."}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Eisenbahnverbindung mitten durch Zürich", imgSrc: relativePath + 'assets/projects/project2.jpg', legend: "Ein Tunnel in äusserst heiklem Umfeld"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Das Herzstück der 2014 eingeweihten Durchmesserlinie"}, {legend: true})
 
       +accordion-item("Tagbautunnel")
         .l-grid
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Kehrichtverbrennungs-anlage in Perlen", imgSrc: relativePath + 'assets/projects/project4.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Eisenbahnverbindungmitten durch Zürich", imgSrc: relativePath + 'assets/projects/project5.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "PV Anlage in Esslingen", imgSrc: relativePath + 'assets/projects/project6.jpg', legend: "220 Watt Photovoltaik-Module übernehmen die Funktion von Ziegeln."}, {legend: true})
 
       +accordion-item("Stollen")
         .l-grid
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Riedtlistrasse Zürich", imgSrc: relativePath + 'assets/projects/project10.jpg', legend: "Ein städtisches Pionierprojekt: Tiefbau in hoher Geschwindigkeit und Qualität."}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Umwelt Arena Spreitenbach", imgSrc: relativePath + 'assets/projects/project11.jpg', legend: "Innovationsobjekte für die Photovoltaik stellen Glaubengrundsätze auf den Kopf"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Kraftwerk in Andermatt", imgSrc: relativePath + 'assets/projects/project12.jpg', legend: "Ein Wasserkraftwerk in äusserst heiklem Umfeld"}, {legend: true})
 
       +accordion-item("Kavernen")
         .l-grid
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Bundesinventar der historischen Verkehrswege der Schweiz", imgSrc: relativePath + 'assets/projects/project13.jpg', legend: "Vom Papierinventar zum Hightech-Produkt"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Coop Gebäudekomplex Schafisheim", imgSrc: relativePath + 'assets/projects/project14.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Basler Fest", imgSrc: relativePath + 'assets/projects/project15.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
 
       +accordion-item("Sanierungen")
         .l-grid
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Kehrichtverbrennungs-anlage in Perlen", imgSrc: relativePath + 'assets/projects/project4.jpg', legend: "Lorem ipsum dolor sit amet"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "Eisenbahnverbindungmitten durch Zürich", imgSrc: relativePath + 'assets/projects/project5.jpg', legend: "Ein Logistikzentrum von gigantischer Dimension"}, {legend: true})
-          .l-grid-cell.l-margin-v-m.l-one-third
+          .l-grid-cell.l-one-third
             +item-project({title: "PV Anlage in Esslingen", imgSrc: relativePath + 'assets/projects/project6.jpg', legend: "220 Watt Photovoltaik-Module übernehmen die Funktion von Ziegeln."}, {legend: true})
   .l-m-width.l-spacing-v-s
     p
       a(href="#") Zurück zur Übersicht
 
     +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
-      
+
   .l-border-t.l-spacing-v-l
     .l-m-width
-      h2.l-margin-v-xs Ihre Ansprechpartner
+      h2.t-vr-reset Ihre Ansprechpartner
       .l-grid
         .l-grid-cell.l-one-third
           +item-contact({

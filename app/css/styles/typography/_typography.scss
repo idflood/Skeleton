@@ -141,8 +141,9 @@ ul {
     &:before {
       content: "_";
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
+      height: 1em;
     }
   }
 }
@@ -155,10 +156,6 @@ ul {
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
     page-break-inside: avoid; /* Firefox */
     break-inside: avoid; /* IE 10+ */
-
-    // Display bullets again, the css column change how the &:before pseudo
-    // element is displayed.
-    margin-left: 15px;
 
     // On 2 column layout the "li + li" margin top make the second column not align
     // to the first one. Use an equivalent margin-bottom to keep correct spacing

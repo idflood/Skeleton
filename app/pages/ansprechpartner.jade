@@ -16,10 +16,9 @@ block htmlbody
 
     .l-l-width
       +index({}, {columns: false})
-        +index-item('A')
-          .l-margin-v-xs
+        +index-item('A').t-vr-reset
           ol.list--no-bullets.l-grid
-            li.l-grid-cell.l-one-third.l-margin-v-s
+            li.l-grid-cell.l-one-third
               +item-contact({
                 imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
                 firstname: "Anna",
@@ -30,7 +29,7 @@ block htmlbody
                 email: "test@example.com",
                 attributes: { expertises: 'Bahnbau' }
                 }, {})
-            li.l-grid-cell.l-one-third.l-margin-v-s
+            li.l-grid-cell.l-one-third
               +item-contact({
                 imgSrc: relativePath + 'assets/anspreschpartner-contact2.jpg',
                 firstname: "Anne",
@@ -43,9 +42,8 @@ block htmlbody
                 }, {})
 
         +index-item('B')
-          .l-margin-v-xs
           ol.list--no-bullets.l-grid
-            li.l-grid-cell.l-one-third.l-margin-v-s
+            li.l-grid-cell.l-one-third
               +item-contact({
                 imgSrc: relativePath + 'assets/anspreschpartner-contact4.jpg',
                 firstname: "Bert",
@@ -56,7 +54,7 @@ block htmlbody
                 email: "test@example.com",
                 attributes: { expertises: 'Bahnbau' }
                 }, {})
-            li.l-grid-cell.l-one-third.l-margin-v-s
+            li.l-grid-cell.l-one-third
               +item-contact({
                 imgSrc: relativePath + 'assets/anspreschpartner-contact5.jpg',
                 firstname: "Beat",
@@ -67,7 +65,7 @@ block htmlbody
                 email: "test2@example.com",
                 attributes: { expertises: 'Bahnbau' }
                 }, {})
-            li.l-grid-cell.l-one-third.l-margin-v-s
+            li.l-grid-cell.l-one-third
               +item-contact({
                 imgSrc: relativePath + 'assets/anspreschpartner-contact6.jpg',
                 firstname: "Benedikt",
@@ -78,7 +76,7 @@ block htmlbody
                 email: "test3@example.com",
                 attributes: { expertises: 'Altlasten' }
                 }, {})
-            li.l-grid-cell.l-one-third.l-margin-v-s
+            li.l-grid-cell.l-one-third
               +item-contact({
                 imgSrc: relativePath + 'assets/anspreschpartner-contact1.jpg',
                 firstname: "Bernhard",
@@ -89,12 +87,6 @@ block htmlbody
                 email: "test@example.com",
                 attributes: { expertises: 'Bahnbau' }
                 }, {})
-
-      .section-button
-        +button({
-            href: "#",
-            text: "Weitere Kontakte laden"
-        }, { color: 'pink', size: 'large' })
 
   +footer({
     copyright: '© Basler & Hofmann 2015',

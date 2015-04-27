@@ -1,0 +1,68 @@
+extends /layout/layout
+
+block htmlhead
+    title Detail Employee
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Aktuelles"})
+  +breadcrumbs({
+    pages: [
+      {name: "Ansprechpartner", href: "./ansprechpartner.html"},
+      {name: "Peter Muster"}
+    ]
+  }, {})
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h1.t-title Peter Muster
+    p.t-lead Dr.-Ingenieur
+    p.t-lead Fachbereichsleiter Verkehr, Mobilität & Raum
+
+    h2 Fachliche Kompetenzen
+    p <a class="t-link" href="#">Bahnbau</a>, <a class="t-link" href="#">Bauherrenberatung</a>, <a class="t-link" href="#">Bahntechnik</a>.
+
+    figure
+      img(src="http://placehold.it/640x400",alt="Normal image")
+
+    p Kurzer Prosa-Text, der beschreibt, welche Schwerpunkte, Ausbildung und Erfahrungen der Mitarbeiter/die Mitarbeiterin hat. Morbi porta purus a nulla vestibulum, in gravida diam suscipit.
+
+    h2 Was fasziniert dich an deiner Arbeit?
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+
+    h2 Warum arbeitest du bei Basler & Hofmann?
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+
+    h3 Basler & Hofmann West AG
+    p
+      | Forchstrasse 395, Postfach
+      br
+      | CH-8032 Zürich
+      a(href="#") Lageplan und Anfahrtsbeschreibung
+
+    p
+      | T +41 44 387 12 27
+      br
+      | F +41 44 387 11 00
+      br
+      a(href="#") E-Mail
+
+    p
+      a(href="#") V-Card herunterladen
+      br
+      a(href="#") Profil auf LinkedIn
+
+  .l-m-width.l-spacing-v-m
+    a.t-link(href="#") Zurück zur Übersicht
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})

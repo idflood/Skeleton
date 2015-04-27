@@ -1,6 +1,6 @@
 // SPACINGS
 $item-current-padding: $size-xl !default; // 90px
-$item-current-spacing: 3 * $s-gutter !default;
+$item-current-spacing: $size-s !default;
 $item-current-spacing--medium: $size-xs !default;
 
 $item-current-icon-width--small: 14px !default;
@@ -16,6 +16,7 @@ $item-current-external-margin: 5px !default;
 $item-current-download-margin: 5px !default;
 
 // COLORS
+$item-current-title-color--hover: $c-pink !default;
 $item-current-type-color--medium: $c-grey60 !default;
 $item-current-title-color--medium: $c-black !default;
 $item-current-icon-color--medium: $c-grey40 !default;
@@ -24,11 +25,7 @@ $item-current-image-border: $c-grey20 !default;
 
 .item-current {
   position: relative;
-  margin-bottom: $item-current-spacing;
-
-  a {
-    text-decoration: none;
-  }
+  margin-top: $item-current-spacing;
 
   &-type {
     text-transform: uppercase;
@@ -40,7 +37,14 @@ $item-current-image-border: $c-grey20 !default;
     font-family: "ZwoWeb-Semibold";
   }
 
+  &-link {
+    display: block;
+    text-decoration: none;
+  }
+
   &-download {
+    text-decoration: none;
+
     .icon {
       margin-left: $item-current-download-margin;
     }
@@ -59,8 +63,6 @@ $item-current-image-border: $c-grey20 !default;
   }
 
   &-image {
-    display: block;
-
     img {
       display: block;
       max-width: 100%;
@@ -176,6 +178,20 @@ $item-current-image-border: $c-grey20 !default;
     .icon--download {
       // Apply the margin to the icon since it's not in the wrapper .item-current-download.
       margin-left: $item-current-download-margin;
+      
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  // Set the title color on link hover at the end so that we don't have to use
+  // !important or bigger specificity.
+  &-link {
+    &:hover, &:focus {
+      .item-current-title {
+        color: $item-current-title-color--hover;
+      }
     }
   }
 

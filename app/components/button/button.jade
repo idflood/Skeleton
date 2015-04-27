@@ -2,7 +2,7 @@ mixin button (data, options)
   - options = setOptionsDefaults(options, "button", components.button)
   - var classes = getOptionsModifier(options, "button", ['color', 'size'], components.button)
 
-  a.button.t-button(class=classes, href=data.href)
+  a.button.t-button(class=classes, href=data.href)&attributes(attributes)
     if options.icon
       +button-svg(options.icon)
     | #{data.text}

@@ -6,6 +6,7 @@ $accordion-icon-vertical-align: 2px !default;
 
 // COLORS
 $accordion-border: $c-grey20 !default;
+$acordion-color: $c-black !default;
 
 // OTHER
 $accordion-icon-display: inline-block !default;
@@ -15,10 +16,10 @@ $accordion-icon-display: inline-block !default;
 
   &-item {
     border-top: 1px solid $accordion-border;
-
     &:last-child {
       border-bottom: 1px solid $accordion-border;
     }
+
 
     .icon {
       display: $accordion-icon-display;
@@ -39,6 +40,13 @@ $accordion-icon-display: inline-block !default;
     padding: $accordion-toggle-padding 0;
     text-decoration: none; // Overwrite default link underline.
     text-transform: uppercase;
+    &, &:link, &:active, &:visited, &.active  {
+      color: $acordion-color;
+    }
+
+    &:hover, &:focus {
+      color: $c-pink;
+    }
   }
 
   &-content {
