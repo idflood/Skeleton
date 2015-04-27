@@ -51,7 +51,7 @@ $-title-margin-bottom: 1.38em;
   margin-top: 0;
 }
 
-.t-link {
+a {
   &, &:link, &:active, &:visited {
     color: $c-grey60;
   }
