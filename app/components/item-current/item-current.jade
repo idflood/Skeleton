@@ -4,7 +4,7 @@ mixin item-current(data, options)
 
   - // Set the data.label with location and date. @see item-current.jade.js
   - itemCurrentLabel(data, options)
-  
+
   +item-current-wrapper(data, options)
     if !data.imgSrc
       a(href=options.href, data-grunticon-embed, class="item-current-icon icon icon--" + options.icon)
@@ -50,7 +50,7 @@ mixin item-current-wrapper(data, options)
 mixin item-current-title(data, options)
   a(href=options.href, itemprop="url")
     if options.size == 'medium'
-      h2.item-current-title.t-link(itemprop="name")
+      h2.item-current-title.t-link.t-vr-reset(itemprop="name")
         block
     else
       div.item-current-title.t-link
