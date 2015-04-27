@@ -6,7 +6,8 @@ $page-navigation-sticky-offset: $header-menu-height;
 // COLORS
 $page-navigation-background: $c-black !default;
 $page-navigation-link-color: $c-white !default;
-$page-navigation-link-color--active: $c-grey20 !default;
+$page-navigation-link-color--hover: $c-grey20 !default;
+$page-navigation-link-color--active: $c-pink !default;
 
 .page-navigation {
   position: relative; // Required for z-index.
@@ -41,10 +42,13 @@ $page-navigation-link-color--active: $c-grey20 !default;
     line-height: $page-navigation-height;
     text-decoration: none;
 
-    &, &:active, &:visited {
+    &, &:link, &:active, &:visited {
       color: $page-navigation-link-color;
     }
     &:hover, &:focus {
+      color: $page-navigation-link-color--hover;
+    }
+    &.active {
       color: $page-navigation-link-color--active;
     }
   }
