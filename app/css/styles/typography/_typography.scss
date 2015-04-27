@@ -140,3 +140,30 @@ p {
     }
   }
 }
+
+.list--two-columns {
+  column-count: 2;
+  column-gap: 2*$s-gutter;
+
+  > li {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid; /* Firefox */
+    break-inside: avoid; /* IE 10+ */
+
+    // Display bullets again, the css column change how the &:before pseudo
+    // element is displayed.
+    margin-left: 15px;
+
+    // On 2 column layout the "li + li" margin top make the second column not align
+    // to the first one. Use an equivalent margin-bottom to keep correct spacing
+    // between elements.
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+}
+
+ul.list--two-columns{
+  // Since we added a margin-bottom to the li we remove it from the list.
+  // We need to increase specificty to ul since we override a style applied to ul.
+  margin-bottom: -0.5em;
+}
