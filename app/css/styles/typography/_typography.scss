@@ -129,13 +129,12 @@ p {
     // column-gap: 2*$s-gutter;
     li {
       position: relative;
+      padding-left: 1.5 * $s-gutter;
       &:before {
         content: "_";
         position: absolute;
         bottom: 0;
-        top: 0;
-        left: -5px;
-        transform: translateX(-100%);
+        left: 0;
       }
     }
   }
