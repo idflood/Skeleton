@@ -16,9 +16,8 @@ block htmlbody
   .l-m-width.l-spacing-v-m.t-rt-container
     h1.t-title Bauingenieur/in Brückenbau
 
-    p.t-link
-      | Zollikofen |
-      a(href="#") Lageplan und Anfahrtsbeschreibung
+    p.t-grey60
+      | Zollikofen | <a href="./standorte.html">Lageplan und Anfahrtsbeschreibung</a>
 
     p.t-lead
       | Die Projektierung und Realisierung von bedeutenden Tunnelbauten im In-
@@ -51,23 +50,23 @@ block htmlbody
       | von Vorteil, denn bei Interesse sind Auslandeinsätze denkbar.
 
     h2 Ihre Aufgaben
-    
+
     p
-      | Bei uns erwartet Sie eine attraktive Herausforderung mit interessanten 
-      | Entwicklungs- und Weiterbildungsmöglichkeiten. Wir bieten Ihnen ein 
-      | attraktives Arbeitsumfeld und fortschrittliche Anstellungsbedingungen. 
+      | Bei uns erwartet Sie eine attraktive Herausforderung mit interessanten
+      | Entwicklungs- und Weiterbildungsmöglichkeiten. Wir bieten Ihnen ein
+      | attraktives Arbeitsumfeld und fortschrittliche Anstellungsbedingungen.
       | Ihr Arbeitsort ist in Esslingen/ZH.
-  
+
     h2 Das Team
-    
+
     p
-      | Nunc ornare viverra semper. Duis hendrerit tempor ligula eu interdum. 
-      | Pellentesque dictum nibh ac ante sodales, nec ornare nisi ultrices. 
-      | Aliquam finibus pellentesque nisi quis elementum. Donec vestibulum 
-      | hendrerit lectus, ut sagittis eros interdum vitae. 
+      | Nunc ornare viverra semper. Duis hendrerit tempor ligula eu interdum.
+      | Pellentesque dictum nibh ac ante sodales, nec ornare nisi ultrices.
+      | Aliquam finibus pellentesque nisi quis elementum. Donec vestibulum
+      | hendrerit lectus, ut sagittis eros interdum vitae.
 
     h2.l-margin-v-xs Beispielprojekte
-    
+
     .l-grid
       .l-grid-cell.l-one-third
         +item-project({title: "Axenstrasse Schwyz–Uri", imgSrc: relativePath + 'assets/projects/project1.jpg', legend: "Mauris nec sodales nisi, quis euismod velit lorem ipsum dolor."}, {legend: true})
@@ -77,11 +76,11 @@ block htmlbody
         +item-project({title: "Unterirdischer Durchgangsbahnhof Zürich", imgSrc: relativePath + 'assets/projects/project3.jpg', legend: "Das Herzstück der 2014 eingeweihten Durchmesserlinie"}, {legend: true})
 
     h2 Bei allfälligen Fragen
-    
+
     p
-      | Falls Sie fachliche Fragen zur Stelle bzw. Fragen zur Bewerbung haben, 
+      | Falls Sie fachliche Fragen zur Stelle bzw. Fragen zur Bewerbung haben,
       | bitten wir Sie, sich an eine der folgenden Personen zu wenden.
-  
+
     .l-grid.l-spacing-v-s
       .l-grid-cell.l-one-third
         p Fachliche Fragen zur Stelle
@@ -105,15 +104,15 @@ block htmlbody
           phone: "044 387 13 19",
           email: "test2@example.com"
           }, {})
-    
+
     h2 Interesse?
-    
+
     p Haben wir Ihr Interesse geweckt? Dann freuen wir uns, Sie kennen zu lernen!
-    
+
     .l-spacing-v-xs
-      +button({text: "Jetzt online bewerben", href: "#"}, {color: "pink"})
-      +button({text: "Weitersagen", href: "#"}, {color: "grey", icon: "mail"})
-      +button({text: "Als PDF herunterladen", href: "#"}, {color: "grey", icon: "download"})
+      +button({text: "Jetzt online bewerben", href: "./detail-offene-form.html"}, {color: "pink"}).l-margin-r-m
+      +button({text: "Weitersagen", href: "#"}, {color: "grey", icon: "mail"}).l-margin-r-m
+      +button({text: "Als PDF herunterladen", href: "#"}, {color: "grey", icon: "download"}).l-margin-r-m
 
     p Bewerbungen per Post bitte an:
 
