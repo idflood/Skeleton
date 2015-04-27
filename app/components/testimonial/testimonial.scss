@@ -8,6 +8,7 @@ $testimonial-margin-right: 160px !default;
 $testimonial-background: $c-black !default;
 
 .testimonial {
+  @extend .l-xl-width;
   position: relative; // Needed for text position.
   height: $testimonial-height;
   background-size: cover;

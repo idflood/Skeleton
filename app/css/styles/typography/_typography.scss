@@ -93,6 +93,10 @@ p {
 
 .t-rt-container {
 
+  .button {
+    margin-top: 1em;
+  }
+
   ul {
     margin: 0;
   }
@@ -129,13 +133,12 @@ p {
     // column-gap: 2*$s-gutter;
     li {
       position: relative;
+      padding-left: 1.5 * $s-gutter;
       &:before {
         content: "_";
         position: absolute;
         bottom: 0;
-        top: 0;
-        left: -5px;
-        transform: translateX(-100%);
+        left: 0;
       }
     }
   }
@@ -166,4 +169,16 @@ ul.list--two-columns{
   // Since we added a margin-bottom to the li we remove it from the list.
   // We need to increase specificty to ul since we override a style applied to ul.
   margin-bottom: -0.5em;
+}
+
+
+p .icon {
+  margin-right: .5em;
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+  path {
+    fill: currentColor;
+  }
 }

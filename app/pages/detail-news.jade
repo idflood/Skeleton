@@ -1,0 +1,63 @@
+extends /layout/layout
+
+block htmlhead
+    title Detail News
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Aktuelles"})
+  +breadcrumbs({
+    pages: [
+      {name: "Aktuelles", href: "./aktuelles.html"},
+      {name: "Newsartikel"}
+    ]
+  }, {})
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h1.t-title Basler & Hofmann ausgezeichnet als «Tunnel Design Firm of the Year
+    p.t-grey60 02.03.2015
+
+    p.t-lead Gleich zwei Mal wurde Basler & Hofmann bei den diesjährigen "International Tunnelling and Underground Space Awards" ausgezeichnet. Martin Bosshard, Bereichsleiter Tunnel und Bahnen, konnte bei der Preisverleihung am 4. Dezember 2014 in London den ersten Preis als "Tunnel Design Firm of the Year" entgegennehmen und für das Projekt Durchmesserlinie den zweiten Preis in der Kategorie "Major Tunnelling Project of the Year (over $ 500 M)".
+
+    p Die Awards der International Underground Space Association werden für international herausragende Leistungen im Bereich des Tunnel- und Untertagbaus verliehen. Die Konkurrenz ist stark: In diesem Jahr waren alle namhaften internationalen Ingenieurunternehmen im Tunnelbau mit hochkarätigen Projekten in der Auswahl vertreten.
+    figure
+      img(src="http://placehold.it/640x420",alt="Normal image")
+      figcaption Die Preisverleihung am 4. Dezember 2014 in London
+
+    p Als "Tunnelling Design Firm of the Year" werden Unternehmen ausgezeichnet, die über einen langen Zeitraum eine gleichbleibend hohe Qualität im Tunnelbau unter Beweis gestellt haben, die ihre Projekte und die Branche mit innovativen Lösungen bereichern und immer wieder gezeigt haben, dass sie auch grosse Herausforderungen im Sinne des Kunden gemeistert haben. "Die Auszeichnung ist eine schöne Anerkennung für die intensive Projektarbeit unserer Projektteams in den letzten Jahren", kommentiert Martin Bosshard, Bereichsleiter Tunnel und Bahnen die Preisverleihung.
+
+    p
+      | Besonders gewürdigt wurde auch das Projekt "Durchmesserlinie", bei dem Basler & Hofmann in der Ingenieurgemeinschaft mit Pöyry und SNZ die Gesamtprojektleitung für alle Tunnels und den Durchgangsbahnhof im Auftrag der SBB innehatte. Es erhielt den zweiten Preis in der Kategorie "Major Tunnelling Project of the Year (over $ 500 M)". <a href="#">Mehr zum Award</a>
+
+    p.t-grey60 Author/Fotograf
+
+  .l-m-width.l-spacing-v-m
+    a.t-link(href="#") Zurück zur Übersicht
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  .l-border-t.l-spacing-v-m
+    .l-m-width
+      h2 Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
