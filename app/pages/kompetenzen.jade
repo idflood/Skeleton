@@ -21,7 +21,7 @@ block htmlbody
       +search-field({ placeholder: 'Suche in Kompetenzen' }, {})
     .l-l-width
       +index({}, {columns: true})
-        +index-item('A')
+        +index-item('A').t-vr-reset
           ol.list--no-bullets
             +konpetenz-link("Altasten", "detail-kompetenz-simple.html")
             +konpetenz-link("Asbest und Gebäudeschadstoffe", "detail-kompetenz-complex.html")
