@@ -4,6 +4,7 @@
   description: "Contact item component"
   author: "Ginetta"
   data:
+    href: "./detail-employee.html"
     imgSrc: "http://placehold.it/217x145/dc2856/FFFFFF/.png&text=Image1"
     firstname: "Hans"
     lastname: "Muster"
