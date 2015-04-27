@@ -35,10 +35,15 @@ $-title-margin-bottom: 1.38em;
   }
 }
 
-.no-bullets {
+.list--no-bullets {
   margin: 0;
   padding: 0;
   list-style: none;
+  li {
+    padding: 0;
+    margin: 0;
+    &:before { display: none; }
+  }
 }
 
 
@@ -90,56 +95,54 @@ p {
   margin: 0;
 }
 
+.button {
+  margin-top: 1em;
+}
 
-.t-rt-container {
+ul {
+  margin: 0;
+}
 
-  .button {
-    margin-top: 1em;
-  }
+// TODO: remove this, is just for debugging
+// background: rgba(red, 0.1);
 
-  ul {
-    margin: 0;
-  }
+// NOTE: h1 doesn't have margin top
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2em;
+}
 
-  // TODO: remove this, is just for debugging
-  // background: rgba(red, 0.1);
+p, ul {
+  margin-top: 1em;
+}
 
-  // NOTE: h1 doesn't have margin top
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 2em;
-  }
+p + p,
+li + li {
+  margin-top: .5em;
+}
 
-  p, ul {
-    margin-top: 1em;
-  }
-
-  p + p,
-  li + li {
-    margin-top: .5em;
-  }
-
-
-  figure + p { margin-top: $size-m; }
+.t-vr-reset { margin-top: 0; }
 
 
-  ul {
-    list-style: none;
-    padding: 0;
-    // column-count: 2;
-    // column-gap: 2*$s-gutter;
-    li {
-      position: relative;
-      padding-left: 1.5 * $s-gutter;
-      &:before {
-        content: "_";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
+figure + p { margin-top: $size-m; }
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  // column-count: 2;
+  // column-gap: 2*$s-gutter;
+  li {
+    position: relative;
+    padding-left: 1.5 * $s-gutter;
+    &:before {
+      content: "_";
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
   }
 }
