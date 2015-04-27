@@ -1,0 +1,67 @@
+extends /layout/layout
+
+block htmlhead
+    title Detail Reportage
+    meta(name='description', content='')
+
+block htmlbody
+  +header({}, {active: "Aktuelles"})
+  +breadcrumbs({
+    pages: [
+      {name: "Aktuelles", href: "./aktuelles.html"},
+      {name: "Reportage"}
+    ]
+  }, {})
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h1.t-title People Business
+    p.t-grey60 16.03.2015
+
+    p.t-lead Team Spirit spielt bei uns eine zentrale Rolle. Wie Basler & Hofmann ihren Leitsatz «Miteinander — Füreinander» seit 50 Jahren umsetzt.
+
+  +testimonial({
+    imgSrc: relativePath + 'assets/arbeiten-testimonial1.png',
+    text: 'Team Spirit spielt bei uns eine zentrale Rolle. Wie Basler & Hofmann ihren Leitsatz «Miteinander — Füreinander» seit 50 Jahren umsetzt.'
+  }, {})
+
+  .l-m-width.l-spacing-v-m.t-rt-container
+    h2 Lorem ipsum dolor sit amet
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis lorem sed lorem bibendum tincidunt. Proin ut maximus purus. Pellentesque vulputate leo ac turpis aliquam, sit amet bibendum neque dictum. Phasellus sed dui pellentesque, accumsan quam tempus, aliquet diam. Suspendisse luctus eget nulla a vehicula. Morbi consectetur viverra commodo.
+    figure
+      img(src="http://placehold.it/640x420",alt="Normal image")
+      figcaption Die Preisverleihung am 4. Dezember 2014 in London
+
+    p Phasellus vitae rhoncus erat, eu scelerisque libero. Sed id enim nec velit blandit accumsan in eget ipsum. Vestibulum ultrices aliquet felis ac mollis. Suspendisse accumsan nisl vel lectus aliquet, quis laoreet erat volutpat. Sed eget augue at risus posuere lacinia et sed mi. Cras sed consequat massa, bibendum tincidunt nisi. Aliquam vulputate maximus ullamcorper. Nunc blandit tellus vitae tellus commodo accumsan. In at justo eu ligula faucibus pulvinar. Suspendisse eget diam at ante lobortis vehicula. Fusce mollis faucibus felis nec cursus. Morbi aliquet tellus a augue finibus,
+
+    p.t-grey60 Author/Fotograf
+
+  .l-m-width.l-spacing-v-m
+    a.t-link(href="#") Zurück zur Übersicht
+    +share({url: "http://localhost:9000/en/detail-generic.html"}, {})
+
+  .l-border-t.l-spacing-v-m
+    .l-m-width
+      h2.t-vr-reset Bei allfälligen Fragen
+      p Falls Sie eine Medienanfrage haben, zögern Sie nicht, uns zu kontaktieren!
+      .l-grid
+        .l-grid-cell.l-one-third
+          +item-contact({
+            imgSrc: relativePath + 'assets/home-contact2.png',
+            firstname: "Maria",
+            lastname: "Muster",
+            role: "Leitender Expertin",
+            region: "Zürich",
+            phone: "044 387 13 19",
+            email: "test2@example.com"
+            }, {})
+  +footer({
+    copyright: '© Basler & Hofmann 2015',
+    languages: [
+      { text: 'DE', href: '#', active: true },
+      { text: 'FR', href: '#' },
+      { text: 'EN', href: '#' }
+    ],
+    links: [
+      { text: 'Impressum'    , href: '#' },
+      { text: 'Service Links', href: '#' }
+    ]
+  }, {})
