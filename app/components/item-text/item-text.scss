@@ -6,7 +6,7 @@ $item-text-margin: $size-s;
   padding: $item-text-card-spacing;
   margin-top: $item-text-margin;
 
-  &--no-card   { padding: $item-text-card-spacing 0; }
+  &--no-card   { padding: 0; }
   &--card-grey { background: $c-light-grey; }
   &--card-blue { background: $c-blue; }
 }
